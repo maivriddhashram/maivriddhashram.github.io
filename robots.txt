@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: [VERIFIED CANONICAL URL]/sitemap.xml

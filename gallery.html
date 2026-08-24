@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="mr" data-lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>गॅलरी | Gallery — Mai Vriddhashram</title>
+<meta name="description" content="माई वृद्धाश्रम येथील माता, उपक्रम, आरोग्य सेवा, सण आणि स्वयंसेवकांच्या क्षणांची छायाचित्रे.">
+<link rel="canonical" href="[VERIFIED CANONICAL URL]/gallery.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Noto+Serif+Devanagari:wght@600;700&family=Work+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <p class="breadcrumbs" data-mr="मुख्यपृष्ठ / गॅलरी" data-en="Home / Gallery">मुख्यपृष्ठ / गॅलरी</p>
+      <h1 data-mr="गॅलरी" data-en="Gallery">गॅलरी</h1>
+      <p class="max-w-prose mx-auto" data-mr="येथे खरी माई वृद्धाश्रम छायाचित्रे प्रकाशित होतील. सर्व फोटो जोडण्यापूर्वी संबंधित संमती घेतली जाते." data-en="Genuine Mai Vriddhashram photographs will be published here. Consent is obtained before any photo is added.">येथे खरी माई वृद्धाश्रम छायाचित्रे प्रकाशित होतील. सर्व फोटो जोडण्यापूर्वी संबंधित संमती घेतली जाते.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="gallery-filters" role="group" aria-label="Gallery filters">
+        <button class="filter-btn active" data-filter="all" data-mr="सर्व" data-en="All">सर्व</button>
+        <button class="filter-btn" data-filter="mothers" data-mr="माता" data-en="Mothers">माता</button>
+        <button class="filter-btn" data-filter="activities" data-mr="उपक्रम" data-en="Activities">उपक्रम</button>
+        <button class="filter-btn" data-filter="health" data-mr="आरोग्य" data-en="Health">आरोग्य</button>
+        <button class="filter-btn" data-filter="festivals" data-mr="सण" data-en="Festivals">सण</button>
+        <button class="filter-btn" data-filter="volunteers" data-mr="स्वयंसेवक" data-en="Volunteers">स्वयंसेवक</button>
+        <button class="filter-btn" data-filter="donations" data-mr="देणग्या" data-en="Donations">देणग्या</button>
+        <button class="filter-btn" data-filter="facilities" data-mr="सुविधा" data-en="Facilities">सुविधा</button>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <button class="gallery-item" data-cat="mothers"><img src="images/gallery/placeholder-1.svg" alt="माई वृद्धाश्रम — फोटो लवकरच जोडला जाईल (Photo to be added)" loading="lazy"></button>
+        <button class="gallery-item" data-cat="activities"><img src="images/gallery/placeholder-2.svg" alt="उपक्रम — फोटो लवकरच जोडला जाईल (Photo to be added)" loading="lazy"></button>
+        <button class="gallery-item" data-cat="health"><img src="images/gallery/placeholder-3.svg" alt="आरोग्य शिबिर — फोटो लवकरच जोडला जाईल (Photo to be added)" loading="lazy"></button>
+        <button class="gallery-item" data-cat="festivals"><img src="images/gallery/placeholder-4.svg" alt="सण — फोटो लवकरच जोडला जाईल (Photo to be added)" loading="lazy"></button>
+        <button class="gallery-item" data-cat="volunteers"><img src="images/gallery/placeholder-5.svg" alt="स्वयंसेवक — फोटो लवकरच जोडला जाईल (Photo to be added)" loading="lazy"></button>
+        <button class="gallery-item" data-cat="donations"><img src="images/gallery/placeholder-6.svg" alt="देणगी मोहीम — फोटो लवकरच जोडला जाईल (Photo to be added)" loading="lazy"></button>
+        <button class="gallery-item" data-cat="facilities"><img src="images/gallery/placeholder-7.svg" alt="सुविधा — फोटो लवकरच जोडला जाईल (Photo to be added)" loading="lazy"></button>
+        <button class="gallery-item" data-cat="mothers"><img src="images/gallery/placeholder-8.svg" alt="माई वृद्धाश्रम — फोटो लवकरच जोडला जाईल (Photo to be added)" loading="lazy"></button>
+      </div>
+      <p class="form-note text-center" style="margin-top:20px;" data-mr="टीप: सध्या दाखवलेल्या प्रतिमा नमुना-प्लेसहोल्डर आहेत. या खऱ्या, संमती-मंजूर छायाचित्रांनी बदलल्या जातील." data-en="Note: images currently shown are sample placeholders and will be replaced with genuine, consent-approved photographs.">टीप: सध्या दाखवलेल्या प्रतिमा नमुना-प्लेसहोल्डर आहेत. या खऱ्या, संमती-मंजूर छायाचित्रांनी बदलल्या जातील.</p>
+    </div>
+  </section>
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" tabindex="-1">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <div class="lightbox-inner text-center">
+    <img id="lightboxImg" src="" alt="" style="max-height:70vh; margin:0 auto; border-radius:12px;">
+    <p id="lightboxCaption" style="margin-top:14px;"></p>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+<script src="config.js"></script>
+<script src="js/common.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

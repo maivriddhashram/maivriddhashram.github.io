@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="mr" data-lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>देणगी द्या | Donate — Mai Vriddhashram</title>
+<meta name="description" content="माई वृद्धाश्रमला देणगी द्या — यूपीआय, बँक ट्रान्सफर किंवा ऑनलाइन पेमेंटद्वारे वृद्ध मातांच्या काळजीसाठी मदत करा.">
+<link rel="canonical" href="[VERIFIED CANONICAL URL]/donate.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Noto+Serif+Devanagari:wght@600;700&family=Work+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <p class="breadcrumbs" data-mr="मुख्यपृष्ठ / देणगी द्या" data-en="Home / Donate">मुख्यपृष्ठ / देणगी द्या</p>
+      <h1 data-mr="आपली छोटी मदत, एका आईसाठी मोठा आधार." data-en="Your small contribution can make a big difference in a mother's life.">आपली छोटी मदत,<br>एका आईसाठी मोठा आधार.</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid grid-2" style="align-items:start; gap:36px;">
+
+      <!-- Donation form / amount -->
+      <div class="card reveal">
+        <h3 data-mr="रक्कम निवडा" data-en="Choose an Amount">रक्कम निवडा</h3>
+        <div class="amount-grid" id="amountGrid">
+          <button class="amount-btn active" type="button">₹500</button>
+          <button class="amount-btn" type="button">₹1,000</button>
+          <button class="amount-btn" type="button">₹2,500</button>
+          <button class="amount-btn" type="button">₹5,000</button>
+        </div>
+        <div class="form-field" style="margin-top:16px;">
+          <label for="customAmount" data-mr="इतर रक्कम (₹)" data-en="Custom Amount (₹)">इतर रक्कम (₹)</label>
+          <input type="number" id="customAmount" min="1" placeholder="₹ ______">
+        </div>
+        <a href="#donate-methods" class="btn btn-primary" style="width:100%; margin-top:10px;" data-mr="❤️ पुढे जा" data-en="❤️ Continue">❤️ पुढे जा</a>
+        <p class="form-note" style="margin-top:14px;" data-mr="ऑनलाइन पेमेंट गेटवे लवकरच जोडले जाईल." data-en="An online payment gateway will be connected here soon.">ऑनलाइन पेमेंट गेटवे लवकरच जोडले जाईल.</p>
+      </div>
+
+      <!-- Donation methods -->
+      <div id="donate-methods">
+        <div class="card reveal" style="margin-bottom:20px;">
+          <h3 data-mr="यूपीआय द्वारे देणगी" data-en="Donate via UPI">यूपीआय द्वारे देणगी</h3>
+          <p><strong data-mr="यूपीआय आयडी:" data-en="UPI ID:">यूपीआय आयडी:</strong> <span id="upiId"></span></p>
+          <img src="images/qr/upi-qr-placeholder.svg" alt="UPI QR code placeholder" style="width:160px; border-radius:12px; border:1px solid var(--line);">
+        </div>
+        <div class="card reveal">
+          <h3 data-mr="बँक ट्रान्सफर" data-en="Bank Transfer">बँक ट्रान्सफर</h3>
+          <p><strong data-mr="खातेदाराचे नाव:" data-en="Account Name:">खातेदाराचे नाव:</strong> <span id="bankAccName"></span></p>
+          <p><strong data-mr="बँक:" data-en="Bank:">बँक:</strong> <span id="bankName"></span></p>
+          <p><strong data-mr="खाते क्रमांक:" data-en="Account Number:">खाते क्रमांक:</strong> <span id="bankAccNum"></span></p>
+          <p><strong data-mr="आयएफएससी:" data-en="IFSC:">आयएफएससी:</strong> <span id="bankIfsc"></span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Current needs -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="text-center reveal" style="margin-bottom:32px;">
+        <p class="eyebrow" data-mr="सध्याच्या गरजा" data-en="Current Needs">सध्याच्या गरजा</p>
+        <h2 data-mr="तुमची मदत कुठे उपयोगी पडते" data-en="Where Your Support Helps">तुमची मदत कुठे उपयोगी पडते</h2>
+      </div>
+      <div class="grid grid-4">
+        <div class="card reveal"><div class="icon-badge">🍚</div><h3 data-mr="अन्न व किराणा" data-en="Food & Groceries">अन्न व किराणा</h3><p class="form-note" data-mr="[लक्ष्य पडताळणीनंतर दाखवले जाईल]" data-en="[Target shown after verification]">[लक्ष्य पडताळणीनंतर दाखवले जाईल]</p></div>
+        <div class="card reveal"><div class="icon-badge">💊</div><h3 data-mr="आरोग्यसेवा" data-en="Healthcare">आरोग्यसेवा</h3><p class="form-note" data-mr="[लक्ष्य पडताळणीनंतर दाखवले जाईल]" data-en="[Target shown after verification]">[लक्ष्य पडताळणीनंतर दाखवले जाईल]</p></div>
+        <div class="card reveal"><div class="icon-badge">🛏️</div><h3 data-mr="बेड व बेडिंग" data-en="Beds & Bedding">बेड व बेडिंग</h3><p class="form-note" data-mr="[लक्ष्य पडताळणीनंतर दाखवले जाईल]" data-en="[Target shown after verification]">[लक्ष्य पडताळणीनंतर दाखवले जाईल]</p></div>
+        <div class="card reveal"><div class="icon-badge">🍳</div><h3 data-mr="स्वयंपाकघर उपकरणे" data-en="Kitchen Equipment">स्वयंपाकघर उपकरणे</h3><p class="form-note" data-mr="[लक्ष्य पडताळणीनंतर दाखवले जाईल]" data-en="[Target shown after verification]">[लक्ष्य पडताळणीनंतर दाखवले जाईल]</p></div>
+        <div class="card reveal"><div class="icon-badge">⚡</div><h3 data-mr="वीज व सुविधा" data-en="Electricity & Utilities">वीज व सुविधा</h3><p class="form-note" data-mr="[लक्ष्य पडताळणीनंतर दाखवले जाईल]" data-en="[Target shown after verification]">[लक्ष्य पडताळणीनंतर दाखवले जाईल]</p></div>
+        <div class="card reveal"><div class="icon-badge">☀️</div><h3 data-mr="सौर ऊर्जा" data-en="Solar Energy">सौर ऊर्जा</h3><p class="form-note" data-mr="[लक्ष्य पडताळणीनंतर दाखवले जाईल]" data-en="[Target shown after verification]">[लक्ष्य पडताळणीनंतर दाखवले जाईल]</p></div>
+        <div class="card reveal"><div class="icon-badge">🧴</div><h3 data-mr="दैनंदिन गरजेच्या वस्तू" data-en="Daily Essentials">दैनंदिन गरजेच्या वस्तू</h3><p class="form-note" data-mr="[लक्ष्य पडताळणीनंतर दाखवले जाईल]" data-en="[Target shown after verification]">[लक्ष्य पडताळणीनंतर दाखवले जाईल]</p></div>
+        <div class="card reveal"><div class="icon-badge">🏡</div><h3 data-mr="देखभाल" data-en="Maintenance">देखभाल</h3><p class="form-note" data-mr="[लक्ष्य पडताळणीनंतर दाखवले जाईल]" data-en="[Target shown after verification]">[लक्ष्य पडताळणीनंतर दाखवले जाईल]</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Donate with confidence -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center reveal" style="margin-bottom:32px;">
+        <h2 data-mr="विश्वासाने देणगी द्या" data-en="Donate With Confidence">विश्वासाने देणगी द्या</h2>
+      </div>
+      <div class="grid grid-2">
+        <div class="card reveal">
+          <h3 data-mr="संस्थेचा तपशील" data-en="Organization Details">संस्थेचा तपशील</h3>
+          <p data-mr="माई वृद्धाश्रम — बोधी ट्री एज्युकेशनल फाउंडेशन द्वारा संचालित" data-en="Mai Vriddhashram — Run by Bodhi Tree Educational Foundation">माई वृद्धाश्रम — बोधी ट्री एज्युकेशनल फाउंडेशन द्वारा संचालित</p>
+          <p><strong data-mr="नोंदणी क्रमांक:" data-en="Registration No.:">नोंदणी क्रमांक:</strong> <span id="regNo2"></span></p>
+        </div>
+        <div class="card reveal">
+          <h3 data-mr="पावती प्रक्रिया" data-en="Receipt Process">पावती प्रक्रिया</h3>
+          <p data-mr="प्रत्येक देणगीसाठी पावती दिली जाते. तपशीलांसाठी आमच्याशी संपर्क साधा." data-en="A receipt is issued for every donation. Contact us for details.">प्रत्येक देणगीसाठी पावती दिली जाते. तपशीलांसाठी आमच्याशी संपर्क साधा.</p>
+          <a href="contact.html" class="btn btn-sm btn-outline" data-mr="संपर्क करा" data-en="Contact Us">संपर्क करा</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="site-footer"></div>
+<script src="config.js"></script>
+<script src="js/common.js"></script>
+<script src="js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", ()=>{
+  document.getElementById("upiId").textContent = SITE_CONFIG.upiId;
+  document.getElementById("bankAccName").textContent = SITE_CONFIG.bank.accountName;
+  document.getElementById("bankName").textContent = SITE_CONFIG.bank.bankName;
+  document.getElementById("bankAccNum").textContent = SITE_CONFIG.bank.accountNumber;
+  document.getElementById("bankIfsc").textContent = SITE_CONFIG.bank.ifsc;
+  document.getElementById("regNo2").textContent = SITE_CONFIG.registrationNumber;
+});
+</script>
+</body>
+</html>

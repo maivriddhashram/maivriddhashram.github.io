@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="mr" data-lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>संपर्क | Contact — Mai Vriddhashram</title>
+<meta name="description" content="माई वृद्धाश्रमशी संपर्क साधा — फोन, व्हॉट्सअ‍ॅप, ईमेल किंवा भेट देऊन.">
+<link rel="canonical" href="[VERIFIED CANONICAL URL]/contact.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Noto+Serif+Devanagari:wght@600;700&family=Work+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <p class="breadcrumbs" data-mr="मुख्यपृष्ठ / संपर्क" data-en="Home / Contact">मुख्यपृष्ठ / संपर्क</p>
+      <h1 data-mr="संपर्क साधा" data-en="Get in Touch">संपर्क साधा</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid grid-2" style="align-items:start; gap:36px;">
+      <div class="reveal">
+        <div class="card" style="margin-bottom:20px;">
+          <h3 data-mr="माई वृद्धाश्रम" data-en="Mai Vriddhashram">माई वृद्धाश्रम</h3>
+          <p data-mr="बोधी ट्री एज्युकेशनल फाउंडेशन द्वारा संचालित" data-en="Run by Bodhi Tree Educational Foundation">बोधी ट्री एज्युकेशनल फाउंडेशन द्वारा संचालित</p>
+          <p><strong data-mr="पत्ता:" data-en="Address:">पत्ता:</strong> <span id="cAddress"></span></p>
+          <p><strong data-mr="फोन:" data-en="Phone:">फोन:</strong> <span id="cPhoneD"></span></p>
+          <p><strong data-mr="व्हॉट्सअ‍ॅप:" data-en="WhatsApp:">व्हॉट्सअ‍ॅप:</strong> <span id="cWa"></span></p>
+          <p><strong data-mr="ईमेल:" data-en="Email:">ईमेल:</strong> <span id="cEmailD"></span></p>
+          <div class="hero-cta-row">
+            <a href="#" id="btnCall" class="btn btn-outline btn-sm" data-mr="📞 कॉल करा" data-en="📞 Call">📞 कॉल करा</a>
+            <a href="#" id="btnWa" target="_blank" rel="noopener" class="btn btn-outline btn-sm" data-mr="💬 व्हॉट्सअ‍ॅप" data-en="💬 WhatsApp">💬 व्हॉट्सअ‍ॅप</a>
+            <a href="#" id="btnMap" target="_blank" rel="noopener" class="btn btn-outline btn-sm" data-mr="📍 दिशा मिळवा" data-en="📍 Get Directions">📍 दिशा मिळवा</a>
+            <a href="#" id="btnEmail" class="btn btn-outline btn-sm" data-mr="✉️ ईमेल करा" data-en="✉️ Email">✉️ ईमेल करा</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3 data-mr="सोशल मीडिया" data-en="Social Media">सोशल मीडिया</h3>
+          <p><strong>Instagram:</strong> <span id="cInsta"></span></p>
+          <p><strong>Facebook:</strong> <span id="cFb"></span></p>
+          <div class="hero-media" style="aspect-ratio:16/9; margin-top:16px;">
+            <div class="placeholder-media">
+              <span data-mr="सत्यापित Google नकाशा येथे जोडला जाईल" data-en="A verified Google Map will be embedded here">सत्यापित Google नकाशा येथे जोडला जाईल</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <h3 data-mr="संदेश पाठवा" data-en="Send a Message">संदेश पाठवा</h3>
+        <form id="contactForm" novalidate>
+          <div class="form-field">
+            <label for="ctName" data-mr="नाव" data-en="Name">नाव <span class="req">*</span></label>
+            <input type="text" id="ctName" required><span class="form-error"></span>
+          </div>
+          <div class="form-field">
+            <label for="ctEmail" data-mr="ईमेल" data-en="Email">ईमेल <span class="req">*</span></label>
+            <input type="email" id="ctEmail" required><span class="form-error"></span>
+          </div>
+          <div class="form-field">
+            <label for="ctPhone" data-mr="फोन" data-en="Phone">फोन</label>
+            <input type="tel" id="ctPhone">
+          </div>
+          <div class="form-field">
+            <label for="ctMessage" data-mr="संदेश" data-en="Message">संदेश <span class="req">*</span></label>
+            <textarea id="ctMessage" rows="4" required></textarea><span class="form-error"></span>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;" data-mr="संदेश पाठवा" data-en="Send Message">संदेश पाठवा</button>
+          <div class="form-success" data-mr="धन्यवाद! आम्ही लवकरच आपल्याशी संपर्क साधू." data-en="Thank you! We'll get back to you soon.">धन्यवाद! आम्ही लवकरच आपल्याशी संपर्क साधू.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="site-footer"></div>
+<script src="config.js"></script>
+<script src="js/common.js"></script>
+<script src="js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", ()=>{
+  document.getElementById("cAddress").textContent = SITE_CONFIG.address;
+  document.getElementById("cPhoneD").textContent = SITE_CONFIG.phone;
+  document.getElementById("cWa").textContent = SITE_CONFIG.whatsapp;
+  document.getElementById("cEmailD").textContent = SITE_CONFIG.email;
+  document.getElementById("cInsta").textContent = SITE_CONFIG.instagram;
+  document.getElementById("cFb").textContent = SITE_CONFIG.facebook;
+  const tel = /^\[/.test(SITE_CONFIG.phone) ? "#" : "tel:"+SITE_CONFIG.phone;
+  const wa = (SITE_CONFIG.whatsapp||"").replace(/[^0-9]/g,"");
+  document.getElementById("btnCall").href = tel;
+  document.getElementById("btnWa").href = wa ? "https://wa.me/"+wa : "#";
+  document.getElementById("btnMap").href = /^\[/.test(SITE_CONFIG.googleMapsLink) ? "#" : SITE_CONFIG.googleMapsLink;
+  document.getElementById("btnEmail").href = /^\[/.test(SITE_CONFIG.email) ? "#" : "mailto:"+SITE_CONFIG.email;
+  initForm("contactForm");
+});
+</script>
+</body>
+</html>
