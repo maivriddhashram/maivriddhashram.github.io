@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+<rect width="300" height="300" fill="#FFFDF9"/>
+<rect x="10" y="10" width="280" height="280" fill="none" stroke="#3B2A20" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="150" y="140" font-family="sans-serif" font-size="16" fill="#3B2A20" text-anchor="middle">UPI QR CODE</text>
+<text x="150" y="165" font-family="sans-serif" font-size="12" fill="#7A3B2E" text-anchor="middle">[VERIFIED QR TO BE ADDED]</text>
+</svg>
