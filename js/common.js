@@ -31,12 +31,11 @@
     <header class="site-header">
       <div class="header-inner">
         <a href="index.html" class="brand">
-          <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-            <circle cx="24" cy="24" r="23" fill="#3B2A20"/>
-            <path d="M12 27 L24 15 L36 27" stroke="#E7C88A" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M17 25 V33 H31 V25" stroke="#FBF3E7" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M22 33 V27 H26 V33" stroke="#C8963E" stroke-width="2" fill="none"/>
-          </svg>
+         <img
+  src="/images/logo/old%20age%20home%20png%20logo.png"
+  class="brand-mark"
+  alt="माई वृद्धाश्रम Logo"
+>
           <span class="brand-name" data-mr="माई वृद्धाश्रम" data-en="Mai Vriddhashram">माई वृद्धाश्रम<small data-mr="बोधी ट्री एज्युकेशनल फाउंडेशन" data-en="Bodhi Tree Educational Foundation">बोधी ट्री एज्युकेशनल फाउंडेशन</small></span>
         </a>
         <nav class="main-nav" aria-label="Primary">${links}</nav>
