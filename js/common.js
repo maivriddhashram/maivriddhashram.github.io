@@ -31,7 +31,7 @@
     <header class="site-header">
       <div class="header-inner">
         <a href="index.html" class="brand">
-  <img
+ <img
   src="images/logo/home-logo.png"
   class="brand-mark"
   alt="माई वृद्धाश्रम Logo"
