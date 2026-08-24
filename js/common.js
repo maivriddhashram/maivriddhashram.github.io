@@ -31,10 +31,11 @@
     <header class="site-header">
       <div class="header-inner">
         <a href="index.html" class="brand">
-         <img
-  src="/images/logo/old%20age%20home%20png%20logo.png"
+        <img
+  src="images/logo/old%20age%20home%20png%20logo.png"
   class="brand-mark"
   alt="माई वृद्धाश्रम Logo"
+>
 >
           <span class="brand-name" data-mr="माई वृद्धाश्रम" data-en="Mai Vriddhashram">माई वृद्धाश्रम<small data-mr="बोधी ट्री एज्युकेशनल फाउंडेशन" data-en="Bodhi Tree Educational Foundation">बोधी ट्री एज्युकेशनल फाउंडेशन</small></span>
         </a>
