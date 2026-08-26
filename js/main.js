@@ -68,20 +68,103 @@ function initGallery(){
 }
 
 /* ---- Donation amount selector ---- */
+/* ---- Donation amount selector + Continue ---- */
 function initDonationAmounts(){
+
   const wrap = document.getElementById("amountGrid");
   if(!wrap) return;
+
+  const buttons = wrap.querySelectorAll(".amount-btn");
   const custom = document.getElementById("customAmount");
-  wrap.querySelectorAll(".amount-btn").forEach(btn=>{
-    btn.addEventListener("click", ()=>{
-      wrap.querySelectorAll(".amount-btn").forEach(b=>b.classList.remove("active"));
-      btn.classList.add("active");
-      if(custom) custom.value = "";
+  const continueBtn = document.getElementById("continueDonation");
+  const methods = document.getElementById("donate-methods");
+
+  let selectedAmount = 500;
+
+  /* Preset amount buttons */
+  buttons.forEach(btn => {
+
+    btn.addEventListener("click", function(){
+
+      /* Remove active from all */
+      buttons.forEach(b => b.classList.remove("active"));
+
+      /* Add active to clicked button */
+      this.classList.add("active");
+
+      /* Save selected amount */
+      selectedAmount = Number(this.dataset.amount);
+
+      /* Clear custom amount */
+      if(custom){
+        custom.value = "";
+      }
+
     });
+
   });
-  custom?.addEventListener("input", ()=>{
-    wrap.querySelectorAll(".amount-btn").forEach(b=>b.classList.remove("active"));
-  });
+
+
+  /* Custom amount */
+  if(custom){
+
+    custom.addEventListener("input", function(){
+
+      const value = Number(this.value);
+
+      if(value > 0){
+
+        selectedAmount = value;
+
+        /* Remove preset selection */
+        buttons.forEach(b => b.classList.remove("active"));
+
+      }
+
+    });
+
+  }
+
+
+  /* Continue button */
+  if(continueBtn){
+
+    continueBtn.addEventListener("click", function(){
+
+      let amount = Number(custom?.value);
+
+      if(!amount || amount <= 0){
+        amount = selectedAmount;
+      }
+
+      if(!amount || amount <= 0){
+
+        alert(
+          document.documentElement.getAttribute("data-lang") === "mr"
+          ? "कृपया देणगीची रक्कम निवडा."
+          : "Please select a donation amount."
+        );
+
+        return;
+      }
+
+      /* Save amount for next donation step */
+      sessionStorage.setItem("donationAmount", amount);
+
+      /* Go to donation methods */
+      if(methods){
+
+        methods.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+      }
+
+    });
+
+  }
+
 }
 
 /* ---- Generic accessible form validation (volunteer / CSR / contact) ---- */
