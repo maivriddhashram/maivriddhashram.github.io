@@ -66,6 +66,47 @@ function initGallery(){
   lightbox?.addEventListener("click", (e)=>{ if(e.target===lightbox) lightbox.classList.remove("open"); });
   document.addEventListener("keydown", (e)=>{ if(e.key==="Escape") lightbox?.classList.remove("open"); });
 }
+/* ---- Donation details ---- */
+function initDonationDetails(){
+
+  if(typeof SITE_CONFIG === "undefined") return;
+
+  const upiId = document.getElementById("upiId");
+  const bankAccName = document.getElementById("bankAccName");
+  const bankName = document.getElementById("bankName");
+  const bankAccNum = document.getElementById("bankAccNum");
+  const bankIfsc = document.getElementById("bankIfsc");
+  const regNo2 = document.getElementById("regNo2");
+
+  if(upiId){
+    upiId.textContent = SITE_CONFIG.upiId || "";
+  }
+
+  if(SITE_CONFIG.bank){
+
+    if(bankAccName){
+      bankAccName.textContent = SITE_CONFIG.bank.accountName || "";
+    }
+
+    if(bankName){
+      bankName.textContent = SITE_CONFIG.bank.bankName || "";
+    }
+
+    if(bankAccNum){
+      bankAccNum.textContent = SITE_CONFIG.bank.accountNumber || "";
+    }
+
+    if(bankIfsc){
+      bankIfsc.textContent = SITE_CONFIG.bank.ifsc || "";
+    }
+
+  }
+
+  if(regNo2){
+    regNo2.textContent = SITE_CONFIG.registrationNumber || "";
+  }
+
+}
 /* ---- Donation amount selector + Continue ---- */
 function initDonationAmounts(){
 
@@ -210,5 +251,6 @@ function initForm(formId){
 function initPage(){
   initCounters();
   initGallery();
+  initDonationDetails();
   initDonationAmounts();
 }
