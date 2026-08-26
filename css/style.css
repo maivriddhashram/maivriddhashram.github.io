@@ -259,7 +259,11 @@ footer.site-footer a:hover{opacity:1; text-decoration:underline;}
 .lightbox-close{position:absolute; top:20px; right:24px; background:none; border:none; color:var(--ivory); font-size:2rem; cursor:pointer;}
 
 /* Donation amount selector */
-.amount-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:10px;}
+.amount-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+}
 @media(max-width:600px){.amount-grid{grid-template-columns:repeat(3,1fr);}}
 .amount-btn{
   padding:16px 8px; border-radius:var(--radius-sm); border:1.5px solid var(--line); background:var(--white);
