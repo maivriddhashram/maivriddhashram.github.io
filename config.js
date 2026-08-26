@@ -44,7 +44,7 @@ const SITE_CONFIG = {
 
   // --- Donation details ---
   upiId: "MAB.037326017310014@AXISBANK",
-  qrCodeImage: "images/qr/upi-qr-placeholder.svg",
+qrCodeImage: "images/qr/upi-qr.png",
   bank: {
     accountName: "[VERIFIED ACCOUNT NAME]",
     bankName: "[VERIFIED BANK NAME]",
