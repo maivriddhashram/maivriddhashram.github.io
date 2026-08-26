@@ -45,12 +45,12 @@ const SITE_CONFIG = {
   // --- Donation details ---
   upiId: "MAB.037326017310014@AXISBANK",
 qrCodeImage: "images/qr/upi-qr.png",
-  bank: {
-    accountName: "[VERIFIED ACCOUNT NAME]",
-    bankName: "[VERIFIED BANK NAME]",
-    accountNumber: "[VERIFIED ACCOUNT NUMBER]",
-    ifsc: "[VERIFIED IFSC]"
-  },
+bank: {
+    accountName: "Mai Vriddhaashram",
+    bankName: "Axis Bank (Garkheda Branch)",
+    accountNumber: "925020022604888",
+    ifsc: "UTIB0001731"
+},
   donationAmounts: [500, 1000, 2500, 5000],
   onlinePaymentGatewayUrl: "", // add a verified payment gateway checkout link when ready
 
