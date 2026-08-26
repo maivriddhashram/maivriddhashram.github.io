@@ -264,7 +264,11 @@ footer.site-footer a:hover{opacity:1; text-decoration:underline;}
   grid-template-columns:repeat(4,1fr);
   gap:10px;
 }
-@media(max-width:600px){.amount-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:600px){
+  .amount-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
 .amount-btn{
   padding:16px 8px; border-radius:var(--radius-sm); border:1.5px solid var(--line); background:var(--white);
   font-weight:700; font-size:1.05rem; cursor:pointer;
