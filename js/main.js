@@ -66,8 +66,6 @@ function initGallery(){
   lightbox?.addEventListener("click", (e)=>{ if(e.target===lightbox) lightbox.classList.remove("open"); });
   document.addEventListener("keydown", (e)=>{ if(e.key==="Escape") lightbox?.classList.remove("open"); });
 }
-
-/* ---- Donation amount selector ---- */
 /* ---- Donation amount selector + Continue ---- */
 function initDonationAmounts(){
 
@@ -82,89 +80,6 @@ function initDonationAmounts(){
 
   let selectedAmount = 500;
 
-  buttons.forEach(btn => {
-
-    btn.addEventListener("click", function(){
-
-      buttons.forEach(b => b.classList.remove("active"));
-
-      this.classList.add("active");
-
-      selectedAmount = Number(this.dataset.amount);
-
-      if(custom){
-        custom.value = "";
-      }
-
-    });
-
-  });
-
-  if(custom){
-
-    custom.addEventListener("input", function(){
-
-      const value = Number(this.value);
-
-      if(value > 0){
-
-        selectedAmount = value;
-
-        buttons.forEach(b => {
-          b.classList.remove("active");
-        });
-
-      }
-
-    });
-
-  }
-
-  if(continueButton){
-
-    continueButton.addEventListener("click", function(){
-
-      let amount = Number(custom ? custom.value : 0);
-
-      if(!amount || amount <= 0){
-        amount = selectedAmount;
-      }
-
-      if(!amount || amount <= 0){
-
-        alert("कृपया देणगीची रक्कम निवडा.");
-
-        return;
-      }
-
-      sessionStorage.setItem(
-        "donationAmount",
-        String(amount)
-      );
-
-      if(donationMethods){
-
-        donationMethods.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-
-      }
-
-    });
-
-  }
-
-}
-  const wrap = document.getElementById("amountGrid");
-  if(!wrap) return;
-
-  const buttons = wrap.querySelectorAll(".amount-btn");
-  const custom = document.getElementById("customAmount");
-  const continueBtn = document.getElementById("continueDonation");
-  const methods = document.getElementById("donate-methods");
-
-  let selectedAmount = 500;
 
   /* Preset amount buttons */
   buttons.forEach(btn => {
@@ -172,12 +87,14 @@ function initDonationAmounts(){
     btn.addEventListener("click", function(){
 
       /* Remove active from all */
-      buttons.forEach(b => b.classList.remove("active"));
+      buttons.forEach(b => {
+        b.classList.remove("active");
+      });
 
-      /* Add active to clicked button */
+      /* Activate selected button */
       this.classList.add("active");
 
-      /* Save selected amount */
+      /* Save amount */
       selectedAmount = Number(this.dataset.amount);
 
       /* Clear custom amount */
@@ -201,8 +118,10 @@ function initDonationAmounts(){
 
         selectedAmount = value;
 
-        /* Remove preset selection */
-        buttons.forEach(b => b.classList.remove("active"));
+        /* Remove preset active state */
+        buttons.forEach(b => {
+          b.classList.remove("active");
+        });
 
       }
 
@@ -212,16 +131,19 @@ function initDonationAmounts(){
 
 
   /* Continue button */
-  if(continueBtn){
+  if(continueButton){
 
-    continueBtn.addEventListener("click", function(){
+    continueButton.addEventListener("click", function(){
 
-      let amount = Number(custom?.value);
+      let amount = Number(custom ? custom.value : 0);
 
+      /* If custom amount is empty, use selected button */
       if(!amount || amount <= 0){
         amount = selectedAmount;
       }
 
+
+      /* Validate amount */
       if(!amount || amount <= 0){
 
         alert(
@@ -233,13 +155,18 @@ function initDonationAmounts(){
         return;
       }
 
-      /* Save amount for next donation step */
-      sessionStorage.setItem("donationAmount", amount);
 
-      /* Go to donation methods */
-      if(methods){
+      /* Save donation amount */
+      sessionStorage.setItem(
+        "donationAmount",
+        String(amount)
+      );
 
-        methods.scrollIntoView({
+
+      /* Scroll to UPI / Bank section */
+      if(donationMethods){
+
+        donationMethods.scrollIntoView({
           behavior: "smooth",
           block: "start"
         });
@@ -251,8 +178,7 @@ function initDonationAmounts(){
   }
 
 }
-
-/* ---- Generic accessible form validation (volunteer / CSR / contact) ---- */
+ (volunteer / CSR / contact) ---- */
 function initForm(formId){
   const form = document.getElementById(formId);
   if(!form) return;
