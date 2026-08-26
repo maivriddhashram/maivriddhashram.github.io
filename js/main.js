@@ -72,6 +72,91 @@ function initGallery(){
 function initDonationAmounts(){
 
   const wrap = document.getElementById("amountGrid");
+  const custom = document.getElementById("customAmount");
+  const continueButton = document.getElementById("continueDonation");
+  const donationMethods = document.getElementById("donate-methods");
+
+  if(!wrap) return;
+
+  const buttons = wrap.querySelectorAll(".amount-btn");
+
+  let selectedAmount = 500;
+
+  buttons.forEach(btn => {
+
+    btn.addEventListener("click", function(){
+
+      buttons.forEach(b => b.classList.remove("active"));
+
+      this.classList.add("active");
+
+      selectedAmount = Number(this.dataset.amount);
+
+      if(custom){
+        custom.value = "";
+      }
+
+    });
+
+  });
+
+  if(custom){
+
+    custom.addEventListener("input", function(){
+
+      const value = Number(this.value);
+
+      if(value > 0){
+
+        selectedAmount = value;
+
+        buttons.forEach(b => {
+          b.classList.remove("active");
+        });
+
+      }
+
+    });
+
+  }
+
+  if(continueButton){
+
+    continueButton.addEventListener("click", function(){
+
+      let amount = Number(custom ? custom.value : 0);
+
+      if(!amount || amount <= 0){
+        amount = selectedAmount;
+      }
+
+      if(!amount || amount <= 0){
+
+        alert("कृपया देणगीची रक्कम निवडा.");
+
+        return;
+      }
+
+      sessionStorage.setItem(
+        "donationAmount",
+        String(amount)
+      );
+
+      if(donationMethods){
+
+        donationMethods.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+      }
+
+    });
+
+  }
+
+}
+  const wrap = document.getElementById("amountGrid");
   if(!wrap) return;
 
   const buttons = wrap.querySelectorAll(".amount-btn");
