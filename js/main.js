@@ -178,7 +178,8 @@ function initDonationAmounts(){
   }
 
 }
- (volunteer / CSR / contact) ---- */
+
+/* ---- Generic accessible form validation (volunteer / CSR / contact) ---- */
 function initForm(formId){
   const form = document.getElementById(formId);
   if(!form) return;
