@@ -43,7 +43,7 @@ const SITE_CONFIG = {
   facebook: "[VERIFIED FACEBOOK]",
 
   // --- Donation details ---
-  upiId: "[VERIFIED UPI ID]",
+  upiId: "MAB.037326017310014@AXISBANK",
   qrCodeImage: "images/qr/upi-qr-placeholder.svg",
   bank: {
     accountName: "[VERIFIED ACCOUNT NAME]",
