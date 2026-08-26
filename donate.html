@@ -184,13 +184,92 @@
 <script src="js/common.js"></script>
 <script src="js/main.js"></script>
 <script>
-document.addEventListener("DOMContentLoaded", ()=>{
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* Existing Donation Details */
   document.getElementById("upiId").textContent = SITE_CONFIG.upiId;
   document.getElementById("bankAccName").textContent = SITE_CONFIG.bank.accountName;
   document.getElementById("bankName").textContent = SITE_CONFIG.bank.bankName;
   document.getElementById("bankAccNum").textContent = SITE_CONFIG.bank.accountNumber;
   document.getElementById("bankIfsc").textContent = SITE_CONFIG.bank.ifsc;
   document.getElementById("regNo2").textContent = SITE_CONFIG.registrationNumber;
+
+
+  /* ==============================
+     DONATION AMOUNT SELECTION
+     ============================== */
+
+  const amountButtons = document.querySelectorAll(".amount-btn");
+  const customAmount = document.getElementById("customAmount");
+  const continueButton = document.getElementById("continueDonation");
+
+  let selectedAmount = 500;
+
+
+  /* Amount button click */
+
+  amountButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+      amountButtons.forEach(btn => {
+        btn.classList.remove("active");
+      });
+
+      button.classList.add("active");
+
+      selectedAmount = Number(button.dataset.amount);
+
+      customAmount.value = "";
+
+    });
+
+  });
+
+
+  /* Custom amount */
+
+  customAmount.addEventListener("input", () => {
+
+    const value = Number(customAmount.value);
+
+    if (value > 0) {
+      selectedAmount = value;
+
+      amountButtons.forEach(btn => {
+        btn.classList.remove("active");
+      });
+    }
+
+  });
+
+
+  /* Continue button */
+
+  continueButton.addEventListener("click", () => {
+
+    let amount = Number(customAmount.value);
+
+    if (!amount || amount <= 0) {
+      amount = selectedAmount;
+    }
+
+    if (!amount || amount <= 0) {
+      alert("कृपया देणगीची रक्कम निवडा.");
+      return;
+    }
+
+    /* Scroll to donation methods */
+
+    const donationMethods = document.getElementById("donate-methods");
+
+    donationMethods.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+
+  });
+
 });
 </script>
 </body>
