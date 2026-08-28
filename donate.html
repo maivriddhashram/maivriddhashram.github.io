@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="mr" data-lang="mr">
 
@@ -243,8 +242,6 @@
             </p>
 
 
-            <!-- Amount buttons generated from config.js -->
-
             <div
               id="donateAmountGrid"
               class="donate-amount-grid"
@@ -374,8 +371,6 @@
               </p>
 
 
-              <!-- QR -->
-
               <img
                 id="donateQrCode"
                 class="donate-qr"
@@ -383,8 +378,6 @@
                 alt="Mai Vriddhashram UPI Donation QR Code"
               >
 
-
-              <!-- UPI ID -->
 
               <p>
 
@@ -401,8 +394,6 @@
 
               </p>
 
-
-              <!-- Copy UPI -->
 
               <button
                 type="button"
@@ -576,8 +567,6 @@
         <div class="grid grid-4">
 
 
-          <!-- Food -->
-
           <div class="card reveal">
 
             <div class="icon-badge">
@@ -601,8 +590,6 @@
 
           </div>
 
-
-          <!-- Healthcare -->
 
           <div class="card reveal">
 
@@ -628,8 +615,6 @@
           </div>
 
 
-          <!-- Beds -->
-
           <div class="card reveal">
 
             <div class="icon-badge">
@@ -653,8 +638,6 @@
 
           </div>
 
-
-          <!-- Kitchen -->
 
           <div class="card reveal">
 
@@ -680,8 +663,6 @@
           </div>
 
 
-          <!-- Electricity -->
-
           <div class="card reveal">
 
             <div class="icon-badge">
@@ -705,8 +686,6 @@
 
           </div>
 
-
-          <!-- Solar -->
 
           <div class="card reveal">
 
@@ -732,8 +711,6 @@
           </div>
 
 
-          <!-- Daily Essentials -->
-
           <div class="card reveal">
 
             <div class="icon-badge">
@@ -757,8 +734,6 @@
 
           </div>
 
-
-          <!-- Maintenance -->
 
           <div class="card reveal">
 
@@ -849,6 +824,34 @@
 
 
     <!-- ======================================================
+         THANK YOU
+    ======================================================= -->
+
+    <section class="section">
+
+      <div class="container">
+
+        <div
+          class="card reveal"
+          style="text-align:center;"
+        >
+
+          <h2
+            data-mr="आपल्या मदतीबद्दल मनःपूर्वक धन्यवाद ❤️"
+            data-en="Thank you sincerely for your support ❤️"
+          >
+            आपल्या मदतीबद्दल मनःपूर्वक धन्यवाद ❤️
+          </h2>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
          DONATE WITH CONFIDENCE
     ======================================================= -->
 
@@ -873,8 +876,6 @@
 
         <div class="grid grid-2">
 
-
-          <!-- Organization -->
 
           <div class="card reveal">
 
@@ -926,8 +927,6 @@
           </div>
 
 
-
-          <!-- Receipt -->
 
           <div class="card reveal">
 
@@ -994,10 +993,6 @@
 
     document.addEventListener("DOMContentLoaded", function(){
 
-      /* ------------------------------------------------------
-         CHECK CONFIG
-      ------------------------------------------------------ */
-
       if(typeof SITE_CONFIG === "undefined"){
 
         console.error(
@@ -1008,10 +1003,6 @@
 
       }
 
-
-      /* ------------------------------------------------------
-         ELEMENTS
-      ------------------------------------------------------ */
 
       const amountGrid =
         document.getElementById("donateAmountGrid");
@@ -1032,10 +1023,6 @@
         document.getElementById("donateSuccess");
 
 
-      /* ------------------------------------------------------
-         CONFIG VALUES
-      ------------------------------------------------------ */
-
       const donationAmounts =
         Array.isArray(SITE_CONFIG.donationAmounts)
           ? SITE_CONFIG.donationAmounts
@@ -1046,10 +1033,6 @@
         Number(donationAmounts[0]) || 500;
 
 
-      /* ------------------------------------------------------
-         FORMAT RUPEES
-      ------------------------------------------------------ */
-
       function formatRupees(amount){
 
         return "₹" +
@@ -1057,10 +1040,6 @@
 
       }
 
-
-      /* ------------------------------------------------------
-         UPDATE SELECTED AMOUNT
-      ------------------------------------------------------ */
 
       function updateSelectedAmount(amount){
 
@@ -1072,10 +1051,6 @@
 
       }
 
-
-      /* ------------------------------------------------------
-         CREATE AMOUNT BUTTONS
-      ------------------------------------------------------ */
 
       amountGrid.innerHTML = "";
 
@@ -1111,7 +1086,6 @@
           "click",
           function(){
 
-            /* Remove active */
             document
               .querySelectorAll(".donate-amount-btn")
               .forEach(function(btn){
@@ -1121,15 +1095,12 @@
               });
 
 
-            /* Activate current */
             this.classList.add("active");
 
 
-            /* Clear custom */
             customAmount.value = "";
 
 
-            /* Update amount */
             updateSelectedAmount(value);
 
           }
@@ -1141,15 +1112,9 @@
       });
 
 
-      /* Initial amount */
-
       updateSelectedAmount(currentAmount);
 
 
-
-      /* ------------------------------------------------------
-         CUSTOM AMOUNT
-      ------------------------------------------------------ */
 
       customAmount.addEventListener(
         "input",
@@ -1178,10 +1143,6 @@
       );
 
 
-
-      /* ------------------------------------------------------
-         CONTINUE
-      ------------------------------------------------------ */
 
       continueBtn.addEventListener(
         "click",
@@ -1217,26 +1178,18 @@
           }
 
 
-          /* Save amount */
-
           sessionStorage.setItem(
             "donationAmount",
             String(amount)
           );
 
 
-          /* Update display */
-
           updateSelectedAmount(amount);
 
-
-          /* Success message */
 
           successBox.style.display =
             "block";
 
-
-          /* Scroll to payment */
 
           donationMethods.scrollIntoView({
             behavior: "smooth",
@@ -1247,10 +1200,6 @@
       );
 
 
-
-      /* ------------------------------------------------------
-         UPI DETAILS
-      ------------------------------------------------------ */
 
       const upiId =
         document.getElementById("donateUpiId");
@@ -1263,8 +1212,6 @@
 
       }
 
-
-      /* QR */
 
       const qr =
         document.getElementById("donateQrCode");
@@ -1281,10 +1228,6 @@
       }
 
 
-
-      /* ------------------------------------------------------
-         COPY UPI
-      ------------------------------------------------------ */
 
       const copyUpiBtn =
         document.getElementById("copyUpiBtn");
@@ -1335,10 +1278,6 @@
 
 
 
-      /* ------------------------------------------------------
-         BANK DETAILS
-      ------------------------------------------------------ */
-
       if(SITE_CONFIG.bank){
 
         document.getElementById(
@@ -1373,10 +1312,6 @@
       }
 
 
-
-      /* ------------------------------------------------------
-         REGISTRATION DETAILS
-      ------------------------------------------------------ */
 
       const registrationPNo =
         document.getElementById(
@@ -1416,4 +1351,3 @@
 </body>
 
 </html>
-```
