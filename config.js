@@ -2,66 +2,212 @@
  * ============================================================
  * MAI VRIDDHASHRAM — CENTRAL SITE CONFIGURATION
  * ============================================================
- * Edit ONLY this file to update contact details, donation
- * information, and impact numbers across the entire website.
- * Every page reads from this single source of truth.
- *
- * IMPORTANT: Do not delete a key. If real data is not yet
- * available, leave the "[VERIFIED ...]" placeholder in place —
- * the design is built to display placeholders clearly until
- * they are replaced with confirmed information.
+ * Central configuration for the entire website.
+ * Edit this file when you need to update organisation,
+ * contact, donation or social-media information.
  * ============================================================
  */
+
 const SITE_CONFIG = {
+
+  // ------------------------------------------------------------
+  // ORGANISATION
+  // ------------------------------------------------------------
   organizationName: {
     mr: "माई वृद्धाश्रम",
     en: "Mai Vriddhashram"
   },
+
+  legalOrganizationName: {
+    mr: "बोधी ट्री एज्युकेशनल फाऊंडेशन",
+    en: "Bodhi Tree Educational Foundation"
+  },
+
   runBy: {
-    mr: "बोधी ट्री एज्युकेशनल फाउंडेशन द्वारा संचालित",
+    mr: "बोधी ट्री एज्युकेशनल फाऊंडेशन द्वारा संचालित",
     en: "Run by Bodhi Tree Educational Foundation"
   },
+
+  establishedDate: "11-09-2015",
+
   city: {
     mr: "छत्रपती संभाजीनगर, महाराष्ट्र",
     en: "Chhatrapati Sambhajinagar, Maharashtra, India"
   },
 
-  // --- Contact details (replace placeholders with verified info) ---
-  address: "[VERIFIED ADDRESS]",
-  phone: "[VERIFIED PHONE NUMBER]",
-  whatsapp: "[VERIFIED WHATSAPP NUMBER]", // digits only with country code, e.g. 919999999999
-  email: "[VERIFIED EMAIL]",
-  googleMapsLink: "[VERIFIED GOOGLE MAP LINK]",
-  googleMapsEmbed: "", // paste a verified Google Maps embed src URL here when available
 
-  // --- Registration / legal (do not fill until verified) ---
-  registrationNumber: "[VERIFIED REGISTRATION NUMBER]",
-  taxBenefitStatus: "[VERIFIED 80G/12A/FCRA STATUS]",
+  // ------------------------------------------------------------
+  // MAI VRIDDHASHRAM INFORMATION
+  // ------------------------------------------------------------
+  vriddhashram: {
 
-  // --- Social ---
-  instagram: "[VERIFIED INSTAGRAM]",
-  facebook: "[VERIFIED FACEBOOK]",
+    establishedYear: 2020,
 
-  // --- Donation details ---
-  upiId: "MAB.037326017310014@AXISBANK",
-qrCodeImage: "images/qr/upi-qr.png",
-bank: {
-    accountName: "Mai Vriddhaashram",
-    bankName: "Axis Bank (Garkheda Branch)",
-    accountNumber: "925020022604888",
-    ifsc: "UTIB0001731"
-},
-  donationAmounts: [500, 1000, 2500, 5000],
-  onlinePaymentGatewayUrl: "", // add a verified payment gateway checkout link when ready
+    currentMothers: 25,
 
-  // --- Impact numbers (leave as [XX] until confirmed by the organization) ---
-  impact: {
-    mothersSupported: "[XX]",
-    mealsServed: "[XX]",
-    healthActivities: "[XX]",
-    yearsOfService: "[XX]",
-    volunteers: "[XX]"
+    currentCapacity: 25,
+
+    futureCapacity: 100,
+
+    availableAreaSqFt: 2400,
+
+    ownership: {
+      mr: "संस्थेच्या मालकीची",
+      en: "Owned by the organisation"
+    },
+
+    futureVision: {
+      mr: "100 वृद्ध आजी-आजोबांसाठी सुरक्षित, सन्मानपूर्वक आणि सर्वसमावेशक निवास व काळजी सुविधा निर्माण करणे.",
+      en: "To create safe, dignified and inclusive residential and care facilities for 100 elderly women and men."
+    }
+
   },
 
+
+  // ------------------------------------------------------------
+  // CONTACT DETAILS
+  // ------------------------------------------------------------
+  address: "माई वृद्धाश्रम, प्लॉट क्र. 49, गल्ली नं. 8, आनंद नगर (शिवाजी नगर), गरखेडा परिसर, छत्रपती संभाजीनगर, महाराष्ट्र, भारत - 431009",
+
+  phone: "8888125610",
+
+  alternatePhone: "8421141104",
+
+  whatsapp: "918888125610",
+
+  email: "bodhitef@gmail.com",
+
+  website: "https://ngobtefoundationindia.org",
+
+  googleMapsLink: "https://maps.app.goo.gl/ZShVipRaBq5jzbAy8?g_st=aw",
+
+  googleMapsEmbed: "",
+
+
+  // ------------------------------------------------------------
+  // REGISTRATION / LEGAL DETAILS
+  // ------------------------------------------------------------
+  registrationNumber: "705/15",
+
+  registrationPNumber: "F-23015",
+
+  ngoDarpanNumber: "MH/2022/0310125",
+
+  panNumber: "AAETB1944J",
+
+  registration12A: "AAETB1944JE2022101",
+
+  registration80G: "AAETB1944JF2022101",
+
+  csr1Number: "CSR00039216",
+
+  isoCertificateNumber: "AQC21031125",
+
+  taxBenefitStatus: {
+    mr: "80G कर सवलत उपलब्ध",
+    en: "80G Tax Benefit Available"
+  },
+
+
+  // ------------------------------------------------------------
+  // GOVERNING BODY
+  // ------------------------------------------------------------
+  governingBody: {
+
+    president: "श्री. रामदास आर. वाघमारे",
+
+    vicePresident: "श्री. ऋत्विक आर. वाघमारे",
+
+    secretary: "श्रीमती. मीरा के. अचलखांब",
+
+    jointVicePresident: "श्रीमती. प्रेरणा एस. आझादे",
+
+    treasurer: "श्री. अंशीराम आर. वाघमारे"
+
+  },
+
+
+  // ------------------------------------------------------------
+  // DONATION — UPI
+  // ------------------------------------------------------------
+  upiId: "MAB.037326017310014@AXISBANK",
+
+  qrCodeImage: "images/qr/upi-qr.png",
+
+
+  // ------------------------------------------------------------
+  // DONATION — BANK ACCOUNT
+  // ------------------------------------------------------------
+  bank: {
+
+    accountName: "Mai Vriddhaashram",
+
+    bankName: "Axis Bank",
+
+    branch: "Garkheda Branch",
+
+    accountNumber: "925020022604888",
+
+    ifsc: "UTIB0001731"
+
+  },
+
+
+  // ------------------------------------------------------------
+  // DONATION AMOUNTS
+  // ------------------------------------------------------------
+  donationAmounts: [
+    500,
+    1000,
+    2500,
+    5000
+  ],
+
+
+  // ------------------------------------------------------------
+  // PAYMENT GATEWAY
+  // ------------------------------------------------------------
+  // Razorpay will be added later.
+  onlinePaymentGatewayUrl: "",
+
+
+  // ------------------------------------------------------------
+  // SOCIAL MEDIA
+  // ------------------------------------------------------------
+  instagram: "https://www.instagram.com/maivridhashram?igsi=bTJhMnIydW5mbGhy",
+
+  facebook: "https://www.facebook.com/share/1LNocfsJxi/",
+
+  youtube: "https://youtube.com/@ngobtefoundationaurangabad3105?si=3gP6t1oPZurx1W5u",
+
+
+  // ------------------------------------------------------------
+  // IMPACT NUMBERS
+  // ------------------------------------------------------------
+  impact: {
+
+    mothersSupported: "25",
+
+    currentCapacity: "25",
+
+    futureCapacity: "100",
+
+    availableArea: "2400",
+
+    yearsOfService: "6",
+
+    mealsServed: "[XX]",
+
+    healthActivities: "[XX]",
+
+    volunteers: "[XX]"
+
+  },
+
+
+  // ------------------------------------------------------------
+  // CURRENT YEAR
+  // ------------------------------------------------------------
   currentYear: new Date().getFullYear()
+
 };
