@@ -3,25 +3,17 @@
 <html lang="mr" data-lang="mr">
 
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>देणगी द्या | Donate — Mai Vriddhashram</title>
 
   <meta
     name="description"
-    content="माई वृद्धाश्रमला देणगी द्या. UPI, QR Code किंवा Bank Transfer द्वारे वृद्ध मातांच्या अन्न, आरोग्य, निवास आणि दैनंदिन गरजांसाठी सहकार्य करा."
+    content="माई वृद्धाश्रमला देणगी द्या. वृद्ध मातांच्या अन्न, आरोग्य, निवास, औषधे आणि दैनंदिन गरजांसाठी आपला हातभार लावा."
   >
 
-  <link
-    rel="canonical"
-    href="https://maivriddhashram.github.io/donate.html"
-  >
+  <link rel="canonical" href="https://maivriddhashram.github.io/donate.html">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -30,1390 +22,761 @@
     rel="stylesheet"
   >
 
-  <link
-    rel="stylesheet"
-    href="css/style.css"
-  >
-
-  <style>
-
-    /* ========================================================
-       DONATE PAGE
-    ======================================================== */
-
-    .donate-amount-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .donate-amount-btn {
-      border: 1px solid var(--line);
-      background: #fff;
-      color: inherit;
-      padding: 14px 10px;
-      border-radius: 12px;
-      font-size: 18px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: 0.2s ease;
-    }
-
-    .donate-amount-btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .donate-amount-btn.active {
-      border-color: currentColor;
-      box-shadow: 0 0 0 2px rgba(0,0,0,0.06);
-      transform: translateY(-1px);
-    }
-
-    .donate-selected-box {
-      margin-top: 18px;
-      padding: 14px 16px;
-      border-radius: 12px;
-      background: rgba(0,0,0,0.035);
-      text-align: center;
-      font-weight: 600;
-    }
-
-    .donate-selected-amount {
-      font-size: 24px;
-      font-weight: 700;
-    }
-
-    .donate-qr {
-      width: 240px;
-      max-width: 100%;
-      display: block;
-      margin: 20px auto;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      padding: 6px;
-      background: #fff;
-    }
-
-    .donate-upi-box {
-      text-align: center;
-    }
-
-    .donate-copy-btn {
-      margin-top: 8px;
-    }
-
-    .donate-bank-details p {
-      margin: 9px 0;
-      line-height: 1.7;
-      word-break: break-word;
-    }
-
-    .donate-info-list {
-      margin: 18px 0 0;
-      padding-left: 20px;
-      line-height: 1.9;
-    }
-
-    .donate-info-list li {
-      margin-bottom: 5px;
-    }
-
-    .donate-expansion {
-      text-align: center;
-    }
-
-    .donate-expansion p {
-      max-width: 850px;
-      margin: 15px auto;
-      line-height: 1.9;
-    }
-
-    .donate-note {
-      font-size: 14px;
-      line-height: 1.7;
-      opacity: 0.85;
-    }
-
-    .donate-success {
-      display: none;
-      margin-top: 14px;
-      padding: 12px 14px;
-      border-radius: 10px;
-      text-align: center;
-      background: rgba(0,128,0,0.08);
-    }
-
-    @media (max-width: 600px) {
-
-      .donate-amount-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .donate-amount-btn {
-        font-size: 16px;
-        padding: 13px 8px;
-      }
-
-      .donate-qr {
-        width: 210px;
-      }
-
-    }
-
-  </style>
-
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 
 <body>
 
-  <!-- ========================================================
-       HEADER
-  ======================================================== -->
+<div id="site-header"></div>
 
-  <div id="site-header"></div>
+<main id="main">
+
+  <!-- =========================================================
+       HERO
+  ========================================================== -->
+
+  <section class="page-hero">
+
+    <div class="container">
+
+      <p
+        class="breadcrumbs"
+        data-mr="मुख्यपृष्ठ / देणगी द्या"
+        data-en="Home / Donate"
+      >
+        मुख्यपृष्ठ / देणगी द्या
+      </p>
+
+      <h1
+        data-mr="आपली छोटी मदत, एका आईसाठी मोठा आधार."
+        data-en="Your small contribution can make a big difference in a mother's life."
+      >
+        आपली छोटी मदत,<br>
+        एका आईसाठी मोठा आधार.
+      </h1>
+
+    </div>
+
+  </section>
 
 
-  <main id="main">
+  <!-- =========================================================
+       DONATION SECTION
+  ========================================================== -->
+
+  <section class="section">
+
+    <div
+      class="container grid grid-2"
+      style="align-items:start; gap:36px;"
+    >
+
+      <!-- -----------------------------------------------------
+           AMOUNT
+      ------------------------------------------------------ -->
+
+      <div class="card reveal">
+
+        <h3
+          data-mr="देणगीची रक्कम निवडा"
+          data-en="Choose Donation Amount"
+        >
+          देणगीची रक्कम निवडा
+        </h3>
+
+        <!-- Amount buttons will be generated from config.js -->
+        <div
+          class="amount-grid"
+          id="amountGrid"
+          style="margin-top:16px;"
+        ></div>
 
 
-    <!-- ======================================================
-         HERO
-    ======================================================= -->
+        <!-- Custom Amount -->
 
-    <section class="page-hero">
+        <div
+          class="form-field"
+          style="margin-top:16px;"
+        >
 
-      <div class="container">
+          <label
+            for="customAmount"
+            data-mr="इतर रक्कम (₹)"
+            data-en="Custom Amount (₹)"
+          >
+            इतर रक्कम (₹)
+          </label>
+
+          <input
+            type="number"
+            id="customAmount"
+            min="1"
+            step="1"
+            inputmode="numeric"
+            placeholder="₹ रक्कम लिहा"
+            aria-label="Custom donation amount"
+          >
+
+        </div>
+
+
+        <!-- Continue -->
+
+        <button
+          id="continueDonation"
+          type="button"
+          class="btn btn-primary"
+          style="width:100%; margin-top:10px;"
+          data-mr="❤️ पुढे जा"
+          data-en="❤️ Continue"
+        >
+          ❤️ पुढे जा
+        </button>
+
+
+        <!-- Donation Note -->
 
         <p
-          class="breadcrumbs"
-          data-mr="मुख्यपृष्ठ / देणगी द्या"
-          data-en="Home / Donate"
+          class="form-note"
+          style="margin-top:14px; line-height:1.7;"
+          data-mr="आपली देणगी माई वृद्धाश्रमातील वृद्ध मातांच्या अन्न, निवास, आरोग्यसेवा, औषधे आणि दैनंदिन गरजांसाठी उपयोगी पडते. आपल्या छोट्याशा योगदानातून एका आईला आधार, सुरक्षितता आणि सन्मानाने जगण्याची संधी मिळते."
+          data-en="Your donation helps support food, shelter, healthcare, medicines and daily needs for the elderly mothers at Mai Vriddhashram. Your small contribution gives a mother support, security and a dignified life."
         >
-          मुख्यपृष्ठ / देणगी द्या
+          आपली देणगी माई वृद्धाश्रमातील वृद्ध मातांच्या अन्न, निवास, आरोग्यसेवा, औषधे आणि दैनंदिन गरजांसाठी उपयोगी पडते. आपल्या छोट्याशा योगदानातून एका आईला आधार, सुरक्षितता आणि सन्मानाने जगण्याची संधी मिळते.
+        </p>
+
+      </div>
+
+
+      <!-- -----------------------------------------------------
+           PAYMENT METHODS
+      ------------------------------------------------------ -->
+
+      <div id="donate-methods">
+
+
+        <!-- UPI -->
+
+        <div
+          class="card reveal"
+          style="margin-bottom:20px;"
+        >
+
+          <h3
+            data-mr="यूपीआयद्वारे देणगी"
+            data-en="Donate via UPI"
+          >
+            यूपीआयद्वारे देणगी
+          </h3>
+
+
+          <p>
+
+            <strong
+              data-mr="यूपीआय आयडी:"
+              data-en="UPI ID:"
+            >
+              यूपीआय आयडी:
+            </strong>
+
+            <span id="upiId"></span>
+
+          </p>
+
+
+          <!-- QR Code -->
+
+          <img
+            id="upiQrCode"
+            src="images/qr/upi-qr.png"
+            alt="माई वृद्धाश्रम UPI Donation QR Code"
+            style="
+              width:220px;
+              max-width:100%;
+              border-radius:12px;
+              border:1px solid var(--line);
+              display:block;
+              margin:16px auto;
+            "
+          >
+
+
+          <p
+            style="text-align:center; margin-top:12px;"
+            data-mr="📱 QR Code Scan करून देणगी द्या"
+            data-en="📱 Scan the QR Code to donate"
+          >
+            📱 QR Code Scan करून देणगी द्या
+          </p>
+
+
+          <p
+            class="form-note"
+            style="text-align:center;"
+            data-mr="देणगी केल्यानंतर कृपया पावतीसाठी आमच्याशी संपर्क साधा."
+            data-en="After making a donation, please contact us for a receipt."
+          >
+            देणगी केल्यानंतर कृपया पावतीसाठी आमच्याशी संपर्क साधा.
+          </p>
+
+        </div>
+
+
+        <!-- BANK -->
+
+        <div class="card reveal">
+
+          <h3
+            data-mr="बँक ट्रान्सफर"
+            data-en="Bank Transfer"
+          >
+            बँक ट्रान्सफर
+          </h3>
+
+
+          <p>
+
+            <strong
+              data-mr="खातेदाराचे नाव:"
+              data-en="Account Name:"
+            >
+              खातेदाराचे नाव:
+            </strong>
+
+            <span id="bankAccName"></span>
+
+          </p>
+
+
+          <p>
+
+            <strong
+              data-mr="बँक:"
+              data-en="Bank:"
+            >
+              बँक:
+            </strong>
+
+            <span id="bankName"></span>
+
+          </p>
+
+
+          <p>
+
+            <strong
+              data-mr="शाखा:"
+              data-en="Branch:"
+            >
+              शाखा:
+            </strong>
+
+            <span id="bankBranch"></span>
+
+          </p>
+
+
+          <p>
+
+            <strong
+              data-mr="खाते क्रमांक:"
+              data-en="Account Number:"
+            >
+              खाते क्रमांक:
+            </strong>
+
+            <span id="bankAccNum"></span>
+
+          </p>
+
+
+          <p>
+
+            <strong
+              data-mr="आयएफएससी:"
+              data-en="IFSC:"
+            >
+              आयएफएससी:
+            </strong>
+
+            <span id="bankIfsc"></span>
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       EXPANSION APPEAL
+  ========================================================== -->
+
+  <section class="section section-alt">
+
+    <div class="container">
+
+      <div
+        class="card reveal"
+        style="text-align:center;"
+      >
+
+        <p
+          class="eyebrow"
+          data-mr="भविष्यातील संकल्प"
+          data-en="Our Future Vision"
+        >
+          भविष्यातील संकल्प
         </p>
 
 
-        <h1
-          data-mr="आपली छोटी मदत, एका आईसाठी मोठा आधार."
-          data-en="Your small contribution can make a big difference in a mother's life."
+        <h2
+          data-mr="100 आजी-आजोबांसाठी सुरक्षित निवासाची उभारणी"
+          data-en="Building a Safe Home for 100 Elderly People"
         >
-          आपली छोटी मदत,<br>
-          एका आईसाठी मोठा आधार.
-        </h1>
+          100 आजी-आजोबांसाठी सुरक्षित निवासाची उभारणी
+        </h2>
 
-      </div>
 
-    </section>
+        <p
+          style="max-width:800px; margin:0 auto; line-height:1.8;"
+          data-mr="सध्या माई वृद्धाश्रमात 25 वृद्ध मातांची काळजी घेतली जात आहे. भविष्यात 100 वृद्ध आजी-आजोबांसाठी सुरक्षित, सन्मानपूर्वक आणि सर्वसमावेशक निवास व काळजी सुविधा निर्माण करण्याचा आमचा संकल्प आहे. या विस्तारासाठी जागा, बांधकाम आणि आवश्यक सुविधांसाठी आपली आर्थिक मदत अत्यंत महत्त्वाची आहे."
+          data-en="Mai Vriddhashram currently supports 25 elderly mothers. Our vision is to create safe, dignified and inclusive residential and care facilities for 100 elderly women and men. Financial support for space, construction and essential facilities will help us take this vision forward."
+        >
+          सध्या माई वृद्धाश्रमात 25 वृद्ध मातांची काळजी घेतली जात आहे. भविष्यात 100 वृद्ध आजी-आजोबांसाठी सुरक्षित, सन्मानपूर्वक आणि सर्वसमावेशक निवास व काळजी सुविधा निर्माण करण्याचा आमचा संकल्प आहे. या विस्तारासाठी जागा, बांधकाम आणि आवश्यक सुविधांसाठी आपली आर्थिक मदत अत्यंत महत्त्वाची आहे.
+        </p>
 
-
-
-    <!-- ======================================================
-         DONATION AMOUNT
-    ======================================================= -->
-
-    <section class="section">
-
-      <div class="container">
-
-        <div class="grid grid-2" style="align-items:start; gap:36px;">
-
-
-          <!-- ==================================================
-               SELECT AMOUNT
-          =================================================== -->
-
-          <div class="card reveal">
-
-            <h2
-              data-mr="देणगीची रक्कम निवडा"
-              data-en="Choose Donation Amount"
-            >
-              देणगीची रक्कम निवडा
-            </h2>
-
-
-            <p
-              class="form-note"
-              data-mr="आपल्या सोयीनुसार देणगीची रक्कम निवडा."
-              data-en="Choose a donation amount according to your convenience."
-            >
-              आपल्या सोयीनुसार देणगीची रक्कम निवडा.
-            </p>
-
-
-            <!-- Amount buttons generated from config.js -->
-
-            <div
-              id="donateAmountGrid"
-              class="donate-amount-grid"
-            ></div>
-
-
-            <!-- Custom Amount -->
-
-            <div
-              class="form-field"
-              style="margin-top:18px;"
-            >
-
-              <label
-                for="donateCustomAmount"
-                data-mr="इतर रक्कम (₹)"
-                data-en="Other Amount (₹)"
-              >
-                इतर रक्कम (₹)
-              </label>
-
-
-              <input
-                type="number"
-                id="donateCustomAmount"
-                min="1"
-                step="1"
-                inputmode="numeric"
-                placeholder="₹ रक्कम टाका"
-              >
-
-            </div>
-
-
-            <!-- Selected Amount -->
-
-            <div
-              class="donate-selected-box"
-            >
-
-              <div
-                data-mr="निवडलेली देणगी"
-                data-en="Selected Donation"
-              >
-                निवडलेली देणगी
-              </div>
-
-
-              <div
-                id="donateSelectedAmount"
-                class="donate-selected-amount"
-              >
-                ₹500
-              </div>
-
-            </div>
-
-
-            <!-- Continue -->
-
-            <button
-              id="donateContinueBtn"
-              type="button"
-              class="btn btn-primary"
-              style="width:100%; margin-top:16px;"
-              data-mr="❤️ देणगी देण्यासाठी पुढे जा"
-              data-en="❤️ Continue to Donate"
-            >
-              ❤️ देणगी देण्यासाठी पुढे जा
-            </button>
-
-
-            <div
-              id="donateSuccess"
-              class="donate-success"
-            >
-              <span
-                data-mr="रक्कम निवडली आहे. खाली UPI किंवा Bank Transfer द्वारे देणगी देता येईल."
-                data-en="Amount selected. You can donate below using UPI or Bank Transfer."
-              >
-                रक्कम निवडली आहे. खाली UPI किंवा Bank Transfer द्वारे देणगी देता येईल.
-              </span>
-            </div>
-
-
-            <p
-              class="donate-note"
-              style="margin-top:16px;"
-              data-mr="आपली देणगी वृद्ध मातांच्या अन्न, निवास, आरोग्यसेवा, औषधे, वीज, बेडिंग आणि दैनंदिन गरजांसाठी उपयोगी पडते."
-              data-en="Your donation helps support food, shelter, healthcare, medicines, electricity, bedding and daily needs for elderly mothers."
-            >
-              आपली देणगी वृद्ध मातांच्या अन्न, निवास, आरोग्यसेवा,
-              औषधे, वीज, बेडिंग आणि दैनंदिन गरजांसाठी उपयोगी पडते.
-            </p>
-
-          </div>
-
-
-
-          <!-- ==================================================
-               UPI DONATION
-          =================================================== -->
-
-          <div
-            id="donationMethods"
-          >
-
-            <div
-              class="card reveal donate-upi-box"
-              style="margin-bottom:20px;"
-            >
-
-              <h2
-                data-mr="UPI द्वारे देणगी"
-                data-en="Donate via UPI"
-              >
-                UPI द्वारे देणगी
-              </h2>
-
-
-              <p
-                class="form-note"
-                data-mr="खालील QR Code Scan करून सुरक्षितपणे देणगी द्या."
-                data-en="Scan the QR Code below to make your donation."
-              >
-                खालील QR Code Scan करून सुरक्षितपणे देणगी द्या.
-              </p>
-
-
-              <!-- QR -->
-
-              <img
-                id="donateQrCode"
-                class="donate-qr"
-                src="images/qr/upi-qr.png"
-                alt="Mai Vriddhashram UPI Donation QR Code"
-              >
-
-
-              <!-- UPI ID -->
-
-              <p>
-
-                <strong
-                  data-mr="UPI ID:"
-                  data-en="UPI ID:"
-                >
-                  UPI ID:
-                </strong>
-
-                <span id="donateUpiId">
-                  MAB.037326017310014@AXISBANK
-                </span>
-
-              </p>
-
-
-              <!-- Copy UPI -->
-
-              <button
-                type="button"
-                id="copyUpiBtn"
-                class="btn btn-sm btn-outline donate-copy-btn"
-                data-mr="📋 UPI ID कॉपी करा"
-                data-en="📋 Copy UPI ID"
-              >
-                📋 UPI ID कॉपी करा
-              </button>
-
-
-              <p
-                id="upiCopyMessage"
-                class="donate-note"
-                style="margin-top:8px;"
-              ></p>
-
-
-              <p
-                class="donate-note"
-                style="margin-top:14px;"
-                data-mr="टीप: पेमेंट करताना UPI ID आणि प्राप्तकर्त्याचे नाव तपासूनच देणगी पूर्ण करा."
-                data-en="Note: Please verify the UPI ID and recipient name before completing the donation."
-              >
-                टीप: पेमेंट करताना UPI ID आणि प्राप्तकर्त्याचे नाव तपासूनच देणगी पूर्ण करा.
-              </p>
-
-            </div>
-
-
-
-            <!-- ==================================================
-                 BANK TRANSFER
-            =================================================== -->
-
-            <div
-              class="card reveal donate-bank-details"
-            >
-
-              <h2
-                data-mr="बँक ट्रान्सफर"
-                data-en="Bank Transfer"
-              >
-                बँक ट्रान्सफर
-              </h2>
-
-
-              <p
-                class="form-note"
-                data-mr="खालील बँक खात्यावर थेट देणगी जमा करू शकता."
-                data-en="You can transfer your donation directly to the bank account below."
-              >
-                खालील बँक खात्यावर थेट देणगी जमा करू शकता.
-              </p>
-
-
-              <p>
-                <strong
-                  data-mr="खातेदाराचे नाव:"
-                  data-en="Account Name:"
-                >
-                  खातेदाराचे नाव:
-                </strong>
-
-                <span id="donateAccountName"></span>
-              </p>
-
-
-              <p>
-                <strong
-                  data-mr="बँक:"
-                  data-en="Bank:"
-                >
-                  बँक:
-                </strong>
-
-                <span id="donateBankName"></span>
-              </p>
-
-
-              <p>
-                <strong
-                  data-mr="शाखा:"
-                  data-en="Branch:"
-                >
-                  शाखा:
-                </strong>
-
-                <span id="donateBankBranch"></span>
-              </p>
-
-
-              <p>
-                <strong
-                  data-mr="खाते क्रमांक:"
-                  data-en="Account Number:"
-                >
-                  खाते क्रमांक:
-                </strong>
-
-                <span id="donateAccountNumber"></span>
-              </p>
-
-
-              <p>
-                <strong
-                  data-mr="IFSC:"
-                  data-en="IFSC:"
-                >
-                  IFSC:
-                </strong>
-
-                <span id="donateIfsc"></span>
-              </p>
-
-
-              <p
-                class="donate-note"
-                style="margin-top:16px;"
-                data-mr="बँक ट्रान्सफर केल्यानंतर पावतीसाठी कृपया आमच्याशी संपर्क साधा."
-                data-en="After making a bank transfer, please contact us for the donation receipt."
-              >
-                बँक ट्रान्सफर केल्यानंतर पावतीसाठी कृपया आमच्याशी संपर्क साधा.
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ======================================================
-         CURRENT NEEDS
-    ======================================================= -->
-
-    <section class="section section-alt">
-
-      <div class="container">
 
         <div
-          class="text-center reveal"
-          style="margin-bottom:32px;"
+          style="
+            margin-top:24px;
+            display:flex;
+            justify-content:center;
+            gap:12px;
+            flex-wrap:wrap;
+          "
         >
 
-          <p
-            class="eyebrow"
-            data-mr="सध्याच्या गरजा"
-            data-en="Current Needs"
-          >
-            सध्याच्या गरजा
-          </p>
+          <span class="btn btn-sm btn-outline">
+            🏠 25 सध्याची क्षमता
+          </span>
 
+          <span class="btn btn-sm btn-outline">
+            ❤️ 100 भविष्यातील क्षमता
+          </span>
 
-          <h2
-            data-mr="तुमची मदत कुठे उपयोगी पडते"
-            data-en="Where Your Support Helps"
-          >
-            तुमची मदत कुठे उपयोगी पडते
-          </h2>
-
-        </div>
-
-
-        <div class="grid grid-4">
-
-
-          <!-- Food -->
-
-          <div class="card reveal">
-
-            <div class="icon-badge">
-              🍚
-            </div>
-
-            <h3
-              data-mr="अन्न व किराणा"
-              data-en="Food & Groceries"
-            >
-              अन्न व किराणा
-            </h3>
-
-            <p
-              class="form-note"
-              data-mr="रोजचे अन्नधान्य, किराणा व पौष्टिक आहारासाठी."
-              data-en="For daily food, groceries and nutritious meals."
-            >
-              रोजचे अन्नधान्य, किराणा व पौष्टिक आहारासाठी.
-            </p>
-
-          </div>
-
-
-          <!-- Healthcare -->
-
-          <div class="card reveal">
-
-            <div class="icon-badge">
-              🏥
-            </div>
-
-            <h3
-              data-mr="आरोग्यसेवा"
-              data-en="Healthcare"
-            >
-              आरोग्यसेवा
-            </h3>
-
-            <p
-              class="form-note"
-              data-mr="औषधे, तपासण्या, उपचार आणि आरोग्यसेवेसाठी."
-              data-en="For medicines, check-ups, treatment and healthcare."
-            >
-              औषधे, तपासण्या, उपचार आणि आरोग्यसेवेसाठी.
-            </p>
-
-          </div>
-
-
-          <!-- Beds -->
-
-          <div class="card reveal">
-
-            <div class="icon-badge">
-              🛏️
-            </div>
-
-            <h3
-              data-mr="बेड व बेडिंग"
-              data-en="Beds & Bedding"
-            >
-              बेड व बेडिंग
-            </h3>
-
-            <p
-              class="form-note"
-              data-mr="बेड, गाद्या, चादरी आणि आवश्यक बेडिंगसाठी."
-              data-en="For beds, mattresses, blankets and bedding."
-            >
-              बेड, गाद्या, चादरी आणि आवश्यक बेडिंगसाठी.
-            </p>
-
-          </div>
-
-
-          <!-- Kitchen -->
-
-          <div class="card reveal">
-
-            <div class="icon-badge">
-              🍳
-            </div>
-
-            <h3
-              data-mr="स्वयंपाकघर उपकरणे"
-              data-en="Kitchen Equipment"
-            >
-              स्वयंपाकघर उपकरणे
-            </h3>
-
-            <p
-              class="form-note"
-              data-mr="स्वयंपाकघरातील आवश्यक साहित्य व उपकरणांसाठी."
-              data-en="For essential kitchen equipment and supplies."
-            >
-              स्वयंपाकघरातील आवश्यक साहित्य व उपकरणांसाठी.
-            </p>
-
-          </div>
-
-
-          <!-- Electricity -->
-
-          <div class="card reveal">
-
-            <div class="icon-badge">
-              ⚡
-            </div>
-
-            <h3
-              data-mr="वीज व सुविधा"
-              data-en="Electricity & Utilities"
-            >
-              वीज व सुविधा
-            </h3>
-
-            <p
-              class="form-note"
-              data-mr="वीज बिल, विद्युत साहित्य आणि आवश्यक सुविधांसाठी."
-              data-en="For electricity bills, electrical materials and utilities."
-            >
-              वीज बिल, विद्युत साहित्य आणि आवश्यक सुविधांसाठी.
-            </p>
-
-          </div>
-
-
-          <!-- Solar -->
-
-          <div class="card reveal">
-
-            <div class="icon-badge">
-              ☀️
-            </div>
-
-            <h3
-              data-mr="सौर ऊर्जा"
-              data-en="Solar Energy"
-            >
-              सौर ऊर्जा
-            </h3>
-
-            <p
-              class="form-note"
-              data-mr="ऊर्जेचा खर्च कमी करण्यासाठी सौर सुविधांसाठी."
-              data-en="For solar energy facilities to reduce energy costs."
-            >
-              ऊर्जेचा खर्च कमी करण्यासाठी सौर सुविधांसाठी.
-            </p>
-
-          </div>
-
-
-          <!-- Daily Essentials -->
-
-          <div class="card reveal">
-
-            <div class="icon-badge">
-              🧴
-            </div>
-
-            <h3
-              data-mr="दैनंदिन गरजेच्या वस्तू"
-              data-en="Daily Essentials"
-            >
-              दैनंदिन गरजेच्या वस्तू
-            </h3>
-
-            <p
-              class="form-note"
-              data-mr="दैनंदिन वापरातील आवश्यक व स्वच्छता साहित्यांसाठी."
-              data-en="For daily essentials and hygiene supplies."
-            >
-              दैनंदिन वापरातील आवश्यक व स्वच्छता साहित्यांसाठी.
-            </p>
-
-          </div>
-
-
-          <!-- Maintenance -->
-
-          <div class="card reveal">
-
-            <div class="icon-badge">
-              🏠
-            </div>
-
-            <h3
-              data-mr="देखभाल व दुरुस्ती"
-              data-en="Maintenance & Repairs"
-            >
-              देखभाल व दुरुस्ती
-            </h3>
-
-            <p
-              class="form-note"
-              data-mr="आश्रमाची देखभाल, दुरुस्ती आणि सुरक्षित वातावरणासाठी."
-              data-en="For maintenance, repairs and a safe environment."
-            >
-              आश्रमाची देखभाल, दुरुस्ती आणि सुरक्षित वातावरणासाठी.
-            </p>
-
-          </div>
+          <span class="btn btn-sm btn-outline">
+            📐 2400 sq.ft.
+          </span>
 
         </div>
 
       </div>
 
-    </section>
+    </div>
+
+  </section>
 
 
+  <!-- =========================================================
+       CURRENT NEEDS
+  ========================================================== -->
 
-    <!-- ======================================================
-         FUTURE EXPANSION
-    ======================================================= -->
+  <section class="section">
 
-    <section class="section">
+    <div class="container">
 
-      <div class="container">
+      <div
+        class="text-center reveal"
+        style="margin-bottom:32px;"
+      >
 
-        <div class="card reveal donate-expansion">
+        <p
+          class="eyebrow"
+          data-mr="सध्याच्या गरजा"
+          data-en="Current Needs"
+        >
+          सध्याच्या गरजा
+        </p>
+
+        <h2
+          data-mr="तुमची मदत कुठे उपयोगी पडते"
+          data-en="Where Your Support Helps"
+        >
+          तुमची मदत कुठे उपयोगी पडते
+        </h2>
+
+      </div>
+
+
+      <div class="grid grid-4">
+
+
+        <!-- Food -->
+
+        <div class="card reveal">
+
+          <div class="icon-badge">🍚</div>
+
+          <h3
+            data-mr="अन्न व किराणा"
+            data-en="Food & Groceries"
+          >
+            अन्न व किराणा
+          </h3>
 
           <p
-            class="eyebrow"
-            data-mr="भविष्यातील विस्तार"
-            data-en="Future Expansion"
+            class="form-note"
+            data-mr="वृद्ध मातांसाठी रोजचे अन्नधान्य, किराणा व पोषणयुक्त आहारासाठी."
+            data-en="For daily food, groceries and nutritious meals for elderly mothers."
           >
-            भविष्यातील विस्तार
+            वृद्ध मातांसाठी रोजचे अन्नधान्य, किराणा व पोषणयुक्त आहारासाठी.
+          </p>
+
+        </div>
+
+
+        <!-- Healthcare -->
+
+        <div class="card reveal">
+
+          <div class="icon-badge">🏥</div>
+
+          <h3
+            data-mr="आरोग्यसेवा"
+            data-en="Healthcare"
+          >
+            आरोग्यसेवा
+          </h3>
+
+          <p
+            class="form-note"
+            data-mr="औषधे, तपासण्या, उपचार आणि आवश्यक आरोग्यसेवेसाठी."
+            data-en="For medicines, check-ups, treatment and essential healthcare."
+          >
+            औषधे, तपासण्या, उपचार आणि आवश्यक आरोग्यसेवेसाठी.
+          </p>
+
+        </div>
+
+
+        <!-- Beds -->
+
+        <div class="card reveal">
+
+          <div class="icon-badge">🛏️</div>
+
+          <h3
+            data-mr="बेड व बेडिंग"
+            data-en="Beds & Bedding"
+          >
+            बेड व बेडिंग
+          </h3>
+
+          <p
+            class="form-note"
+            data-mr="वृद्ध मातांसाठी आरामदायी बेड, गाद्या, चादरी व बेडिंगसाठी."
+            data-en="For comfortable beds, mattresses, blankets and bedding."
+          >
+            वृद्ध मातांसाठी आरामदायी बेड, गाद्या, चादरी व बेडिंगसाठी.
+          </p>
+
+        </div>
+
+
+        <!-- Kitchen -->
+
+        <div class="card reveal">
+
+          <div class="icon-badge">🍳</div>
+
+          <h3
+            data-mr="स्वयंपाकघर उपकरणे"
+            data-en="Kitchen Equipment"
+          >
+            स्वयंपाकघर उपकरणे
+          </h3>
+
+          <p
+            class="form-note"
+            data-mr="पौष्टिक भोजन तयार करण्यासाठी आवश्यक स्वयंपाकघर साहित्य व उपकरणांसाठी."
+            data-en="For essential kitchen equipment and supplies."
+          >
+            पौष्टिक भोजन तयार करण्यासाठी आवश्यक स्वयंपाकघर साहित्य व उपकरणांसाठी.
+          </p>
+
+        </div>
+
+
+        <!-- Electricity -->
+
+        <div class="card reveal">
+
+          <div class="icon-badge">⚡</div>
+
+          <h3
+            data-mr="वीज व सुविधा"
+            data-en="Electricity & Utilities"
+          >
+            वीज व सुविधा
+          </h3>
+
+          <p
+            class="form-note"
+            data-mr="वीज बिल, विद्युत साहित्य आणि आश्रमातील आवश्यक सुविधांसाठी."
+            data-en="For electricity bills, electrical materials and essential utilities."
+          >
+            वीज बिल, विद्युत साहित्य आणि आश्रमातील आवश्यक सुविधांसाठी.
+          </p>
+
+        </div>
+
+
+        <!-- Solar -->
+
+        <div class="card reveal">
+
+          <div class="icon-badge">☀️</div>
+
+          <h3
+            data-mr="सौर ऊर्जा"
+            data-en="Solar Energy"
+          >
+            सौर ऊर्जा
+          </h3>
+
+          <p
+            class="form-note"
+            data-mr="ऊर्जेचा खर्च कमी करण्यासाठी सौर ऊर्जा व संबंधित सुविधांसाठी."
+            data-en="For solar energy and related facilities."
+          >
+            ऊर्जेचा खर्च कमी करण्यासाठी सौर ऊर्जा व संबंधित सुविधांसाठी.
+          </p>
+
+        </div>
+
+
+        <!-- Daily Essentials -->
+
+        <div class="card reveal">
+
+          <div class="icon-badge">🧴</div>
+
+          <h3
+            data-mr="दैनंदिन गरजेच्या वस्तू"
+            data-en="Daily Essentials"
+          >
+            दैनंदिन गरजेच्या वस्तू
+          </h3>
+
+          <p
+            class="form-note"
+            data-mr="वृद्ध मातांच्या रोजच्या वापरातील आवश्यक वस्तू व स्वच्छता साहित्यांसाठी."
+            data-en="For daily essentials and hygiene supplies."
+          >
+            वृद्ध मातांच्या रोजच्या वापरातील आवश्यक वस्तू व स्वच्छता साहित्यांसाठी.
+          </p>
+
+        </div>
+
+
+        <!-- Maintenance -->
+
+        <div class="card reveal">
+
+          <div class="icon-badge">🏠</div>
+
+          <h3
+            data-mr="देखभाल व दुरुस्ती"
+            data-en="Maintenance & Repairs"
+          >
+            देखभाल व दुरुस्ती
+          </h3>
+
+          <p
+            class="form-note"
+            data-mr="आश्रमाची देखभाल, दुरुस्ती आणि सुरक्षित वातावरणासाठी."
+            data-en="For maintenance, repairs and a safe environment."
+          >
+            आश्रमाची देखभाल, दुरुस्ती आणि सुरक्षित वातावरणासाठी.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       DONATE WITH CONFIDENCE
+  ========================================================== -->
+
+  <section class="section section-alt">
+
+    <div class="container">
+
+      <div
+        class="text-center reveal"
+        style="margin-bottom:32px;"
+      >
+
+        <h2
+          data-mr="विश्वासाने देणगी द्या"
+          data-en="Donate With Confidence"
+        >
+          विश्वासाने देणगी द्या
+        </h2>
+
+      </div>
+
+
+      <div class="grid grid-2">
+
+
+        <!-- Organization -->
+
+        <div class="card reveal">
+
+          <h3
+            data-mr="संस्थेचा तपशील"
+            data-en="Organization Details"
+          >
+            संस्थेचा तपशील
+          </h3>
+
+
+          <p
+            data-mr="माई वृद्धाश्रम — बोधी ट्री एज्युकेशनल फाऊंडेशन द्वारा संचालित"
+            data-en="Mai Vriddhashram — Run by Bodhi Tree Educational Foundation"
+          >
+            माई वृद्धाश्रम — बोधी ट्री एज्युकेशनल फाऊंडेशन द्वारा संचालित
           </p>
 
 
-          <h2
-            data-mr="100 वृद्ध आजी-आजोबांसाठी सुरक्षित निवासाचे स्वप्न"
-            data-en="A Safe Home for 100 Elderly People"
+          <p>
+
+            <strong
+              data-mr="नोंदणी P. No.:"
+              data-en="Registration P. No.:"
+            >
+              नोंदणी P. No.:
+            </strong>
+
+            <span id="regNo2"></span>
+
+          </p>
+
+
+          <p>
+
+            <strong
+              data-mr="NGO Darpan:"
+              data-en="NGO Darpan:"
+            >
+              NGO Darpan:
+            </strong>
+
+            <span id="ngoDarpan"></span>
+
+          </p>
+
+        </div>
+
+
+        <!-- Receipt -->
+
+        <div class="card reveal">
+
+          <h3
+            data-mr="पावती प्रक्रिया"
+            data-en="Receipt Process"
           >
-            100 वृद्ध आजी-आजोबांसाठी सुरक्षित निवासाचे स्वप्न
-          </h2>
+            पावती प्रक्रिया
+          </h3>
 
 
           <p
-            data-mr="सध्या माई वृद्धाश्रमात 25 वृद्ध मातांची काळजी घेतली जाते. भविष्यात 100 वृद्ध आजी-आजोबांसाठी सुरक्षित, सन्मानपूर्वक आणि सर्वसमावेशक निवास व काळजी सुविधा निर्माण करण्याचे आमचे ध्येय आहे. या विस्तारासाठी जागा, बांधकाम आणि आवश्यक सुविधांसाठी आर्थिक व CSR सहकार्याची गरज आहे."
-            data-en="Mai Vriddhashram currently cares for 25 elderly mothers. Our vision is to create safe, dignified and inclusive residential and care facilities for 100 elderly people. We seek financial and CSR support for space, construction and essential facilities."
+            data-mr="प्रत्येक देणगीसाठी पावती दिली जाते. देणगी केल्यानंतर पावतीसाठी कृपया आमच्याशी संपर्क साधा."
+            data-en="A receipt is issued for every donation. Please contact us after donating for your receipt."
           >
-            सध्या माई वृद्धाश्रमात 25 वृद्ध मातांची काळजी घेतली जाते.
-            भविष्यात 100 वृद्ध आजी-आजोबांसाठी सुरक्षित,
-            सन्मानपूर्वक आणि सर्वसमावेशक निवास व काळजी सुविधा
-            निर्माण करण्याचे आमचे ध्येय आहे.
-            या विस्तारासाठी जागा, बांधकाम आणि आवश्यक सुविधांसाठी
-            आर्थिक व CSR सहकार्याची गरज आहे.
+            प्रत्येक देणगीसाठी पावती दिली जाते. देणगी केल्यानंतर पावतीसाठी कृपया आमच्याशी संपर्क साधा.
           </p>
 
 
           <a
             href="contact.html"
-            class="btn btn-primary"
-            data-mr="🤝 विस्तारासाठी सहकार्य करा"
-            data-en="🤝 Support the Expansion"
+            class="btn btn-sm btn-outline"
+            data-mr="संपर्क करा"
+            data-en="Contact Us"
           >
-            🤝 विस्तारासाठी सहकार्य करा
+            संपर्क करा
           </a>
 
         </div>
 
       </div>
 
-    </section>
+    </div>
+
+  </section>
 
 
+  <!-- =========================================================
+       THANK YOU
+  ========================================================== -->
 
-    <!-- ======================================================
-         DONATE WITH CONFIDENCE
-    ======================================================= -->
+  <section class="section">
 
-    <section class="section">
+    <div class="container">
 
-      <div class="container">
+      <div
+        class="card reveal"
+        style="text-align:center;"
+      >
 
-        <div
-          class="text-center reveal"
-          style="margin-bottom:32px;"
+        <h2
+          data-mr="आपल्या मदतीबद्दल मनःपूर्वक धन्यवाद ❤️"
+          data-en="Thank you sincerely for your support ❤️"
         >
-
-          <h2
-            data-mr="विश्वासाने देणगी द्या"
-            data-en="Donate With Confidence"
-          >
-            विश्वासाने देणगी द्या
-          </h2>
-
-        </div>
+          आपल्या मदतीबद्दल मनःपूर्वक धन्यवाद ❤️
+        </h2>
 
 
-        <div class="grid grid-2">
-
-
-          <!-- Organization -->
-
-          <div class="card reveal">
-
-            <h3
-              data-mr="संस्थेचा तपशील"
-              data-en="Organization Details"
-            >
-              संस्थेचा तपशील
-            </h3>
-
-
-            <p
-              data-mr="माई वृद्धाश्रम — बोधी ट्री एज्युकेशनल फाऊंडेशन द्वारा संचालित"
-              data-en="Mai Vriddhashram — Run by Bodhi Tree Educational Foundation"
-            >
-              माई वृद्धाश्रम — बोधी ट्री एज्युकेशनल फाऊंडेशन द्वारा संचालित
-            </p>
-
-
-            <p>
-
-              <strong
-                data-mr="नोंदणी P. No.:"
-                data-en="Registration P. No.:"
-              >
-                नोंदणी P. No.:
-              </strong>
-
-              <span id="donateRegistrationPNo">
-                F-23015
-              </span>
-
-            </p>
-
-
-            <p>
-
-              <strong
-                data-mr="NGO Darpan:"
-                data-en="NGO Darpan:"
-              >
-                NGO Darpan:
-              </strong>
-
-              <span id="donateNgoDarpan"></span>
-
-            </p>
-
-          </div>
-
-
-
-          <!-- Receipt -->
-
-          <div class="card reveal">
-
-            <h3
-              data-mr="पावती प्रक्रिया"
-              data-en="Receipt Process"
-            >
-              पावती प्रक्रिया
-            </h3>
-
-
-            <p
-              data-mr="प्रत्येक देणगीसाठी पावती दिली जाते. देणगी केल्यानंतर पावतीसाठी कृपया आमच्याशी संपर्क साधा."
-              data-en="A receipt is issued for every donation. Please contact us after donating to receive the receipt."
-            >
-              प्रत्येक देणगीसाठी पावती दिली जाते.
-              देणगी केल्यानंतर पावतीसाठी कृपया आमच्याशी संपर्क साधा.
-            </p>
-
-
-            <a
-              href="contact.html"
-              class="btn btn-sm btn-outline"
-              data-mr="संपर्क करा"
-              data-en="Contact Us"
-            >
-              संपर्क करा
-            </a>
-
-          </div>
-
-        </div>
+        <p
+          style="max-width:700px; margin:0 auto; line-height:1.8;"
+          data-mr="आपली मदत ही केवळ देणगी नाही; ती एका वृद्ध आईच्या आयुष्यातील आधार, सुरक्षितता आणि सन्मान आहे."
+          data-en="Your support is more than a donation; it is a source of care, security and dignity for an elderly mother."
+        >
+          आपली मदत ही केवळ देणगी नाही; ती एका वृद्ध आईच्या आयुष्यातील आधार, सुरक्षितता आणि सन्मान आहे.
+        </p>
 
       </div>
 
-    </section>
+    </div>
 
+  </section>
 
-  </main>
+</main>
 
 
-  <!-- ========================================================
-       FOOTER
-  ======================================================== -->
+<div id="site-footer"></div>
 
-  <div id="site-footer"></div>
 
+<!-- =========================================================
+     JAVASCRIPT
+========================================================== -->
 
-  <!-- ========================================================
-       CONFIG + COMMON
-  ======================================================== -->
-
-  <script src="config.js"></script>
-
-  <script src="js/common.js"></script>
-
-
-  <!-- ========================================================
-       DONATION PAGE SCRIPT
-       Independent from main.js
-  ======================================================== -->
-
-  <script>
-
-    document.addEventListener("DOMContentLoaded", function(){
-
-      /* ------------------------------------------------------
-         CHECK CONFIG
-      ------------------------------------------------------ */
-
-      if(typeof SITE_CONFIG === "undefined"){
-
-        console.error(
-          "SITE_CONFIG is not loaded."
-        );
-
-        return;
-
-      }
-
-
-      /* ------------------------------------------------------
-         ELEMENTS
-      ------------------------------------------------------ */
-
-      const amountGrid =
-        document.getElementById("donateAmountGrid");
-
-      const customAmount =
-        document.getElementById("donateCustomAmount");
-
-      const selectedAmount =
-        document.getElementById("donateSelectedAmount");
-
-      const continueBtn =
-        document.getElementById("donateContinueBtn");
-
-      const donationMethods =
-        document.getElementById("donationMethods");
-
-      const successBox =
-        document.getElementById("donateSuccess");
-
-
-      /* ------------------------------------------------------
-         CONFIG VALUES
-      ------------------------------------------------------ */
-
-      const donationAmounts =
-        Array.isArray(SITE_CONFIG.donationAmounts)
-          ? SITE_CONFIG.donationAmounts
-          : [500, 1000, 2500, 5000];
-
-
-      let currentAmount =
-        Number(donationAmounts[0]) || 500;
-
-
-      /* ------------------------------------------------------
-         FORMAT RUPEES
-      ------------------------------------------------------ */
-
-      function formatRupees(amount){
-
-        return "₹" +
-          Number(amount).toLocaleString("en-IN");
-
-      }
-
-
-      /* ------------------------------------------------------
-         UPDATE SELECTED AMOUNT
-      ------------------------------------------------------ */
-
-      function updateSelectedAmount(amount){
-
-        currentAmount =
-          Number(amount);
-
-        selectedAmount.textContent =
-          formatRupees(currentAmount);
-
-      }
-
-
-      /* ------------------------------------------------------
-         CREATE AMOUNT BUTTONS
-      ------------------------------------------------------ */
-
-      amountGrid.innerHTML = "";
-
-
-      donationAmounts.forEach(function(amount, index){
-
-        const value =
-          Number(amount);
-
-        if(!value || value <= 0) return;
-
-
-        const button =
-          document.createElement("button");
-
-
-        button.type = "button";
-
-        button.className =
-          "donate-amount-btn" +
-          (index === 0 ? " active" : "");
-
-
-        button.dataset.amount =
-          String(value);
-
-
-        button.textContent =
-          formatRupees(value);
-
-
-        button.addEventListener(
-          "click",
-          function(){
-
-            /* Remove active */
-            document
-              .querySelectorAll(".donate-amount-btn")
-              .forEach(function(btn){
-
-                btn.classList.remove("active");
-
-              });
-
-
-            /* Activate current */
-            this.classList.add("active");
-
-
-            /* Clear custom */
-            customAmount.value = "";
-
-
-            /* Update amount */
-            updateSelectedAmount(value);
-
-          }
-        );
-
-
-        amountGrid.appendChild(button);
-
-      });
-
-
-      /* Initial amount */
-
-      updateSelectedAmount(currentAmount);
-
-
-
-      /* ------------------------------------------------------
-         CUSTOM AMOUNT
-      ------------------------------------------------------ */
-
-      customAmount.addEventListener(
-        "input",
-        function(){
-
-          const value =
-            Number(this.value);
-
-
-          if(value > 0){
-
-            document
-              .querySelectorAll(".donate-amount-btn")
-              .forEach(function(btn){
-
-                btn.classList.remove("active");
-
-              });
-
-
-            updateSelectedAmount(value);
-
-          }
-
-        }
-      );
-
-
-
-      /* ------------------------------------------------------
-         CONTINUE
-      ------------------------------------------------------ */
-
-      continueBtn.addEventListener(
-        "click",
-        function(){
-
-          let amount =
-            Number(customAmount.value);
-
-
-          if(!amount || amount <= 0){
-
-            amount =
-              currentAmount;
-
-          }
-
-
-          if(!amount || amount <= 0){
-
-            const language =
-              document.documentElement
-                .getAttribute("data-lang");
-
-
-            alert(
-              language === "mr"
-                ? "कृपया देणगीची रक्कम निवडा."
-                : "Please select a donation amount."
-            );
-
-            return;
-
-          }
-
-
-          /* Save amount */
-
-          sessionStorage.setItem(
-            "donationAmount",
-            String(amount)
-          );
-
-
-          /* Update display */
-
-          updateSelectedAmount(amount);
-
-
-          /* Success message */
-
-          successBox.style.display =
-            "block";
-
-
-          /* Scroll to payment */
-
-          donationMethods.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-          });
-
-        }
-      );
-
-
-
-      /* ------------------------------------------------------
-         UPI DETAILS
-      ------------------------------------------------------ */
-
-      const upiId =
-        document.getElementById("donateUpiId");
-
-
-      if(upiId){
-
-        upiId.textContent =
-          SITE_CONFIG.upiId || "";
-
-      }
-
-
-      /* QR */
-
-      const qr =
-        document.getElementById("donateQrCode");
-
-
-      if(
-        qr &&
-        SITE_CONFIG.qrCodeImage
-      ){
-
-        qr.src =
-          SITE_CONFIG.qrCodeImage;
-
-      }
-
-
-
-      /* ------------------------------------------------------
-         COPY UPI
-      ------------------------------------------------------ */
-
-      const copyUpiBtn =
-        document.getElementById("copyUpiBtn");
-
-      const copyMessage =
-        document.getElementById("upiCopyMessage");
-
-
-      if(copyUpiBtn){
-
-        copyUpiBtn.addEventListener(
-          "click",
-          async function(){
-
-            const upi =
-              SITE_CONFIG.upiId || "";
-
-
-            if(!upi){
-
-              return;
-
-            }
-
-
-            try{
-
-              await navigator.clipboard.writeText(
-                upi
-              );
-
-
-              copyMessage.textContent =
-                "✓ UPI ID कॉपी झाला.";
-
-
-            }catch(error){
-
-              copyMessage.textContent =
-                "UPI ID: " + upi;
-
-            }
-
-          }
-        );
-
-      }
-
-
-
-      /* ------------------------------------------------------
-         BANK DETAILS
-      ------------------------------------------------------ */
-
-      if(SITE_CONFIG.bank){
-
-        document.getElementById(
-          "donateAccountName"
-        ).textContent =
-          SITE_CONFIG.bank.accountName || "";
-
-
-        document.getElementById(
-          "donateBankName"
-        ).textContent =
-          SITE_CONFIG.bank.bankName || "";
-
-
-        document.getElementById(
-          "donateBankBranch"
-        ).textContent =
-          SITE_CONFIG.bank.branch || "";
-
-
-        document.getElementById(
-          "donateAccountNumber"
-        ).textContent =
-          SITE_CONFIG.bank.accountNumber || "";
-
-
-        document.getElementById(
-          "donateIfsc"
-        ).textContent =
-          SITE_CONFIG.bank.ifsc || "";
-
-      }
-
-
-
-      /* ------------------------------------------------------
-         REGISTRATION DETAILS
-      ------------------------------------------------------ */
-
-      const registrationPNo =
-        document.getElementById(
-          "donateRegistrationPNo"
-        );
-
-
-      if(registrationPNo){
-
-        registrationPNo.textContent =
-          SITE_CONFIG.registrationPNumber ||
-          SITE_CONFIG.registrationNumber ||
-          "";
-
-      }
-
-
-      const ngoDarpan =
-        document.getElementById(
-          "donateNgoDarpan"
-        );
-
-
-      if(ngoDarpan){
-
-        ngoDarpan.textContent =
-          SITE_CONFIG.ngoDarpanNumber || "";
-
-      }
-
-
-    });
-
-  </script>
-
+<script src="config.js"></script>
+<script src="js/common.js"></script>
+<script src="js/main.js"></script>
 
 </body>
-
 </html>
 ```
