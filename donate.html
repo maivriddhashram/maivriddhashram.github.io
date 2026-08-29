@@ -248,32 +248,225 @@
             ></div>
 
 
-            <!-- Custom Amount -->
+            <!-- ==================================================
+     DONOR DETAILS
+=================================================== -->
 
-            <div
-              class="form-field"
-              style="margin-top:18px;"
-            >
+<div
+  class="donor-details"
+  style="margin-top:24px;"
+>
 
-              <label
-                for="donateCustomAmount"
-                data-mr="इतर रक्कम (₹)"
-                data-en="Other Amount (₹)"
-              >
-                इतर रक्कम (₹)
-              </label>
+  <h3
+    data-mr="देणगीदाराची माहिती"
+    data-en="Donor Details"
+  >
+    देणगीदाराची माहिती
+  </h3>
+
+  <p
+    class="form-note"
+    data-mr="पावती आणि धन्यवाद पत्रासाठी कृपया योग्य माहिती भरा."
+    data-en="Please enter correct details for your receipt and thank-you letter."
+  >
+    पावती आणि धन्यवाद पत्रासाठी कृपया योग्य माहिती भरा.
+  </p>
 
 
-              <input
-                type="number"
-                id="donateCustomAmount"
-                min="1"
-                step="1"
-                inputmode="numeric"
-                placeholder="₹ रक्कम टाका"
-              >
+  <!-- Full Name -->
 
-            </div>
+  <div class="form-field">
+
+    <label
+      for="donorName"
+      data-mr="पूर्ण नाव *"
+      data-en="Full Name *"
+    >
+      पूर्ण नाव *
+    </label>
+
+    <input
+      type="text"
+      id="donorName"
+      name="donorName"
+      autocomplete="name"
+      required
+      placeholder="आपले पूर्ण नाव"
+    >
+
+    <div
+      class="form-error"
+      id="donorNameError"
+    ></div>
+
+  </div>
+
+
+  <!-- Mobile -->
+
+  <div class="form-field">
+
+    <label
+      for="donorPhone"
+      data-mr="मोबाईल नंबर *"
+      data-en="Mobile Number *"
+    >
+      मोबाईल नंबर *
+    </label>
+
+    <input
+      type="tel"
+      id="donorPhone"
+      name="donorPhone"
+      autocomplete="tel"
+      inputmode="numeric"
+      maxlength="10"
+      required
+      placeholder="10 अंकी मोबाईल नंबर"
+    >
+
+    <div
+      class="form-error"
+      id="donorPhoneError"
+    ></div>
+
+  </div>
+
+
+  <!-- Email -->
+
+  <div class="form-field">
+
+    <label
+      for="donorEmail"
+      data-mr="ई-मेल *"
+      data-en="Email *"
+    >
+      ई-मेल *
+    </label>
+
+    <input
+      type="email"
+      id="donorEmail"
+      name="donorEmail"
+      autocomplete="email"
+      required
+      placeholder="example@email.com"
+    >
+
+    <div
+      class="form-error"
+      id="donorEmailError"
+    ></div>
+
+  </div>
+
+
+  <!-- PAN -->
+
+  <div class="form-field">
+
+    <label
+      for="donorPan"
+      data-mr="PAN नंबर (ऐच्छिक)"
+      data-en="PAN Number (Optional)"
+    >
+      PAN नंबर (ऐच्छिक)
+    </label>
+
+    <input
+      type="text"
+      id="donorPan"
+      name="donorPan"
+      maxlength="10"
+      autocomplete="off"
+      placeholder="उदा. ABCDE1234F"
+      style="text-transform:uppercase;"
+    >
+
+  </div>
+
+
+  <!-- Address -->
+
+  <div class="form-field">
+
+    <label
+      for="donorAddress"
+      data-mr="पत्ता (ऐच्छिक)"
+      data-en="Address (Optional)"
+    >
+      पत्ता (ऐच्छिक)
+    </label>
+
+    <textarea
+      id="donorAddress"
+      name="donorAddress"
+      rows="3"
+      autocomplete="street-address"
+      placeholder="आपला पूर्ण पत्ता"
+    ></textarea>
+
+  </div>
+
+
+  <!-- Custom Amount -->
+
+  <div
+    class="form-field"
+    style="margin-top:18px;"
+  >
+
+    <label
+      for="donateCustomAmount"
+      data-mr="इतर रक्कम (₹)"
+      data-en="Other Amount (₹)"
+    >
+      इतर रक्कम (₹)
+    </label>
+
+    <input
+      type="number"
+      id="donateCustomAmount"
+      min="1"
+      step="1"
+      inputmode="numeric"
+      placeholder="₹ रक्कम टाका"
+    >
+
+  </div>
+
+
+  <!-- 80G -->
+
+  <div
+    class="form-field"
+    style="margin-top:16px;"
+  >
+
+    <label
+      style="display:flex; align-items:flex-start; gap:10px; cursor:pointer;"
+    >
+
+      <input
+        type="checkbox"
+        id="donor80G"
+        name="donor80G"
+        style="margin-top:5px;"
+      >
+
+      <span
+        data-mr="मला 80G कर सवलतीसाठी पावती हवी आहे."
+        data-en="I would like a receipt for 80G tax benefit."
+      >
+        मला 80G कर सवलतीसाठी पावती हवी आहे.
+      </span>
+
+    </label>
+
+  </div>
+
+</div>
 
 
             <!-- Selected Amount -->
