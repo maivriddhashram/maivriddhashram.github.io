@@ -1371,11 +1371,94 @@
           }
 
 
-          sessionStorage.setItem(
-            "donationAmount",
-            String(amount)
-          );
+          // ==================================================
+// SAVE DONOR DETAILS
+// ==================================================
 
+const donorName =
+  document.getElementById("donorName").value.trim();
+
+const donorPhone =
+  document.getElementById("donorPhone").value.trim();
+
+const donorEmail =
+  document.getElementById("donorEmail").value.trim();
+
+const donorPan =
+  document.getElementById("donorPan").value.trim().toUpperCase();
+
+const donorAddress =
+  document.getElementById("donorAddress").value.trim();
+
+const donor80G =
+  document.getElementById("donor80G").checked;
+
+
+// ==================================================
+// VALIDATION
+// ==================================================
+
+if (!donorName) {
+
+  alert("कृपया आपले पूर्ण नाव भरा.");
+
+  document
+    .getElementById("donorName")
+    .focus();
+
+  return;
+
+}
+
+
+if (!/^[0-9]{10}$/.test(donorPhone)) {
+
+  alert("कृपया योग्य 10 अंकी मोबाईल नंबर भरा.");
+
+  document
+    .getElementById("donorPhone")
+    .focus();
+
+  return;
+
+}
+
+
+if (!donorEmail) {
+
+  alert("कृपया आपला ई-मेल भरा.");
+
+  document
+    .getElementById("donorEmail")
+    .focus();
+
+  return;
+
+}
+
+
+// ==================================================
+// SAVE DONOR INFORMATION
+// ==================================================
+
+sessionStorage.setItem(
+  "donorDetails",
+  JSON.stringify({
+
+    name: donorName,
+
+    phone: donorPhone,
+
+    email: donorEmail,
+
+    pan: donorPan,
+
+    address: donorAddress,
+
+    request80G: donor80G
+
+  })
+);
 
           updateSelectedAmount(amount);
 
