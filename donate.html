@@ -81,6 +81,7 @@
     .donate-selected-amount {
       font-size: 24px;
       font-weight: 700;
+      margin-top: 5px;
     }
 
     .donate-qr {
@@ -108,16 +109,6 @@
       word-break: break-word;
     }
 
-    .donate-info-list {
-      margin: 18px 0 0;
-      padding-left: 20px;
-      line-height: 1.9;
-    }
-
-    .donate-info-list li {
-      margin-bottom: 5px;
-    }
-
     .donate-expansion {
       text-align: center;
     }
@@ -141,6 +132,43 @@
       border-radius: 10px;
       text-align: center;
       background: rgba(0,128,0,0.08);
+    }
+
+    .form-error {
+      color: #b42318;
+      font-size: 13px;
+      margin-top: 5px;
+      min-height: 18px;
+    }
+
+    .donor-details {
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+    }
+
+    .payment-status {
+      display: none;
+      margin-top: 15px;
+      padding: 14px;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .payment-status.error {
+      display: block;
+      background: rgba(180,35,24,0.08);
+      color: #b42318;
+    }
+
+    .payment-status.success {
+      display: block;
+      background: rgba(0,128,0,0.08);
+      color: #087443;
+    }
+
+    .donate-methods-hidden {
+      display: none;
     }
 
     @media (max-width: 600px) {
@@ -209,18 +237,21 @@
 
 
     <!-- ======================================================
-         DONATION AMOUNT
+         DONATION AMOUNT + DONOR DETAILS
     ======================================================= -->
 
     <section class="section">
 
       <div class="container">
 
-        <div class="grid grid-2" style="align-items:start; gap:36px;">
+        <div
+          class="grid grid-2"
+          style="align-items:start; gap:36px;"
+        >
 
 
           <!-- ==================================================
-               SELECT AMOUNT
+               DONATION FORM
           =================================================== -->
 
           <div class="card reveal">
@@ -249,231 +280,243 @@
 
 
             <!-- ==================================================
-     DONOR DETAILS
-=================================================== -->
+                 DONOR DETAILS
+            =================================================== -->
 
-<div
-  class="donor-details"
-  style="margin-top:24px;"
->
+            <div
+              class="donor-details"
+              style="margin-top:24px;"
+            >
 
-  <h3
-    data-mr="देणगीदाराची माहिती"
-    data-en="Donor Details"
-  >
-    देणगीदाराची माहिती
-  </h3>
-
-  <p
-    class="form-note"
-    data-mr="पावती आणि धन्यवाद पत्रासाठी कृपया योग्य माहिती भरा."
-    data-en="Please enter correct details for your receipt and thank-you letter."
-  >
-    पावती आणि धन्यवाद पत्रासाठी कृपया योग्य माहिती भरा.
-  </p>
+              <h3
+                data-mr="देणगीदाराची माहिती"
+                data-en="Donor Details"
+              >
+                देणगीदाराची माहिती
+              </h3>
 
 
-  <!-- Full Name -->
-
-  <div class="form-field">
-
-    <label
-      for="donorName"
-      data-mr="पूर्ण नाव *"
-      data-en="Full Name *"
-    >
-      पूर्ण नाव *
-    </label>
-
-    <input
-      type="text"
-      id="donorName"
-      name="donorName"
-      autocomplete="name"
-      required
-      placeholder="आपले पूर्ण नाव"
-    >
-
-    <div
-      class="form-error"
-      id="donorNameError"
-    ></div>
-
-  </div>
+              <p
+                class="form-note"
+                data-mr="पावती आणि धन्यवाद पत्रासाठी कृपया योग्य माहिती भरा."
+                data-en="Please enter correct details for your receipt and thank-you letter."
+              >
+                पावती आणि धन्यवाद पत्रासाठी कृपया योग्य माहिती भरा.
+              </p>
 
 
-  <!-- Mobile -->
+              <!-- Full Name -->
 
-  <div class="form-field">
+              <div class="form-field">
 
-    <label
-      for="donorPhone"
-      data-mr="मोबाईल नंबर *"
-      data-en="Mobile Number *"
-    >
-      मोबाईल नंबर *
-    </label>
+                <label
+                  for="donorName"
+                  data-mr="पूर्ण नाव *"
+                  data-en="Full Name *"
+                >
+                  पूर्ण नाव *
+                </label>
 
-    <input
-      type="tel"
-      id="donorPhone"
-      name="donorPhone"
-      autocomplete="tel"
-      inputmode="numeric"
-      maxlength="10"
-      required
-      placeholder="10 अंकी मोबाईल नंबर"
-    >
+                <input
+                  type="text"
+                  id="donorName"
+                  name="donorName"
+                  autocomplete="name"
+                  required
+                  maxlength="100"
+                  placeholder="आपले पूर्ण नाव"
+                >
 
-    <div
-      class="form-error"
-      id="donorPhoneError"
-    ></div>
+                <div
+                  class="form-error"
+                  id="donorNameError"
+                ></div>
 
-  </div>
-
-
-  <!-- Email -->
-
-  <div class="form-field">
-
-    <label
-      for="donorEmail"
-      data-mr="ई-मेल *"
-      data-en="Email *"
-    >
-      ई-मेल *
-    </label>
-
-    <input
-      type="email"
-      id="donorEmail"
-      name="donorEmail"
-      autocomplete="email"
-      required
-      placeholder="example@email.com"
-    >
-
-    <div
-      class="form-error"
-      id="donorEmailError"
-    ></div>
-
-  </div>
+              </div>
 
 
-  <!-- PAN -->
+              <!-- Mobile -->
 
-  <div class="form-field">
+              <div class="form-field">
 
-    <label
-      for="donorPan"
-      data-mr="PAN नंबर (ऐच्छिक)"
-      data-en="PAN Number (Optional)"
-    >
-      PAN नंबर (ऐच्छिक)
-    </label>
+                <label
+                  for="donorPhone"
+                  data-mr="मोबाईल नंबर *"
+                  data-en="Mobile Number *"
+                >
+                  मोबाईल नंबर *
+                </label>
 
-    <input
-      type="text"
-      id="donorPan"
-      name="donorPan"
-      maxlength="10"
-      autocomplete="off"
-      placeholder="उदा. ABCDE1234F"
-      style="text-transform:uppercase;"
-    >
+                <input
+                  type="tel"
+                  id="donorPhone"
+                  name="donorPhone"
+                  autocomplete="tel"
+                  inputmode="numeric"
+                  maxlength="10"
+                  required
+                  placeholder="10 अंकी मोबाईल नंबर"
+                >
 
-  </div>
+                <div
+                  class="form-error"
+                  id="donorPhoneError"
+                ></div>
 
-
-  <!-- Address -->
-
-  <div class="form-field">
-
-    <label
-      for="donorAddress"
-      data-mr="पत्ता (ऐच्छिक)"
-      data-en="Address (Optional)"
-    >
-      पत्ता (ऐच्छिक)
-    </label>
-
-    <textarea
-      id="donorAddress"
-      name="donorAddress"
-      rows="3"
-      autocomplete="street-address"
-      placeholder="आपला पूर्ण पत्ता"
-    ></textarea>
-
-  </div>
+              </div>
 
 
-  <!-- Custom Amount -->
+              <!-- Email -->
 
-  <div
-    class="form-field"
-    style="margin-top:18px;"
-  >
+              <div class="form-field">
 
-    <label
-      for="donateCustomAmount"
-      data-mr="इतर रक्कम (₹)"
-      data-en="Other Amount (₹)"
-    >
-      इतर रक्कम (₹)
-    </label>
+                <label
+                  for="donorEmail"
+                  data-mr="ई-मेल *"
+                  data-en="Email *"
+                >
+                  ई-मेल *
+                </label>
 
-    <input
-      type="number"
-      id="donateCustomAmount"
-      min="1"
-      step="1"
-      inputmode="numeric"
-      placeholder="₹ रक्कम टाका"
-    >
+                <input
+                  type="email"
+                  id="donorEmail"
+                  name="donorEmail"
+                  autocomplete="email"
+                  required
+                  maxlength="150"
+                  placeholder="example@email.com"
+                >
 
-  </div>
+                <div
+                  class="form-error"
+                  id="donorEmailError"
+                ></div>
+
+              </div>
 
 
-  <!-- 80G -->
+              <!-- PAN -->
 
-  <div
-    class="form-field"
-    style="margin-top:16px;"
-  >
+              <div class="form-field">
 
-    <label
-      style="display:flex; align-items:flex-start; gap:10px; cursor:pointer;"
-    >
+                <label
+                  for="donorPan"
+                  data-mr="PAN नंबर (ऐच्छिक)"
+                  data-en="PAN Number (Optional)"
+                >
+                  PAN नंबर (ऐच्छिक)
+                </label>
 
-      <input
-        type="checkbox"
-        id="donor80G"
-        name="donor80G"
-        style="margin-top:5px;"
-      >
+                <input
+                  type="text"
+                  id="donorPan"
+                  name="donorPan"
+                  maxlength="10"
+                  autocomplete="off"
+                  placeholder="उदा. ABCDE1234F"
+                  style="text-transform:uppercase;"
+                >
 
-      <span
-        data-mr="मला 80G कर सवलतीसाठी पावती हवी आहे."
-        data-en="I would like a receipt for 80G tax benefit."
-      >
-        मला 80G कर सवलतीसाठी पावती हवी आहे.
-      </span>
+                <div
+                  class="form-error"
+                  id="donorPanError"
+                ></div>
 
-    </label>
+              </div>
 
-  </div>
 
-</div>
+              <!-- Address -->
+
+              <div class="form-field">
+
+                <label
+                  for="donorAddress"
+                  data-mr="पत्ता (ऐच्छिक)"
+                  data-en="Address (Optional)"
+                >
+                  पत्ता (ऐच्छिक)
+                </label>
+
+                <textarea
+                  id="donorAddress"
+                  name="donorAddress"
+                  rows="3"
+                  maxlength="500"
+                  autocomplete="street-address"
+                  placeholder="आपला पूर्ण पत्ता"
+                ></textarea>
+
+              </div>
+
+
+              <!-- Custom Amount -->
+
+              <div
+                class="form-field"
+                style="margin-top:18px;"
+              >
+
+                <label
+                  for="donateCustomAmount"
+                  data-mr="इतर रक्कम (₹)"
+                  data-en="Other Amount (₹)"
+                >
+                  इतर रक्कम (₹)
+                </label>
+
+                <input
+                  type="number"
+                  id="donateCustomAmount"
+                  min="1"
+                  step="1"
+                  inputmode="numeric"
+                  placeholder="₹ रक्कम टाका"
+                >
+
+              </div>
+
+
+              <!-- 80G -->
+
+              <div
+                class="form-field"
+                style="margin-top:16px;"
+              >
+
+                <label
+                  style="
+                    display:flex;
+                    align-items:flex-start;
+                    gap:10px;
+                    cursor:pointer;
+                  "
+                >
+
+                  <input
+                    type="checkbox"
+                    id="donor80G"
+                    name="donor80G"
+                    style="margin-top:5px;"
+                  >
+
+                  <span
+                    data-mr="मला 80G कर सवलतीसाठी पावती हवी आहे."
+                    data-en="I would like a receipt for 80G tax benefit."
+                  >
+                    मला 80G कर सवलतीसाठी पावती हवी आहे.
+                  </span>
+
+                </label>
+
+              </div>
+
+            </div>
 
 
             <!-- Selected Amount -->
 
-            <div
-              class="donate-selected-box"
-            >
+            <div class="donate-selected-box">
 
               <div
                 data-mr="निवडलेली देणगी"
@@ -501,7 +544,7 @@
               class="btn btn-primary"
               style="width:100%; margin-top:16px;"
               data-mr="❤️ देणगी देण्यासाठी पुढे जा"
-              data-en="❤️ Continue to Donate"
+              data-en="❤️ देणगी देण्यासाठी पुढे जा"
             >
               ❤️ देणगी देण्यासाठी पुढे जा
             </button>
@@ -512,12 +555,18 @@
               class="donate-success"
             >
               <span
-                data-mr="रक्कम निवडली आहे. खाली UPI किंवा Bank Transfer द्वारे देणगी देता येईल."
-                data-en="Amount selected. You can donate below using UPI or Bank Transfer."
+                data-mr="तुमची माहिती जतन झाली आहे. खालील पर्यायातून देणगी पूर्ण करा."
+                data-en="Your information has been saved. Complete your donation using an option below."
               >
-                रक्कम निवडली आहे. खाली UPI किंवा Bank Transfer द्वारे देणगी देता येईल.
+                तुमची माहिती जतन झाली आहे. खालील पर्यायातून देणगी पूर्ण करा.
               </span>
             </div>
+
+
+            <div
+              id="paymentStatus"
+              class="payment-status"
+            ></div>
 
 
             <p
@@ -535,12 +584,15 @@
 
 
           <!-- ==================================================
-               UPI DONATION
+               DONATION METHODS
           =================================================== -->
 
-          <div
-            id="donationMethods"
-          >
+          <div id="donationMethods">
+
+
+            <!-- ==================================================
+                 UPI
+            =================================================== -->
 
             <div
               class="card reveal donate-upi-box"
@@ -762,9 +814,7 @@
 
           <div class="card reveal">
 
-            <div class="icon-badge">
-              🍚
-            </div>
+            <div class="icon-badge">🍚</div>
 
             <h3
               data-mr="अन्न व किराणा"
@@ -786,9 +836,7 @@
 
           <div class="card reveal">
 
-            <div class="icon-badge">
-              🏥
-            </div>
+            <div class="icon-badge">🏥</div>
 
             <h3
               data-mr="आरोग्यसेवा"
@@ -810,9 +858,7 @@
 
           <div class="card reveal">
 
-            <div class="icon-badge">
-              🛏️
-            </div>
+            <div class="icon-badge">🛏️</div>
 
             <h3
               data-mr="बेड व बेडिंग"
@@ -834,9 +880,7 @@
 
           <div class="card reveal">
 
-            <div class="icon-badge">
-              🍳
-            </div>
+            <div class="icon-badge">🍳</div>
 
             <h3
               data-mr="स्वयंपाकघर उपकरणे"
@@ -858,9 +902,7 @@
 
           <div class="card reveal">
 
-            <div class="icon-badge">
-              ⚡
-            </div>
+            <div class="icon-badge">⚡</div>
 
             <h3
               data-mr="वीज व सुविधा"
@@ -882,9 +924,7 @@
 
           <div class="card reveal">
 
-            <div class="icon-badge">
-              ☀️
-            </div>
+            <div class="icon-badge">☀️</div>
 
             <h3
               data-mr="सौर ऊर्जा"
@@ -906,9 +946,7 @@
 
           <div class="card reveal">
 
-            <div class="icon-badge">
-              🧴
-            </div>
+            <div class="icon-badge">🧴</div>
 
             <h3
               data-mr="दैनंदिन गरजेच्या वस्तू"
@@ -930,9 +968,7 @@
 
           <div class="card reveal">
 
-            <div class="icon-badge">
-              🏠
-            </div>
+            <div class="icon-badge">🏠</div>
 
             <h3
               data-mr="देखभाल व दुरुस्ती"
@@ -1070,6 +1106,8 @@
         <div class="grid grid-2">
 
 
+          <!-- ORGANIZATION -->
+
           <div class="card reveal">
 
             <h3
@@ -1120,6 +1158,8 @@
           </div>
 
 
+
+          <!-- RECEIPT -->
 
           <div class="card reveal">
 
@@ -1179,447 +1219,1043 @@
 
   <!-- ========================================================
        DONATION PAGE SCRIPT
-       Independent from main.js
   ======================================================== -->
 
   <script>
 
-    document.addEventListener("DOMContentLoaded", function(){
+    document.addEventListener(
+      "DOMContentLoaded",
+      function(){
 
-      if(typeof SITE_CONFIG === "undefined"){
+        /* ====================================================
+           CHECK CONFIG
+        ==================================================== */
 
-        console.error(
-          "SITE_CONFIG is not loaded."
-        );
+        if(typeof SITE_CONFIG === "undefined"){
 
-        return;
+          console.error(
+            "SITE_CONFIG is not loaded."
+          );
 
-      }
-
-
-      const amountGrid =
-        document.getElementById("donateAmountGrid");
-
-      const customAmount =
-        document.getElementById("donateCustomAmount");
-
-      const selectedAmount =
-        document.getElementById("donateSelectedAmount");
-
-      const continueBtn =
-        document.getElementById("donateContinueBtn");
-
-      const donationMethods =
-        document.getElementById("donationMethods");
-
-      const successBox =
-        document.getElementById("donateSuccess");
-
-
-      const donationAmounts =
-        Array.isArray(SITE_CONFIG.donationAmounts)
-          ? SITE_CONFIG.donationAmounts
-          : [500, 1000, 2500, 5000];
-
-
-      let currentAmount =
-        Number(donationAmounts[0]) || 500;
-
-
-      function formatRupees(amount){
-
-        return "₹" +
-          Number(amount).toLocaleString("en-IN");
-
-      }
-
-
-      function updateSelectedAmount(amount){
-
-        currentAmount =
-          Number(amount);
-
-        selectedAmount.textContent =
-          formatRupees(currentAmount);
-
-      }
-
-
-      amountGrid.innerHTML = "";
-
-
-      donationAmounts.forEach(function(amount, index){
-
-        const value =
-          Number(amount);
-
-        if(!value || value <= 0) return;
-
-
-        const button =
-          document.createElement("button");
-
-
-        button.type = "button";
-
-        button.className =
-          "donate-amount-btn" +
-          (index === 0 ? " active" : "");
-
-
-        button.dataset.amount =
-          String(value);
-
-
-        button.textContent =
-          formatRupees(value);
-
-
-        button.addEventListener(
-          "click",
-          function(){
-
-            document
-              .querySelectorAll(".donate-amount-btn")
-              .forEach(function(btn){
-
-                btn.classList.remove("active");
-
-              });
-
-
-            this.classList.add("active");
-
-
-            customAmount.value = "";
-
-
-            updateSelectedAmount(value);
-
-          }
-        );
-
-
-        amountGrid.appendChild(button);
-
-      });
-
-
-      updateSelectedAmount(currentAmount);
-
-
-
-      customAmount.addEventListener(
-        "input",
-        function(){
-
-          const value =
-            Number(this.value);
-
-
-          if(value > 0){
-
-            document
-              .querySelectorAll(".donate-amount-btn")
-              .forEach(function(btn){
-
-                btn.classList.remove("active");
-
-              });
-
-
-            updateSelectedAmount(value);
-
-          }
+          return;
 
         }
-      );
 
 
+        /* ====================================================
+           ELEMENTS
+        ==================================================== */
 
-      continueBtn.addEventListener(
-        "click",
-        function(){
+        const amountGrid =
+          document.getElementById(
+            "donateAmountGrid"
+          );
 
-          let amount =
-            Number(customAmount.value);
+        const customAmount =
+          document.getElementById(
+            "donateCustomAmount"
+          );
+
+        const selectedAmount =
+          document.getElementById(
+            "donateSelectedAmount"
+          );
+
+        const continueBtn =
+          document.getElementById(
+            "donateContinueBtn"
+          );
+
+        const donationMethods =
+          document.getElementById(
+            "donationMethods"
+          );
+
+        const successBox =
+          document.getElementById(
+            "donateSuccess"
+          );
+
+        const paymentStatus =
+          document.getElementById(
+            "paymentStatus"
+          );
 
 
-          if(!amount || amount <= 0){
+        /* ====================================================
+           DONATION AMOUNTS
+        ==================================================== */
 
-            amount =
-              currentAmount;
-
-          }
-
-
-          if(!amount || amount <= 0){
-
-            const language =
-              document.documentElement
-                .getAttribute("data-lang");
+        const donationAmounts =
+          Array.isArray(
+            SITE_CONFIG.donationAmounts
+          )
+            ? SITE_CONFIG.donationAmounts
+            : [500, 1000, 2500, 5000];
 
 
-            alert(
-              language === "mr"
-                ? "कृपया देणगीची रक्कम निवडा."
-                : "Please select a donation amount."
+        let currentAmount =
+          Number(
+            donationAmounts[0]
+          ) || 500;
+
+
+        /* ====================================================
+           FORMAT RUPEES
+        ==================================================== */
+
+        function formatRupees(amount){
+
+          return "₹" +
+            Number(amount).toLocaleString(
+              "en-IN"
             );
 
-            return;
+        }
+
+
+        /* ====================================================
+           UPDATE SELECTED AMOUNT
+        ==================================================== */
+
+        function updateSelectedAmount(
+          amount
+        ){
+
+          currentAmount =
+            Number(amount);
+
+          selectedAmount.textContent =
+            formatRupees(
+              currentAmount
+            );
+
+        }
+
+
+        /* ====================================================
+           CLEAR ERRORS
+        ==================================================== */
+
+        function clearErrors(){
+
+          const errors =
+            document.querySelectorAll(
+              ".form-error"
+            );
+
+          errors.forEach(
+            function(error){
+
+              error.textContent = "";
+
+            }
+          );
+
+          paymentStatus.className =
+            "payment-status";
+
+          paymentStatus.textContent =
+            "";
+
+        }
+
+
+        /* ====================================================
+           SHOW ERROR
+        ==================================================== */
+
+        function showFieldError(
+          elementId,
+          message
+        ){
+
+          const element =
+            document.getElementById(
+              elementId
+            );
+
+          if(element){
+
+            element.textContent =
+              message;
 
           }
 
-
-          // ==================================================
-// SAVE DONOR DETAILS
-// ==================================================
-
-const donorName =
-  document.getElementById("donorName").value.trim();
-
-const donorPhone =
-  document.getElementById("donorPhone").value.trim();
-
-const donorEmail =
-  document.getElementById("donorEmail").value.trim();
-
-const donorPan =
-  document.getElementById("donorPan").value.trim().toUpperCase();
-
-const donorAddress =
-  document.getElementById("donorAddress").value.trim();
-
-const donor80G =
-  document.getElementById("donor80G").checked;
-
-
-// ==================================================
-// VALIDATION
-// ==================================================
-
-if (!donorName) {
-
-  alert("कृपया आपले पूर्ण नाव भरा.");
-
-  document
-    .getElementById("donorName")
-    .focus();
-
-  return;
-
-}
-
-
-if (!/^[0-9]{10}$/.test(donorPhone)) {
-
-  alert("कृपया योग्य 10 अंकी मोबाईल नंबर भरा.");
-
-  document
-    .getElementById("donorPhone")
-    .focus();
-
-  return;
-
-}
-
-
-if (!donorEmail) {
-
-  alert("कृपया आपला ई-मेल भरा.");
-
-  document
-    .getElementById("donorEmail")
-    .focus();
-
-  return;
-
-}
-
-
-// ==================================================
-// SAVE DONOR INFORMATION
-// ==================================================
-
-sessionStorage.setItem(
-  "donorDetails",
-  JSON.stringify({
-
-    name: donorName,
-
-    phone: donorPhone,
-
-    email: donorEmail,
-
-    pan: donorPan,
-
-    address: donorAddress,
-
-    request80G: donor80G
-
-  })
-);
-
-          updateSelectedAmount(amount);
-
-
-          successBox.style.display =
-            "block";
-
-
-          donationMethods.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-          });
-
         }
-      );
 
 
+        /* ====================================================
+           CREATE AMOUNT BUTTONS
+        ==================================================== */
 
-      const upiId =
-        document.getElementById("donateUpiId");
-
-
-      if(upiId){
-
-        upiId.textContent =
-          SITE_CONFIG.upiId || "";
-
-      }
+        amountGrid.innerHTML = "";
 
 
-      const qr =
-        document.getElementById("donateQrCode");
+        donationAmounts.forEach(
+          function(amount, index){
 
+            const value =
+              Number(amount);
 
-      if(
-        qr &&
-        SITE_CONFIG.qrCodeImage
-      ){
-
-        qr.src =
-          SITE_CONFIG.qrCodeImage;
-
-      }
-
-
-
-      const copyUpiBtn =
-        document.getElementById("copyUpiBtn");
-
-      const copyMessage =
-        document.getElementById("upiCopyMessage");
-
-
-      if(copyUpiBtn){
-
-        copyUpiBtn.addEventListener(
-          "click",
-          async function(){
-
-            const upi =
-              SITE_CONFIG.upiId || "";
-
-
-            if(!upi){
+            if(
+              !value ||
+              value <= 0
+            ){
 
               return;
 
             }
 
 
-            try{
-
-              await navigator.clipboard.writeText(
-                upi
+            const button =
+              document.createElement(
+                "button"
               );
 
 
-              copyMessage.textContent =
-                "✓ UPI ID कॉपी झाला.";
+            button.type = "button";
 
 
-            }catch(error){
+            button.className =
+              "donate-amount-btn" +
+              (
+                index === 0
+                  ? " active"
+                  : ""
+              );
 
-              copyMessage.textContent =
-                "UPI ID: " + upi;
+
+            button.dataset.amount =
+              String(value);
+
+
+            button.textContent =
+              formatRupees(
+                value
+              );
+
+
+            button.addEventListener(
+              "click",
+              function(){
+
+                document
+                  .querySelectorAll(
+                    ".donate-amount-btn"
+                  )
+                  .forEach(
+                    function(btn){
+
+                      btn.classList.remove(
+                        "active"
+                      );
+
+                    }
+                  );
+
+
+                this.classList.add(
+                  "active"
+                );
+
+
+                customAmount.value =
+                  "";
+
+
+                updateSelectedAmount(
+                  value
+                );
+
+              }
+            );
+
+
+            amountGrid.appendChild(
+              button
+            );
+
+          }
+        );
+
+
+        updateSelectedAmount(
+          currentAmount
+        );
+
+
+
+        /* ====================================================
+           CUSTOM AMOUNT
+        ==================================================== */
+
+        customAmount.addEventListener(
+          "input",
+          function(){
+
+            const value =
+              Number(
+                this.value
+              );
+
+
+            if(value > 0){
+
+              document
+                .querySelectorAll(
+                  ".donate-amount-btn"
+                )
+                .forEach(
+                  function(btn){
+
+                    btn.classList.remove(
+                      "active"
+                    );
+
+                  }
+                );
+
+
+              updateSelectedAmount(
+                value
+              );
 
             }
 
           }
         );
 
-      }
 
 
+        /* ====================================================
+           PHONE INPUT
+        ==================================================== */
 
-      if(SITE_CONFIG.bank){
-
-        document.getElementById(
-          "donateAccountName"
-        ).textContent =
-          SITE_CONFIG.bank.accountName || "";
-
-
-        document.getElementById(
-          "donateBankName"
-        ).textContent =
-          SITE_CONFIG.bank.bankName || "";
+        const donorPhone =
+          document.getElementById(
+            "donorPhone"
+          );
 
 
-        document.getElementById(
-          "donateBankBranch"
-        ).textContent =
-          SITE_CONFIG.bank.branch || "";
+        donorPhone.addEventListener(
+          "input",
+          function(){
 
+            this.value =
+              this.value
+                .replace(
+                  /[^0-9]/g,
+                  ""
+                )
+                .slice(
+                  0,
+                  10
+                );
 
-        document.getElementById(
-          "donateAccountNumber"
-        ).textContent =
-          SITE_CONFIG.bank.accountNumber || "";
-
-
-        document.getElementById(
-          "donateIfsc"
-        ).textContent =
-          SITE_CONFIG.bank.ifsc || "";
-
-      }
-
-
-
-      const registrationPNo =
-        document.getElementById(
-          "donateRegistrationPNo"
+          }
         );
 
 
-      if(registrationPNo){
 
-        registrationPNo.textContent =
-          SITE_CONFIG.registrationPNumber ||
-          SITE_CONFIG.registrationNumber ||
-          "";
+        /* ====================================================
+           PAN INPUT
+        ==================================================== */
 
-      }
+        const donorPan =
+          document.getElementById(
+            "donorPan"
+          );
 
 
-      const ngoDarpan =
-        document.getElementById(
-          "donateNgoDarpan"
+        donorPan.addEventListener(
+          "input",
+          function(){
+
+            this.value =
+              this.value
+                .toUpperCase()
+                .replace(
+                  /[^A-Z0-9]/g,
+                  ""
+                )
+                .slice(
+                  0,
+                  10
+                );
+
+          }
         );
 
 
-      if(ngoDarpan){
 
-        ngoDarpan.textContent =
-          SITE_CONFIG.ngoDarpanNumber || "";
+        /* ====================================================
+           VALIDATE DONOR DETAILS
+        ==================================================== */
+
+        function validateDonorDetails(){
+
+          clearErrors();
+
+
+          const donorName =
+            document
+              .getElementById(
+                "donorName"
+              )
+              .value
+              .trim();
+
+
+          const phone =
+            donorPhone.value.trim();
+
+
+          const email =
+            document
+              .getElementById(
+                "donorEmail"
+              )
+              .value
+              .trim();
+
+
+          const pan =
+            donorPan.value
+              .trim()
+              .toUpperCase();
+
+
+          let valid = true;
+
+
+          /* NAME */
+
+          if(!donorName){
+
+            showFieldError(
+              "donorNameError",
+              "कृपया आपले पूर्ण नाव भरा."
+            );
+
+            document
+              .getElementById(
+                "donorName"
+              )
+              .focus();
+
+            valid = false;
+
+          }
+
+
+          /* PHONE */
+
+          if(
+            !/^[0-9]{10}$/.test(
+              phone
+            )
+          ){
+
+            showFieldError(
+              "donorPhoneError",
+              "कृपया योग्य 10 अंकी मोबाईल नंबर भरा."
+            );
+
+            if(valid){
+
+              donorPhone.focus();
+
+            }
+
+            valid = false;
+
+          }
+
+
+          /* EMAIL */
+
+          const emailPattern =
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+          if(
+            !emailPattern.test(
+              email
+            )
+          ){
+
+            showFieldError(
+              "donorEmailError",
+              "कृपया योग्य ई-मेल पत्ता भरा."
+            );
+
+            if(valid){
+
+              document
+                .getElementById(
+                  "donorEmail"
+                )
+                .focus();
+
+            }
+
+            valid = false;
+
+          }
+
+
+          /* PAN */
+
+          if(
+            pan &&
+            !/^[A-Z]{5}[0-9]{4}[A-Z]$/.test(
+              pan
+            )
+          ){
+
+            showFieldError(
+              "donorPanError",
+              "कृपया योग्य PAN नंबर भरा."
+            );
+
+            if(valid){
+
+              donorPan.focus();
+
+            }
+
+            valid = false;
+
+          }
+
+
+          return valid;
+
+        }
+
+
+
+        /* ====================================================
+           CONTINUE BUTTON
+        ==================================================== */
+
+        continueBtn.addEventListener(
+          "click",
+          function(){
+
+            clearErrors();
+
+
+            let amount =
+              Number(
+                customAmount.value
+              );
+
+
+            if(
+              !amount ||
+              amount <= 0
+            ){
+
+              amount =
+                currentAmount;
+
+            }
+
+
+            /* AMOUNT VALIDATION */
+
+            if(
+              !amount ||
+              amount <= 0
+            ){
+
+              alert(
+                "कृपया देणगीची रक्कम निवडा."
+              );
+
+              return;
+
+            }
+
+
+            /* MINIMUM AMOUNT */
+
+            if(
+              amount < 1
+            ){
+
+              alert(
+                "कृपया ₹1 किंवा त्यापेक्षा जास्त रक्कम निवडा."
+              );
+
+              return;
+
+            }
+
+
+            /* DONOR VALIDATION */
+
+            if(
+              !validateDonorDetails()
+            ){
+
+              return;
+
+            }
+
+
+            /* =================================================
+               COLLECT DONOR DETAILS
+            ================================================= */
+
+            const donorData = {
+
+              name:
+                document
+                  .getElementById(
+                    "donorName"
+                  )
+                  .value
+                  .trim(),
+
+              phone:
+                donorPhone
+                  .value
+                  .trim(),
+
+              email:
+                document
+                  .getElementById(
+                    "donorEmail"
+                  )
+                  .value
+                  .trim(),
+
+              pan:
+                donorPan
+                  .value
+                  .trim()
+                  .toUpperCase(),
+
+              address:
+                document
+                  .getElementById(
+                    "donorAddress"
+                  )
+                  .value
+                  .trim(),
+
+              request80G:
+                document
+                  .getElementById(
+                    "donor80G"
+                  )
+                  .checked
+
+            };
+
+
+            /* =================================================
+               SAVE AMOUNT
+            ================================================= */
+
+            sessionStorage.setItem(
+              "donationAmount",
+              String(amount)
+            );
+
+
+            /* =================================================
+               SAVE DONOR DETAILS
+            ================================================= */
+
+            sessionStorage.setItem(
+              "donorDetails",
+              JSON.stringify(
+                donorData
+              )
+            );
+
+
+            /* =================================================
+               UPDATE UI
+            ================================================= */
+
+            updateSelectedAmount(
+              amount
+            );
+
+
+            successBox.style.display =
+              "block";
+
+
+            paymentStatus.className =
+              "payment-status";
+
+
+            paymentStatus.textContent =
+              "";
+
+
+            /* =================================================
+               SCROLL TO PAYMENT METHODS
+            ================================================= */
+
+            donationMethods.scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+
+          }
+        );
+
+
+
+        /* ====================================================
+           UPI
+        ==================================================== */
+
+        const upiId =
+          document.getElementById(
+            "donateUpiId"
+          );
+
+
+        if(upiId){
+
+          upiId.textContent =
+            SITE_CONFIG.upiId || "";
+
+        }
+
+
+
+        /* ====================================================
+           QR CODE
+        ==================================================== */
+
+        const qr =
+          document.getElementById(
+            "donateQrCode"
+          );
+
+
+        if(
+          qr &&
+          SITE_CONFIG.qrCodeImage
+        ){
+
+          qr.src =
+            SITE_CONFIG.qrCodeImage;
+
+        }
+
+
+
+        /* ====================================================
+           COPY UPI
+        ==================================================== */
+
+        const copyUpiBtn =
+          document.getElementById(
+            "copyUpiBtn"
+          );
+
+
+        const copyMessage =
+          document.getElementById(
+            "upiCopyMessage"
+          );
+
+
+        if(copyUpiBtn){
+
+          copyUpiBtn.addEventListener(
+            "click",
+            async function(){
+
+              const upi =
+                SITE_CONFIG.upiId || "";
+
+
+              if(!upi){
+
+                return;
+
+              }
+
+
+              try{
+
+                await navigator
+                  .clipboard
+                  .writeText(
+                    upi
+                  );
+
+
+                copyMessage.textContent =
+                  "✓ UPI ID कॉपी झाला.";
+
+
+              }catch(error){
+
+                copyMessage.textContent =
+                  "UPI ID: " + upi;
+
+              }
+
+            }
+          );
+
+        }
+
+
+
+        /* ====================================================
+           BANK DETAILS
+        ==================================================== */
+
+        if(
+          SITE_CONFIG.bank
+        ){
+
+          const accountName =
+            document.getElementById(
+              "donateAccountName"
+            );
+
+
+          const bankName =
+            document.getElementById(
+              "donateBankName"
+            );
+
+
+          const branch =
+            document.getElementById(
+              "donateBankBranch"
+            );
+
+
+          const accountNumber =
+            document.getElementById(
+              "donateAccountNumber"
+            );
+
+
+          const ifsc =
+            document.getElementById(
+              "donateIfsc"
+            );
+
+
+          if(accountName){
+
+            accountName.textContent =
+              SITE_CONFIG.bank.accountName || "";
+
+          }
+
+
+          if(bankName){
+
+            bankName.textContent =
+              SITE_CONFIG.bank.bankName || "";
+
+          }
+
+
+          if(branch){
+
+            branch.textContent =
+              SITE_CONFIG.bank.branch || "";
+
+          }
+
+
+          if(accountNumber){
+
+            accountNumber.textContent =
+              SITE_CONFIG.bank.accountNumber || "";
+
+          }
+
+
+          if(ifsc){
+
+            ifsc.textContent =
+              SITE_CONFIG.bank.ifsc || "";
+
+          }
+
+        }
+
+
+
+        /* ====================================================
+           REGISTRATION NUMBER
+        ==================================================== */
+
+        const registrationPNo =
+          document.getElementById(
+            "donateRegistrationPNo"
+          );
+
+
+        if(registrationPNo){
+
+          registrationPNo.textContent =
+            SITE_CONFIG.registrationPNumber ||
+            SITE_CONFIG.registrationNumber ||
+            "F-23015";
+
+        }
+
+
+
+        /* ====================================================
+           NGO DARPAN
+        ==================================================== */
+
+        const ngoDarpan =
+          document.getElementById(
+            "donateNgoDarpan"
+          );
+
+
+        if(ngoDarpan){
+
+          ngoDarpan.textContent =
+            SITE_CONFIG.ngoDarpanNumber || "";
+
+        }
+
+
+
+        /* ====================================================
+           RESTORE SESSION DATA
+        ==================================================== */
+
+        try{
+
+          const savedDonor =
+            sessionStorage.getItem(
+              "donorDetails"
+            );
+
+
+          if(savedDonor){
+
+            const data =
+              JSON.parse(
+                savedDonor
+              );
+
+
+            if(data.name){
+
+              document
+                .getElementById(
+                  "donorName"
+                )
+                .value =
+                data.name;
+
+            }
+
+
+            if(data.phone){
+
+              donorPhone.value =
+                data.phone;
+
+            }
+
+
+            if(data.email){
+
+              document
+                .getElementById(
+                  "donorEmail"
+                )
+                .value =
+                data.email;
+
+            }
+
+
+            if(data.pan){
+
+              donorPan.value =
+                data.pan;
+
+            }
+
+
+            if(data.address){
+
+              document
+                .getElementById(
+                  "donorAddress"
+                )
+                .value =
+                data.address;
+
+            }
+
+
+            if(
+              typeof data.request80G ===
+              "boolean"
+            ){
+
+              document
+                .getElementById(
+                  "donor80G"
+                )
+                .checked =
+                data.request80G;
+
+            }
+
+          }
+
+
+          const savedAmount =
+            Number(
+              sessionStorage.getItem(
+                "donationAmount"
+              )
+            );
+
+
+          if(
+            savedAmount &&
+            savedAmount > 0
+          ){
+
+            updateSelectedAmount(
+              savedAmount
+            );
+
+          }
+
+        }catch(error){
+
+          console.warn(
+            "Saved donation data could not be restored.",
+            error
+          );
+
+        }
 
       }
 
-
-    });
+    );
 
   </script>
 
