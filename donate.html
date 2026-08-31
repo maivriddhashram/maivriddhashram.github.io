@@ -1,20 +1,17 @@
+```html
 <!DOCTYPE html>
 <html lang="mr" data-lang="mr">
 
 <head>
-
   <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>देणगी द्या | Donate — Mai Vriddhashram</title>
 
   <meta
     name="description"
-    content="माई वृद्धाश्रमला देणगी द्या. UPI, QR Code किंवा Bank Transfer द्वारे वृद्ध मातांच्या अन्न, आरोग्य, निवास आणि दैनंदिन गरजांसाठी सहकार्य करा."
+    content="माई वृद्धाश्रमला देणगी द्या. सुरक्षितपणे ऑनलाइन देणगी करा."
   >
 
   <link
@@ -29,161 +26,159 @@
     rel="stylesheet"
   >
 
-  <link
-    rel="stylesheet"
-    href="css/style.css"
-  >
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Razorpay Checkout -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
   <style>
 
-    /* ========================================================
-       DONATE PAGE
-    ======================================================== */
-
     .donate-amount-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 18px;
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+      margin-top:18px;
     }
 
     .donate-amount-btn {
-      border: 1px solid var(--line);
-      background: #fff;
-      color: inherit;
-      padding: 14px 10px;
-      border-radius: 12px;
-      font-size: 18px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: 0.2s ease;
+      border:1px solid var(--line);
+      background:#fff;
+      color:inherit;
+      padding:14px 10px;
+      border-radius:12px;
+      font-size:18px;
+      font-weight:700;
+      cursor:pointer;
+      transition:.2s ease;
     }
 
     .donate-amount-btn:hover {
-      transform: translateY(-2px);
+      transform:translateY(-2px);
     }
 
     .donate-amount-btn.active {
-      border-color: currentColor;
-      box-shadow: 0 0 0 2px rgba(0,0,0,0.06);
-      transform: translateY(-1px);
+      border-color:currentColor;
+      box-shadow:0 0 0 2px rgba(0,0,0,.06);
     }
 
     .donate-selected-box {
-      margin-top: 18px;
-      padding: 14px 16px;
-      border-radius: 12px;
-      background: rgba(0,0,0,0.035);
-      text-align: center;
-      font-weight: 600;
+      margin-top:18px;
+      padding:14px 16px;
+      border-radius:12px;
+      background:rgba(0,0,0,.035);
+      text-align:center;
+      font-weight:600;
     }
 
     .donate-selected-amount {
-      font-size: 24px;
-      font-weight: 700;
-      margin-top: 5px;
+      font-size:24px;
+      font-weight:700;
+      margin-top:5px;
     }
 
     .donate-qr {
-      width: 240px;
-      max-width: 100%;
-      display: block;
-      margin: 20px auto;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      padding: 6px;
-      background: #fff;
+      width:240px;
+      max-width:100%;
+      display:block;
+      margin:20px auto;
+      border-radius:14px;
+      border:1px solid var(--line);
+      padding:6px;
+      background:#fff;
     }
 
     .donate-upi-box {
-      text-align: center;
+      text-align:center;
     }
 
     .donate-copy-btn {
-      margin-top: 8px;
+      margin-top:8px;
     }
 
     .donate-bank-details p {
-      margin: 9px 0;
-      line-height: 1.7;
-      word-break: break-word;
+      margin:9px 0;
+      line-height:1.7;
+      word-break:break-word;
     }
 
     .donate-expansion {
-      text-align: center;
+      text-align:center;
     }
 
     .donate-expansion p {
-      max-width: 850px;
-      margin: 15px auto;
-      line-height: 1.9;
+      max-width:850px;
+      margin:15px auto;
+      line-height:1.9;
     }
 
     .donate-note {
-      font-size: 14px;
-      line-height: 1.7;
-      opacity: 0.85;
+      font-size:14px;
+      line-height:1.7;
+      opacity:.85;
     }
 
     .donate-success {
-      display: none;
-      margin-top: 14px;
-      padding: 12px 14px;
-      border-radius: 10px;
-      text-align: center;
-      background: rgba(0,128,0,0.08);
+      display:none;
+      margin-top:14px;
+      padding:12px 14px;
+      border-radius:10px;
+      text-align:center;
+      background:rgba(0,128,0,.08);
     }
 
     .form-error {
-      color: #b42318;
-      font-size: 13px;
-      margin-top: 5px;
-      min-height: 18px;
+      color:#b42318;
+      font-size:13px;
+      margin-top:5px;
+      min-height:18px;
     }
 
     .donor-details {
-      border-top: 1px solid var(--line);
-      padding-top: 20px;
+      border-top:1px solid var(--line);
+      padding-top:20px;
     }
 
     .payment-status {
-      display: none;
-      margin-top: 15px;
-      padding: 14px;
-      border-radius: 12px;
-      text-align: center;
-      font-weight: 600;
+      display:none;
+      margin-top:15px;
+      padding:14px;
+      border-radius:12px;
+      text-align:center;
+      font-weight:600;
     }
 
     .payment-status.error {
-      display: block;
-      background: rgba(180,35,24,0.08);
-      color: #b42318;
+      display:block;
+      background:rgba(180,35,24,.08);
+      color:#b42318;
     }
 
     .payment-status.success {
-      display: block;
-      background: rgba(0,128,0,0.08);
-      color: #087443;
+      display:block;
+      background:rgba(0,128,0,.08);
+      color:#087443;
     }
 
-    .donate-methods-hidden {
-      display: none;
+    .payment-loading {
+      display:none;
+      margin-top:12px;
+      text-align:center;
+      font-size:14px;
     }
 
-    @media (max-width: 600px) {
+    @media(max-width:600px) {
 
       .donate-amount-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:repeat(2,1fr);
       }
 
       .donate-amount-btn {
-        font-size: 16px;
-        padding: 13px 8px;
+        font-size:16px;
+        padding:13px 8px;
       }
 
       .donate-qr {
-        width: 210px;
+        width:210px;
       }
 
     }
@@ -195,19 +190,13 @@
 
 <body>
 
-  <!-- ========================================================
-       HEADER
-  ======================================================== -->
-
   <div id="site-header"></div>
 
 
   <main id="main">
 
 
-    <!-- ======================================================
-         HERO
-    ======================================================= -->
+    <!-- HERO -->
 
     <section class="page-hero">
 
@@ -220,7 +209,6 @@
         >
           मुख्यपृष्ठ / देणगी द्या
         </p>
-
 
         <h1
           data-mr="आपली छोटी मदत, एका आईसाठी मोठा आधार."
@@ -235,10 +223,7 @@
     </section>
 
 
-
-    <!-- ======================================================
-         DONATION AMOUNT + DONOR DETAILS
-    ======================================================= -->
+    <!-- DONATION -->
 
     <section class="section">
 
@@ -246,13 +231,11 @@
 
         <div
           class="grid grid-2"
-          style="align-items:start; gap:36px;"
+          style="align-items:start;gap:36px;"
         >
 
 
-          <!-- ==================================================
-               DONATION FORM
-          =================================================== -->
+          <!-- FORM -->
 
           <div class="card reveal">
 
@@ -262,7 +245,6 @@
             >
               देणगीची रक्कम निवडा
             </h2>
-
 
             <p
               class="form-note"
@@ -279,9 +261,7 @@
             ></div>
 
 
-            <!-- ==================================================
-                 DONOR DETAILS
-            =================================================== -->
+            <!-- DONOR DETAILS -->
 
             <div
               class="donor-details"
@@ -295,35 +275,29 @@
                 देणगीदाराची माहिती
               </h3>
 
-
               <p
                 class="form-note"
-                data-mr="पावती आणि धन्यवाद पत्रासाठी कृपया योग्य माहिती भरा."
-                data-en="Please enter correct details for your receipt and thank-you letter."
+                data-mr="पावतीसाठी कृपया योग्य माहिती भरा."
+                data-en="Please enter correct details for your receipt."
               >
-                पावती आणि धन्यवाद पत्रासाठी कृपया योग्य माहिती भरा.
+                पावतीसाठी कृपया योग्य माहिती भरा.
               </p>
 
 
-              <!-- Full Name -->
+              <!-- NAME -->
 
               <div class="form-field">
 
-                <label
-                  for="donorName"
-                  data-mr="पूर्ण नाव *"
-                  data-en="Full Name *"
-                >
+                <label for="donorName">
                   पूर्ण नाव *
                 </label>
 
                 <input
                   type="text"
                   id="donorName"
-                  name="donorName"
                   autocomplete="name"
-                  required
                   maxlength="100"
+                  required
                   placeholder="आपले पूर्ण नाव"
                 >
 
@@ -335,22 +309,17 @@
               </div>
 
 
-              <!-- Mobile -->
+              <!-- PHONE -->
 
               <div class="form-field">
 
-                <label
-                  for="donorPhone"
-                  data-mr="मोबाईल नंबर *"
-                  data-en="Mobile Number *"
-                >
+                <label for="donorPhone">
                   मोबाईल नंबर *
                 </label>
 
                 <input
                   type="tel"
                   id="donorPhone"
-                  name="donorPhone"
                   autocomplete="tel"
                   inputmode="numeric"
                   maxlength="10"
@@ -366,25 +335,20 @@
               </div>
 
 
-              <!-- Email -->
+              <!-- EMAIL -->
 
               <div class="form-field">
 
-                <label
-                  for="donorEmail"
-                  data-mr="ई-मेल *"
-                  data-en="Email *"
-                >
+                <label for="donorEmail">
                   ई-मेल *
                 </label>
 
                 <input
                   type="email"
                   id="donorEmail"
-                  name="donorEmail"
                   autocomplete="email"
-                  required
                   maxlength="150"
+                  required
                   placeholder="example@email.com"
                 >
 
@@ -400,21 +364,16 @@
 
               <div class="form-field">
 
-                <label
-                  for="donorPan"
-                  data-mr="PAN नंबर (ऐच्छिक)"
-                  data-en="PAN Number (Optional)"
-                >
+                <label for="donorPan">
                   PAN नंबर (ऐच्छिक)
                 </label>
 
                 <input
                   type="text"
                   id="donorPan"
-                  name="donorPan"
                   maxlength="10"
                   autocomplete="off"
-                  placeholder="उदा. ABCDE1234F"
+                  placeholder="ABCDE1234F"
                   style="text-transform:uppercase;"
                 >
 
@@ -426,42 +385,32 @@
               </div>
 
 
-              <!-- Address -->
+              <!-- ADDRESS -->
 
               <div class="form-field">
 
-                <label
-                  for="donorAddress"
-                  data-mr="पत्ता (ऐच्छिक)"
-                  data-en="Address (Optional)"
-                >
+                <label for="donorAddress">
                   पत्ता (ऐच्छिक)
                 </label>
 
                 <textarea
                   id="donorAddress"
-                  name="donorAddress"
                   rows="3"
                   maxlength="500"
-                  autocomplete="street-address"
                   placeholder="आपला पूर्ण पत्ता"
                 ></textarea>
 
               </div>
 
 
-              <!-- Custom Amount -->
+              <!-- CUSTOM AMOUNT -->
 
               <div
                 class="form-field"
                 style="margin-top:18px;"
               >
 
-                <label
-                  for="donateCustomAmount"
-                  data-mr="इतर रक्कम (₹)"
-                  data-en="Other Amount (₹)"
-                >
+                <label for="donateCustomAmount">
                   इतर रक्कम (₹)
                 </label>
 
@@ -496,14 +445,10 @@
                   <input
                     type="checkbox"
                     id="donor80G"
-                    name="donor80G"
                     style="margin-top:5px;"
                   >
 
-                  <span
-                    data-mr="मला 80G कर सवलतीसाठी पावती हवी आहे."
-                    data-en="I would like a receipt for 80G tax benefit."
-                  >
+                  <span>
                     मला 80G कर सवलतीसाठी पावती हवी आहे.
                   </span>
 
@@ -514,17 +459,13 @@
             </div>
 
 
-            <!-- Selected Amount -->
+            <!-- SELECTED AMOUNT -->
 
             <div class="donate-selected-box">
 
-              <div
-                data-mr="निवडलेली देणगी"
-                data-en="Selected Donation"
-              >
+              <div>
                 निवडलेली देणगी
               </div>
-
 
               <div
                 id="donateSelectedAmount"
@@ -536,30 +477,23 @@
             </div>
 
 
-            <!-- Continue -->
+            <!-- CONTINUE / PAY -->
 
             <button
               id="donateContinueBtn"
               type="button"
               class="btn btn-primary"
-              style="width:100%; margin-top:16px;"
-              data-mr="❤️ देणगी देण्यासाठी पुढे जा"
-              data-en="❤️ देणगी देण्यासाठी पुढे जा"
+              style="width:100%;margin-top:16px;"
             >
-              ❤️ देणगी देण्यासाठी पुढे जा
+              ❤️ सुरक्षित देणगीसाठी पुढे जा
             </button>
 
 
             <div
-              id="donateSuccess"
-              class="donate-success"
+              id="paymentLoading"
+              class="payment-loading"
             >
-              <span
-                data-mr="तुमची माहिती जतन झाली आहे. खालील पर्यायातून देणगी पूर्ण करा."
-                data-en="Your information has been saved. Complete your donation using an option below."
-              >
-                तुमची माहिती जतन झाली आहे. खालील पर्यायातून देणगी पूर्ण करा.
-              </span>
+              कृपया थांबा... पेमेंट तयार केले जात आहे.
             </div>
 
 
@@ -572,49 +506,34 @@
             <p
               class="donate-note"
               style="margin-top:16px;"
-              data-mr="आपली देणगी वृद्ध मातांच्या अन्न, निवास, आरोग्यसेवा, औषधे, वीज, बेडिंग आणि दैनंदिन गरजांसाठी उपयोगी पडते."
-              data-en="Your donation helps support food, shelter, healthcare, medicines, electricity, bedding and daily needs for elderly mothers."
             >
-              आपली देणगी वृद्ध मातांच्या अन्न, निवास, आरोग्यसेवा,
-              औषधे, वीज, बेडिंग आणि दैनंदिन गरजांसाठी उपयोगी पडते.
+              आपली देणगी वृद्ध मातांच्या अन्न, निवास,
+              आरोग्यसेवा, औषधे, वीज, बेडिंग आणि
+              दैनंदिन गरजांसाठी उपयोगी पडते.
             </p>
 
           </div>
 
 
-
-          <!-- ==================================================
-               DONATION METHODS
-          =================================================== -->
+          <!-- UPI / BANK -->
 
           <div id="donationMethods">
 
 
-            <!-- ==================================================
-                 UPI
-            =================================================== -->
+            <!-- UPI -->
 
             <div
               class="card reveal donate-upi-box"
               style="margin-bottom:20px;"
             >
 
-              <h2
-                data-mr="UPI द्वारे देणगी"
-                data-en="Donate via UPI"
-              >
+              <h2>
                 UPI द्वारे देणगी
               </h2>
 
-
-              <p
-                class="form-note"
-                data-mr="खालील QR Code Scan करून सुरक्षितपणे देणगी द्या."
-                data-en="Scan the QR Code below to make your donation."
-              >
-                खालील QR Code Scan करून सुरक्षितपणे देणगी द्या.
+              <p class="form-note">
+                QR Code Scan करून सुरक्षितपणे देणगी द्या.
               </p>
-
 
               <img
                 id="donateQrCode"
@@ -623,13 +542,9 @@
                 alt="Mai Vriddhashram UPI Donation QR Code"
               >
 
-
               <p>
 
-                <strong
-                  data-mr="UPI ID:"
-                  data-en="UPI ID:"
-                >
+                <strong>
                   UPI ID:
                 </strong>
 
@@ -639,130 +554,64 @@
 
               </p>
 
-
               <button
                 type="button"
                 id="copyUpiBtn"
                 class="btn btn-sm btn-outline donate-copy-btn"
-                data-mr="📋 UPI ID कॉपी करा"
-                data-en="📋 Copy UPI ID"
               >
                 📋 UPI ID कॉपी करा
               </button>
 
-
               <p
                 id="upiCopyMessage"
                 class="donate-note"
-                style="margin-top:8px;"
               ></p>
-
-
-              <p
-                class="donate-note"
-                style="margin-top:14px;"
-                data-mr="टीप: पेमेंट करताना UPI ID आणि प्राप्तकर्त्याचे नाव तपासूनच देणगी पूर्ण करा."
-                data-en="Note: Please verify the UPI ID and recipient name before completing the donation."
-              >
-                टीप: पेमेंट करताना UPI ID आणि प्राप्तकर्त्याचे नाव तपासूनच देणगी पूर्ण करा.
-              </p>
 
             </div>
 
 
-
-            <!-- ==================================================
-                 BANK TRANSFER
-            =================================================== -->
+            <!-- BANK -->
 
             <div
               class="card reveal donate-bank-details"
             >
 
-              <h2
-                data-mr="बँक ट्रान्सफर"
-                data-en="Bank Transfer"
-              >
+              <h2>
                 बँक ट्रान्सफर
               </h2>
 
-
-              <p
-                class="form-note"
-                data-mr="खालील बँक खात्यावर थेट देणगी जमा करू शकता."
-                data-en="You can transfer your donation directly to the bank account below."
-              >
+              <p class="form-note">
                 खालील बँक खात्यावर थेट देणगी जमा करू शकता.
               </p>
 
-
               <p>
-                <strong
-                  data-mr="खातेदाराचे नाव:"
-                  data-en="Account Name:"
-                >
-                  खातेदाराचे नाव:
-                </strong>
-
+                <strong>खातेदाराचे नाव:</strong>
                 <span id="donateAccountName"></span>
               </p>
 
-
               <p>
-                <strong
-                  data-mr="बँक:"
-                  data-en="Bank:"
-                >
-                  बँक:
-                </strong>
-
+                <strong>बँक:</strong>
                 <span id="donateBankName"></span>
               </p>
 
-
               <p>
-                <strong
-                  data-mr="शाखा:"
-                  data-en="Branch:"
-                >
-                  शाखा:
-                </strong>
-
+                <strong>शाखा:</strong>
                 <span id="donateBankBranch"></span>
               </p>
 
-
               <p>
-                <strong
-                  data-mr="खाते क्रमांक:"
-                  data-en="Account Number:"
-                >
-                  खाते क्रमांक:
-                </strong>
-
+                <strong>खाते क्रमांक:</strong>
                 <span id="donateAccountNumber"></span>
               </p>
 
-
               <p>
-                <strong
-                  data-mr="IFSC:"
-                  data-en="IFSC:"
-                >
-                  IFSC:
-                </strong>
-
+                <strong>IFSC:</strong>
                 <span id="donateIfsc"></span>
               </p>
 
-
-              <p
-                class="donate-note"
-                style="margin-top:16px;"
-                data-mr="बँक ट्रान्सफर केल्यानंतर पावतीसाठी कृपया आमच्याशी संपर्क साधा."
-                data-en="After making a bank transfer, please contact us for the donation receipt."
-              >
-                बँक ट्रान्सफर केल्यानंतर पावतीसाठी कृपया आमच्याशी संपर्क साधा.
+              <p class="donate-note">
+                बँक ट्रान्सफर केल्यानंतर पावतीसाठी
+                कृपया आमच्याशी संपर्क साधा.
               </p>
 
             </div>
@@ -776,10 +625,7 @@
     </section>
 
 
-
-    <!-- ======================================================
-         CURRENT NEEDS
-    ======================================================= -->
+    <!-- CURRENT NEEDS -->
 
     <section class="section section-alt">
 
@@ -790,19 +636,11 @@
           style="margin-bottom:32px;"
         >
 
-          <p
-            class="eyebrow"
-            data-mr="सध्याच्या गरजा"
-            data-en="Current Needs"
-          >
+          <p class="eyebrow">
             सध्याच्या गरजा
           </p>
 
-
-          <h2
-            data-mr="तुमची मदत कुठे उपयोगी पडते"
-            data-en="Where Your Support Helps"
-          >
+          <h2>
             तुमची मदत कुठे उपयोगी पडते
           </h2>
 
@@ -811,180 +649,68 @@
 
         <div class="grid grid-4">
 
-
           <div class="card reveal">
-
             <div class="icon-badge">🍚</div>
-
-            <h3
-              data-mr="अन्न व किराणा"
-              data-en="Food & Groceries"
-            >
-              अन्न व किराणा
-            </h3>
-
-            <p
-              class="form-note"
-              data-mr="रोजचे अन्नधान्य, किराणा व पौष्टिक आहारासाठी."
-              data-en="For daily food, groceries and nutritious meals."
-            >
+            <h3>अन्न व किराणा</h3>
+            <p class="form-note">
               रोजचे अन्नधान्य, किराणा व पौष्टिक आहारासाठी.
             </p>
-
           </div>
 
-
           <div class="card reveal">
-
             <div class="icon-badge">🏥</div>
-
-            <h3
-              data-mr="आरोग्यसेवा"
-              data-en="Healthcare"
-            >
-              आरोग्यसेवा
-            </h3>
-
-            <p
-              class="form-note"
-              data-mr="औषधे, तपासण्या, उपचार आणि आरोग्यसेवेसाठी."
-              data-en="For medicines, check-ups, treatment and healthcare."
-            >
+            <h3>आरोग्यसेवा</h3>
+            <p class="form-note">
               औषधे, तपासण्या, उपचार आणि आरोग्यसेवेसाठी.
             </p>
-
           </div>
 
-
           <div class="card reveal">
-
             <div class="icon-badge">🛏️</div>
-
-            <h3
-              data-mr="बेड व बेडिंग"
-              data-en="Beds & Bedding"
-            >
-              बेड व बेडिंग
-            </h3>
-
-            <p
-              class="form-note"
-              data-mr="बेड, गाद्या, चादरी आणि आवश्यक बेडिंगसाठी."
-              data-en="For beds, mattresses, blankets and bedding."
-            >
+            <h3>बेड व बेडिंग</h3>
+            <p class="form-note">
               बेड, गाद्या, चादरी आणि आवश्यक बेडिंगसाठी.
             </p>
-
           </div>
 
-
           <div class="card reveal">
-
             <div class="icon-badge">🍳</div>
-
-            <h3
-              data-mr="स्वयंपाकघर उपकरणे"
-              data-en="Kitchen Equipment"
-            >
-              स्वयंपाकघर उपकरणे
-            </h3>
-
-            <p
-              class="form-note"
-              data-mr="स्वयंपाकघरातील आवश्यक साहित्य व उपकरणांसाठी."
-              data-en="For essential kitchen equipment and supplies."
-            >
+            <h3>स्वयंपाकघर उपकरणे</h3>
+            <p class="form-note">
               स्वयंपाकघरातील आवश्यक साहित्य व उपकरणांसाठी.
             </p>
-
           </div>
 
-
           <div class="card reveal">
-
             <div class="icon-badge">⚡</div>
-
-            <h3
-              data-mr="वीज व सुविधा"
-              data-en="Electricity & Utilities"
-            >
-              वीज व सुविधा
-            </h3>
-
-            <p
-              class="form-note"
-              data-mr="वीज बिल, विद्युत साहित्य आणि आवश्यक सुविधांसाठी."
-              data-en="For electricity bills, electrical materials and utilities."
-            >
+            <h3>वीज व सुविधा</h3>
+            <p class="form-note">
               वीज बिल, विद्युत साहित्य आणि आवश्यक सुविधांसाठी.
             </p>
-
           </div>
 
-
           <div class="card reveal">
-
             <div class="icon-badge">☀️</div>
-
-            <h3
-              data-mr="सौर ऊर्जा"
-              data-en="Solar Energy"
-            >
-              सौर ऊर्जा
-            </h3>
-
-            <p
-              class="form-note"
-              data-mr="ऊर्जेचा खर्च कमी करण्यासाठी सौर सुविधांसाठी."
-              data-en="For solar energy facilities to reduce energy costs."
-            >
+            <h3>सौर ऊर्जा</h3>
+            <p class="form-note">
               ऊर्जेचा खर्च कमी करण्यासाठी सौर सुविधांसाठी.
             </p>
-
           </div>
 
-
           <div class="card reveal">
-
             <div class="icon-badge">🧴</div>
-
-            <h3
-              data-mr="दैनंदिन गरजेच्या वस्तू"
-              data-en="Daily Essentials"
-            >
-              दैनंदिन गरजेच्या वस्तू
-            </h3>
-
-            <p
-              class="form-note"
-              data-mr="दैनंदिन वापरातील आवश्यक व स्वच्छता साहित्यांसाठी."
-              data-en="For daily essentials and hygiene supplies."
-            >
+            <h3>दैनंदिन गरजेच्या वस्तू</h3>
+            <p class="form-note">
               दैनंदिन वापरातील आवश्यक व स्वच्छता साहित्यांसाठी.
             </p>
-
           </div>
 
-
           <div class="card reveal">
-
             <div class="icon-badge">🏠</div>
-
-            <h3
-              data-mr="देखभाल व दुरुस्ती"
-              data-en="Maintenance & Repairs"
-            >
-              देखभाल व दुरुस्ती
-            </h3>
-
-            <p
-              class="form-note"
-              data-mr="आश्रमाची देखभाल, दुरुस्ती आणि सुरक्षित वातावरणासाठी."
-              data-en="For maintenance, repairs and a safe environment."
-            >
+            <h3>देखभाल व दुरुस्ती</h3>
+            <p class="form-note">
               आश्रमाची देखभाल, दुरुस्ती आणि सुरक्षित वातावरणासाठी.
             </p>
-
           </div>
 
         </div>
@@ -994,10 +720,7 @@
     </section>
 
 
-
-    <!-- ======================================================
-         FUTURE EXPANSION
-    ======================================================= -->
+    <!-- EXPANSION -->
 
     <section class="section">
 
@@ -1005,27 +728,15 @@
 
         <div class="card reveal donate-expansion">
 
-          <p
-            class="eyebrow"
-            data-mr="भविष्यातील विस्तार"
-            data-en="Future Expansion"
-          >
+          <p class="eyebrow">
             भविष्यातील विस्तार
           </p>
 
-
-          <h2
-            data-mr="100 वृद्ध आजी-आजोबांसाठी सुरक्षित निवासाचे स्वप्न"
-            data-en="A Safe Home for 100 Elderly People"
-          >
+          <h2>
             100 वृद्ध आजी-आजोबांसाठी सुरक्षित निवासाचे स्वप्न
           </h2>
 
-
-          <p
-            data-mr="सध्या माई वृद्धाश्रमात 25 वृद्ध मातांची काळजी घेतली जाते. भविष्यात 100 वृद्ध आजी-आजोबांसाठी सुरक्षित, सन्मानपूर्वक आणि सर्वसमावेशक निवास व काळजी सुविधा निर्माण करण्याचे आमचे ध्येय आहे. या विस्तारासाठी जागा, बांधकाम आणि आवश्यक सुविधांसाठी आर्थिक व CSR सहकार्याची गरज आहे."
-            data-en="Mai Vriddhashram currently cares for 25 elderly mothers. Our vision is to create safe, dignified and inclusive residential and care facilities for 100 elderly people. We seek financial and CSR support for space, construction and essential facilities."
-          >
+          <p>
             सध्या माई वृद्धाश्रमात 25 वृद्ध मातांची काळजी घेतली जाते.
             भविष्यात 100 वृद्ध आजी-आजोबांसाठी सुरक्षित,
             सन्मानपूर्वक आणि सर्वसमावेशक निवास व काळजी सुविधा
@@ -1034,12 +745,9 @@
             आर्थिक व CSR सहकार्याची गरज आहे.
           </p>
 
-
           <a
             href="contact.html"
             class="btn btn-primary"
-            data-mr="🤝 विस्तारासाठी सहकार्य करा"
-            data-en="🤝 Support the Expansion"
           >
             🤝 विस्तारासाठी सहकार्य करा
           </a>
@@ -1051,38 +759,7 @@
     </section>
 
 
-
-    <!-- ======================================================
-         THANK YOU
-    ======================================================= -->
-
-    <section class="section">
-
-      <div class="container">
-
-        <div
-          class="card reveal"
-          style="text-align:center;"
-        >
-
-          <h2
-            data-mr="आपल्या मदतीबद्दल मनःपूर्वक धन्यवाद ❤️"
-            data-en="Thank you sincerely for your support ❤️"
-          >
-            आपल्या मदतीबद्दल मनःपूर्वक धन्यवाद ❤️
-          </h2>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ======================================================
-         DONATE WITH CONFIDENCE
-    ======================================================= -->
+    <!-- CONFIDENCE -->
 
     <section class="section">
 
@@ -1093,10 +770,7 @@
           style="margin-bottom:32px;"
         >
 
-          <h2
-            data-mr="विश्वासाने देणगी द्या"
-            data-en="Donate With Confidence"
-          >
+          <h2>
             विश्वासाने देणगी द्या
           </h2>
 
@@ -1106,85 +780,47 @@
         <div class="grid grid-2">
 
 
-          <!-- ORGANIZATION -->
-
           <div class="card reveal">
 
-            <h3
-              data-mr="संस्थेचा तपशील"
-              data-en="Organization Details"
-            >
+            <h3>
               संस्थेचा तपशील
             </h3>
 
-
-            <p
-              data-mr="माई वृद्धाश्रम — बोधी ट्री एज्युकेशनल फाऊंडेशन द्वारा संचालित"
-              data-en="Mai Vriddhashram — Run by Bodhi Tree Educational Foundation"
-            >
-              माई वृद्धाश्रम — बोधी ट्री एज्युकेशनल फाऊंडेशन द्वारा संचालित
+            <p>
+              माई वृद्धाश्रम —
+              बोधी ट्री एज्युकेशनल फाऊंडेशन द्वारा संचालित
             </p>
 
-
             <p>
-
-              <strong
-                data-mr="नोंदणी P. No.:"
-                data-en="Registration P. No.:"
-              >
-                नोंदणी P. No.:
-              </strong>
-
+              <strong>नोंदणी P. No.:</strong>
               <span id="donateRegistrationPNo">
                 F-23015
               </span>
-
             </p>
 
-
             <p>
-
-              <strong
-                data-mr="NGO Darpan:"
-                data-en="NGO Darpan:"
-              >
-                NGO Darpan:
-              </strong>
-
+              <strong>NGO Darpan:</strong>
               <span id="donateNgoDarpan"></span>
-
             </p>
 
           </div>
 
 
-
-          <!-- RECEIPT -->
-
           <div class="card reveal">
 
-            <h3
-              data-mr="पावती प्रक्रिया"
-              data-en="Receipt Process"
-            >
+            <h3>
               पावती प्रक्रिया
             </h3>
 
-
-            <p
-              data-mr="प्रत्येक देणगीसाठी पावती दिली जाते. देणगी केल्यानंतर पावतीसाठी कृपया आमच्याशी संपर्क साधा."
-              data-en="A receipt is issued for every donation. Please contact us after donating to receive the receipt."
-            >
-              प्रत्येक देणगीसाठी पावती दिली जाते.
-              देणगी केल्यानंतर पावतीसाठी कृपया आमच्याशी संपर्क साधा.
+            <p>
+              ऑनलाइन पेमेंटनंतर पावती प्रक्रियेसाठी
+              संस्थेच्या नोंदीप्रमाणे माहिती वापरली जाईल.
+              आवश्यक असल्यास आमच्याशी संपर्क साधा.
             </p>
-
 
             <a
               href="contact.html"
               class="btn btn-sm btn-outline"
-              data-mr="संपर्क करा"
-              data-en="Contact Us"
             >
               संपर्क करा
             </a>
@@ -1198,159 +834,149 @@
     </section>
 
 
+    <!-- THANK YOU -->
+
+    <section class="section">
+
+      <div class="container">
+
+        <div
+          class="card reveal"
+          style="text-align:center;"
+        >
+
+          <h2>
+            आपल्या मदतीबद्दल मनःपूर्वक धन्यवाद ❤️
+          </h2>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
   </main>
 
-
-  <!-- ========================================================
-       FOOTER
-  ======================================================== -->
 
   <div id="site-footer"></div>
 
 
-  <!-- ========================================================
-       CONFIG + COMMON
-  ======================================================== -->
+  <!-- COMMON FILES -->
 
   <script src="config.js"></script>
-
   <script src="js/common.js"></script>
 
 
-  <!-- ========================================================
-       DONATION PAGE SCRIPT
-  ======================================================== -->
+  <!-- DONATION SCRIPT -->
 
   <script>
 
     document.addEventListener(
       "DOMContentLoaded",
-      function(){
+      function () {
 
-        /* ====================================================
-           CHECK CONFIG
-        ==================================================== */
+        /* =====================================================
+           CONFIGURATION
+        ===================================================== */
 
-        if(typeof SITE_CONFIG === "undefined"){
-
-          console.error(
-            "SITE_CONFIG is not loaded."
-          );
-
-          return;
-
-        }
+        const SUPABASE_FUNCTION_URL =
+          "https://ktgqxfmjhfqpkezgqegv.supabase.co/functions/v1/rapid-endpoint";
 
 
-        /* ====================================================
+        /*
+          IMPORTANT:
+          This is your PUBLIC Razorpay Key ID.
+          NEVER put Razorpay Secret Key here.
+        */
+
+        const RAZORPAY_KEY_ID =
+          "rzp_live_TVca4MBUL38YOW";
+
+
+        /* =====================================================
            ELEMENTS
-        ==================================================== */
+        ===================================================== */
 
         const amountGrid =
-          document.getElementById(
-            "donateAmountGrid"
-          );
+          document.getElementById("donateAmountGrid");
 
         const customAmount =
-          document.getElementById(
-            "donateCustomAmount"
-          );
+          document.getElementById("donateCustomAmount");
 
         const selectedAmount =
-          document.getElementById(
-            "donateSelectedAmount"
-          );
+          document.getElementById("donateSelectedAmount");
 
         const continueBtn =
-          document.getElementById(
-            "donateContinueBtn"
-          );
-
-        const donationMethods =
-          document.getElementById(
-            "donationMethods"
-          );
-
-        const successBox =
-          document.getElementById(
-            "donateSuccess"
-          );
+          document.getElementById("donateContinueBtn");
 
         const paymentStatus =
-          document.getElementById(
-            "paymentStatus"
-          );
+          document.getElementById("paymentStatus");
+
+        const paymentLoading =
+          document.getElementById("paymentLoading");
 
 
-        /* ====================================================
+        /* =====================================================
            DONATION AMOUNTS
-        ==================================================== */
+        ===================================================== */
 
         const donationAmounts =
-          Array.isArray(
-            SITE_CONFIG.donationAmounts
+          (
+            typeof SITE_CONFIG !== "undefined" &&
+            Array.isArray(SITE_CONFIG.donationAmounts)
           )
             ? SITE_CONFIG.donationAmounts
-            : [500, 1000, 2500, 5000];
+            : [500,1000,2500,5000];
 
 
         let currentAmount =
-          Number(
-            donationAmounts[0]
-          ) || 500;
+          Number(donationAmounts[0]) || 500;
 
 
-        /* ====================================================
-           FORMAT RUPEES
-        ==================================================== */
+        /* =====================================================
+           FORMAT
+        ===================================================== */
 
-        function formatRupees(amount){
+        function formatRupees(amount) {
 
           return "₹" +
-            Number(amount).toLocaleString(
-              "en-IN"
-            );
+            Number(amount).toLocaleString("en-IN");
 
         }
 
 
-        /* ====================================================
-           UPDATE SELECTED AMOUNT
-        ==================================================== */
+        /* =====================================================
+           UPDATE AMOUNT
+        ===================================================== */
 
-        function updateSelectedAmount(
-          amount
-        ){
+        function updateSelectedAmount(amount) {
 
           currentAmount =
             Number(amount);
 
           selectedAmount.textContent =
-            formatRupees(
-              currentAmount
-            );
+            formatRupees(currentAmount);
 
         }
 
 
-        /* ====================================================
-           CLEAR ERRORS
-        ==================================================== */
+        /* =====================================================
+           STATUS
+        ===================================================== */
 
-        function clearErrors(){
+        function showStatus(message,type) {
 
-          const errors =
-            document.querySelectorAll(
-              ".form-error"
-            );
+          paymentStatus.className =
+            "payment-status " + type;
 
-          errors.forEach(
-            function(error){
+          paymentStatus.textContent =
+            message;
 
-              error.textContent = "";
+        }
 
-            }
-          );
+
+        function clearStatus() {
 
           paymentStatus.className =
             "payment-status";
@@ -1361,61 +987,29 @@
         }
 
 
-        /* ====================================================
-           SHOW ERROR
-        ==================================================== */
-
-        function showFieldError(
-          elementId,
-          message
-        ){
-
-          const element =
-            document.getElementById(
-              elementId
-            );
-
-          if(element){
-
-            element.textContent =
-              message;
-
-          }
-
-        }
-
-
-        /* ====================================================
+        /* =====================================================
            CREATE AMOUNT BUTTONS
-        ==================================================== */
+        ===================================================== */
 
         amountGrid.innerHTML = "";
 
 
         donationAmounts.forEach(
-          function(amount, index){
+          function(amount,index) {
 
             const value =
               Number(amount);
 
-            if(
-              !value ||
-              value <= 0
-            ){
-
+            if(!value || value < 1) {
               return;
-
             }
 
 
             const button =
-              document.createElement(
-                "button"
-              );
+              document.createElement("button");
 
 
             button.type = "button";
-
 
             button.className =
               "donate-amount-btn" +
@@ -1426,100 +1020,70 @@
               );
 
 
-            button.dataset.amount =
-              String(value);
-
-
             button.textContent =
-              formatRupees(
-                value
-              );
+              formatRupees(value);
 
 
             button.addEventListener(
               "click",
-              function(){
+              function() {
 
                 document
                   .querySelectorAll(
                     ".donate-amount-btn"
                   )
                   .forEach(
-                    function(btn){
-
-                      btn.classList.remove(
-                        "active"
-                      );
-
+                    function(btn) {
+                      btn.classList.remove("active");
                     }
                   );
 
 
-                this.classList.add(
-                  "active"
-                );
+                this.classList.add("active");
 
+                customAmount.value = "";
 
-                customAmount.value =
-                  "";
-
-
-                updateSelectedAmount(
-                  value
-                );
+                updateSelectedAmount(value);
 
               }
             );
 
 
-            amountGrid.appendChild(
-              button
-            );
+            amountGrid.appendChild(button);
 
           }
         );
 
 
-        updateSelectedAmount(
-          currentAmount
-        );
+        updateSelectedAmount(currentAmount);
 
 
-
-        /* ====================================================
+        /* =====================================================
            CUSTOM AMOUNT
-        ==================================================== */
+        ===================================================== */
 
         customAmount.addEventListener(
           "input",
-          function(){
+          function() {
 
             const value =
-              Number(
-                this.value
-              );
+              Number(this.value);
 
 
-            if(value > 0){
+            if(value > 0) {
 
               document
                 .querySelectorAll(
                   ".donate-amount-btn"
                 )
                 .forEach(
-                  function(btn){
-
-                    btn.classList.remove(
-                      "active"
-                    );
-
+                  function(btn) {
+                    btn.classList.remove("active");
                   }
                 );
 
 
-              updateSelectedAmount(
-                value
-              );
+              updateSelectedAmount(value);
 
             }
 
@@ -1527,82 +1091,96 @@
         );
 
 
-
-        /* ====================================================
-           PHONE INPUT
-        ==================================================== */
+        /* =====================================================
+           PHONE
+        ===================================================== */
 
         const donorPhone =
-          document.getElementById(
-            "donorPhone"
-          );
+          document.getElementById("donorPhone");
 
 
         donorPhone.addEventListener(
           "input",
-          function(){
+          function() {
 
             this.value =
               this.value
-                .replace(
-                  /[^0-9]/g,
-                  ""
-                )
-                .slice(
-                  0,
-                  10
-                );
+                .replace(/[^0-9]/g,"")
+                .slice(0,10);
 
           }
         );
 
 
-
-        /* ====================================================
-           PAN INPUT
-        ==================================================== */
+        /* =====================================================
+           PAN
+        ===================================================== */
 
         const donorPan =
-          document.getElementById(
-            "donorPan"
-          );
+          document.getElementById("donorPan");
 
 
         donorPan.addEventListener(
           "input",
-          function(){
+          function() {
 
             this.value =
               this.value
                 .toUpperCase()
-                .replace(
-                  /[^A-Z0-9]/g,
-                  ""
-                )
-                .slice(
-                  0,
-                  10
-                );
+                .replace(/[^A-Z0-9]/g,"")
+                .slice(0,10);
 
           }
         );
 
 
+        /* =====================================================
+           CLEAR ERRORS
+        ===================================================== */
 
-        /* ====================================================
-           VALIDATE DONOR DETAILS
-        ==================================================== */
+        function clearErrors() {
 
-        function validateDonorDetails(){
+          document
+            .querySelectorAll(".form-error")
+            .forEach(
+              function(el) {
+                el.textContent = "";
+              }
+            );
+
+          clearStatus();
+
+        }
+
+
+        /* =====================================================
+           FIELD ERROR
+        ===================================================== */
+
+        function fieldError(id,message) {
+
+          const el =
+            document.getElementById(id);
+
+          if(el) {
+            el.textContent = message;
+          }
+
+        }
+
+
+        /* =====================================================
+           VALIDATE
+        ===================================================== */
+
+        function validateDonorDetails() {
 
           clearErrors();
 
 
-          const donorName =
+          const name =
             document
-              .getElementById(
-                "donorName"
-              )
+              .getElementById("donorName")
               .value
               .trim();
 
@@ -1613,9 +1191,7 @@
 
           const email =
             document
-              .getElementById(
-                "donorEmail"
-              )
+              .getElementById("donorEmail")
               .value
               .trim();
 
@@ -1629,101 +1205,55 @@
           let valid = true;
 
 
-          /* NAME */
+          if(!name) {
 
-          if(!donorName){
-
-            showFieldError(
+            fieldError(
               "donorNameError",
               "कृपया आपले पूर्ण नाव भरा."
             );
 
-            document
-              .getElementById(
-                "donorName"
-              )
-              .focus();
-
             valid = false;
 
           }
 
 
-          /* PHONE */
+          if(!/^[0-9]{10}$/.test(phone)) {
 
-          if(
-            !/^[0-9]{10}$/.test(
-              phone
-            )
-          ){
-
-            showFieldError(
+            fieldError(
               "donorPhoneError",
               "कृपया योग्य 10 अंकी मोबाईल नंबर भरा."
             );
 
-            if(valid){
-
-              donorPhone.focus();
-
-            }
-
             valid = false;
 
           }
 
-
-          /* EMAIL */
 
           const emailPattern =
             /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 
-          if(
-            !emailPattern.test(
-              email
-            )
-          ){
+          if(!emailPattern.test(email)) {
 
-            showFieldError(
+            fieldError(
               "donorEmailError",
               "कृपया योग्य ई-मेल पत्ता भरा."
             );
-
-            if(valid){
-
-              document
-                .getElementById(
-                  "donorEmail"
-                )
-                .focus();
-
-            }
 
             valid = false;
 
           }
 
 
-          /* PAN */
-
           if(
             pan &&
-            !/^[A-Z]{5}[0-9]{4}[A-Z]$/.test(
-              pan
-            )
-          ){
+            !/^[A-Z]{5}[0-9]{4}[A-Z]$/.test(pan)
+          ) {
 
-            showFieldError(
+            fieldError(
               "donorPanError",
               "कृपया योग्य PAN नंबर भरा."
             );
-
-            if(valid){
-
-              donorPan.focus();
-
-            }
 
             valid = false;
 
@@ -1735,28 +1265,347 @@
         }
 
 
+        /* =====================================================
+           GET DONOR DATA
+        ===================================================== */
 
-        /* ====================================================
-           CONTINUE BUTTON
-        ==================================================== */
+        function getDonorData() {
+
+          return {
+
+            name:
+              document
+                .getElementById("donorName")
+                .value
+                .trim(),
+
+            phone:
+              donorPhone
+                .value
+                .trim(),
+
+            email:
+              document
+                .getElementById("donorEmail")
+                .value
+                .trim(),
+
+            pan:
+              donorPan
+                .value
+                .trim()
+                .toUpperCase(),
+
+            address:
+              document
+                .getElementById("donorAddress")
+                .value
+                .trim(),
+
+            request80G:
+              document
+                .getElementById("donor80G")
+                .checked
+
+          };
+
+        }
+
+
+        /* =====================================================
+           SAVE DONOR DATA
+        ===================================================== */
+
+        function saveDonorData(amount,donor) {
+
+          try {
+
+            sessionStorage.setItem(
+              "donationAmount",
+              String(amount)
+            );
+
+            sessionStorage.setItem(
+              "donorDetails",
+              JSON.stringify(donor)
+            );
+
+          } catch(error) {
+
+            console.warn(
+              "Session storage unavailable",
+              error
+            );
+
+          }
+
+        }
+
+
+        /* =====================================================
+           CREATE RAZORPAY ORDER
+        ===================================================== */
+
+        async function createOrder(amount) {
+
+          const response =
+            await fetch(
+              SUPABASE_FUNCTION_URL,
+              {
+                method:"POST",
+
+                headers:{
+                  "Content-Type":"application/json"
+                },
+
+                body:
+                  JSON.stringify({
+                    amount:amount
+                  })
+              }
+            );
+
+
+          const data =
+            await response.json();
+
+
+          if(!response.ok) {
+
+            throw new Error(
+              data.error ||
+              "Order creation failed."
+            );
+
+          }
+
+
+          if(!data.order_id) {
+
+            throw new Error(
+              "Razorpay order ID मिळाला नाही."
+            );
+
+          }
+
+
+          return data;
+
+        }
+
+
+        /* =====================================================
+           OPEN RAZORPAY
+        ===================================================== */
+
+        function openRazorpay(order,donor) {
+
+          if(
+            typeof Razorpay === "undefined"
+          ) {
+
+            throw new Error(
+              "Razorpay Checkout load झाले नाही."
+            );
+
+          }
+
+
+          const options = {
+
+            key:
+              RAZORPAY_KEY_ID,
+
+            amount:
+              order.amount,
+
+            currency:
+              order.currency || "INR",
+
+            name:
+              "Mai Vriddhashram",
+
+            description:
+              "Donation to Mai Vriddhashram",
+
+            order_id:
+              order.order_id,
+
+
+            prefill: {
+
+              name:
+                donor.name,
+
+              email:
+                donor.email,
+
+              contact:
+                donor.phone
+
+            },
+
+
+            notes: {
+
+              donor_name:
+                donor.name,
+
+              donor_phone:
+                donor.phone,
+
+              donor_email:
+                donor.email,
+
+              pan:
+                donor.pan || "",
+
+              request_80g:
+                donor.request80G
+                  ? "Yes"
+                  : "No"
+
+            },
+
+
+            theme: {
+
+              color:"#6B4F3A"
+
+            },
+
+
+            handler:
+              function(response) {
+
+                paymentLoading.style.display =
+                  "none";
+
+                continueBtn.disabled =
+                  false;
+
+
+                showStatus(
+                  "✓ पेमेंट यशस्वी झाले. Payment ID: " +
+                  response.razorpay_payment_id,
+                  "success"
+                );
+
+
+                /*
+                  Save successful payment information
+                  for the next receipt step.
+                */
+
+                try {
+
+                  sessionStorage.setItem(
+                    "razorpayPaymentId",
+                    response.razorpay_payment_id
+                  );
+
+                  sessionStorage.setItem(
+                    "razorpayOrderId",
+                    response.razorpay_order_id
+                  );
+
+                  sessionStorage.setItem(
+                    "razorpaySignature",
+                    response.razorpay_signature
+                  );
+
+                } catch(error) {
+
+                  console.warn(error);
+
+                }
+
+
+                /*
+                  Future:
+                  Here we can connect the payment
+                  verification + automatic receipt.
+                */
+
+              },
+
+
+            modal: {
+
+              ondismiss:
+                function() {
+
+                  paymentLoading.style.display =
+                    "none";
+
+                  continueBtn.disabled =
+                    false;
+
+                  showStatus(
+                    "पेमेंट विंडो बंद करण्यात आली. पुन्हा प्रयत्न करू शकता.",
+                    "error"
+                  );
+
+                }
+
+            }
+
+          };
+
+
+          const razorpay =
+            new Razorpay(options);
+
+
+          razorpay.on(
+            "payment.failed",
+            function(response) {
+
+              paymentLoading.style.display =
+                "none";
+
+              continueBtn.disabled =
+                false;
+
+
+              const description =
+                response.error &&
+                response.error.description
+                  ? response.error.description
+                  : "पेमेंट अयशस्वी झाले.";
+
+
+              showStatus(
+                "पेमेंट अयशस्वी: " +
+                description,
+                "error"
+              );
+
+            }
+          );
+
+
+          razorpay.open();
+
+        }
+
+
+        /* =====================================================
+           CONTINUE / PAY BUTTON
+        ===================================================== */
 
         continueBtn.addEventListener(
           "click",
-          function(){
+          async function() {
 
             clearErrors();
 
 
             let amount =
-              Number(
-                customAmount.value
-              );
+              Number(customAmount.value);
 
 
-            if(
-              !amount ||
-              amount <= 0
-            ){
+            if(!amount || amount <= 0) {
 
               amount =
                 currentAmount;
@@ -1764,131 +1613,42 @@
             }
 
 
-            /* AMOUNT VALIDATION */
+            if(!amount || amount < 1) {
 
-            if(
-              !amount ||
-              amount <= 0
-            ){
-
-              alert(
-                "कृपया देणगीची रक्कम निवडा."
+              showStatus(
+                "कृपया ₹1 किंवा त्यापेक्षा जास्त देणगीची रक्कम निवडा.",
+                "error"
               );
 
               return;
 
             }
 
-
-            /* MINIMUM AMOUNT */
-
-            if(
-              amount < 1
-            ){
-
-              alert(
-                "कृपया ₹1 किंवा त्यापेक्षा जास्त रक्कम निवडा."
-              );
-
-              return;
-
-            }
-
-
-            /* DONOR VALIDATION */
 
             if(
               !validateDonorDetails()
-            ){
+            ) {
 
               return;
 
             }
 
 
-            /* =================================================
-               COLLECT DONOR DETAILS
-            ================================================= */
-
-            const donorData = {
-
-              name:
-                document
-                  .getElementById(
-                    "donorName"
-                  )
-                  .value
-                  .trim(),
-
-              phone:
-                donorPhone
-                  .value
-                  .trim(),
-
-              email:
-                document
-                  .getElementById(
-                    "donorEmail"
-                  )
-                  .value
-                  .trim(),
-
-              pan:
-                donorPan
-                  .value
-                  .trim()
-                  .toUpperCase(),
-
-              address:
-                document
-                  .getElementById(
-                    "donorAddress"
-                  )
-                  .value
-                  .trim(),
-
-              request80G:
-                document
-                  .getElementById(
-                    "donor80G"
-                  )
-                  .checked
-
-            };
+            const donor =
+              getDonorData();
 
 
-            /* =================================================
-               SAVE AMOUNT
-            ================================================= */
-
-            sessionStorage.setItem(
-              "donationAmount",
-              String(amount)
+            saveDonorData(
+              amount,
+              donor
             );
 
 
-            /* =================================================
-               SAVE DONOR DETAILS
-            ================================================= */
-
-            sessionStorage.setItem(
-              "donorDetails",
-              JSON.stringify(
-                donorData
-              )
-            );
+            continueBtn.disabled =
+              true;
 
 
-            /* =================================================
-               UPDATE UI
-            ================================================= */
-
-            updateSelectedAmount(
-              amount
-            );
-
-
-            successBox.style.display =
+            paymentLoading.style.display =
               "block";
 
 
@@ -1900,108 +1660,106 @@
               "";
 
 
-            /* =================================================
-               SCROLL TO PAYMENT METHODS
-            ================================================= */
+            try {
 
-            donationMethods.scrollIntoView({
-              behavior: "smooth",
-              block: "start"
-            });
+              /*
+                STEP 1:
+                Create secure Razorpay order
+                through Supabase Edge Function.
+              */
+
+              const order =
+                await createOrder(amount);
+
+
+              /*
+                STEP 2:
+                Open Razorpay Checkout.
+              */
+
+              openRazorpay(
+                order,
+                donor
+              );
+
+
+            } catch(error) {
+
+              console.error(
+                "Donation payment error:",
+                error
+              );
+
+
+              paymentLoading.style.display =
+                "none";
+
+
+              continueBtn.disabled =
+                false;
+
+
+              showStatus(
+                error.message ||
+                "पेमेंट सुरू करता आले नाही. कृपया पुन्हा प्रयत्न करा.",
+                "error"
+              );
+
+            }
 
           }
         );
 
 
-
-        /* ====================================================
-           UPI
-        ==================================================== */
+        /* =====================================================
+           COPY UPI
+        ===================================================== */
 
         const upiId =
-          document.getElementById(
-            "donateUpiId"
-          );
-
-
-        if(upiId){
-
-          upiId.textContent =
-            SITE_CONFIG.upiId || "";
-
-        }
-
-
-
-        /* ====================================================
-           QR CODE
-        ==================================================== */
-
-        const qr =
-          document.getElementById(
-            "donateQrCode"
-          );
+          document.getElementById("donateUpiId");
 
 
         if(
-          qr &&
-          SITE_CONFIG.qrCodeImage
-        ){
+          upiId &&
+          typeof SITE_CONFIG !== "undefined" &&
+          SITE_CONFIG.upiId
+        ) {
 
-          qr.src =
-            SITE_CONFIG.qrCodeImage;
+          upiId.textContent =
+            SITE_CONFIG.upiId;
 
         }
 
 
-
-        /* ====================================================
-           COPY UPI
-        ==================================================== */
-
         const copyUpiBtn =
-          document.getElementById(
-            "copyUpiBtn"
-          );
+          document.getElementById("copyUpiBtn");
 
 
         const copyMessage =
-          document.getElementById(
-            "upiCopyMessage"
-          );
+          document.getElementById("upiCopyMessage");
 
 
-        if(copyUpiBtn){
+        if(copyUpiBtn) {
 
           copyUpiBtn.addEventListener(
             "click",
-            async function(){
+            async function() {
 
               const upi =
-                SITE_CONFIG.upiId || "";
+                upiId.textContent.trim();
 
 
-              if(!upi){
-
-                return;
-
-              }
-
-
-              try{
+              try {
 
                 await navigator
                   .clipboard
-                  .writeText(
-                    upi
-                  );
+                  .writeText(upi);
 
 
                 copyMessage.textContent =
                   "✓ UPI ID कॉपी झाला.";
 
-
-              }catch(error){
+              } catch(error) {
 
                 copyMessage.textContent =
                   "UPI ID: " + upi;
@@ -2014,133 +1772,104 @@
         }
 
 
+        /* =====================================================
+           QR CODE
+        ===================================================== */
 
-        /* ====================================================
-           BANK DETAILS
-        ==================================================== */
+        const qr =
+          document.getElementById("donateQrCode");
+
 
         if(
-          SITE_CONFIG.bank
-        ){
+          qr &&
+          typeof SITE_CONFIG !== "undefined" &&
+          SITE_CONFIG.qrCodeImage
+        ) {
 
-          const accountName =
-            document.getElementById(
-              "donateAccountName"
-            );
-
-
-          const bankName =
-            document.getElementById(
-              "donateBankName"
-            );
-
-
-          const branch =
-            document.getElementById(
-              "donateBankBranch"
-            );
-
-
-          const accountNumber =
-            document.getElementById(
-              "donateAccountNumber"
-            );
-
-
-          const ifsc =
-            document.getElementById(
-              "donateIfsc"
-            );
-
-
-          if(accountName){
-
-            accountName.textContent =
-              SITE_CONFIG.bank.accountName || "";
-
-          }
-
-
-          if(bankName){
-
-            bankName.textContent =
-              SITE_CONFIG.bank.bankName || "";
-
-          }
-
-
-          if(branch){
-
-            branch.textContent =
-              SITE_CONFIG.bank.branch || "";
-
-          }
-
-
-          if(accountNumber){
-
-            accountNumber.textContent =
-              SITE_CONFIG.bank.accountNumber || "";
-
-          }
-
-
-          if(ifsc){
-
-            ifsc.textContent =
-              SITE_CONFIG.bank.ifsc || "";
-
-          }
+          qr.src =
+            SITE_CONFIG.qrCodeImage;
 
         }
 
 
+        /* =====================================================
+           BANK DETAILS
+        ===================================================== */
 
-        /* ====================================================
-           REGISTRATION NUMBER
-        ==================================================== */
+        if(
+          typeof SITE_CONFIG !== "undefined" &&
+          SITE_CONFIG.bank
+        ) {
 
-        const registrationPNo =
-          document.getElementById(
-            "donateRegistrationPNo"
-          );
+          const bank =
+            SITE_CONFIG.bank;
 
 
-        if(registrationPNo){
+          document
+            .getElementById("donateAccountName")
+            .textContent =
+            bank.accountName || "";
 
-          registrationPNo.textContent =
+
+          document
+            .getElementById("donateBankName")
+            .textContent =
+            bank.bankName || "";
+
+
+          document
+            .getElementById("donateBankBranch")
+            .textContent =
+            bank.branch || "";
+
+
+          document
+            .getElementById("donateAccountNumber")
+            .textContent =
+            bank.accountNumber || "";
+
+
+          document
+            .getElementById("donateIfsc")
+            .textContent =
+            bank.ifsc || "";
+
+        }
+
+
+        /* =====================================================
+           REGISTRATION
+        ===================================================== */
+
+        if(
+          typeof SITE_CONFIG !== "undefined"
+        ) {
+
+          const registration =
             SITE_CONFIG.registrationPNumber ||
             SITE_CONFIG.registrationNumber ||
             "F-23015";
 
-        }
+
+          document
+            .getElementById("donateRegistrationPNo")
+            .textContent =
+            registration;
 
 
-
-        /* ====================================================
-           NGO DARPAN
-        ==================================================== */
-
-        const ngoDarpan =
-          document.getElementById(
-            "donateNgoDarpan"
-          );
-
-
-        if(ngoDarpan){
-
-          ngoDarpan.textContent =
+          document
+            .getElementById("donateNgoDarpan")
+            .textContent =
             SITE_CONFIG.ngoDarpanNumber || "";
 
         }
 
 
+        /* =====================================================
+           RESTORE SESSION
+        ===================================================== */
 
-        /* ====================================================
-           RESTORE SESSION DATA
-        ==================================================== */
-
-        try{
+        try {
 
           const savedDonor =
             sessionStorage.getItem(
@@ -2148,27 +1877,23 @@
             );
 
 
-          if(savedDonor){
+          if(savedDonor) {
 
             const data =
-              JSON.parse(
-                savedDonor
-              );
+              JSON.parse(savedDonor);
 
 
-            if(data.name){
+            if(data.name) {
 
               document
-                .getElementById(
-                  "donorName"
-                )
+                .getElementById("donorName")
                 .value =
                 data.name;
 
             }
 
 
-            if(data.phone){
+            if(data.phone) {
 
               donorPhone.value =
                 data.phone;
@@ -2176,19 +1901,17 @@
             }
 
 
-            if(data.email){
+            if(data.email) {
 
               document
-                .getElementById(
-                  "donorEmail"
-                )
+                .getElementById("donorEmail")
                 .value =
                 data.email;
 
             }
 
 
-            if(data.pan){
+            if(data.pan) {
 
               donorPan.value =
                 data.pan;
@@ -2196,12 +1919,10 @@
             }
 
 
-            if(data.address){
+            if(data.address) {
 
               document
-                .getElementById(
-                  "donorAddress"
-                )
+                .getElementById("donorAddress")
                 .value =
                 data.address;
 
@@ -2211,12 +1932,10 @@
             if(
               typeof data.request80G ===
               "boolean"
-            ){
+            ) {
 
               document
-                .getElementById(
-                  "donor80G"
-                )
+                .getElementById("donor80G")
                 .checked =
                 data.request80G;
 
@@ -2236,7 +1955,7 @@
           if(
             savedAmount &&
             savedAmount > 0
-          ){
+          ) {
 
             updateSelectedAmount(
               savedAmount
@@ -2244,17 +1963,16 @@
 
           }
 
-        }catch(error){
+        } catch(error) {
 
           console.warn(
-            "Saved donation data could not be restored.",
+            "Could not restore saved donation data.",
             error
           );
 
         }
 
       }
-
     );
 
   </script>
@@ -2263,3 +1981,4 @@
 </body>
 
 </html>
+```
