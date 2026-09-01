@@ -1,0 +1,916 @@
+```html
+<!DOCTYPE html>
+<html lang="mr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Donation Receipt | Mai Vriddhashram</title>
+
+  <meta
+    name="description"
+    content="Mai Vriddhashram Donation Receipt and Thank You Letter"
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Noto+Serif+Devanagari:wght@600;700&family=Work+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
+
+  <style>
+
+    .receipt-page {
+      padding: 40px 15px;
+    }
+
+    .receipt-wrapper {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .receipt-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 16px;
+      padding: 35px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      margin-bottom: 30px;
+    }
+
+    .receipt-header {
+      text-align: center;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 25px;
+      margin-bottom: 25px;
+    }
+
+    .receipt-logo {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin: 10px auto;
+      display: block;
+    }
+
+    .receipt-title {
+      font-family: "Noto Serif Devanagari", serif;
+      font-size: 30px;
+      margin: 8px 0;
+    }
+
+    .receipt-subtitle {
+      margin: 5px 0;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .success-icon {
+      font-size: 42px;
+      margin-bottom: 5px;
+    }
+
+    .receipt-number {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 8px 15px;
+      border-radius: 8px;
+      background: #f5f5f5;
+      font-weight: 700;
+    }
+
+    .receipt-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    .receipt-table td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    .receipt-table td:first-child {
+      width: 35%;
+      font-weight: 700;
+      background: #fafafa;
+    }
+
+    .amount-box {
+      text-align: center;
+      margin: 25px 0;
+      padding: 20px;
+      border-radius: 12px;
+      background: #f7f7f7;
+    }
+
+    .amount-box .amount {
+      font-size: 32px;
+      font-weight: 700;
+      margin-top: 5px;
+    }
+
+    .thank-you {
+      text-align: center;
+      line-height: 1.9;
+    }
+
+    .thank-you h2 {
+      font-family: "Noto Serif Devanagari", serif;
+    }
+
+    .signature {
+      margin-top: 35px;
+      text-align: right;
+      line-height: 1.8;
+    }
+
+    .action-buttons {
+      text-align: center;
+      margin: 25px 0;
+    }
+
+    .action-buttons button {
+      margin: 5px;
+    }
+
+    .warning {
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+      margin-top: 20px;
+      line-height: 1.7;
+    }
+
+    .error-box {
+      max-width: 700px;
+      margin: 80px auto;
+      padding: 30px;
+      text-align: center;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    }
+
+    .receipt-success {
+      text-align: center;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      background: rgba(0,128,0,0.08);
+      color: #087443;
+      font-weight: 600;
+    }
+
+    @media print {
+
+      body {
+        background: white !important;
+      }
+
+      #site-header,
+      #site-footer,
+      .action-buttons,
+      .warning {
+        display: none !important;
+      }
+
+      .receipt-page {
+        padding: 0;
+      }
+
+      .receipt-card {
+        box-shadow: none;
+        border: 1px solid #aaa;
+        margin-bottom: 20px;
+        page-break-inside: avoid;
+      }
+
+      .receipt-success {
+        display: none !important;
+      }
+
+    }
+
+    @media (max-width: 600px) {
+
+      .receipt-card {
+        padding: 20px;
+      }
+
+      .receipt-title {
+        font-size: 24px;
+      }
+
+      .receipt-table td {
+        padding: 9px;
+        font-size: 14px;
+      }
+
+      .receipt-table td:first-child {
+        width: 40%;
+      }
+
+      .signature {
+        text-align: center;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <!-- HEADER -->
+
+  <div id="site-header"></div>
+
+
+  <main class="receipt-page">
+
+    <div class="receipt-wrapper">
+
+
+      <!-- RECEIPT -->
+
+      <section class="receipt-card">
+
+        <div class="receipt-success">
+          ❤️ पेमेंट यशस्वी झाले आहे. धन्यवाद!
+        </div>
+
+
+        <div class="receipt-header">
+
+          <div class="success-icon">
+            ❤️
+          </div>
+
+
+          <img
+            src="images/logo.png"
+            alt="Mai Vriddhashram"
+            class="receipt-logo"
+            onerror="this.style.display='none';"
+          >
+
+
+          <h1 class="receipt-title">
+            माई वृद्धाश्रम
+          </h1>
+
+
+          <p class="receipt-subtitle">
+            बोधी ट्री एज्युकेशनल फाऊंडेशन द्वारा संचालित
+          </p>
+
+
+          <p>
+            <strong>Donation Receipt</strong>
+          </p>
+
+
+          <div
+            id="receiptNumber"
+            class="receipt-number"
+          >
+            Receipt No.
+          </div>
+
+        </div>
+
+
+        <h2>
+          देणगी पावती
+        </h2>
+
+
+        <div class="amount-box">
+
+          <div>
+            प्राप्त झालेली देणगी
+          </div>
+
+
+          <div
+            id="receiptAmount"
+            class="amount"
+          >
+            ₹0
+          </div>
+
+        </div>
+
+
+        <table class="receipt-table">
+
+
+          <tr>
+
+            <td>
+              देणगीदाराचे पूर्ण नाव
+            </td>
+
+            <td id="receiptName">
+              -
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              मोबाईल नंबर
+            </td>
+
+            <td id="receiptPhone">
+              -
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              ई-मेल
+            </td>
+
+            <td id="receiptEmail">
+              -
+            </td>
+
+          </tr>
+
+
+          <tr id="panRow">
+
+            <td>
+              PAN नंबर
+            </td>
+
+            <td id="receiptPan">
+              -
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              पत्ता
+            </td>
+
+            <td id="receiptAddress">
+              -
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              देणगीची रक्कम
+            </td>
+
+            <td id="receiptAmountTable">
+              -
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              Payment ID
+            </td>
+
+            <td id="receiptPaymentId">
+              -
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              Order ID
+            </td>
+
+            <td id="receiptOrderId">
+              -
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              पेमेंट दिनांक
+            </td>
+
+            <td id="receiptDate">
+              -
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              80G पावतीची विनंती
+            </td>
+
+            <td id="receipt80G">
+              -
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              संस्थेचा Registration P. No.
+            </td>
+
+            <td>
+              F-23015
+            </td>
+
+          </tr>
+
+
+        </table>
+
+
+        <p class="warning">
+
+          ही पावती ऑनलाइन पेमेंटच्या यशस्वी पडताळणीनंतर
+          तयार करण्यात आली आहे.
+          कृपया ही पावती आपल्या नोंदीसाठी जतन करा.
+
+        </p>
+
+      </section>
+
+
+
+      <!-- THANK YOU LETTER -->
+
+      <section class="receipt-card thank-you">
+
+        <h2>
+          ❤️ मनःपूर्वक धन्यवाद
+        </h2>
+
+
+        <p>
+          आदरणीय
+          <strong id="letterName">
+            देणगीदार
+          </strong>,
+        </p>
+
+
+        <p>
+
+          माई वृद्धाश्रमासाठी आपण केलेल्या
+          <strong id="letterAmount">
+            ₹0
+          </strong>
+          च्या मौल्यवान देणगीबद्दल
+          आम्ही आपले मनःपूर्वक आभार मानतो.
+
+        </p>
+
+
+        <p>
+
+          आपल्या सहकार्यामुळे वृद्ध मातांना
+          अन्न, निवास, आरोग्यसेवा, औषधे,
+          दैनंदिन गरजा आणि सन्मानपूर्वक जीवन
+          देण्यासाठी आम्हाला बळ मिळते.
+
+        </p>
+
+
+        <p>
+
+          आपली मदत ही केवळ आर्थिक मदत नसून
+          एका वृद्ध आईच्या जीवनात
+          <strong>
+            आपुलकी, आधार आणि आशेचा किरण
+          </strong>
+          आहे.
+
+        </p>
+
+
+        <p>
+
+          आपल्या विश्वासाबद्दल आणि
+          माई वृद्धाश्रमाच्या कार्याला दिलेल्या
+          मोलाच्या सहकार्याबद्दल पुन्हा एकदा
+          मनःपूर्वक धन्यवाद.
+
+        </p>
+
+
+        <div class="signature">
+
+          <strong>
+            माई वृद्धाश्रम
+          </strong>
+
+          <br>
+
+          बोधी ट्री एज्युकेशनल फाऊंडेशन
+
+          <br>
+
+          Registration P. No.: F-23015
+
+          <br>
+
+          “जन सेवा हीच ईश्वर सेवा”
+
+        </div>
+
+      </section>
+
+
+
+      <!-- BUTTONS -->
+
+      <div class="action-buttons">
+
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="window.print()"
+        >
+          🖨️ पावती / आभार पत्र Print करा
+        </button>
+
+
+        <button
+          type="button"
+          class="btn btn-outline"
+          onclick="window.location.href='donate.html'"
+        >
+          ❤️ पुन्हा देणगी द्या
+        </button>
+
+      </div>
+
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <div id="site-footer"></div>
+
+
+  <!-- COMMON JS -->
+
+  <script src="config.js"></script>
+
+  <script src="js/common.js"></script>
+
+
+  <!-- RECEIPT SCRIPT -->
+
+  <script>
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      function () {
+
+
+        /* ==========================================
+           GET SUCCESSFUL DONATION
+        ========================================== */
+
+        let donationData = null;
+
+
+        try {
+
+          const saved =
+            sessionStorage.getItem(
+              "successfulDonation"
+            );
+
+
+          if (saved) {
+
+            donationData =
+              JSON.parse(saved);
+
+          }
+
+        } catch (error) {
+
+          console.error(
+            "Receipt data error:",
+            error
+          );
+
+        }
+
+
+        /* ==========================================
+           CHECK DATA
+        ========================================== */
+
+        if (
+          !donationData ||
+          !donationData.donor
+        ) {
+
+          document.querySelector(
+            ".receipt-wrapper"
+          ).innerHTML = `
+
+            <div class="error-box">
+
+              <h2>
+                ⚠️ पावतीची माहिती उपलब्ध नाही
+              </h2>
+
+              <p>
+                कृपया पेमेंट यशस्वी झाल्यानंतर
+                पावती उघडा.
+              </p>
+
+              <br>
+
+              <button
+                type="button"
+                class="btn btn-primary"
+                onclick="window.location.href='donate.html'"
+              >
+                देणगी पृष्ठावर जा
+              </button>
+
+            </div>
+
+          `;
+
+          return;
+
+        }
+
+
+        /* ==========================================
+           DONOR
+        ========================================== */
+
+        const donor =
+          donationData.donor;
+
+
+        /* ==========================================
+           AMOUNT
+        ========================================== */
+
+        const amount =
+          Number(
+            donationData.amount
+          ) || 0;
+
+
+        const formattedAmount =
+          "₹" +
+          amount.toLocaleString(
+            "en-IN"
+          );
+
+
+        /* ==========================================
+           PAYMENT IDs
+        ========================================== */
+
+        const paymentId =
+          donationData.payment_id ||
+          "-";
+
+
+        const orderId =
+          donationData.order_id ||
+          "-";
+
+
+        /* ==========================================
+           RECEIPT NUMBER
+        ========================================== */
+
+        const receiptNumber =
+          "MV-" +
+          Date.now();
+
+
+        document.getElementById(
+          "receiptNumber"
+        ).textContent =
+          "Receipt No.: " +
+          receiptNumber;
+
+
+        /* ==========================================
+           AMOUNT
+        ========================================== */
+
+        document.getElementById(
+          "receiptAmount"
+        ).textContent =
+          formattedAmount;
+
+
+        document.getElementById(
+          "receiptAmountTable"
+        ).textContent =
+          formattedAmount;
+
+
+        document.getElementById(
+          "letterAmount"
+        ).textContent =
+          formattedAmount;
+
+
+        /* ==========================================
+           DONOR DETAILS
+        ========================================== */
+
+        document.getElementById(
+          "receiptName"
+        ).textContent =
+          donor.name || "-";
+
+
+        document.getElementById(
+          "receiptPhone"
+        ).textContent =
+          donor.phone || "-";
+
+
+        document.getElementById(
+          "receiptEmail"
+        ).textContent =
+          donor.email || "-";
+
+
+        document.getElementById(
+          "receiptPan"
+        ).textContent =
+          donor.pan || "-";
+
+
+        document.getElementById(
+          "receiptAddress"
+        ).textContent =
+          donor.address || "-";
+
+
+        document.getElementById(
+          "letterName"
+        ).textContent =
+          donor.name ||
+          "देणगीदार";
+
+
+        /* ==========================================
+           PAYMENT DETAILS
+        ========================================== */
+
+        document.getElementById(
+          "receiptPaymentId"
+        ).textContent =
+          paymentId;
+
+
+        document.getElementById(
+          "receiptOrderId"
+        ).textContent =
+          orderId;
+
+
+        /* ==========================================
+           PAYMENT DATE
+        ========================================== */
+
+        let paymentDate =
+          new Date(
+            donationData.payment_date
+          );
+
+
+        if (
+          isNaN(
+            paymentDate.getTime()
+          )
+        ) {
+
+          paymentDate =
+            new Date();
+
+        }
+
+
+        const dateText =
+          paymentDate.toLocaleDateString(
+            "en-IN",
+            {
+              day: "2-digit",
+              month: "2-digit",
+              year: "numeric"
+            }
+          );
+
+
+        const timeText =
+          paymentDate.toLocaleTimeString(
+            "en-IN",
+            {
+              hour: "2-digit",
+              minute: "2-digit"
+            }
+          );
+
+
+        document.getElementById(
+          "receiptDate"
+        ).textContent =
+          dateText +
+          " | " +
+          timeText;
+
+
+        /* ==========================================
+           80G
+        ========================================== */
+
+        document.getElementById(
+          "receipt80G"
+        ).textContent =
+          donor.request80G
+            ? "होय"
+            : "नाही";
+
+
+        /* ==========================================
+           HIDE PAN IF EMPTY
+        ========================================== */
+
+        if (
+          !donor.pan
+        ) {
+
+          document.getElementById(
+            "panRow"
+          ).style.display =
+            "none";
+
+        }
+
+      }
+
+    );
+
+  </script>
+
+
+</body>
+
+</html>
+```
