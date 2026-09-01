@@ -15,7 +15,7 @@
 
   <meta
     name="description"
-    content="Mai Vriddhashram Donation Receipt and Thank You Letter"
+    content="Official Donation Receipt and Thank You Letter - Mai Vriddhashram"
   >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,203 +30,781 @@
     href="css/style.css"
   >
 
+
   <style>
 
-    .receipt-page {
-      padding: 40px 15px;
+    /* =====================================================
+       PREMIUM RECEIPT DESIGN
+    ===================================================== */
+
+    :root {
+      --receipt-primary: #7b4b2a;
+      --receipt-secondary: #a66a3f;
+      --receipt-gold: #c99a4a;
+      --receipt-dark: #2d241f;
+      --receipt-muted: #6f6863;
+      --receipt-line: #ded7d1;
+      --receipt-soft: #f8f4ef;
+      --receipt-white: #ffffff;
+      --receipt-green: #18794e;
     }
+
+
+    body {
+      background:
+        linear-gradient(
+          135deg,
+          #f7f3ef 0%,
+          #fff 50%,
+          #f7f3ef 100%
+        );
+    }
+
+
+    .receipt-page {
+      padding: 45px 15px 70px;
+    }
+
 
     .receipt-wrapper {
-      max-width: 850px;
-      margin: auto;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
-    .receipt-card {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 16px;
-      padding: 35px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-      margin-bottom: 30px;
-    }
 
-    .receipt-header {
+    /* =====================================================
+       SUCCESS BANNER
+    ===================================================== */
+
+    .receipt-success-banner {
+      background: #edf8f2;
+      border: 1px solid #c9ead8;
+      color: var(--receipt-green);
+      padding: 14px 18px;
+      border-radius: 12px;
       text-align: center;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 25px;
-      margin-bottom: 25px;
+      font-weight: 700;
+      margin-bottom: 22px;
     }
+
+
+    /* =====================================================
+       MAIN RECEIPT
+    ===================================================== */
+
+    .premium-receipt {
+      position: relative;
+      background: var(--receipt-white);
+      border: 1px solid #d9d0c8;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow:
+        0 18px 50px rgba(45,36,31,0.12);
+    }
+
+
+    .receipt-top-line {
+      height: 7px;
+      background:
+        linear-gradient(
+          90deg,
+          var(--receipt-primary),
+          var(--receipt-gold),
+          var(--receipt-primary)
+        );
+    }
+
+
+    .receipt-inner {
+      padding: 42px;
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    .premium-receipt-header {
+      display: grid;
+      grid-template-columns: 120px 1fr 160px;
+      gap: 25px;
+      align-items: center;
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--receipt-line);
+    }
+
+
+    .receipt-logo-wrap {
+      width: 105px;
+      height: 105px;
+      border: 1px solid #ddd2c8;
+      border-radius: 50%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow:
+        0 5px 18px rgba(0,0,0,0.07);
+    }
+
 
     .receipt-logo {
-      width: 100px;
-      height: 100px;
+      width: 88px;
+      height: 88px;
       object-fit: contain;
-      margin: 10px auto;
-      display: block;
     }
 
-    .receipt-title {
-      font-family: "Noto Serif Devanagari", serif;
-      font-size: 30px;
-      margin: 8px 0;
-    }
 
-    .receipt-subtitle {
-      margin: 5px 0;
-      font-size: 16px;
-      line-height: 1.7;
-    }
-
-    .success-icon {
-      font-size: 42px;
-      margin-bottom: 5px;
-    }
-
-    .receipt-number {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 8px 15px;
-      border-radius: 8px;
-      background: #f5f5f5;
-      font-weight: 700;
-    }
-
-    .receipt-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-
-    .receipt-table td {
-      border: 1px solid #ddd;
-      padding: 12px;
-      vertical-align: top;
-      line-height: 1.6;
-    }
-
-    .receipt-table td:first-child {
-      width: 35%;
-      font-weight: 700;
-      background: #fafafa;
-    }
-
-    .amount-box {
+    .receipt-organization {
       text-align: center;
-      margin: 25px 0;
-      padding: 20px;
-      border-radius: 12px;
-      background: #f7f7f7;
     }
 
-    .amount-box .amount {
-      font-size: 32px;
-      font-weight: 700;
-      margin-top: 5px;
+
+    .receipt-organization h1 {
+      margin: 0;
+      color: var(--receipt-primary);
+      font-family:
+        "Noto Serif Devanagari",
+        serif;
+      font-size: 31px;
+      line-height: 1.35;
     }
 
-    .thank-you {
-      text-align: center;
-      line-height: 1.9;
-    }
 
-    .thank-you h2 {
-      font-family: "Noto Serif Devanagari", serif;
-    }
-
-    .signature {
-      margin-top: 35px;
-      text-align: right;
-      line-height: 1.8;
-    }
-
-    .action-buttons {
-      text-align: center;
-      margin: 25px 0;
-    }
-
-    .action-buttons button {
-      margin: 5px;
-    }
-
-    .warning {
-      text-align: center;
-      font-size: 13px;
-      color: #666;
-      margin-top: 20px;
-      line-height: 1.7;
-    }
-
-    .error-box {
-      max-width: 700px;
-      margin: 80px auto;
-      padding: 30px;
-      text-align: center;
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 15px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-    }
-
-    .receipt-success {
-      text-align: center;
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      background: rgba(0,128,0,0.08);
-      color: #087443;
+    .receipt-organization h2 {
+      margin: 6px 0 0;
+      color: var(--receipt-dark);
+      font-family: "Fraunces", serif;
+      font-size: 21px;
       font-weight: 600;
     }
 
+
+    .receipt-organization p {
+      margin: 8px 0 0;
+      color: var(--receipt-muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+
+    .receipt-official-box {
+      text-align: center;
+      border: 1px solid var(--receipt-line);
+      border-radius: 12px;
+      padding: 13px 10px;
+      background: var(--receipt-soft);
+    }
+
+
+    .receipt-official-box .label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--receipt-muted);
+    }
+
+
+    .receipt-official-box strong {
+      display: block;
+      margin-top: 5px;
+      font-size: 14px;
+      color: var(--receipt-dark);
+    }
+
+
+    /* =====================================================
+       RECEIPT TITLE
+    ===================================================== */
+
+    .receipt-title-area {
+      text-align: center;
+      padding: 30px 0 24px;
+    }
+
+
+    .receipt-title-area .small-title {
+      color: var(--receipt-gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+
+    .receipt-title-area h2 {
+      margin: 7px 0 5px;
+      color: var(--receipt-dark);
+      font-family:
+        "Noto Serif Devanagari",
+        serif;
+      font-size: 30px;
+    }
+
+
+    .receipt-title-area p {
+      margin: 0;
+      color: var(--receipt-muted);
+      font-size: 14px;
+    }
+
+
+    /* =====================================================
+       RECEIPT META
+    ===================================================== */
+
+    .receipt-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 25px;
+    }
+
+
+    .receipt-meta-box {
+      border: 1px solid var(--receipt-line);
+      border-radius: 11px;
+      padding: 13px 15px;
+      background: #fff;
+    }
+
+
+    .receipt-meta-box span {
+      display: block;
+      font-size: 11px;
+      color: var(--receipt-muted);
+      margin-bottom: 4px;
+    }
+
+
+    .receipt-meta-box strong {
+      color: var(--receipt-dark);
+      font-size: 14px;
+      word-break: break-word;
+    }
+
+
+    /* =====================================================
+       AMOUNT
+    ===================================================== */
+
+    .premium-amount-box {
+      position: relative;
+      text-align: center;
+      background:
+        linear-gradient(
+          135deg,
+          #faf6f0,
+          #fff
+        );
+      border: 1px solid #dfd1c3;
+      border-radius: 15px;
+      padding: 24px;
+      margin: 24px 0 30px;
+    }
+
+
+    .premium-amount-box .amount-label {
+      color: var(--receipt-muted);
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+
+
+    .premium-amount-box .amount {
+      color: var(--receipt-primary);
+      font-family: "Fraunces", serif;
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+
+    .premium-amount-box .verified {
+      margin-top: 7px;
+      color: var(--receipt-green);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+
+    /* =====================================================
+       DETAILS
+    ===================================================== */
+
+    .details-heading {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 12px;
+      color: var(--receipt-dark);
+      font-family:
+        "Noto Serif Devanagari",
+        serif;
+      font-size: 20px;
+    }
+
+
+    .details-heading::before {
+      content: "";
+      width: 4px;
+      height: 24px;
+      border-radius: 5px;
+      background: var(--receipt-gold);
+    }
+
+
+    .premium-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      overflow: hidden;
+      border: 1px solid var(--receipt-line);
+      border-radius: 12px;
+    }
+
+
+    .premium-table td {
+      padding: 13px 15px;
+      border-bottom: 1px solid var(--receipt-line);
+      vertical-align: top;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+
+    .premium-table tr:last-child td {
+      border-bottom: none;
+    }
+
+
+    .premium-table td:first-child {
+      width: 36%;
+      background: #faf8f5;
+      color: #5d554f;
+      font-weight: 700;
+    }
+
+
+    .premium-table td:last-child {
+      color: var(--receipt-dark);
+      background: #fff;
+      word-break: break-word;
+    }
+
+
+    .payment-id {
+      font-family: monospace;
+      font-size: 12px;
+    }
+
+
+    /* =====================================================
+       IMPORTANT NOTE
+    ===================================================== */
+
+    .receipt-note {
+      margin-top: 22px;
+      padding: 15px 17px;
+      border-radius: 11px;
+      background: #faf7f3;
+      border: 1px solid #e6ddd5;
+      color: #665e58;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .receipt-document-footer {
+      margin-top: 35px;
+      padding-top: 22px;
+      border-top: 1px solid var(--receipt-line);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: end;
+    }
+
+
+    .receipt-motto {
+      color: var(--receipt-primary);
+      font-family:
+        "Noto Serif Devanagari",
+        serif;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+
+    .receipt-motto small {
+      display: block;
+      color: var(--receipt-muted);
+      font-family:
+        "Noto Sans Devanagari",
+        sans-serif;
+      font-size: 11px;
+      margin-top: 7px;
+      line-height: 1.6;
+    }
+
+
+    .signature-area {
+      text-align: right;
+      min-height: 85px;
+    }
+
+
+    .signature-line {
+      width: 180px;
+      margin: 30px 0 6px auto;
+      border-top: 1px solid #777;
+    }
+
+
+    .signature-area strong {
+      font-size: 13px;
+    }
+
+
+    .signature-area span {
+      display: block;
+      font-size: 11px;
+      color: var(--receipt-muted);
+      margin-top: 3px;
+    }
+
+
+    /* =====================================================
+       THANK YOU LETTER
+    ===================================================== */
+
+    .thank-you-letter {
+      position: relative;
+      margin-top: 30px;
+      background: #fff;
+      border: 1px solid #d9d0c8;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow:
+        0 18px 50px rgba(45,36,31,0.10);
+    }
+
+
+    .thank-you-top-line {
+      height: 5px;
+      background:
+        linear-gradient(
+          90deg,
+          var(--receipt-gold),
+          var(--receipt-primary),
+          var(--receipt-gold)
+        );
+    }
+
+
+    .thank-you-inner {
+      padding: 42px;
+    }
+
+
+    .thank-you-header {
+      text-align: center;
+      padding-bottom: 25px;
+      border-bottom: 1px solid var(--receipt-line);
+    }
+
+
+    .thank-you-header .heart {
+      font-size: 34px;
+      margin-bottom: 5px;
+    }
+
+
+    .thank-you-header h2 {
+      margin: 0;
+      color: var(--receipt-primary);
+      font-family:
+        "Noto Serif Devanagari",
+        serif;
+      font-size: 28px;
+    }
+
+
+    .thank-you-header p {
+      margin: 7px 0 0;
+      color: var(--receipt-muted);
+      font-size: 13px;
+    }
+
+
+    .letter-content {
+      max-width: 720px;
+      margin: 28px auto 0;
+      color: #443d38;
+      font-size: 15px;
+      line-height: 2;
+    }
+
+
+    .letter-content p {
+      margin: 0 0 18px;
+    }
+
+
+    .letter-highlight {
+      margin: 25px 0;
+      padding: 20px 22px;
+      border-left: 4px solid var(--receipt-gold);
+      background: var(--receipt-soft);
+      border-radius: 0 12px 12px 0;
+      color: var(--receipt-primary);
+      font-family:
+        "Noto Serif Devanagari",
+        serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.8;
+      text-align: center;
+    }
+
+
+    .letter-signature {
+      margin-top: 38px;
+      text-align: right;
+      line-height: 1.8;
+      color: var(--receipt-dark);
+    }
+
+
+    .letter-signature strong {
+      color: var(--receipt-primary);
+      font-size: 15px;
+    }
+
+
+    .letter-signature small {
+      color: var(--receipt-muted);
+      font-size: 11px;
+    }
+
+
+    /* =====================================================
+       BUTTONS
+    ===================================================== */
+
+    .receipt-actions {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+
+    .receipt-actions button,
+    .receipt-actions a {
+      margin: 5px;
+    }
+
+
+    /* =====================================================
+       ERROR
+    ===================================================== */
+
+    .receipt-error {
+      max-width: 650px;
+      margin: 80px auto;
+      padding: 35px 25px;
+      text-align: center;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 18px;
+      box-shadow:
+        0 15px 40px rgba(0,0,0,0.08);
+    }
+
+
+    .receipt-error h2 {
+      color: #9b2c2c;
+      font-family:
+        "Noto Serif Devanagari",
+        serif;
+    }
+
+
+    /* =====================================================
+       PRINT
+    ===================================================== */
+
     @media print {
 
-      body {
-        background: white !important;
+      @page {
+        size: A4;
+        margin: 12mm;
       }
+
+
+      html,
+      body {
+        background: #fff !important;
+      }
+
 
       #site-header,
       #site-footer,
-      .action-buttons,
-      .warning {
+      .receipt-actions,
+      .receipt-success-banner {
         display: none !important;
       }
+
 
       .receipt-page {
         padding: 0;
       }
 
-      .receipt-card {
-        box-shadow: none;
-        border: 1px solid #aaa;
-        margin-bottom: 20px;
-        page-break-inside: avoid;
+
+      .receipt-wrapper {
+        max-width: none;
       }
 
-      .receipt-success {
-        display: none !important;
+
+      .premium-receipt,
+      .thank-you-letter {
+        box-shadow: none !important;
+        border: 1px solid #bbb;
+        border-radius: 0;
+      }
+
+
+      .receipt-inner,
+      .thank-you-inner {
+        padding: 25px;
+      }
+
+
+      .premium-receipt {
+        page-break-after: always;
+      }
+
+
+      .thank-you-letter {
+        page-break-before: always;
+      }
+
+
+      .premium-table,
+      .receipt-meta,
+      .premium-amount-box {
+        break-inside: avoid;
+      }
+
+
+      .thank-you-letter {
+        break-inside: avoid;
       }
 
     }
 
-    @media (max-width: 600px) {
 
-      .receipt-card {
-        padding: 20px;
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media (max-width: 700px) {
+
+      .receipt-page {
+        padding: 25px 10px 50px;
       }
 
-      .receipt-title {
+
+      .receipt-inner,
+      .thank-you-inner {
+        padding: 22px 17px;
+      }
+
+
+      .premium-receipt-header {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+
+      .receipt-logo-wrap {
+        margin: 0 auto;
+      }
+
+
+      .receipt-official-box {
+        max-width: 220px;
+        margin: 0 auto;
+      }
+
+
+      .receipt-organization h1 {
+        font-size: 25px;
+      }
+
+
+      .receipt-organization h2 {
+        font-size: 18px;
+      }
+
+
+      .receipt-title-area h2 {
+        font-size: 25px;
+      }
+
+
+      .receipt-meta {
+        grid-template-columns: 1fr;
+      }
+
+
+      .premium-amount-box .amount {
+        font-size: 34px;
+      }
+
+
+      .premium-table td {
+        padding: 10px;
+        font-size: 13px;
+      }
+
+
+      .premium-table td:first-child {
+        width: 42%;
+      }
+
+
+      .receipt-document-footer {
+        grid-template-columns: 1fr;
+      }
+
+
+      .signature-area {
+        text-align: center;
+      }
+
+
+      .signature-line {
+        margin: 30px auto 6px;
+      }
+
+
+      .thank-you-header h2 {
         font-size: 24px;
       }
 
-      .receipt-table td {
-        padding: 9px;
+
+      .letter-content {
         font-size: 14px;
       }
 
-      .receipt-table td:first-child {
-        width: 40%;
-      }
 
-      .signature {
+      .letter-signature {
         text-align: center;
       }
 
@@ -239,6 +817,7 @@
 
 <body>
 
+
   <!-- HEADER -->
 
   <div id="site-header"></div>
@@ -246,319 +825,532 @@
 
   <main class="receipt-page">
 
-    <div class="receipt-wrapper">
+    <div
+      class="receipt-wrapper"
+      id="receiptWrapper"
+    >
 
 
-      <!-- RECEIPT -->
+      <!-- =================================================
+           SUCCESS
+      ================================================== -->
 
-      <section class="receipt-card">
+      <div class="receipt-success-banner">
 
-        <div class="receipt-success">
-          ❤️ पेमेंट यशस्वी झाले आहे. धन्यवाद!
-        </div>
+        ✓ पेमेंट यशस्वीरीत्या पडताळले गेले आहे.
+        आपल्या मौल्यवान सहकार्याबद्दल धन्यवाद.
+
+      </div>
 
 
-        <div class="receipt-header">
 
-          <div class="success-icon">
-            ❤️
+      <!-- =================================================
+           OFFICIAL DONATION RECEIPT
+      ================================================== -->
+
+      <section class="premium-receipt">
+
+        <div class="receipt-top-line"></div>
+
+
+        <div class="receipt-inner">
+
+
+          <!-- HEADER -->
+
+          <div class="premium-receipt-header">
+
+
+            <div class="receipt-logo-wrap">
+
+              <img
+                src="images/logo.png"
+                alt="Mai Vriddhashram Logo"
+                class="receipt-logo"
+                onerror="this.style.display='none';"
+              >
+
+            </div>
+
+
+            <div class="receipt-organization">
+
+              <h1>
+                माई वृद्धाश्रम
+              </h1>
+
+              <h2>
+                Mai Vriddhashram
+              </h2>
+
+              <p>
+                बोधी ट्री एज्युकेशनल फाऊंडेशन द्वारा संचालित
+                <br>
+                “जन सेवा हीच ईश्वर सेवा”
+              </p>
+
+            </div>
+
+
+            <div class="receipt-official-box">
+
+              <div class="label">
+                Official Receipt
+              </div>
+
+              <strong>
+                DONATION RECEIPT
+              </strong>
+
+              <strong>
+                F-23015
+              </strong>
+
+            </div>
+
           </div>
 
 
-          <img
-            src="images/logo.png"
-            alt="Mai Vriddhashram"
-            class="receipt-logo"
-            onerror="this.style.display='none';"
+
+          <!-- TITLE -->
+
+          <div class="receipt-title-area">
+
+            <div class="small-title">
+              MAI VRIDDHASHRAM
+            </div>
+
+            <h2>
+              देणगी पावती
+            </h2>
+
+            <p>
+              आपल्या उदार सहकार्याची अधिकृत नोंद
+            </p>
+
+          </div>
+
+
+
+          <!-- RECEIPT META -->
+
+          <div class="receipt-meta">
+
+
+            <div class="receipt-meta-box">
+
+              <span>
+                Receipt Number
+              </span>
+
+              <strong id="receiptNumber">
+                —
+              </strong>
+
+            </div>
+
+
+            <div class="receipt-meta-box">
+
+              <span>
+                Payment Date & Time
+              </span>
+
+              <strong id="receiptDate">
+                —
+              </strong>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- AMOUNT -->
+
+          <div class="premium-amount-box">
+
+            <div class="amount-label">
+              प्राप्त झालेली देणगी
+            </div>
+
+            <div
+              id="receiptAmount"
+              class="amount"
+            >
+              ₹0
+            </div>
+
+            <div class="verified">
+              ✓ Payment Successfully Verified
+            </div>
+
+          </div>
+
+
+
+          <!-- DONOR DETAILS -->
+
+          <h3 class="details-heading">
+            देणगीदाराची माहिती
+          </h3>
+
+
+          <table class="premium-table">
+
+
+            <tr>
+
+              <td>
+                देणगीदाराचे पूर्ण नाव
+              </td>
+
+              <td id="receiptName">
+                —
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                मोबाईल नंबर
+              </td>
+
+              <td id="receiptPhone">
+                —
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                ई-मेल
+              </td>
+
+              <td id="receiptEmail">
+                —
+              </td>
+
+            </tr>
+
+
+            <tr
+              id="panRow"
+            >
+
+              <td>
+                PAN नंबर
+              </td>
+
+              <td id="receiptPan">
+                —
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                पत्ता
+              </td>
+
+              <td id="receiptAddress">
+                —
+              </td>
+
+            </tr>
+
+
+          </table>
+
+
+
+          <!-- PAYMENT DETAILS -->
+
+          <h3
+            class="details-heading"
+            style="margin-top:28px;"
           >
+            पेमेंटची माहिती
+          </h3>
 
 
-          <h1 class="receipt-title">
-            माई वृद्धाश्रम
-          </h1>
+          <table class="premium-table">
 
 
-          <p class="receipt-subtitle">
-            बोधी ट्री एज्युकेशनल फाऊंडेशन द्वारा संचालित
-          </p>
+            <tr>
+
+              <td>
+                देणगीची रक्कम
+              </td>
+
+              <td id="receiptAmountTable">
+                —
+              </td>
+
+            </tr>
 
 
-          <p>
-            <strong>Donation Receipt</strong>
-          </p>
+            <tr>
+
+              <td>
+                Payment ID
+              </td>
+
+              <td
+                id="receiptPaymentId"
+                class="payment-id"
+              >
+                —
+              </td>
+
+            </tr>
 
 
-          <div
-            id="receiptNumber"
-            class="receipt-number"
-          >
-            Receipt No.
+            <tr>
+
+              <td>
+                Order ID
+              </td>
+
+              <td
+                id="receiptOrderId"
+                class="payment-id"
+              >
+                —
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                80G पावतीची विनंती
+              </td>
+
+              <td id="receipt80G">
+                —
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                संस्थेचा Registration P. No.
+              </td>
+
+              <td>
+                F-23015
+              </td>
+
+            </tr>
+
+
+          </table>
+
+
+
+          <!-- NOTE -->
+
+          <div class="receipt-note">
+
+            <strong>
+              महत्त्वाची नोंद:
+            </strong>
+
+            ही पावती ऑनलाइन पेमेंटच्या यशस्वी पडताळणीनंतर
+            तयार करण्यात आली आहे. कृपया ही पावती आपल्या
+            वैयक्तिक नोंदीसाठी जतन करून ठेवा.
+
+            <br><br>
+
+            80G कर सवलतीसाठी आवश्यक असल्यास संबंधित
+            कागदपत्रे व प्रक्रिया संस्थेच्या लागू नियमांनुसार
+            स्वतंत्रपणे केली जाईल.
+
           </div>
+
+
+
+          <!-- FOOTER -->
+
+          <div class="receipt-document-footer">
+
+
+            <div class="receipt-motto">
+
+              “जन सेवा हीच ईश्वर सेवा”
+
+              <small>
+                वृद्ध मातांना सन्मान, आधार आणि सुरक्षित जीवन
+                देण्यासाठी आपल्या सहकार्याबद्दल धन्यवाद.
+              </small>
+
+            </div>
+
+
+            <div class="signature-area">
+
+              <div class="signature-line"></div>
+
+              <strong>
+                माई वृद्धाश्रम
+              </strong>
+
+              <span>
+                बोधी ट्री एज्युकेशनल फाऊंडेशन
+              </span>
+
+              <span>
+                Authorized Representative
+              </span>
+
+            </div>
+
+          </div>
+
 
         </div>
-
-
-        <h2>
-          देणगी पावती
-        </h2>
-
-
-        <div class="amount-box">
-
-          <div>
-            प्राप्त झालेली देणगी
-          </div>
-
-
-          <div
-            id="receiptAmount"
-            class="amount"
-          >
-            ₹0
-          </div>
-
-        </div>
-
-
-        <table class="receipt-table">
-
-
-          <tr>
-
-            <td>
-              देणगीदाराचे पूर्ण नाव
-            </td>
-
-            <td id="receiptName">
-              -
-            </td>
-
-          </tr>
-
-
-          <tr>
-
-            <td>
-              मोबाईल नंबर
-            </td>
-
-            <td id="receiptPhone">
-              -
-            </td>
-
-          </tr>
-
-
-          <tr>
-
-            <td>
-              ई-मेल
-            </td>
-
-            <td id="receiptEmail">
-              -
-            </td>
-
-          </tr>
-
-
-          <tr id="panRow">
-
-            <td>
-              PAN नंबर
-            </td>
-
-            <td id="receiptPan">
-              -
-            </td>
-
-          </tr>
-
-
-          <tr>
-
-            <td>
-              पत्ता
-            </td>
-
-            <td id="receiptAddress">
-              -
-            </td>
-
-          </tr>
-
-
-          <tr>
-
-            <td>
-              देणगीची रक्कम
-            </td>
-
-            <td id="receiptAmountTable">
-              -
-            </td>
-
-          </tr>
-
-
-          <tr>
-
-            <td>
-              Payment ID
-            </td>
-
-            <td id="receiptPaymentId">
-              -
-            </td>
-
-          </tr>
-
-
-          <tr>
-
-            <td>
-              Order ID
-            </td>
-
-            <td id="receiptOrderId">
-              -
-            </td>
-
-          </tr>
-
-
-          <tr>
-
-            <td>
-              पेमेंट दिनांक
-            </td>
-
-            <td id="receiptDate">
-              -
-            </td>
-
-          </tr>
-
-
-          <tr>
-
-            <td>
-              80G पावतीची विनंती
-            </td>
-
-            <td id="receipt80G">
-              -
-            </td>
-
-          </tr>
-
-
-          <tr>
-
-            <td>
-              संस्थेचा Registration P. No.
-            </td>
-
-            <td>
-              F-23015
-            </td>
-
-          </tr>
-
-
-        </table>
-
-
-        <p class="warning">
-
-          ही पावती ऑनलाइन पेमेंटच्या यशस्वी पडताळणीनंतर
-          तयार करण्यात आली आहे.
-          कृपया ही पावती आपल्या नोंदीसाठी जतन करा.
-
-        </p>
 
       </section>
 
 
 
-      <!-- THANK YOU LETTER -->
+      <!-- =================================================
+           THANK YOU LETTER
+      ================================================== -->
 
-      <section class="receipt-card thank-you">
+      <section class="thank-you-letter">
 
-        <h2>
-          ❤️ मनःपूर्वक धन्यवाद
-        </h2>
-
-
-        <p>
-          आदरणीय
-          <strong id="letterName">
-            देणगीदार
-          </strong>,
-        </p>
+        <div class="thank-you-top-line"></div>
 
 
-        <p>
-
-          माई वृद्धाश्रमासाठी आपण केलेल्या
-          <strong id="letterAmount">
-            ₹0
-          </strong>
-          च्या मौल्यवान देणगीबद्दल
-          आम्ही आपले मनःपूर्वक आभार मानतो.
-
-        </p>
+        <div class="thank-you-inner">
 
 
-        <p>
+          <div class="thank-you-header">
 
-          आपल्या सहकार्यामुळे वृद्ध मातांना
-          अन्न, निवास, आरोग्यसेवा, औषधे,
-          दैनंदिन गरजा आणि सन्मानपूर्वक जीवन
-          देण्यासाठी आम्हाला बळ मिळते.
+            <div class="heart">
+              ❤️
+            </div>
 
-        </p>
+            <h2>
+              मनःपूर्वक धन्यवाद
+            </h2>
 
+            <p>
+              A Heartfelt Thank You
+            </p>
 
-        <p>
-
-          आपली मदत ही केवळ आर्थिक मदत नसून
-          एका वृद्ध आईच्या जीवनात
-          <strong>
-            आपुलकी, आधार आणि आशेचा किरण
-          </strong>
-          आहे.
-
-        </p>
+          </div>
 
 
-        <p>
 
-          आपल्या विश्वासाबद्दल आणि
-          माई वृद्धाश्रमाच्या कार्याला दिलेल्या
-          मोलाच्या सहकार्याबद्दल पुन्हा एकदा
-          मनःपूर्वक धन्यवाद.
-
-        </p>
+          <div class="letter-content">
 
 
-        <div class="signature">
+            <p>
+              आदरणीय
+              <strong id="letterName">
+                देणगीदार
+              </strong>,
+            </p>
 
-          <strong>
-            माई वृद्धाश्रम
-          </strong>
 
-          <br>
+            <p>
 
-          बोधी ट्री एज्युकेशनल फाऊंडेशन
+              माई वृद्धाश्रमासाठी आपण दिलेल्या
+              <strong id="letterAmount">
+                ₹0
+              </strong>
+              या मौल्यवान देणगीबद्दल आम्ही
+              आपले मनःपूर्वक आभार मानतो.
 
-          <br>
+            </p>
 
-          Registration P. No.: F-23015
 
-          <br>
+            <p>
 
-          “जन सेवा हीच ईश्वर सेवा”
+              आपल्या सहकार्यामुळे वृद्ध मातांना
+              अन्न, निवास, आरोग्यसेवा, औषधे,
+              दैनंदिन गरजा आणि सन्मानपूर्वक जीवन
+              देण्यासाठी आम्हाला अधिक बळ मिळते.
+
+            </p>
+
+
+            <div class="letter-highlight">
+
+              “आपली मदत ही केवळ आर्थिक मदत नाही;
+              ती एका वृद्ध आईसाठी आपुलकी,
+              आधार आणि आशेचा किरण आहे.”
+
+            </div>
+
+
+            <p>
+
+              आपल्या विश्वासामुळे आमच्या कार्याला
+              नवी ऊर्जा मिळते. समाजातील ज्येष्ठ नागरिकांना
+              सुरक्षित, प्रेमळ आणि सन्मानाचे वातावरण
+              देण्याच्या आमच्या प्रयत्नात आपण दिलेले
+              योगदान अत्यंत मोलाचे आहे.
+
+            </p>
+
+
+            <p>
+
+              माई वृद्धाश्रमाच्या कार्यावर विश्वास ठेवून
+              आपण दिलेल्या सहकार्याबद्दल पुन्हा एकदा
+              मनःपूर्वक धन्यवाद.
+
+              आपल्या आयुष्यात आनंद, समाधान आणि
+              समृद्धी सदैव राहो, हीच मनापासून शुभेच्छा.
+
+            </p>
+
+
+            <div class="letter-signature">
+
+              <strong>
+                आपले आभारी,
+              </strong>
+
+              <br>
+
+              <strong>
+                माई वृद्धाश्रम
+              </strong>
+
+              <br>
+
+              बोधी ट्री एज्युकेशनल फाऊंडेशन
+
+              <br>
+
+              <small>
+                Registration P. No.: F-23015
+              </small>
+
+              <br>
+
+              <small>
+                “जन सेवा हीच ईश्वर सेवा”
+              </small>
+
+            </div>
+
+
+          </div>
 
         </div>
 
@@ -566,9 +1358,12 @@
 
 
 
-      <!-- BUTTONS -->
+      <!-- =================================================
+           ACTION BUTTONS
+      ================================================== -->
 
-      <div class="action-buttons">
+      <div class="receipt-actions">
+
 
         <button
           type="button"
@@ -586,6 +1381,7 @@
         >
           ❤️ पुन्हा देणगी द्या
         </button>
+
 
       </div>
 
@@ -607,7 +1403,10 @@
   <script src="js/common.js"></script>
 
 
-  <!-- RECEIPT SCRIPT -->
+
+  <!-- =====================================================
+       RECEIPT DATA SCRIPT
+  ====================================================== -->
 
   <script>
 
@@ -616,9 +1415,9 @@
       function () {
 
 
-        /* ==========================================
+        /* =================================================
            GET SUCCESSFUL DONATION
-        ========================================== */
+        ================================================= */
 
         let donationData = null;
 
@@ -648,23 +1447,28 @@
         }
 
 
-        /* ==========================================
+
+        /* =================================================
            CHECK DATA
-        ========================================== */
+        ================================================= */
 
         if (
           !donationData ||
           !donationData.donor
         ) {
 
-          document.querySelector(
-            ".receipt-wrapper"
+          document.getElementById(
+            "receiptWrapper"
           ).innerHTML = `
 
-            <div class="error-box">
+            <div class="receipt-error">
+
+              <div style="font-size:45px;">
+                ⚠️
+              </div>
 
               <h2>
-                ⚠️ पावतीची माहिती उपलब्ध नाही
+                पावतीची माहिती उपलब्ध नाही
               </h2>
 
               <p>
@@ -679,7 +1483,7 @@
                 class="btn btn-primary"
                 onclick="window.location.href='donate.html'"
               >
-                देणगी पृष्ठावर जा
+                ❤️ देणगी पृष्ठावर जा
               </button>
 
             </div>
@@ -691,17 +1495,19 @@
         }
 
 
-        /* ==========================================
+
+        /* =================================================
            DONOR
-        ========================================== */
+        ================================================= */
 
         const donor =
           donationData.donor;
 
 
-        /* ==========================================
+
+        /* =================================================
            AMOUNT
-        ========================================== */
+        ================================================= */
 
         const amount =
           Number(
@@ -716,9 +1522,10 @@
           );
 
 
-        /* ==========================================
-           PAYMENT IDs
-        ========================================== */
+
+        /* =================================================
+           PAYMENT
+        ================================================= */
 
         const paymentId =
           donationData.payment_id ||
@@ -730,9 +1537,10 @@
           "-";
 
 
-        /* ==========================================
+
+        /* =================================================
            RECEIPT NUMBER
-        ========================================== */
+        ================================================= */
 
         const receiptNumber =
           "MV-" +
@@ -742,13 +1550,13 @@
         document.getElementById(
           "receiptNumber"
         ).textContent =
-          "Receipt No.: " +
           receiptNumber;
 
 
-        /* ==========================================
+
+        /* =================================================
            AMOUNT
-        ========================================== */
+        ================================================= */
 
         document.getElementById(
           "receiptAmount"
@@ -768,38 +1576,44 @@
           formattedAmount;
 
 
-        /* ==========================================
+
+        /* =================================================
            DONOR DETAILS
-        ========================================== */
+        ================================================= */
 
         document.getElementById(
           "receiptName"
         ).textContent =
-          donor.name || "-";
+          donor.name ||
+          "-";
 
 
         document.getElementById(
           "receiptPhone"
         ).textContent =
-          donor.phone || "-";
+          donor.phone ||
+          "-";
 
 
         document.getElementById(
           "receiptEmail"
         ).textContent =
-          donor.email || "-";
+          donor.email ||
+          "-";
 
 
         document.getElementById(
           "receiptPan"
         ).textContent =
-          donor.pan || "-";
+          donor.pan ||
+          "-";
 
 
         document.getElementById(
           "receiptAddress"
         ).textContent =
-          donor.address || "-";
+          donor.address ||
+          "-";
 
 
         document.getElementById(
@@ -809,9 +1623,10 @@
           "देणगीदार";
 
 
-        /* ==========================================
-           PAYMENT DETAILS
-        ========================================== */
+
+        /* =================================================
+           PAYMENT IDs
+        ================================================= */
 
         document.getElementById(
           "receiptPaymentId"
@@ -825,9 +1640,10 @@
           orderId;
 
 
-        /* ==========================================
+
+        /* =================================================
            PAYMENT DATE
-        ========================================== */
+        ================================================= */
 
         let paymentDate =
           new Date(
@@ -876,9 +1692,10 @@
           timeText;
 
 
-        /* ==========================================
+
+        /* =================================================
            80G
-        ========================================== */
+        ================================================= */
 
         document.getElementById(
           "receipt80G"
@@ -888,9 +1705,10 @@
             : "नाही";
 
 
-        /* ==========================================
+
+        /* =================================================
            HIDE PAN IF EMPTY
-        ========================================== */
+        ================================================= */
 
         if (
           !donor.pan
