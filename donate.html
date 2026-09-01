@@ -195,7 +195,158 @@
       }
 
     }
+/* =========================================
+   PREMIUM DONATION HERO
+   ========================================= */
 
+.donate-premium-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(184,144,74,.16), transparent 30%),
+    radial-gradient(circle at 10% 85%, rgba(216,189,131,.08), transparent 28%),
+    var(--navy-dark, #0D1D2A);
+  color: #fff;
+  padding: 90px 0 100px;
+}
+
+.donate-premium-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.025) 0%,
+      transparent 45%,
+      rgba(184,144,74,.035) 100%
+    );
+  pointer-events: none;
+}
+
+.donate-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.donate-hero-breadcrumb {
+  color: rgba(255,255,255,.68) !important;
+  margin-bottom: 24px;
+}
+
+.donate-hero-line {
+  width: 58px;
+  height: 2px;
+  margin: 0 auto 24px;
+  background: var(--gold, #B8904A);
+}
+
+.donate-hero-eyebrow {
+  margin: 0 0 18px;
+  color: var(--gold-light, #D8BD83);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.donate-premium-hero h1 {
+  margin: 0 auto;
+  max-width: 850px;
+  color: #fff;
+  font-family: "Fraunces", "Noto Serif Devanagari", serif;
+  font-size: clamp(42px, 6vw, 72px);
+  line-height: 1.12;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+.donate-hero-description {
+  max-width: 680px;
+  margin: 26px auto 0;
+  color: rgba(255,255,255,.78);
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+.donate-hero-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.donate-hero-ornament span {
+  width: 55px;
+  height: 1px;
+  background: rgba(216,189,131,.5);
+}
+
+.donate-hero-ornament i {
+  color: var(--gold-light, #D8BD83);
+  font-size: 15px;
+  font-style: normal;
+}
+
+.donate-hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(1px);
+}
+
+.donate-hero-glow-1 {
+  width: 220px;
+  height: 220px;
+  right: -80px;
+  top: -90px;
+  border: 1px solid rgba(216,189,131,.12);
+}
+
+.donate-hero-glow-2 {
+  width: 320px;
+  height: 320px;
+  left: -190px;
+  bottom: -210px;
+  border: 1px solid rgba(184,144,74,.10);
+}
+
+@media (max-width: 600px) {
+
+  .donate-premium-hero {
+    padding: 65px 0 75px;
+  }
+
+  .donate-hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    line-height: 1.7;
+  }
+
+  .donate-premium-hero h1 {
+    font-size: 39px;
+    line-height: 1.2;
+    letter-spacing: -.5px;
+  }
+
+  .donate-hero-description {
+    font-size: 15px;
+    line-height: 1.8;
+    padding: 0 10px;
+  }
+
+  .donate-hero-ornament {
+    margin-top: 26px;
+  }
+
+  .donate-hero-ornament span {
+    width: 38px;
+  }
+}
   </style>
 
 </head>
@@ -213,29 +364,57 @@
 
     <!-- HERO -->
 
-    <section class="page-hero">
+    <section class="page-hero donate-premium-hero">
+  <div class="donate-hero-glow donate-hero-glow-1"></div>
+  <div class="donate-hero-glow donate-hero-glow-2"></div>
 
-      <div class="container">
+  <div class="container">
+    <div class="donate-hero-content">
 
-        <p
-          class="breadcrumbs"
-          data-mr="मुख्यपृष्ठ / देणगी द्या"
-          data-en="Home / Donate"
-        >
-          मुख्यपृष्ठ / देणगी द्या
-        </p>
+      <p
+        class="breadcrumbs donate-hero-breadcrumb"
+        data-mr="मुख्यपृष्ठ / देणगी द्या"
+        data-en="Home / Donate"
+      >
+        मुख्यपृष्ठ / देणगी द्या
+      </p>
 
-        <h1
-          data-mr="आपली छोटी मदत, एका आईसाठी मोठा आधार."
-          data-en="Your small contribution can make a big difference in a mother's life."
-        >
-          आपली छोटी मदत,<br>
-          एका आईसाठी मोठा आधार.
-        </h1>
+      <div class="donate-hero-line"></div>
 
+      <p
+        class="donate-hero-eyebrow"
+        data-mr="एका आईसाठी • एका घरासाठी • एका सुंदर उद्यासाठी"
+        data-en="For a mother • For a home • For a better tomorrow"
+      >
+        एका आईसाठी • एका घरासाठी • एका सुंदर उद्यासाठी
+      </p>
+
+      <h1
+        data-mr="आपली छोटी मदत,<br>एका आईसाठी मोठा आधार."
+        data-en="Your small contribution,<br>a great support for a mother."
+      >
+        आपली छोटी मदत,<br>
+        एका आईसाठी मोठा आधार.
+      </h1>
+
+      <p
+        class="donate-hero-description"
+        data-mr="तुमची प्रत्येक देणगी माई वृद्धाश्रमातील मातांना सुरक्षितता, काळजी आणि सन्मानाने जगण्याचा आधार देते."
+        data-en="Every contribution helps the mothers at Mai Vriddhashram live with care, dignity and security."
+      >
+        तुमची प्रत्येक देणगी माई वृद्धाश्रमातील मातांना सुरक्षितता,
+        काळजी आणि सन्मानाने जगण्याचा आधार देते.
+      </p>
+
+      <div class="donate-hero-ornament">
+        <span></span>
+        <i>✦</i>
+        <span></span>
       </div>
 
-    </section>
+    </div>
+  </div>
+</section>
 
 
     <!-- DONATION FORM -->
