@@ -635,78 +635,403 @@
     }
 
 
-    /* =====================================================
-       PRINT
-    ===================================================== */
+   <style>
 
-    @media print {
+/* =====================================================
+   PREMIUM A4 PRINT — RECEIPT + THANK YOU LETTER ONLY
+===================================================== */
 
-      @page {
-        size: A4;
-        margin: 12mm;
-      }
+@media print {
+
+  /* A4 page */
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+
+  /* Remove browser/site background */
+  html,
+  body {
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #000 !important;
+  }
+
+  /* Hide complete website navigation/footer/buttons */
+  #site-header,
+  #site-footer,
+  header,
+  footer,
+  nav,
+  .receipt-actions,
+  .receipt-success-banner {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Receipt page becomes the only printable area */
+  .receipt-page {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+  }
+
+  .receipt-wrapper {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /*
+   * IMPORTANT:
+   * Only these two documents are printed.
+   */
+  .premium-receipt,
+  .thank-you-letter {
+    display: block !important;
+    visibility: visible !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    background: #ffffff !important;
+    box-shadow: none !important;
+
+    border: 1px solid #999 !important;
+    border-radius: 0 !important;
+  }
+
+  /* =========================
+     RECEIPT — PAGE 1
+  ========================= */
+
+  .premium-receipt {
+    page-break-after: always !important;
+    break-after: page !important;
+
+    min-height: 0 !important;
+  }
+
+  .receipt-top-line {
+    display: block !important;
+    height: 5px !important;
+  }
+
+  .receipt-inner {
+    padding: 20px !important;
+  }
+
+  /* =========================
+     THANK YOU — PAGE 2
+  ========================= */
+
+  .thank-you-letter {
+    page-break-before: always !important;
+    break-before: page !important;
+
+    page-break-after: auto !important;
+    break-after: auto !important;
+
+    min-height: 0 !important;
+  }
+
+  .thank-you-top-line {
+    display: block !important;
+    height: 4px !important;
+  }
+
+  .thank-you-inner {
+    padding: 25px !important;
+  }
+
+  /* =========================
+     HEADER
+  ========================= */
+
+  .premium-receipt-header {
+    display: grid !important;
+    grid-template-columns: 90px 1fr 120px !important;
+    gap: 15px !important;
+    align-items: center !important;
+
+    padding-bottom: 18px !important;
+  }
+
+  .receipt-logo-wrap {
+    width: 78px !important;
+    height: 78px !important;
+    box-shadow: none !important;
+  }
+
+  .receipt-logo {
+    width: 68px !important;
+    height: 68px !important;
+    object-fit: contain !important;
+  }
+
+  .receipt-organization h1 {
+    font-size: 25px !important;
+  }
+
+  .receipt-organization h2 {
+    font-size: 17px !important;
+  }
+
+  .receipt-organization p {
+    font-size: 10px !important;
+    line-height: 1.5 !important;
+  }
+
+  .receipt-official-box {
+    padding: 9px 7px !important;
+  }
+
+  .receipt-official-box .label {
+    font-size: 8px !important;
+  }
+
+  .receipt-official-box strong {
+    font-size: 10px !important;
+  }
+
+  /* =========================
+     RECEIPT TITLE
+  ========================= */
+
+  .receipt-title-area {
+    padding: 18px 0 15px !important;
+  }
+
+  .receipt-title-area .small-title {
+    font-size: 9px !important;
+  }
+
+  .receipt-title-area h2 {
+    font-size: 24px !important;
+  }
+
+  .receipt-title-area p {
+    font-size: 10px !important;
+  }
+
+  /* =========================
+     META
+  ========================= */
+
+  .receipt-meta {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    margin-bottom: 15px !important;
+  }
+
+  .receipt-meta-box {
+    padding: 9px 11px !important;
+  }
+
+  .receipt-meta-box span {
+    font-size: 8px !important;
+  }
+
+  .receipt-meta-box strong {
+    font-size: 11px !important;
+  }
+
+  /* =========================
+     AMOUNT
+  ========================= */
+
+  .premium-amount-box {
+    padding: 15px !important;
+    margin: 15px 0 20px !important;
+  }
+
+  .premium-amount-box .amount-label {
+    font-size: 10px !important;
+  }
+
+  .premium-amount-box .amount {
+    font-size: 31px !important;
+  }
+
+  .premium-amount-box .verified {
+    font-size: 9px !important;
+  }
+
+  /* =========================
+     DETAILS
+  ========================= */
+
+  .details-heading {
+    font-size: 16px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .details-heading::before {
+    height: 19px !important;
+  }
+
+  .premium-table {
+    width: 100% !important;
+  }
+
+  .premium-table td {
+    padding: 8px 10px !important;
+    font-size: 10.5px !important;
+    line-height: 1.45 !important;
+  }
+
+  .premium-table td:first-child {
+    width: 34% !important;
+  }
+
+  .payment-id {
+    font-size: 9px !important;
+  }
+
+  /* =========================
+     NOTE
+  ========================= */
+
+  .receipt-note {
+    margin-top: 15px !important;
+    padding: 10px 12px !important;
+    font-size: 9px !important;
+    line-height: 1.55 !important;
+  }
+
+  /* =========================
+     RECEIPT FOOTER
+  ========================= */
+
+  .receipt-document-footer {
+    margin-top: 20px !important;
+    padding-top: 15px !important;
+    gap: 20px !important;
+  }
+
+  .receipt-motto {
+    font-size: 11px !important;
+  }
+
+  .receipt-motto small {
+    font-size: 8px !important;
+  }
+
+  .signature-area {
+    min-height: 60px !important;
+  }
+
+  .signature-line {
+    width: 130px !important;
+    margin-top: 20px !important;
+  }
+
+  .signature-area strong {
+    font-size: 10px !important;
+  }
+
+  .signature-area span {
+    font-size: 8px !important;
+  }
+
+  /* =========================
+     THANK YOU LETTER
+  ========================= */
+
+  .thank-you-header {
+    padding-bottom: 18px !important;
+  }
+
+  .thank-you-header .heart {
+    font-size: 26px !important;
+  }
+
+  .thank-you-header h2 {
+    font-size: 23px !important;
+  }
+
+  .thank-you-header p {
+    font-size: 9px !important;
+  }
+
+  .letter-content {
+    max-width: 100% !important;
+    margin-top: 22px !important;
+    font-size: 12px !important;
+    line-height: 1.8 !important;
+  }
+
+  .letter-content p {
+    margin-bottom: 13px !important;
+  }
+
+  .letter-highlight {
+    margin: 18px 0 !important;
+    padding: 14px 16px !important;
+    font-size: 13px !important;
+    line-height: 1.65 !important;
+  }
+
+  .letter-signature {
+    margin-top: 25px !important;
+    font-size: 11px !important;
+    line-height: 1.7 !important;
+  }
+
+  .letter-signature strong {
+    font-size: 12px !important;
+  }
+
+  .letter-signature small {
+    font-size: 8px !important;
+  }
+
+  /* =========================
+     PREVENT BAD PAGE BREAKS
+  ========================= */
+
+  .premium-receipt *,
+  .thank-you-letter * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .premium-table tr,
+  .receipt-meta-box,
+  .premium-amount-box,
+  .receipt-document-footer,
+  .letter-highlight,
+  .letter-signature {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+}
 
 
-      html,
-      body {
-        background: #fff !important;
-      }
+/* =====================================================
+   MOBILE SCREEN ONLY
+   (Does NOT affect A4 printing)
+===================================================== */
 
+@media screen and (max-width: 700px) {
 
-      #site-header,
-      #site-footer,
-      .receipt-actions,
-      .receipt-success-banner {
-        display: none !important;
-      }
+  .receipt-logo {
+    object-fit: contain;
+  }
 
+}
 
-      .receipt-page {
-        padding: 0;
-      }
-
-
-      .receipt-wrapper {
-        max-width: none;
-      }
-
-
-      .premium-receipt,
-      .thank-you-letter {
-        box-shadow: none !important;
-        border: 1px solid #bbb;
-        border-radius: 0;
-      }
-
-
-      .receipt-inner,
-      .thank-you-inner {
-        padding: 25px;
-      }
-
-
-      .premium-receipt {
-        page-break-after: always;
-      }
-
-
-      .thank-you-letter {
-        page-break-before: always;
-      }
-
-
-      .premium-table,
-      .receipt-meta,
-      .premium-amount-box {
-        break-inside: avoid;
-      }
-
-
-      .thank-you-letter {
-        break-inside: avoid;
-      }
-
-    }
+</style>
 
 
     /* =====================================================
