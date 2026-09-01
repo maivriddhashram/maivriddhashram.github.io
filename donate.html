@@ -195,6 +195,210 @@
       }
 
     }
+    /* =========================================================
+   DONATION PAGE — PREMIUM FORM DESIGN
+   Step 1: Donation Form only
+   ========================================================= */
+
+.donate-form-section {
+  background: var(--premium-cream);
+  padding: 82px 0;
+}
+
+.donate-form-grid {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* Main donation card */
+.donate-form-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(184,144,74,0.20);
+  border-radius: 22px;
+  padding: 34px;
+  box-shadow: 0 16px 40px rgba(23,42,58,0.09);
+  position: relative;
+  overflow: hidden;
+}
+
+.donate-form-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--premium-gold),
+    var(--premium-gold-light),
+    var(--premium-gold)
+  );
+}
+
+.donate-form-card h2 {
+  color: var(--premium-navy);
+  margin-bottom: 8px;
+}
+
+.donate-form-card .form-note {
+  color: #66737D;
+}
+
+/* Donation amount area */
+.donate-amount-title {
+  color: var(--premium-navy);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.donate-amount-grid {
+  margin-top: 18px;
+}
+
+.donate-amount-btn {
+  background: #FFFFFF;
+  color: var(--premium-navy);
+  border: 1.5px solid rgba(23,42,58,0.16);
+  border-radius: 13px;
+  transition:
+    background .2s ease,
+    color .2s ease,
+    border-color .2s ease,
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.donate-amount-btn:hover {
+  background: var(--premium-navy);
+  color: #FFFFFF;
+  border-color: var(--premium-navy);
+  transform: translateY(-2px);
+}
+
+.donate-amount-btn.active {
+  background: var(--premium-navy);
+  color: #FFFFFF;
+  border-color: var(--premium-navy);
+  box-shadow: 0 8px 22px rgba(23,42,58,0.18);
+}
+
+/* Selected amount */
+.donate-selected-box {
+  background: var(--premium-navy-soft);
+  border: 1px solid rgba(184,144,74,0.22);
+  color: var(--premium-navy);
+  border-radius: 14px;
+}
+
+.donate-selected-amount {
+  color: var(--premium-gold);
+}
+
+/* Donor details */
+.donor-details {
+  border-top: 1px solid rgba(23,42,58,0.10);
+  margin-top: 24px;
+}
+
+.donor-details h3 {
+  color: var(--premium-navy);
+}
+
+/* Form labels */
+.donate-form-card .form-field label {
+  color: var(--premium-navy);
+}
+
+/* Input focus */
+.donate-form-card .form-field input,
+.donate-form-card .form-field select,
+.donate-form-card .form-field textarea {
+  border-color: rgba(23,42,58,0.16);
+  border-radius: 11px;
+}
+
+.donate-form-card .form-field input:focus,
+.donate-form-card .form-field select:focus,
+.donate-form-card .form-field textarea:focus {
+  border-color: var(--premium-gold);
+  box-shadow: 0 0 0 3px rgba(184,144,74,0.12);
+}
+
+/* Payment button */
+.donate-form-card .btn-primary {
+  background: var(--premium-gold);
+  border-color: var(--premium-gold);
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(184,144,74,0.22);
+}
+
+.donate-form-card .btn-primary:hover {
+  background: #A27D3F;
+  border-color: #A27D3F;
+  transform: translateY(-2px);
+}
+
+/* Right-side payment cards */
+.donate-payment-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(184,144,74,0.20);
+  border-radius: 22px;
+  padding: 30px;
+  box-shadow: 0 16px 40px rgba(23,42,58,0.08);
+}
+
+.donate-payment-card h2,
+.donate-payment-card h3 {
+  color: var(--premium-navy);
+}
+
+.donate-payment-card .gold-divider {
+  margin: 14px auto 20px;
+}
+
+/* QR */
+.donate-payment-card .donate-qr {
+  border: 1px solid rgba(184,144,74,0.28);
+  box-shadow: 0 8px 25px rgba(23,42,58,0.08);
+}
+
+/* UPI ID */
+.donate-payment-card .upi-id,
+.donate-payment-card code {
+  color: var(--premium-navy);
+  font-weight: 700;
+}
+
+/* Bank details */
+.donate-bank-details p {
+  color: #4F5D66;
+}
+
+.donate-bank-details strong {
+  color: var(--premium-navy);
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .donate-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .donate-form-section {
+    padding: 58px 0;
+  }
+
+  .donate-form-card,
+  .donate-payment-card {
+    padding: 24px 20px;
+    border-radius: 18px;
+  }
+}
 /* =========================================
    PREMIUM DONATION HERO
    HOMEPAGE MATCHING DESIGN
