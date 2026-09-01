@@ -197,7 +197,8 @@
     }
 /* =========================================
    PREMIUM DONATION HERO
-   REAL PHOTO + HOMEPAGE STYLE
+   HOMEPAGE MATCHING DESIGN
+   REAL PHOTO + NAVY + ANTIQUE GOLD
    ========================================= */
 
 .donate-premium-hero {
@@ -211,7 +212,7 @@
   padding: 100px 0 110px;
 }
 
-/* REAL MAI VRIDDHASHRAM PHOTO */
+/* DONATION HERO PHOTO */
 .donate-premium-hero::before {
   content: "";
   position: absolute;
@@ -220,22 +221,21 @@
   background-image:
     linear-gradient(
       90deg,
-      rgba(13,29,42,.92) 0%,
-      rgba(13,29,42,.78) 45%,
-      rgba(13,29,42,.55) 100%
+      rgba(13,29,42,.94) 0%,
+      rgba(13,29,42,.82) 45%,
+      rgba(13,29,42,.58) 100%
     ),
-    url("../images/our-mother.jpg");
+    url("images/donation-hero.jpg");
 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
   transform: scale(1.02);
-
   z-index: 0;
 }
 
-/* GOLDEN ATMOSPHERE */
+/* GOLD ATMOSPHERE */
 .donate-premium-hero::after {
   content: "";
   position: absolute;
@@ -254,40 +254,28 @@
     0 0 0 70px rgba(216,189,131,.02);
 
   pointer-events: none;
-
   z-index: 1;
 }
 
-
 /* HERO CONTENT */
-
 .donate-hero-content {
   position: relative;
   z-index: 3;
-
   max-width: 980px;
-
   margin: 0 auto;
-
   text-align: center;
 }
 
-
 /* BREADCRUMB */
-
 .donate-hero-breadcrumb {
   color: rgba(255,255,255,.70) !important;
-
   margin-bottom: 30px;
 }
 
-
 /* GOLD LINE */
-
 .donate-hero-line {
   width: 70px;
   height: 1px;
-
   margin: 0 auto 24px;
 
   background:
@@ -299,34 +287,26 @@
     );
 }
 
-
 /* EYEBROW */
-
 .donate-hero-eyebrow {
   margin: 0 0 20px;
 
   color: #D8BD83;
 
   font-size: 13px;
-
   font-weight: 700;
 
   letter-spacing: 2.5px;
-
   line-height: 1.7;
 
   text-transform: uppercase;
 
-  text-shadow:
-    0 2px 12px rgba(0,0,0,.4);
+  text-shadow: 0 2px 12px rgba(0,0,0,.4);
 }
 
-
 /* MAIN TITLE */
-
 .donate-premium-hero h1 {
   max-width: 900px;
-
   margin: 0 auto;
 
   color: #FAF7F0;
@@ -336,11 +316,9 @@
     "Noto Serif Devanagari",
     serif;
 
-  font-size:
-    clamp(44px, 6.5vw, 78px);
+  font-size: clamp(44px, 6.5vw, 78px);
 
   font-weight: 600;
-
   line-height: 1.12;
 
   letter-spacing: -1.5px;
@@ -349,42 +327,32 @@
     0 4px 25px rgba(0,0,0,.45);
 }
 
-
 /* DESCRIPTION */
-
 .donate-hero-description {
   max-width: 700px;
-
   margin: 28px auto 0;
 
   color: rgba(255,255,255,.84);
 
   font-size: 17px;
-
   line-height: 1.9;
 
   text-shadow:
     0 2px 15px rgba(0,0,0,.45);
 }
 
-
 /* ORNAMENT */
-
 .donate-hero-ornament {
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
   gap: 14px;
-
   margin-top: 34px;
 }
 
 .donate-hero-ornament span {
   width: 70px;
-
   height: 1px;
 
   background:
@@ -406,22 +374,16 @@
 
 .donate-hero-ornament i {
   color: #D8BD83;
-
   font-size: 15px;
-
   font-style: normal;
 }
 
-
 /* DECORATIVE CIRCLES */
-
 .donate-hero-glow {
   position: absolute;
-
   border-radius: 50%;
 
   pointer-events: none;
-
   z-index: 2;
 }
 
@@ -433,8 +395,7 @@
   top: -90px;
 
   border:
-    1px solid
-    rgba(216,189,131,.14);
+    1px solid rgba(216,189,131,.14);
 }
 
 .donate-hero-glow-2 {
@@ -445,83 +406,59 @@
   bottom: -210px;
 
   border:
-    1px solid
-    rgba(184,144,74,.12);
+    1px solid rgba(184,144,74,.12);
 }
 
-
-/* =========================================
-   MOBILE
-   ========================================= */
-
+/* MOBILE */
 @media (max-width: 600px) {
 
   .donate-premium-hero {
     min-height: 650px;
-
     padding: 72px 0 80px;
   }
 
   .donate-premium-hero::before {
-
     background-image:
       linear-gradient(
-        rgba(13,29,42,.76),
-        rgba(13,29,42,.90)
+        rgba(13,29,42,.78),
+        rgba(13,29,42,.91)
       ),
-      url("../images/our-mother.jpg");
+      url("images/donation-hero.jpg");
 
-    background-position:
-      center center;
-
+    background-position: center center;
   }
 
   .donate-hero-breadcrumb {
     margin-bottom: 25px;
-
     font-size: 12px;
   }
 
   .donate-hero-eyebrow {
     font-size: 11px;
-
     letter-spacing: 1.5px;
-
     line-height: 1.7;
   }
 
   .donate-premium-hero h1 {
-
     font-size: 40px;
-
     line-height: 1.2;
-
     letter-spacing: -.7px;
-
   }
 
   .donate-hero-description {
-
     padding: 0 12px;
 
     font-size: 15px;
-
     line-height: 1.8;
-
   }
 
   .donate-hero-ornament {
-
     margin-top: 28px;
-
   }
 
   .donate-hero-ornament span {
-
     width: 40px;
-
   }
-
 }
   </style>
 
@@ -566,9 +503,12 @@
       </p>
 
       <h1
-        data-mr="आपली छोटी मदत,<br>एका आईसाठी मोठा आधार."
-        data-en="Your small contribution,<br>a great support for a mother."
-      >
+  data-mr="आपली छोटी मदत, एका आईसाठी मोठा आधार."
+  data-en="Your small contribution, a great support for a mother."
+>
+  आपली छोटी मदत,<br>
+  एका आईसाठी मोठा आधार.
+</h1>
         आपली छोटी मदत,<br>
         एका आईसाठी मोठा आधार.
       </h1>
