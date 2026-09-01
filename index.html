@@ -1,729 +1,41 @@
 <!DOCTYPE html>
 <html lang="mr" data-lang="mr">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>माई वृद्धाश्रम | Mai Vriddhashram — A Home of Dignity</title>
 
-<meta name="description" content="माई वृद्धाश्रम — वृद्ध मातांसाठी सुरक्षित, सन्मानाचे आणि प्रेमळ घर. बोधी ट्री एज्युकेशनल फाउंडेशन द्वारा संचालित, छत्रपती संभाजीनगर.">
+<meta name="description"
+content="माई वृद्धाश्रम — वृद्ध मातांसाठी सुरक्षित, सन्मानाचे आणि प्रेमळ घर. बोधी ट्री एज्युकेशनल फाउंडेशनद्वारे संचालित.">
 
-<meta property="og:title" content="Mai Vriddhashram — A Home of Dignity, Care and Love">
-<meta property="og:description" content="Support elderly mothers with dignity, care and love.">
+<meta property="og:title"
+content="Mai Vriddhashram — A Home of Dignity">
+
+<meta property="og:description"
+content="A safe, dignified and loving home for elderly mothers.">
+
 <meta property="og:type" content="website">
-<meta property="og:image" content="images/home-hero.png">
 
-<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image"
+content="images/home-hero.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@600;700&display=swap" rel="stylesheet">
+<meta name="twitter:card"
+content="summary_large_image">
+
+<link rel="canonical"
+href="[VERIFIED CANONICAL URL]/index.html">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link
+href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@600;700&display=swap"
+rel="stylesheet">
 
 <link rel="stylesheet" href="css/style.css">
 
-<style>
-
-/* =========================================================
-   MAI VRIDDHASHRAM — PREMIUM HOMEPAGE
-   Navy + Antique Gold + Warm Cream
-   ========================================================= */
-
-:root{
-  --navy:#172A3A;
-  --navy-dark:#0D1D2A;
-  --navy-mid:#213C51;
-  --gold:#B8904A;
-  --gold-light:#D8BD83;
-  --cream:#FAF7F0;
-  --cream-dark:#F1EBDD;
-  --white:#FFFFFF;
-  --text:#33404A;
-  --muted:#71808A;
-  --border:rgba(23,42,58,.12);
-  --shadow:0 18px 50px rgba(23,42,58,.10);
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  margin:0;
-  background:var(--cream);
-  color:var(--text);
-  font-family:"DM Sans","Noto Sans Devanagari",sans-serif;
-}
-
-h1,h2,h3,h4{
-  font-family:"Fraunces","Noto Serif Devanagari",serif;
-  color:var(--navy);
-  letter-spacing:-.02em;
-}
-
-.container{
-  width:min(1180px,92%);
-  margin:auto;
-}
-
-/* ================= HEADER ================= */
-
-#site-header{
-  position:relative;
-  z-index:100;
-}
-
-.premium-topline{
-  background:var(--navy-dark);
-  color:rgba(255,255,255,.78);
-  text-align:center;
-  font-size:12px;
-  letter-spacing:.08em;
-  padding:9px 15px;
-}
-
-.premium-topline span{
-  color:var(--gold-light);
-}
-
-/* ================= HERO ================= */
-
-.premium-hero{
-  position:relative;
-  min-height:700px;
-  display:flex;
-  align-items:center;
-  overflow:hidden;
-  background:var(--navy);
-}
-
-.premium-hero-image{
-  position:absolute;
-  inset:0;
-  background-image:
-    linear-gradient(90deg,
-      rgba(13,29,42,.98) 0%,
-      rgba(13,29,42,.88) 34%,
-      rgba(13,29,42,.45) 66%,
-      rgba(13,29,42,.18) 100%),
-    url("../images/home-hero.png");
-  background-size:cover;
-  background-position:center;
-}
-
-.premium-hero-content{
-  position:relative;
-  z-index:2;
-  padding:110px 0;
-  max-width:720px;
-  color:white;
-}
-
-.premium-eyebrow{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  color:var(--gold-light);
-  font-size:13px;
-  font-weight:700;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  margin-bottom:22px;
-}
-
-.premium-eyebrow::before{
-  content:"";
-  width:42px;
-  height:1px;
-  background:var(--gold);
-}
-
-.premium-hero h1{
-  color:white;
-  font-size:clamp(3rem,6vw,5.8rem);
-  line-height:1.02;
-  margin:0 0 26px;
-  max-width:800px;
-}
-
-.premium-hero h1 span{
-  color:var(--gold-light);
-}
-
-.premium-hero-description{
-  font-size:18px;
-  line-height:1.8;
-  color:rgba(255,255,255,.84);
-  max-width:600px;
-  margin-bottom:35px;
-}
-
-.premium-buttons{
-  display:flex;
-  flex-wrap:wrap;
-  gap:13px;
-}
-
-.premium-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:52px;
-  padding:0 27px;
-  border-radius:4px;
-  text-decoration:none;
-  font-weight:700;
-  transition:.3s ease;
-}
-
-.premium-btn-gold{
-  background:var(--gold);
-  color:white;
-  box-shadow:0 12px 30px rgba(184,144,74,.25);
-}
-
-.premium-btn-gold:hover{
-  background:#A37D3D;
-  transform:translateY(-3px);
-}
-
-.premium-btn-light{
-  border:1px solid rgba(255,255,255,.55);
-  color:white;
-  background:rgba(255,255,255,.04);
-}
-
-.premium-btn-light:hover{
-  background:white;
-  color:var(--navy);
-}
-
-/* hero bottom detail */
-
-.hero-bottom-line{
-  position:absolute;
-  bottom:0;
-  left:0;
-  right:0;
-  height:90px;
-  background:linear-gradient(
-    to bottom,
-    transparent,
-    rgba(13,29,42,.65)
-  );
-}
-
-/* ================= TRUST ================= */
-
-.premium-trust{
-  background:white;
-  border-bottom:1px solid var(--border);
-}
-
-.trust-inner{
-  min-height:82px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-}
-
-.trust-item{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  color:var(--navy);
-  font-size:14px;
-  font-weight:600;
-}
-
-.trust-icon{
-  width:38px;
-  height:38px;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  background:var(--cream-dark);
-  color:var(--gold);
-}
-
-/* ================= INTRO ================= */
-
-.premium-section{
-  padding:105px 0;
-}
-
-.premium-section-alt{
-  background:white;
-}
-
-.intro-grid{
-  display:grid;
-  grid-template-columns:1.05fr .95fr;
-  gap:80px;
-  align-items:center;
-}
-
-.premium-label{
-  color:var(--gold);
-  font-size:13px;
-  font-weight:700;
-  letter-spacing:.15em;
-  text-transform:uppercase;
-  margin-bottom:16px;
-}
-
-.premium-title{
-  font-size:clamp(2.3rem,4vw,4rem);
-  line-height:1.08;
-  margin:0 0 25px;
-}
-
-.premium-copy{
-  color:var(--muted);
-  font-size:17px;
-  line-height:1.9;
-  margin-bottom:20px;
-}
-
-.gold-line{
-  width:60px;
-  height:2px;
-  background:var(--gold);
-  margin:20px 0 28px;
-}
-
-.editorial-image{
-  position:relative;
-  min-height:520px;
-  overflow:hidden;
-  border-radius:2px;
-  box-shadow:var(--shadow);
-}
-
-.editorial-image img{
-  width:100%;
-  height:100%;
-  min-height:520px;
-  object-fit:cover;
-  display:block;
-}
-
-.editorial-badge{
-  position:absolute;
-  left:25px;
-  bottom:25px;
-  background:white;
-  padding:20px 24px;
-  box-shadow:0 12px 30px rgba(0,0,0,.15);
-  max-width:220px;
-}
-
-.editorial-badge strong{
-  display:block;
-  color:var(--navy);
-  font-family:"Fraunces",serif;
-  font-size:22px;
-}
-
-.editorial-badge span{
-  color:var(--muted);
-  font-size:13px;
-}
-
-/* ================= CARE ================= */
-
-.center-heading{
-  text-align:center;
-  max-width:720px;
-  margin:0 auto 55px;
-}
-
-.center-heading .premium-title{
-  margin-bottom:15px;
-}
-
-.care-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-
-.care-card{
-  background:var(--cream);
-  padding:38px 30px;
-  border:1px solid var(--border);
-  transition:.3s ease;
-}
-
-.care-card:hover{
-  background:white;
-  transform:translateY(-6px);
-  box-shadow:var(--shadow);
-  border-color:rgba(184,144,74,.35);
-}
-
-.care-number{
-  color:var(--gold);
-  font-size:13px;
-  font-weight:700;
-  margin-bottom:25px;
-}
-
-.care-icon{
-  width:58px;
-  height:58px;
-  display:grid;
-  place-items:center;
-  border-radius:50%;
-  background:var(--navy);
-  color:white;
-  font-size:25px;
-  margin-bottom:22px;
-}
-
-.care-card h3{
-  font-size:25px;
-  margin:0 0 12px;
-}
-
-.care-card p{
-  color:var(--muted);
-  line-height:1.7;
-  margin:0;
-}
-
-/* ================= NAVY FEATURE ================= */
-
-.navy-feature{
-  background:var(--navy);
-  color:white;
-  position:relative;
-  overflow:hidden;
-}
-
-.navy-feature::after{
-  content:"";
-  position:absolute;
-  width:450px;
-  height:450px;
-  border:1px solid rgba(184,144,74,.18);
-  border-radius:50%;
-  right:-180px;
-  top:-180px;
-}
-
-.feature-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:80px;
-  align-items:center;
-}
-
-.navy-feature h2{
-  color:white;
-}
-
-.navy-feature p{
-  color:rgba(255,255,255,.75);
-  line-height:1.85;
-}
-
-.feature-card{
-  border:1px solid rgba(255,255,255,.14);
-  padding:38px;
-  background:rgba(255,255,255,.035);
-}
-
-.feature-card + .feature-card{
-  margin-top:16px;
-}
-
-.feature-card-icon{
-  font-size:28px;
-  margin-bottom:15px;
-}
-
-.feature-card h3{
-  color:white;
-  margin:0 0 10px;
-  font-size:23px;
-}
-
-/* ================= MOTHERS ================= */
-
-.mothers-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:25px;
-}
-
-.mother-card{
-  background:white;
-  border:1px solid var(--border);
-  box-shadow:0 8px 30px rgba(23,42,58,.06);
-  overflow:hidden;
-}
-
-.mother-image{
-  aspect-ratio:4/3;
-  background:var(--cream-dark);
-  display:grid;
-  place-items:center;
-  color:var(--muted);
-}
-
-.mother-image span{
-  border:1px solid rgba(184,144,74,.35);
-  padding:8px 13px;
-  font-size:12px;
-  background:white;
-}
-
-.mother-content{
-  padding:25px;
-}
-
-.mother-content h3{
-  margin:0 0 10px;
-}
-
-.mother-content p{
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.7;
-}
-
-/* ================= IMPACT ================= */
-
-.impact-section{
-  background:var(--cream-dark);
-}
-
-.impact-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:1px;
-  background:rgba(23,42,58,.12);
-  border:1px solid rgba(23,42,58,.12);
-}
-
-.impact-box{
-  background:var(--cream-dark);
-  padding:40px 20px;
-  text-align:center;
-}
-
-.impact-number{
-  color:var(--navy);
-  font-family:"Fraunces",serif;
-  font-size:48px;
-  line-height:1;
-  margin-bottom:12px;
-}
-
-.impact-number span{
-  color:var(--gold);
-}
-
-.impact-label{
-  color:var(--muted);
-  font-size:14px;
-}
-
-/* ================= NEEDS ================= */
-
-.needs-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-}
-
-.need-card{
-  min-height:220px;
-  background:white;
-  border:1px solid var(--border);
-  padding:30px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  transition:.3s ease;
-}
-
-.need-card:hover{
-  transform:translateY(-5px);
-  box-shadow:var(--shadow);
-}
-
-.need-icon{
-  font-size:32px;
-}
-
-.need-card h3{
-  font-size:22px;
-  margin:15px 0 0;
-}
-
-.need-card a{
-  color:var(--gold);
-  font-weight:700;
-  text-decoration:none;
-}
-
-/* ================= CTA ================= */
-
-.premium-donation{
-  background:
-    linear-gradient(90deg,rgba(13,29,42,.97),rgba(23,42,58,.92)),
-    url("../images/home-hero.png") center/cover;
-  color:white;
-  padding:100px 0;
-  text-align:center;
-}
-
-.premium-donation h2{
-  color:white;
-  font-size:clamp(2.5rem,5vw,4.5rem);
-  max-width:800px;
-  margin:0 auto 22px;
-}
-
-.premium-donation p{
-  max-width:620px;
-  margin:0 auto 32px;
-  color:rgba(255,255,255,.78);
-  line-height:1.8;
-}
-
-/* ================= FINAL MESSAGE ================= */
-
-.final-message{
-  padding:100px 0;
-  background:white;
-  text-align:center;
-}
-
-.final-message blockquote{
-  max-width:850px;
-  margin:0 auto;
-  color:var(--navy);
-  font-family:"Fraunces","Noto Serif Devanagari",serif;
-  font-size:clamp(2rem,4vw,3.6rem);
-  line-height:1.2;
-}
-
-.final-message cite{
-  display:block;
-  margin-top:25px;
-  color:var(--gold);
-  font-style:normal;
-  font-family:"DM Sans",sans-serif;
-  font-size:14px;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:900px){
-
-  .premium-hero{
-    min-height:650px;
-  }
-
-  .premium-hero-content{
-    padding:90px 0;
-  }
-
-  .intro-grid,
-  .feature-grid{
-    grid-template-columns:1fr;
-    gap:45px;
-  }
-
-  .care-grid,
-  .mothers-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .needs-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .impact-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .trust-inner{
-    flex-wrap:wrap;
-    padding:20px 0;
-  }
-
-}
-
-@media(max-width:600px){
-
-  .premium-section{
-    padding:75px 0;
-  }
-
-  .premium-hero{
-    min-height:650px;
-  }
-
-  .premium-hero-image{
-    background-image:
-      linear-gradient(
-        180deg,
-        rgba(13,29,42,.72),
-        rgba(13,29,42,.96)
-      ),
-      url("../images/home-hero.png");
-  }
-
-  .premium-hero-content{
-    padding:75px 0;
-  }
-
-  .premium-hero h1{
-    font-size:2.9rem;
-  }
-
-  .premium-hero-description{
-    font-size:16px;
-  }
-
-  .premium-buttons{
-    flex-direction:column;
-    align-items:stretch;
-  }
-
-  .premium-btn{
-    width:100%;
-  }
-
-  .care-grid,
-  .mothers-grid,
-  .needs-grid{
-    grid-template-columns:1fr;
-  }
-
-  .impact-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .impact-number{
-    font-size:36px;
-  }
-
-  .editorial-image,
-  .editorial-image img{
-    min-height:390px;
-  }
-
-  .feature-grid{
-    gap:35px;
-  }
-
-}
-
-</style>
 
 <script type="application/ld+json">
 {
@@ -746,179 +58,1504 @@ h1,h2,h3,h4{
 }
 </script>
 
+
+<style>
+
+/* =========================================================
+   MAI VRIDDHASHRAM — PREMIUM HOMEPAGE
+   STRUCTURAL REDESIGN
+========================================================= */
+
+:root{
+  --navy:#142536;
+  --navy-2:#1B3145;
+  --navy-3:#223C52;
+
+  --gold:#B58A4A;
+  --gold-light:#D8BB82;
+
+  --cream:#F7F3EB;
+  --cream-2:#EFE9DE;
+
+  --white:#FFFFFF;
+
+  --text:#26333D;
+  --muted:#66727A;
+
+  --line:rgba(20,37,54,.12);
+
+  --serif:"DM Serif Display","Noto Serif Devanagari",serif;
+  --sans:"DM Sans","Noto Sans Devanagari",sans-serif;
+}
+
+
+/* =========================
+   GLOBAL
+========================= */
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:var(--white);
+  color:var(--text);
+  font-family:var(--sans);
+}
+
+main{
+  overflow:hidden;
+}
+
+.container{
+  width:min(1180px,92%);
+  margin:auto;
+}
+
+a{
+  text-decoration:none;
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.mr-topbar{
+  background:var(--navy);
+  color:#fff;
+  min-height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:.78rem;
+  letter-spacing:.04em;
+  text-align:center;
+  padding:0 15px;
+}
+
+.mr-topbar span{
+  opacity:.88;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.mr-hero{
+  position:relative;
+  min-height:720px;
+  background:var(--navy);
+  color:#fff;
+  display:flex;
+  align-items:stretch;
+}
+
+.mr-hero-inner{
+  width:min(1280px,94%);
+  margin:auto;
+  display:grid;
+  grid-template-columns:47% 53%;
+  min-height:720px;
+  align-items:center;
+}
+
+.mr-hero-content{
+  position:relative;
+  z-index:3;
+  padding:80px 50px 80px 25px;
+}
+
+.mr-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  color:var(--gold-light);
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  font-size:.72rem;
+  font-weight:700;
+  margin-bottom:25px;
+}
+
+.mr-eyebrow:before{
+  content:"";
+  width:38px;
+  height:1px;
+  background:var(--gold);
+}
+
+.mr-hero h1{
+  margin:0 0 25px;
+  font-family:var(--serif);
+  font-size:clamp(3.2rem,6vw,6.1rem);
+  line-height:1.02;
+  font-weight:400;
+  letter-spacing:-.035em;
+  color:#fff;
+}
+
+.mr-hero h1 span{
+  color:var(--gold-light);
+}
+
+.mr-hero-description{
+  max-width:540px;
+  color:rgba(255,255,255,.78);
+  font-size:1.05rem;
+  line-height:1.85;
+  margin-bottom:34px;
+}
+
+.mr-hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.mr-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:52px;
+  padding:0 26px;
+  border-radius:0;
+  font-size:.86rem;
+  font-weight:700;
+  letter-spacing:.03em;
+  transition:.3s ease;
+}
+
+.mr-btn-gold{
+  background:var(--gold);
+  color:#fff;
+}
+
+.mr-btn-gold:hover{
+  background:#c29a5d;
+  transform:translateY(-2px);
+}
+
+.mr-btn-light{
+  border:1px solid rgba(255,255,255,.35);
+  color:#fff;
+  background:transparent;
+}
+
+.mr-btn-light:hover{
+  background:#fff;
+  color:var(--navy);
+}
+
+.mr-hero-photo{
+  position:relative;
+  height:640px;
+  margin-right:-6%;
+  overflow:hidden;
+}
+
+.mr-hero-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.mr-hero-photo:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,var(--navy) 0%,transparent 18%),
+    linear-gradient(0deg,rgba(20,37,54,.25),transparent 40%);
+  pointer-events:none;
+}
+
+.mr-hero-badge{
+  position:absolute;
+  right:30px;
+  bottom:35px;
+  z-index:4;
+  background:#fff;
+  color:var(--navy);
+  padding:20px 24px;
+  width:190px;
+  box-shadow:0 18px 50px rgba(0,0,0,.18);
+}
+
+.mr-hero-badge strong{
+  display:block;
+  font-family:var(--serif);
+  font-size:1.5rem;
+  font-weight:400;
+  margin-bottom:5px;
+}
+
+.mr-hero-badge span{
+  font-size:.72rem;
+  color:var(--muted);
+}
+
+
+/* =========================
+   GOLD LINE
+========================= */
+
+.mr-gold-line{
+  height:4px;
+  background:var(--gold);
+}
+
+
+/* =========================
+   IMPACT BAR
+========================= */
+
+.mr-impact-bar{
+  background:var(--cream);
+  border-bottom:1px solid var(--line);
+}
+
+.mr-impact-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+}
+
+.mr-impact-item{
+  padding:30px 25px;
+  border-right:1px solid var(--line);
+}
+
+.mr-impact-item:last-child{
+  border-right:0;
+}
+
+.mr-impact-number{
+  font-family:var(--serif);
+  font-size:2.3rem;
+  color:var(--navy);
+  line-height:1;
+  margin-bottom:8px;
+}
+
+.mr-impact-label{
+  font-size:.78rem;
+  color:var(--muted);
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.mr-section{
+  padding:110px 0;
+}
+
+.mr-section-cream{
+  background:var(--cream);
+}
+
+.mr-section-navy{
+  background:var(--navy);
+  color:#fff;
+}
+
+.mr-section-header{
+  max-width:720px;
+  margin-bottom:55px;
+}
+
+.mr-section-header.center{
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+}
+
+.mr-kicker{
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:.15em;
+  font-size:.72rem;
+  font-weight:700;
+  margin-bottom:18px;
+}
+
+.mr-section h2{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(2.5rem,4vw,4.5rem);
+  line-height:1.08;
+  letter-spacing:-.025em;
+  color:var(--navy);
+  margin:0 0 22px;
+}
+
+.mr-section-navy h2{
+  color:#fff;
+}
+
+.mr-section-intro{
+  color:var(--muted);
+  line-height:1.9;
+  font-size:1rem;
+}
+
+.mr-section-navy .mr-section-intro{
+  color:rgba(255,255,255,.7);
+}
+
+
+/* =========================
+   ABOUT EDITORIAL
+========================= */
+
+.mr-about{
+  display:grid;
+  grid-template-columns:44% 56%;
+  align-items:center;
+  gap:80px;
+}
+
+.mr-about-photo{
+  position:relative;
+}
+
+.mr-about-photo-frame{
+  height:590px;
+  overflow:hidden;
+  background:var(--cream-2);
+}
+
+.mr-about-photo-frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.mr-photo-note{
+  position:absolute;
+  left:-25px;
+  bottom:35px;
+  background:var(--gold);
+  color:#fff;
+  padding:18px 24px;
+  font-size:.76rem;
+  letter-spacing:.04em;
+}
+
+.mr-about-text p{
+  color:var(--muted);
+  line-height:1.95;
+  margin-bottom:22px;
+}
+
+.mr-about-signature{
+  margin-top:35px;
+  color:var(--navy);
+  font-family:var(--serif);
+  font-size:1.2rem;
+}
+
+
+/* =========================
+   PROMISE CARDS
+========================= */
+
+.mr-promise-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:var(--line);
+}
+
+.mr-promise-card{
+  background:#fff;
+  padding:45px 35px;
+  min-height:250px;
+  transition:.3s ease;
+}
+
+.mr-promise-card:hover{
+  background:var(--navy);
+  color:#fff;
+}
+
+.mr-promise-icon{
+  font-size:2rem;
+  margin-bottom:25px;
+}
+
+.mr-promise-card h3{
+  font-family:var(--serif);
+  font-size:1.65rem;
+  font-weight:400;
+  margin:0 0 12px;
+}
+
+.mr-promise-card p{
+  color:var(--muted);
+  line-height:1.8;
+  margin:0;
+}
+
+.mr-promise-card:hover p{
+  color:rgba(255,255,255,.7);
+}
+
+
+/* =========================
+   BIG STORY
+========================= */
+
+.mr-story{
+  display:grid;
+  grid-template-columns:58% 42%;
+  min-height:650px;
+}
+
+.mr-story-image{
+  min-height:650px;
+  background:var(--cream-2);
+  position:relative;
+}
+
+.mr-story-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.mr-story-content{
+  background:var(--gold);
+  padding:80px 65px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  color:#fff;
+}
+
+.mr-story-content .mr-kicker{
+  color:#fff;
+  opacity:.75;
+}
+
+.mr-story-content h2{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(2.5rem,4vw,4.3rem);
+  line-height:1.08;
+  margin:0 0 25px;
+}
+
+.mr-story-content p{
+  line-height:1.9;
+  color:rgba(255,255,255,.85);
+}
+
+
+/* =========================
+   CARE
+========================= */
+
+.mr-care-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.mr-care-card{
+  position:relative;
+  min-height:270px;
+  background:var(--cream);
+  padding:35px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  border-bottom:3px solid transparent;
+  transition:.3s ease;
+}
+
+.mr-care-card:hover{
+  border-color:var(--gold);
+  transform:translateY(-5px);
+}
+
+.mr-care-icon{
+  position:absolute;
+  top:30px;
+  left:30px;
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.4rem;
+}
+
+.mr-care-card h3{
+  font-family:var(--serif);
+  font-size:1.55rem;
+  font-weight:400;
+  margin:0 0 10px;
+  color:var(--navy);
+}
+
+.mr-care-card p{
+  color:var(--muted);
+  line-height:1.7;
+  margin:0;
+  font-size:.9rem;
+}
+
+
+/* =========================
+   MISSION / VISION
+========================= */
+
+.mr-mission-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+}
+
+.mr-dark-card{
+  border-top:1px solid rgba(255,255,255,.2);
+  padding-top:30px;
+}
+
+.mr-dark-card .mr-number{
+  color:var(--gold-light);
+  font-size:.75rem;
+  letter-spacing:.15em;
+  font-weight:700;
+  margin-bottom:25px;
+}
+
+.mr-dark-card h3{
+  font-family:var(--serif);
+  font-size:2.5rem;
+  font-weight:400;
+  margin:0 0 18px;
+}
+
+.mr-dark-card p{
+  color:rgba(255,255,255,.7);
+  line-height:1.9;
+}
+
+
+/* =========================
+   NEEDS
+========================= */
+
+.mr-needs{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.mr-need{
+  border:1px solid var(--line);
+  padding:35px 28px;
+  background:#fff;
+  transition:.3s ease;
+}
+
+.mr-need:hover{
+  border-color:var(--gold);
+  transform:translateY(-4px);
+}
+
+.mr-need-icon{
+  font-size:2rem;
+  margin-bottom:30px;
+}
+
+.mr-need h3{
+  font-family:var(--serif);
+  font-size:1.5rem;
+  font-weight:400;
+  margin:0 0 18px;
+  color:var(--navy);
+}
+
+.mr-need a{
+  color:var(--gold);
+  font-size:.78rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+
+/* =========================
+   IMPACT
+========================= */
+
+.mr-impact-section{
+  background:var(--cream);
+}
+
+.mr-impact-large{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:90px;
+  align-items:end;
+}
+
+.mr-impact-stats{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+}
+
+.mr-impact-stat{
+  padding:35px 25px;
+  border-top:1px solid var(--line);
+}
+
+.mr-impact-stat:nth-child(odd){
+  border-right:1px solid var(--line);
+}
+
+.mr-stat-number{
+  font-family:var(--serif);
+  color:var(--navy);
+  font-size:3.2rem;
+  line-height:1;
+  margin-bottom:10px;
+}
+
+.mr-stat-label{
+  font-size:.8rem;
+  color:var(--muted);
+}
+
+
+/* =========================
+   MOTHERS
+========================= */
+
+.mr-mothers-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.mr-mother-card{
+  background:#fff;
+}
+
+.mr-mother-image{
+  aspect-ratio:1/1;
+  background:var(--cream-2);
+  overflow:hidden;
+}
+
+.mr-mother-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.5s ease;
+}
+
+.mr-mother-card:hover img{
+  transform:scale(1.04);
+}
+
+.mr-mother-info{
+  padding:24px;
+}
+
+.mr-mother-info span{
+  color:var(--gold);
+  font-size:.7rem;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
+
+.mr-mother-info p{
+  color:var(--muted);
+  font-size:.85rem;
+  margin:10px 0 0;
+}
+
+
+/* =========================
+   CSR
+========================= */
+
+.mr-csr{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+}
+
+.mr-csr-box{
+  padding:75px 65px;
+}
+
+.mr-csr-box:first-child{
+  background:var(--navy);
+  color:#fff;
+}
+
+.mr-csr-box:last-child{
+  background:var(--gold);
+  color:#fff;
+}
+
+.mr-csr-box h2{
+  color:#fff;
+  font-family:var(--serif);
+  font-size:3rem;
+  font-weight:400;
+  margin:0 0 18px;
+}
+
+.mr-csr-box p{
+  line-height:1.9;
+  color:rgba(255,255,255,.75);
+  margin-bottom:30px;
+}
+
+
+/* =========================
+   DONATION CTA
+========================= */
+
+.mr-donation{
+  background:
+    linear-gradient(rgba(20,37,54,.92),rgba(20,37,54,.92)),
+    url("images/home-hero.png") center/cover;
+  padding:120px 20px;
+  text-align:center;
+  color:#fff;
+}
+
+.mr-donation .mr-kicker{
+  color:var(--gold-light);
+}
+
+.mr-donation h2{
+  color:#fff;
+  max-width:850px;
+  margin:0 auto 25px;
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(2.8rem,5vw,5rem);
+  line-height:1.05;
+}
+
+.mr-donation p{
+  max-width:650px;
+  margin:0 auto 35px;
+  color:rgba(255,255,255,.7);
+  line-height:1.8;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.mr-contact{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+}
+
+.mr-contact-info{
+  background:var(--cream);
+  padding:80px;
+}
+
+.mr-contact-info h2{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:3rem;
+  color:var(--navy);
+  margin:0 0 30px;
+}
+
+.mr-contact-item{
+  border-top:1px solid var(--line);
+  padding:20px 0;
+}
+
+.mr-contact-item strong{
+  display:block;
+  color:var(--navy);
+  font-size:.8rem;
+  margin-bottom:5px;
+}
+
+.mr-contact-item span{
+  color:var(--muted);
+  font-size:.9rem;
+}
+
+.mr-map{
+  min-height:450px;
+  background:var(--navy);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  text-align:center;
+  padding:40px;
+}
+
+.mr-map-inner{
+  max-width:400px;
+}
+
+.mr-map-icon{
+  font-size:3rem;
+  margin-bottom:15px;
+}
+
+
+/* =========================
+   FINAL QUOTE
+========================= */
+
+.mr-quote{
+  padding:100px 20px;
+  text-align:center;
+  background:#fff;
+}
+
+.mr-quote-mark{
+  color:var(--gold);
+  font-family:Georgia,serif;
+  font-size:5rem;
+  line-height:.6;
+  margin-bottom:30px;
+}
+
+.mr-quote p{
+  max-width:850px;
+  margin:auto;
+  font-family:var(--serif);
+  font-size:clamp(2rem,3.5vw,3.5rem);
+  line-height:1.25;
+  color:var(--navy);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
+
+  .mr-hero-inner{
+    grid-template-columns:1fr;
+    min-height:auto;
+  }
+
+  .mr-hero-content{
+    padding:90px 20px 45px;
+  }
+
+  .mr-hero-photo{
+    height:480px;
+    margin:0;
+  }
+
+  .mr-about{
+    grid-template-columns:1fr;
+    gap:50px;
+  }
+
+  .mr-about-photo-frame{
+    height:500px;
+  }
+
+  .mr-care-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .mr-needs{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .mr-impact-large{
+    grid-template-columns:1fr;
+    gap:50px;
+  }
+
+}
+
+
+@media(max-width:760px){
+
+  .mr-topbar{
+    font-size:.68rem;
+    min-height:34px;
+  }
+
+  .mr-hero h1{
+    font-size:3.4rem;
+  }
+
+  .mr-hero-description{
+    font-size:.95rem;
+  }
+
+  .mr-hero-photo{
+    height:400px;
+  }
+
+  .mr-hero-badge{
+    right:15px;
+    bottom:15px;
+  }
+
+  .mr-impact-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .mr-impact-item{
+    border-bottom:1px solid var(--line);
+  }
+
+  .mr-promise-grid{
+    grid-template-columns:1fr;
+  }
+
+  .mr-story{
+    grid-template-columns:1fr;
+  }
+
+  .mr-story-image{
+    min-height:430px;
+  }
+
+  .mr-story-content{
+    padding:60px 30px;
+  }
+
+  .mr-mission-grid{
+    grid-template-columns:1fr;
+    gap:45px;
+  }
+
+  .mr-mothers-grid{
+    grid-template-columns:1fr;
+  }
+
+  .mr-csr{
+    grid-template-columns:1fr;
+  }
+
+  .mr-csr-box{
+    padding:60px 30px;
+  }
+
+  .mr-contact{
+    grid-template-columns:1fr;
+  }
+
+  .mr-contact-info{
+    padding:60px 30px;
+  }
+
+}
+
+
+@media(max-width:560px){
+
+  .mr-section{
+    padding:75px 0;
+  }
+
+  .mr-hero-content{
+    padding:70px 15px 35px;
+  }
+
+  .mr-hero h1{
+    font-size:2.8rem;
+  }
+
+  .mr-hero-actions{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .mr-btn{
+    width:100%;
+  }
+
+  .mr-impact-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .mr-impact-number{
+    font-size:1.8rem;
+  }
+
+  .mr-care-grid,
+  .mr-needs{
+    grid-template-columns:1fr;
+  }
+
+  .mr-about-photo-frame{
+    height:380px;
+  }
+
+  .mr-photo-note{
+    left:10px;
+    bottom:15px;
+  }
+
+  .mr-impact-stats{
+    grid-template-columns:1fr;
+  }
+
+  .mr-impact-stat:nth-child(odd){
+    border-right:0;
+  }
+
+  .mr-section h2{
+    font-size:2.7rem;
+  }
+
+}
+
+
+/* =========================
+   REVEAL
+========================= */
+
+.mr-reveal{
+  opacity:0;
+  transform:translateY(25px);
+  transition:opacity .7s ease,transform .7s ease;
+}
+
+.mr-reveal.visible{
+  opacity:1;
+  transform:none;
+}
+
+</style>
+
 </head>
+
 
 <body>
 
+
+<!-- EXISTING HEADER -->
 <div id="site-header"></div>
 
-<main>
+
+<main id="main">
+
+
+<!-- =====================================================
+     TOP MESSAGE
+===================================================== -->
+
+<div class="mr-topbar">
+  <span
+    data-mr="बोधी ट्री एज्युकेशनल फाउंडेशनद्वारे संचालित · माई वृद्धाश्रम"
+    data-en="Run by Bodhi Tree Educational Foundation · Mai Vriddhashram">
+    बोधी ट्री एज्युकेशनल फाउंडेशनद्वारे संचालित · माई वृद्धाश्रम
+  </span>
+</div>
+
 
 <!-- =====================================================
      HERO
 ===================================================== -->
 
-<section class="premium-hero">
+<section class="mr-hero">
 
-  <div class="premium-hero-image"></div>
+  <div class="mr-hero-inner">
 
-  <div class="container">
+    <div class="mr-hero-content mr-reveal">
 
-    <div class="premium-hero-content reveal">
-
-      <div class="premium-eyebrow">
-        Mai Vriddhashram · Since 2020
+      <div
+        class="mr-eyebrow"
+        data-mr="A HOME OF DIGNITY"
+        data-en="A HOME OF DIGNITY">
+        A HOME OF DIGNITY
       </div>
 
       <h1
-        data-mr="एक आईला घर मिळालं... आता तिच्या घराला तुमच्या आधाराची गरज आहे."
-        data-en="One mother found a home... Now her home needs your support.">
+        data-mr="हे फक्त आश्रम नाही.<br><span>हे एका आईचं घर आहे.</span>"
+        data-en="This is not just a shelter.<br><span>It is a mother's home.</span>">
 
-        एक आईला घर मिळालं...<br>
-        <span>आता तिच्या घराला तुमच्या आधाराची गरज आहे.</span>
+        हे फक्त आश्रम नाही.<br>
+        <span>हे एका आईचं घर आहे.</span>
 
       </h1>
 
       <p
-        class="premium-hero-description"
-        data-mr="माई वृद्धाश्रम — वृद्ध मातांसाठी सुरक्षित, सन्मानाचे आणि प्रेमळ घर. येथे प्रत्येक आईला केवळ निवारा नाही, तर आपलेपणा, काळजी आणि सन्मान मिळावा यासाठी आम्ही प्रयत्न करतो."
-        data-en="Mai Vriddhashram is a safe, dignified and loving home for elderly mothers — a place where every mother can experience care, belonging and respect.">
+        class="mr-hero-description"
+        data-mr="वृद्ध मातांना सुरक्षितता, सन्मान, प्रेम आणि आपलेपणाने भरलेले घर मिळावे, यासाठी माई वृद्धाश्रम कार्यरत आहे."
+        data-en="Mai Vriddhashram works to ensure that elderly mothers have a safe, dignified and loving place they can call home.">
 
-        माई वृद्धाश्रम — वृद्ध मातांसाठी सुरक्षित, सन्मानाचे आणि प्रेमळ घर. येथे प्रत्येक आईला केवळ निवारा नाही, तर आपलेपणा, काळजी आणि सन्मान मिळावा यासाठी आम्ही प्रयत्न करतो.
+        वृद्ध मातांना सुरक्षितता, सन्मान, प्रेम आणि आपलेपणाने भरलेले घर मिळावे,
+        यासाठी माई वृद्धाश्रम कार्यरत आहे.
 
       </p>
 
-      <div class="premium-buttons">
 
-        <a href="donate.html"
-           class="premium-btn premium-btn-gold"
-           data-mr="❤️ देणगी द्या"
-           data-en="❤️ Donate Now">
+      <div class="mr-hero-actions">
+
+        <a
+          href="donate.html"
+          class="mr-btn mr-btn-gold"
+          data-mr="❤️ देणगी द्या"
+          data-en="❤️ Donate Now">
           ❤️ देणगी द्या
         </a>
 
-        <a href="about.html"
-           class="premium-btn premium-btn-light"
-           data-mr="आमची कहाणी"
-           data-en="Our Story">
-          आमची कहाणी
+        <a
+          href="about.html"
+          class="mr-btn mr-btn-light"
+          data-mr="आमची कहाणी →"
+          data-en="Our Story →">
+          आमची कहाणी →
         </a>
 
       </div>
 
     </div>
 
-  </div>
 
-  <div class="hero-bottom-line"></div>
+    <div class="mr-hero-photo mr-reveal">
 
-</section>
+      <img
+        src="images/home-hero.png"
+        alt="माई वृद्धाश्रम">
 
+      <div class="mr-hero-badge">
 
-<!-- =====================================================
-     TRUST
-===================================================== -->
+        <strong
+          data-mr="माई वृद्धाश्रम"
+          data-en="Mai Vriddhashram">
+          माई वृद्धाश्रम
+        </strong>
 
-<section class="premium-trust">
-
-  <div class="container trust-inner">
-
-    <div class="trust-item">
-      <span class="trust-icon">✓</span>
-      <span data-mr="बोधी ट्री एज्युकेशनल फाउंडेशन द्वारा संचालित"
-            data-en="Run by Bodhi Tree Educational Foundation">
-        बोधी ट्री एज्युकेशनल फाउंडेशन द्वारा संचालित
-      </span>
-    </div>
-
-    <div class="trust-item">
-      <span class="trust-icon">♥</span>
-      <span data-mr="सन्मान · काळजी · आपलेपणा"
-            data-en="Dignity · Care · Belonging">
-        सन्मान · काळजी · आपलेपणा
-      </span>
-    </div>
-
-    <div class="trust-item">
-      <span class="trust-icon">⌂</span>
-      <span data-mr="छत्रपती संभाजीनगर"
-            data-en="Chhatrapati Sambhajinagar">
-        छत्रपती संभाजीनगर
-      </span>
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =====================================================
-     INTRO / STORY
-===================================================== -->
-
-<section class="premium-section premium-section-alt">
-
-  <div class="container intro-grid">
-
-    <div class="reveal">
-
-      <div class="premium-label"
-           data-mr="आमची कहाणी"
-           data-en="Our Story">
-        आमची कहाणी
-      </div>
-
-      <h2 class="premium-title"
-          data-mr="माई वृद्धाश्रम म्हणजे फक्त आश्रम नाही... हे एका आईचं घर आहे."
-          data-en="Mai Vriddhashram is not just a shelter... it is a mother's home.">
-
-        माई वृद्धाश्रम म्हणजे फक्त आश्रम नाही...<br>
-        हे एका आईचं घर आहे.
-
-      </h2>
-
-      <div class="gold-line"></div>
-
-      <p class="premium-copy"
-         data-mr="वयोमानानुसार अनेक मातांना सोबतीची, सुरक्षिततेची आणि आपुलकीच्या घराची गरज असते. माई वृद्धाश्रम त्यांना केवळ निवारा नाही, तर सन्मान, काळजी आणि आपलेपणा देणारे घर उपलब्ध करून देण्याचा प्रयत्न करते."
-         data-en="As mothers grow older, many need companionship, safety and a home filled with warmth. Mai Vriddhashram works to offer them not just shelter, but dignity, care and belonging.">
-
-        वयोमानानुसार अनेक मातांना सोबतीची, सुरक्षिततेची आणि आपुलकीच्या घराची गरज असते. माई वृद्धाश्रम त्यांना केवळ निवारा नाही, तर सन्मान, काळजी आणि आपलेपणा देणारे घर उपलब्ध करून देण्याचा प्रयत्न करते.
-
-      </p>
-
-      <p class="premium-copy"
-         data-mr="येथे प्रत्येक दिवस पौष्टिक आहार, आरोग्य लक्ष, योग-ध्यान आणि प्रेमळ सहवासाने भरलेला असतो — जेणेकरून प्रत्येक आई सन्मानाने आणि आनंदाने जगू शकेल."
-         data-en="Every day is built around nutritious food, healthcare, yoga, meditation and warm companionship — so that every mother can live with dignity and joy.">
-
-        येथे प्रत्येक दिवस पौष्टिक आहार, आरोग्य लक्ष, योग-ध्यान आणि प्रेमळ सहवासाने भरलेला असतो — जेणेकरून प्रत्येक आई सन्मानाने आणि आनंदाने जगू शकेल.
-
-      </p>
-
-      <a href="about.html"
-         class="premium-btn premium-btn-gold"
-         data-mr="संपूर्ण कहाणी वाचा"
-         data-en="Read Our Story">
-        संपूर्ण कहाणी वाचा
-      </a>
-
-    </div>
-
-    <div class="editorial-image reveal">
-
-      <img src="images/home-hero.png"
-           alt="माई वृद्धाश्रम">
-
-      <div class="editorial-badge">
-
-        <strong>एक घर.</strong>
-
-        <span data-mr="एका आईसाठी सन्मान, काळजी आणि आपलेपणा."
-              data-en="Dignity, care and belonging for a mother.">
-          एका आईसाठी सन्मान, काळजी आणि आपलेपणा.
+        <span
+          data-mr="A Home of Dignity, Care & Love"
+          data-en="A Home of Dignity, Care & Love">
+          A Home of Dignity, Care & Love
         </span>
 
       </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<div class="mr-gold-line"></div>
+
+
+<!-- =====================================================
+     IMPACT BAR
+===================================================== -->
+
+<section class="mr-impact-bar">
+
+  <div class="container mr-impact-grid">
+
+    <div class="mr-impact-item mr-reveal">
+      <div class="mr-impact-number">[XX]+</div>
+      <div
+        class="mr-impact-label"
+        data-mr="आधार मिळालेल्या माता"
+        data-en="Mothers Supported">
+        आधार मिळालेल्या माता
+      </div>
+    </div>
+
+    <div class="mr-impact-item mr-reveal">
+      <div class="mr-impact-number">[XX]+</div>
+      <div
+        class="mr-impact-label"
+        data-mr="वाढलेले जेवण"
+        data-en="Meals Served">
+        वाढलेले जेवण
+      </div>
+    </div>
+
+    <div class="mr-impact-item mr-reveal">
+      <div class="mr-impact-number">[XX]+</div>
+      <div
+        class="mr-impact-label"
+        data-mr="आरोग्य उपक्रम"
+        data-en="Health Activities">
+        आरोग्य उपक्रम
+      </div>
+    </div>
+
+    <div class="mr-impact-item mr-reveal">
+      <div class="mr-impact-number">[XX]+</div>
+      <div
+        class="mr-impact-label"
+        data-mr="सेवेची वर्षे"
+        data-en="Years of Service">
+        सेवेची वर्षे
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section class="mr-section">
+
+  <div class="container mr-about">
+
+    <div class="mr-about-photo mr-reveal">
+
+      <div class="mr-about-photo-frame">
+
+        <img
+          src="images/home-hero.png"
+          alt="माई वृद्धाश्रम">
+
+      </div>
+
+      <div class="mr-photo-note">
+        ❤️ काळजी · सन्मान · आपलेपणा
+      </div>
+
+    </div>
+
+
+    <div class="mr-about-text mr-reveal">
+
+      <div
+        class="mr-kicker"
+        data-mr="आमची कहाणी"
+        data-en="OUR STORY">
+        OUR STORY
+      </div>
+
+      <h2
+        data-mr="एका आईला फक्त निवारा नाही,<br>एक घर हवं असतं."
+        data-en="A mother needs more than shelter.<br>She needs a home.">
+
+        एका आईला फक्त निवारा नाही,<br>
+        एक घर हवं असतं.
+
+      </h2>
+
+      <p
+        data-mr="वयोमानानुसार अनेक मातांना सुरक्षिततेची, सोबतीची आणि आपुलकीच्या घराची गरज असते. माई वृद्धाश्रम त्यांना केवळ निवारा देण्याऐवजी सन्मानाने जगता यावे, यासाठी प्रेमळ आणि सुरक्षित वातावरण निर्माण करण्याचा प्रयत्न करते."
+        data-en="As mothers grow older, many need safety, companionship and a place filled with warmth. Mai Vriddhashram strives to create more than shelter — a dignified and loving home.">
+
+        वयोमानानुसार अनेक मातांना सुरक्षिततेची, सोबतीची आणि आपुलकीच्या घराची गरज असते.
+        माई वृद्धाश्रम त्यांना केवळ निवारा देण्याऐवजी सन्मानाने जगता यावे,
+        यासाठी प्रेमळ आणि सुरक्षित वातावरण निर्माण करण्याचा प्रयत्न करते.
+
+      </p>
+
+      <p
+        data-mr="दररोजचा पौष्टिक आहार, आरोग्याची काळजी, योग-ध्यान, सहचर्य आणि माणुसकीची ऊब — या छोट्या गोष्टी त्यांच्या आयुष्यात मोठा फरक घडवतात."
+        data-en="Nutritious food, healthcare, yoga, companionship and human warmth — these simple things can make a meaningful difference in their lives.">
+
+        दररोजचा पौष्टिक आहार, आरोग्याची काळजी, योग-ध्यान,
+        सहचर्य आणि माणुसकीची ऊब — या छोट्या गोष्टी त्यांच्या आयुष्यात मोठा फरक घडवतात.
+
+      </p>
+
+      <a
+        href="about.html"
+        class="mr-btn mr-btn-gold"
+        data-mr="संपूर्ण कहाणी वाचा →"
+        data-en="Read Our Story →">
+        संपूर्ण कहाणी वाचा →
+      </a>
+
+      <div class="mr-about-signature">
+        जन सेवा हीच ईश्वर सेवा.
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     OUR PROMISE
+===================================================== -->
+
+<section class="mr-section mr-section-cream">
+
+  <div class="container">
+
+    <div class="mr-section-header center mr-reveal">
+
+      <div
+        class="mr-kicker"
+        data-mr="आमचे वचन"
+        data-en="OUR PROMISE">
+        OUR PROMISE
+      </div>
+
+      <h2
+        data-mr="प्रत्येक आईसाठी<br>काहीतरी अधिक."
+        data-en="Something more<br>for every mother.">
+
+        प्रत्येक आईसाठी<br>
+        काहीतरी अधिक.
+
+      </h2>
+
+      <p
+        class="mr-section-intro"
+        data-mr="आमच्यासाठी वृद्धाश्रम म्हणजे केवळ निवास व्यवस्था नाही. प्रत्येक आईला माणूस म्हणून सन्मानाने जगता यावे, हेच आमचे ध्येय आहे."
+        data-en="For us, an old age home is not simply accommodation. Our goal is to help every mother live with dignity.">
+
+        आमच्यासाठी वृद्धाश्रम म्हणजे केवळ निवास व्यवस्था नाही.
+        प्रत्येक आईला माणूस म्हणून सन्मानाने जगता यावे,
+        हेच आमचे ध्येय आहे.
+
+      </p>
+
+    </div>
+
+
+    <div class="mr-promise-grid">
+
+      <div class="mr-promise-card mr-reveal">
+
+        <div class="mr-promise-icon">❤️</div>
+
+        <h3
+          data-mr="माणुसकीची काळजी"
+          data-en="Compassionate Care">
+          माणुसकीची काळजी
+        </h3>
+
+        <p
+          data-mr="प्रत्येक आईसोबत आपुलकीने, संयमाने आणि आदराने वागणे."
+          data-en="Treating every mother with warmth, patience and respect.">
+          प्रत्येक आईसोबत आपुलकीने, संयमाने आणि आदराने वागणे.
+        </p>
+
+      </div>
+
+
+      <div class="mr-promise-card mr-reveal">
+
+        <div class="mr-promise-icon">🏡</div>
+
+        <h3
+          data-mr="सुरक्षित घर"
+          data-en="A Safe Home">
+          सुरक्षित घर
+        </h3>
+
+        <p
+          data-mr="स्वच्छ, सुरक्षित आणि आरामदायी वातावरण देण्याचा प्रयत्न."
+          data-en="A clean, safe and comfortable environment.">
+          स्वच्छ, सुरक्षित आणि आरामदायी वातावरण देण्याचा प्रयत्न.
+        </p>
+
+      </div>
+
+
+      <div class="mr-promise-card mr-reveal">
+
+        <div class="mr-promise-icon">🌿</div>
+
+        <h3
+          data-mr="मनःशांती"
+          data-en="Peace of Mind">
+          मनःशांती
+        </h3>
+
+        <p
+          data-mr="योग, ध्यान, सहचर्य आणि आनंदी वातावरणातून मानसिक स्वास्थ्य."
+          data-en="Supporting emotional wellbeing through yoga, meditation and companionship.">
+          योग, ध्यान, सहचर्य आणि आनंदी वातावरणातून मानसिक स्वास्थ्य.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     BIG STORY
+===================================================== -->
+
+<section>
+
+  <div class="mr-story">
+
+    <div class="mr-story-image mr-reveal">
+
+      <img
+        src="images/home-hero.png"
+        alt="Mai Vriddhashram">
+
+    </div>
+
+
+    <div class="mr-story-content mr-reveal">
+
+      <div
+        class="mr-kicker"
+        data-mr="A MOTHER'S HOME"
+        data-en="A MOTHER'S HOME">
+        A MOTHER'S HOME
+      </div>
+
+      <h2
+        data-mr="घर म्हणजे<br>चार भिंती नाहीत."
+        data-en="Home is more<br>than four walls.">
+
+        घर म्हणजे<br>
+        चार भिंती नाहीत.
+
+      </h2>
+
+      <p
+        data-mr="घर म्हणजे कुणीतरी आपली वाट पाहत आहे ही भावना. कुणीतरी आज जेवली का असे विचारणं. आज तब्येत कशी आहे हे जाणून घेणं. आणि आयुष्याच्या प्रत्येक टप्प्यावर 'तुम्ही आमच्या आहात' असं सांगणं."
+        data-en="Home is the feeling that someone is waiting for you. Someone asking whether you have eaten. Someone caring how you are. And someone reminding you that you belong.">
+
+        घर म्हणजे कुणीतरी आपली वाट पाहत आहे ही भावना.
+        कुणीतरी आज जेवली का असे विचारणं.
+        आज तब्येत कशी आहे हे जाणून घेणं.
+        आणि आयुष्याच्या प्रत्येक टप्प्यावर
+        'तुम्ही आमच्या आहात' असं सांगणं.
+
+      </p>
+
+      <a
+        href="mothers.html"
+        class="mr-btn mr-btn-light"
+        data-mr="आमच्या मातांना भेटा →"
+        data-en="Meet Our Mothers →">
+        आमच्या मातांना भेटा →
+      </a>
 
     </div>
 
@@ -931,108 +1568,196 @@ h1,h2,h3,h4{
      CARE
 ===================================================== -->
 
-<section class="premium-section">
+<section class="mr-section">
 
   <div class="container">
 
-    <div class="center-heading reveal">
+    <div class="mr-section-header mr-reveal">
 
-      <div class="premium-label"
-           data-mr="सुविधा व काळजी"
-           data-en="Care & Support">
-        सुविधा व काळजी
+      <div
+        class="mr-kicker"
+        data-mr="काळजी आणि सुविधा"
+        data-en="CARE & FACILITIES">
+        CARE & FACILITIES
       </div>
 
-      <h2 class="premium-title"
-          data-mr="येथे मिळणारी काळजी"
-          data-en="The care every mother deserves">
-        येथे मिळणारी काळजी
-      </h2>
+      <h2
+        data-mr="दैनंदिन आयुष्यातील<br>छोट्या पण महत्त्वाच्या गोष्टी."
+        data-en="Small things that<br>make everyday life better.">
 
-      <p class="premium-copy">
-        प्रत्येक दिवस अधिक सुरक्षित, आरोग्यपूर्ण आणि आनंदी करण्यासाठी आवश्यक काळजी.
-      </p>
+        दैनंदिन आयुष्यातील<br>
+        छोट्या पण महत्त्वाच्या गोष्टी.
+
+      </h2>
 
     </div>
 
-    <div class="care-grid">
 
-      <div class="care-card reveal">
-        <div class="care-number">01</div>
-        <div class="care-icon">🏡</div>
-        <h3 data-mr="सुरक्षित निवास"
-            data-en="Safe Accommodation">
-          सुरक्षित निवास
+    <div class="mr-care-grid">
+
+      <div class="mr-care-card mr-reveal">
+
+        <div class="mr-care-icon">🏡</div>
+
+        <h3
+          data-mr="निवास"
+          data-en="Accommodation">
+          निवास
         </h3>
-        <p data-mr="स्वच्छ, सुरक्षित आणि आरामदायी वातावरण."
-           data-en="Clean, safe and comfortable living spaces.">
-          स्वच्छ, सुरक्षित आणि आरामदायी वातावरण.
+
+        <p
+          data-mr="स्वच्छ, सुरक्षित आणि आरामदायी निवास व्यवस्था."
+          data-en="Clean, safe and comfortable living spaces.">
+          स्वच्छ, सुरक्षित आणि आरामदायी निवास व्यवस्था.
         </p>
+
       </div>
 
-      <div class="care-card reveal">
-        <div class="care-number">02</div>
-        <div class="care-icon">🍲</div>
-        <h3 data-mr="पौष्टिक आहार"
-            data-en="Nutritious Food">
+
+      <div class="mr-care-card mr-reveal">
+
+        <div class="mr-care-icon">🍲</div>
+
+        <h3
+          data-mr="पौष्टिक आहार"
+          data-en="Nutritious Food">
           पौष्टिक आहार
         </h3>
-        <p data-mr="दररोज सकस आणि पौष्टिक आहाराची व्यवस्था."
-           data-en="Nutritious meals served every day.">
-          दररोज सकस आणि पौष्टिक आहाराची व्यवस्था.
+
+        <p
+          data-mr="दररोज पौष्टिक आणि सकस भोजनाची व्यवस्था."
+          data-en="Nutritious and wholesome meals every day.">
+          दररोज पौष्टिक आणि सकस भोजनाची व्यवस्था.
         </p>
+
       </div>
 
-      <div class="care-card reveal">
-        <div class="care-number">03</div>
-        <div class="care-icon">🩺</div>
-        <h3 data-mr="आरोग्य सहाय्य"
-            data-en="Healthcare Support">
+
+      <div class="mr-care-card mr-reveal">
+
+        <div class="mr-care-icon">🩺</div>
+
+        <h3
+          data-mr="आरोग्य सहाय्य"
+          data-en="Healthcare">
           आरोग्य सहाय्य
         </h3>
-        <p data-mr="आरोग्य तपासणी, औषधे आणि आवश्यक काळजी."
-           data-en="Health check-ups, medicines and care.">
-          आरोग्य तपासणी, औषधे आणि आवश्यक काळजी.
+
+        <p
+          data-mr="आरोग्य तपासणी आणि आवश्यक काळजी."
+          data-en="Health check-ups and attentive care.">
+          आरोग्य तपासणी आणि आवश्यक काळजी.
         </p>
+
       </div>
 
-      <div class="care-card reveal">
-        <div class="care-number">04</div>
-        <div class="care-icon">🧘</div>
-        <h3 data-mr="योग व ध्यान"
-            data-en="Yoga & Meditation">
+
+      <div class="mr-care-card mr-reveal">
+
+        <div class="mr-care-icon">🧘</div>
+
+        <h3
+          data-mr="योग व ध्यान"
+          data-en="Yoga & Meditation">
           योग व ध्यान
         </h3>
-        <p data-mr="मानसिक आणि शारीरिक स्वास्थ्यासाठी उपक्रम."
-           data-en="Activities for mental and physical wellbeing.">
-          मानसिक आणि शारीरिक स्वास्थ्यासाठी उपक्रम.
+
+        <p
+          data-mr="शारीरिक आणि मानसिक स्वास्थ्यासाठी उपक्रम."
+          data-en="Activities for physical and emotional wellbeing.">
+          शारीरिक आणि मानसिक स्वास्थ्यासाठी उपक्रम.
         </p>
+
       </div>
 
-      <div class="care-card reveal">
-        <div class="care-number">05</div>
-        <div class="care-icon">🤝</div>
-        <h3 data-mr="सहचर्य"
-            data-en="Companionship">
-          सहचर्य
-        </h3>
-        <p data-mr="आपुलकीचा सहवास आणि कुटुंबासारखे वातावरण."
-           data-en="Warm companionship and a family-like environment.">
-          आपुलकीचा सहवास आणि कुटुंबासारखे वातावरण.
-        </p>
+    </div>
+
+
+    <div style="margin-top:35px;">
+
+      <a
+        href="facilities.html"
+        class="mr-btn mr-btn-gold"
+        data-mr="सर्व सुविधा पाहा →"
+        data-en="Explore All Facilities →">
+        सर्व सुविधा पाहा →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     MISSION / VISION
+===================================================== -->
+
+<section class="mr-section mr-section-navy">
+
+  <div class="container">
+
+    <div class="mr-section-header mr-reveal">
+
+      <div
+        class="mr-kicker"
+        data-mr="ध्येय आणि दृष्टी"
+        data-en="MISSION & VISION">
+        MISSION & VISION
       </div>
 
-      <div class="care-card reveal">
-        <div class="care-number">06</div>
-        <div class="care-icon">❤️</div>
-        <h3 data-mr="सन्मान व प्रेम"
-            data-en="Dignity & Love">
-          सन्मान व प्रेम
+      <h2
+        data-mr="आजची सेवा.<br>उद्याची आशा."
+        data-en="Care today.<br>Hope for tomorrow.">
+
+        आजची सेवा.<br>
+        उद्याची आशा.
+
+      </h2>
+
+    </div>
+
+
+    <div class="mr-mission-grid">
+
+      <div class="mr-dark-card mr-reveal">
+
+        <div class="mr-number">01 · MISSION</div>
+
+        <h3
+          data-mr="सुरक्षितता, सन्मान आणि प्रेम."
+          data-en="Safety, dignity and love.">
+          सुरक्षितता, सन्मान आणि प्रेम.
         </h3>
-        <p data-mr="प्रत्येक आईला आदर, सन्मान आणि आपलेपणाची भावना."
-           data-en="Respect, dignity and a sense of belonging for every mother.">
-          प्रत्येक आईला आदर, सन्मान आणि आपलेपणाची भावना.
+
+        <p
+          data-mr="वृद्ध मातांना सुरक्षित, सन्मानाचे आणि प्रेमळ वातावरण उपलब्ध करून देणे, जिथे त्या काळजी आणि आपलेपणाच्या भावनेने जगू शकतील."
+          data-en="To provide elderly mothers with a safe, dignified and loving environment where they can live with care and belonging.">
+          वृद्ध मातांना सुरक्षित, सन्मानाचे आणि प्रेमळ वातावरण उपलब्ध करून देणे,
+          जिथे त्या काळजी आणि आपलेपणाच्या भावनेने जगू शकतील.
         </p>
+
+      </div>
+
+
+      <div class="mr-dark-card mr-reveal">
+
+        <div class="mr-number">02 · VISION</div>
+
+        <h3
+          data-mr="कोणतीही आई एकटी राहू नये."
+          data-en="No mother should feel alone.">
+          कोणतीही आई एकटी राहू नये.
+        </h3>
+
+        <p
+          data-mr="असा समाज घडवणे जिथे कोणतीही वृद्ध आई दुर्लक्षित, एकटी किंवा बेघर राहणार नाही."
+          data-en="To build a society where no elderly mother is neglected, alone or without a home.">
+          असा समाज घडवणे जिथे कोणतीही वृद्ध आई दुर्लक्षित,
+          एकटी किंवा बेघर राहणार नाही.
+        </p>
+
       </div>
 
     </div>
@@ -1043,65 +1768,214 @@ h1,h2,h3,h4{
 
 
 <!-- =====================================================
-     MISSION & VISION
+     CURRENT NEEDS
 ===================================================== -->
 
-<section class="premium-section navy-feature">
+<section class="mr-section mr-section-cream">
 
-  <div class="container feature-grid">
+  <div class="container">
 
-    <div class="reveal">
+    <div class="mr-section-header center mr-reveal">
 
-      <div class="premium-label">Our Purpose</div>
+      <div
+        class="mr-kicker"
+        data-mr="सध्याच्या गरजा"
+        data-en="CURRENT NEEDS">
+        CURRENT NEEDS
+      </div>
 
-      <h2 class="premium-title"
-          data-mr="प्रत्येक आईला सन्मानाने जगण्याचा अधिकार आहे."
-          data-en="Every mother deserves to live with dignity.">
+      <h2
+        data-mr="तुमची मदत<br>कुठे उपयोगी पडते?"
+        data-en="Where does<br>your support help?">
 
-        प्रत्येक आईला सन्मानाने जगण्याचा अधिकार आहे.
+        तुमची मदत<br>
+        कुठे उपयोगी पडते?
 
       </h2>
 
-      <p data-mr="आमचे ध्येय वृद्ध मातांना सुरक्षित, सन्मानाचे आणि प्रेमळ वातावरण देणे आहे — जिथे त्या काळजी, आदर आणि आपलेपणाने जगू शकतील."
-         data-en="Our mission is to provide elderly mothers with a safe, dignified and loving environment where they can live with care, respect and belonging.">
+    </div>
 
-        आमचे ध्येय वृद्ध मातांना सुरक्षित, सन्मानाचे आणि प्रेमळ वातावरण देणे आहे — जिथे त्या काळजी, आदर आणि आपलेपणाने जगू शकतील.
+
+    <div class="mr-needs">
+
+      <div class="mr-need mr-reveal">
+
+        <div class="mr-need-icon">🍚</div>
+
+        <h3
+          data-mr="अन्न व किराणा"
+          data-en="Food & Groceries">
+          अन्न व किराणा
+        </h3>
+
+        <a
+          href="donate.html"
+          data-mr="मदत करा →"
+          data-en="Support →">
+          मदत करा →
+        </a>
+
+      </div>
+
+
+      <div class="mr-need mr-reveal">
+
+        <div class="mr-need-icon">💊</div>
+
+        <h3
+          data-mr="आरोग्यसेवा"
+          data-en="Healthcare">
+          आरोग्यसेवा
+        </h3>
+
+        <a
+          href="donate.html"
+          data-mr="मदत करा →"
+          data-en="Support →">
+          मदत करा →
+        </a>
+
+      </div>
+
+
+      <div class="mr-need mr-reveal">
+
+        <div class="mr-need-icon">🛏️</div>
+
+        <h3
+          data-mr="बेड व बेडिंग"
+          data-en="Beds & Bedding">
+          बेड व बेडिंग
+        </h3>
+
+        <a
+          href="donate.html"
+          data-mr="मदत करा →"
+          data-en="Support →">
+          मदत करा →
+        </a>
+
+      </div>
+
+
+      <div class="mr-need mr-reveal">
+
+        <div class="mr-need-icon">☀️</div>
+
+        <h3
+          data-mr="सौर ऊर्जा"
+          data-en="Solar Energy">
+          सौर ऊर्जा
+        </h3>
+
+        <a
+          href="donate.html"
+          data-mr="मदत करा →"
+          data-en="Support →">
+          मदत करा →
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     IMPACT
+===================================================== -->
+
+<section class="mr-section mr-impact-section">
+
+  <div class="container mr-impact-large">
+
+    <div class="mr-reveal">
+
+      <div
+        class="mr-kicker"
+        data-mr="आमचा प्रभाव"
+        data-en="OUR IMPACT">
+        OUR IMPACT
+      </div>
+
+      <h2
+        data-mr="काळजीची किंमत आकड्यांमध्ये मोजता येत नाही.<br>पण परिणाम दिसतो."
+        data-en="Care cannot always be measured.<br>But its impact can be seen.">
+
+        काळजीची किंमत आकड्यांमध्ये मोजता येत नाही.<br>
+        पण परिणाम दिसतो.
+
+      </h2>
+
+      <p
+        class="mr-section-intro"
+        data-mr="* हे आकडे पडताळणी झालेल्या अधिकृत संस्थात्मक माहितीने अद्ययावत केले जातील."
+        data-en="* These numbers will be updated only with verified organizational data.">
+
+        * हे आकडे पडताळणी झालेल्या अधिकृत संस्थात्मक माहितीने अद्ययावत केले जातील.
 
       </p>
 
     </div>
 
-    <div class="reveal">
 
-      <div class="feature-card">
+    <div class="mr-impact-stats">
 
-        <div class="feature-card-icon">🎯</div>
+      <div class="mr-impact-stat mr-reveal">
 
-        <h3 data-mr="ध्येय"
-            data-en="Mission">
-          ध्येय
-        </h3>
+        <div class="mr-stat-number">[XX]+</div>
 
-        <p data-mr="वृद्ध मातांना सुरक्षित, सन्मानाचे आणि प्रेमळ वातावरण देणे."
-           data-en="To provide elderly mothers with a safe, dignified and loving environment.">
-          वृद्ध मातांना सुरक्षित, सन्मानाचे आणि प्रेमळ वातावरण देणे.
-        </p>
+        <div
+          class="mr-stat-label"
+          data-mr="आधार मिळालेल्या माता"
+          data-en="Mothers Supported">
+          आधार मिळालेल्या माता
+        </div>
 
       </div>
 
-      <div class="feature-card">
 
-        <div class="feature-card-icon">🌅</div>
+      <div class="mr-impact-stat mr-reveal">
 
-        <h3 data-mr="दृष्टी"
-            data-en="Vision">
-          दृष्टी
-        </h3>
+        <div class="mr-stat-number">[XX]+</div>
 
-        <p data-mr="असा समाज घडवणे जिथे कोणतीही वृद्ध आई एकटी, दुर्लक्षित किंवा बेघर राहणार नाही."
-           data-en="A society where no elderly mother feels alone, neglected or without a home.">
-          असा समाज घडवणे जिथे कोणतीही वृद्ध आई एकटी, दुर्लक्षित किंवा बेघर राहणार नाही.
-        </p>
+        <div
+          class="mr-stat-label"
+          data-mr="वाढलेले जेवण"
+          data-en="Meals Served">
+          वाढलेले जेवण
+        </div>
+
+      </div>
+
+
+      <div class="mr-impact-stat mr-reveal">
+
+        <div class="mr-stat-number">[XX]+</div>
+
+        <div
+          class="mr-stat-label"
+          data-mr="आरोग्य उपक्रम"
+          data-en="Health Activities">
+          आरोग्य उपक्रम
+        </div>
+
+      </div>
+
+
+      <div class="mr-impact-stat mr-reveal">
+
+        <div class="mr-stat-number">[XX]+</div>
+
+        <div
+          class="mr-stat-label"
+          data-mr="सेवेची वर्षे"
+          data-en="Years of Service">
+          सेवेची वर्षे
+        </div>
 
       </div>
 
@@ -1116,104 +1990,133 @@ h1,h2,h3,h4{
      MOTHERS
 ===================================================== -->
 
-<section class="premium-section premium-section-alt">
+<section class="mr-section">
 
   <div class="container">
 
-    <div class="center-heading reveal">
+    <div class="mr-section-header center mr-reveal">
 
-      <div class="premium-label"
-           data-mr="आमच्या माता"
-           data-en="Our Mothers">
-        आमच्या माता
+      <div
+        class="mr-kicker"
+        data-mr="आमच्या माता"
+        data-en="OUR MOTHERS">
+        OUR MOTHERS
       </div>
 
-      <h2 class="premium-title"
-          data-mr="प्रत्येक आईची एक गोष्ट असते."
-          data-en="Every mother has a story.">
+      <h2
+        data-mr="प्रत्येक आईची<br>एक कहाणी असते."
+        data-en="Every mother<br>has a story.">
 
-        प्रत्येक आईची एक गोष्ट असते.
+        प्रत्येक आईची<br>
+        एक कहाणी असते.
 
       </h2>
 
-      <p class="premium-copy"
-         data-mr="ओळख आणि गोपनीयतेचा पूर्ण आदर राखत, संमती दिलेल्या मातांच्या कहाण्या येथे प्रकाशित केल्या जातात."
-         data-en="With full respect for identity and privacy, only stories published with consent are shared here.">
+      <p
+        class="mr-section-intro"
+        data-mr="मातांची गोपनीयता आणि संमती यांचा पूर्ण आदर राखूनच माहिती प्रकाशित केली जाते."
+        data-en="Stories are published only with full respect for privacy and consent.">
 
-        ओळख आणि गोपनीयतेचा पूर्ण आदर राखत, संमती दिलेल्या मातांच्या कहाण्या येथे प्रकाशित केल्या जातात.
+        मातांची गोपनीयता आणि संमती यांचा पूर्ण आदर राखूनच माहिती प्रकाशित केली जाते.
 
       </p>
 
     </div>
 
-    <div class="mothers-grid">
 
-      <div class="mother-card reveal">
-        <div class="mother-image">
-          <span data-mr="संमतीनंतर प्रकाशित"
-                data-en="Published after consent">
-            संमतीनंतर प्रकाशित
+    <div class="mr-mothers-grid">
+
+      <div class="mr-mother-card mr-reveal">
+
+        <div class="mr-mother-image">
+          <img
+            src="images/home-hero.png"
+            alt="माई वृद्धाश्रम">
+        </div>
+
+        <div class="mr-mother-info">
+
+          <span
+            data-mr="संमतीनंतर प्रकाशित"
+            data-en="Published with consent">
+            Published with consent
           </span>
-        </div>
-        <div class="mother-content">
-          <h3 data-mr="एका आईची कहाणी"
-              data-en="A Mother's Story">
-            एका आईची कहाणी
-          </h3>
-          <p data-mr="संमती-मंजूर माहिती उपलब्ध झाल्यानंतर ही कहाणी येथे प्रकाशित केली जाईल."
-             data-en="This story will be published after consent-approved information is available.">
-            संमती-मंजूर माहिती उपलब्ध झाल्यानंतर ही कहाणी येथे प्रकाशित केली जाईल.
+
+          <p
+            data-mr="माहिती लवकरच उपलब्ध होईल."
+            data-en="Information coming soon.">
+            माहिती लवकरच उपलब्ध होईल.
           </p>
+
         </div>
+
       </div>
 
-      <div class="mother-card reveal">
-        <div class="mother-image">
-          <span data-mr="संमतीनंतर प्रकाशित"
-                data-en="Published after consent">
-            संमतीनंतर प्रकाशित
+
+      <div class="mr-mother-card mr-reveal">
+
+        <div class="mr-mother-image">
+          <img
+            src="images/home-hero.png"
+            alt="माई वृद्धाश्रम">
+        </div>
+
+        <div class="mr-mother-info">
+
+          <span
+            data-mr="संमतीनंतर प्रकाशित"
+            data-en="Published with consent">
+            Published with consent
           </span>
-        </div>
-        <div class="mother-content">
-          <h3 data-mr="एका आईची कहाणी"
-              data-en="A Mother's Story">
-            एका आईची कहाणी
-          </h3>
-          <p data-mr="संमती-मंजूर माहिती उपलब्ध झाल्यानंतर ही कहाणी येथे प्रकाशित केली जाईल."
-             data-en="This story will be published after consent-approved information is available.">
-            संमती-मंजूर माहिती उपलब्ध झाल्यानंतर ही कहाणी येथे प्रकाशित केली जाईल.
+
+          <p
+            data-mr="माहिती लवकरच उपलब्ध होईल."
+            data-en="Information coming soon.">
+            माहिती लवकरच उपलब्ध होईल.
           </p>
+
         </div>
+
       </div>
 
-      <div class="mother-card reveal">
-        <div class="mother-image">
-          <span data-mr="संमतीनंतर प्रकाशित"
-                data-en="Published after consent">
-            संमतीनंतर प्रकाशित
+
+      <div class="mr-mother-card mr-reveal">
+
+        <div class="mr-mother-image">
+          <img
+            src="images/home-hero.png"
+            alt="माई वृद्धाश्रम">
+        </div>
+
+        <div class="mr-mother-info">
+
+          <span
+            data-mr="संमतीनंतर प्रकाशित"
+            data-en="Published with consent">
+            Published with consent
           </span>
-        </div>
-        <div class="mother-content">
-          <h3 data-mr="एका आईची कहाणी"
-              data-en="A Mother's Story">
-            एका आईची कहाणी
-          </h3>
-          <p data-mr="संमती-मंजूर माहिती उपलब्ध झाल्यानंतर ही कहाणी येथे प्रकाशित केली जाईल."
-             data-en="This story will be published after consent-approved information is available.">
-            संमती-मंजूर माहिती उपलब्ध झाल्यानंतर ही कहाणी येथे प्रकाशित केली जाईल.
+
+          <p
+            data-mr="माहिती लवकरच उपलब्ध होईल."
+            data-en="Information coming soon.">
+            माहिती लवकरच उपलब्ध होईल.
           </p>
+
         </div>
+
       </div>
 
     </div>
 
-    <div style="text-align:center;margin-top:35px;">
 
-      <a href="mothers.html"
-         class="premium-btn premium-btn-gold"
-         data-mr="सर्व माता पाहा"
-         data-en="View All Mothers">
-        सर्व माता पाहा
+    <div style="margin-top:35px;text-align:center;">
+
+      <a
+        href="mothers.html"
+        class="mr-btn mr-btn-gold"
+        data-mr="सर्व माता पाहा →"
+        data-en="View All Mothers →">
+        सर्व माता पाहा →
       </a>
 
     </div>
@@ -1224,244 +2127,85 @@ h1,h2,h3,h4{
 
 
 <!-- =====================================================
-     IMPACT
+     CSR / VOLUNTEER
 ===================================================== -->
 
-<section class="premium-section impact-section">
+<section>
 
-  <div class="container">
+  <div class="mr-csr">
 
-    <div class="center-heading reveal">
+    <div class="mr-csr-box mr-reveal">
 
-      <div class="premium-label"
-           data-mr="आमचा प्रभाव"
-           data-en="Our Impact">
-        आमचा प्रभाव
+      <div
+        class="mr-kicker"
+        data-mr="स्वयंसेवा"
+        data-en="VOLUNTEER">
+        VOLUNTEER
       </div>
 
-      <h2 class="premium-title"
-          data-mr="काळजी जी आकड्यांपेक्षा मोठी आहे."
-          data-en="Care that goes beyond numbers.">
+      <h2
+        data-mr="आपला वेळही<br>एक देणगी आहे."
+        data-en="Your time is<br>a gift too.">
 
-        काळजी जी आकड्यांपेक्षा मोठी आहे.
+        आपला वेळही<br>
+        एक देणगी आहे.
 
       </h2>
 
-    </div>
+      <p
+        data-mr="मातांसोबत वेळ घालवा, उपक्रमांमध्ये मदत करा किंवा तुमच्या कौशल्याने योगदान द्या."
+        data-en="Spend time with the mothers, support activities or contribute your skills.">
 
-    <div class="impact-grid">
+        मातांसोबत वेळ घालवा, उपक्रमांमध्ये मदत करा
+        किंवा तुमच्या कौशल्याने योगदान द्या.
 
-      <div class="impact-box reveal">
-        <div class="impact-number">[XX]<span>+</span></div>
-        <div class="impact-label"
-             data-mr="आधार मिळालेल्या माता"
-             data-en="Mothers Supported">
-          आधार मिळालेल्या माता
-        </div>
-      </div>
+      </p>
 
-      <div class="impact-box reveal">
-        <div class="impact-number">[XX]<span>+</span></div>
-        <div class="impact-label"
-             data-mr="वाढलेले जेवण"
-             data-en="Meals Served">
-          वाढलेले जेवण
-        </div>
-      </div>
-
-      <div class="impact-box reveal">
-        <div class="impact-number">[XX]<span>+</span></div>
-        <div class="impact-label"
-             data-mr="आरोग्य उपक्रम"
-             data-en="Health Activities">
-          आरोग्य उपक्रम
-        </div>
-      </div>
-
-      <div class="impact-box reveal">
-        <div class="impact-number">[XX]<span>+</span></div>
-        <div class="impact-label"
-             data-mr="सेवेची वर्षे"
-             data-en="Years of Service">
-          सेवेची वर्षे
-        </div>
-      </div>
+      <a
+        href="volunteer.html"
+        class="mr-btn mr-btn-light"
+        data-mr="स्वयंसेवक व्हा →"
+        data-en="Become a Volunteer →">
+        स्वयंसेवक व्हा →
+      </a>
 
     </div>
 
-  </div>
 
-</section>
+    <div class="mr-csr-box mr-reveal">
 
-
-<!-- =====================================================
-     CURRENT NEEDS
-===================================================== -->
-
-<section class="premium-section">
-
-  <div class="container">
-
-    <div class="center-heading reveal">
-
-      <div class="premium-label"
-           data-mr="सध्याच्या गरजा"
-           data-en="Current Needs">
-        सध्याच्या गरजा
+      <div
+        class="mr-kicker"
+        data-mr="CSR भागीदारी"
+        data-en="CSR PARTNERSHIP">
+        CSR PARTNERSHIP
       </div>
 
-      <h2 class="premium-title"
-          data-mr="तुमची मदत कुठे उपयोगी पडते"
-          data-en="Where your support helps">
+      <h2
+        data-mr="अर्थपूर्ण<br>प्रभावासाठी भागीदार व्हा."
+        data-en="Partner for<br>meaningful impact.">
 
-        तुमची मदत कुठे उपयोगी पडते
+        अर्थपूर्ण<br>
+        प्रभावासाठी भागीदार व्हा.
 
       </h2>
 
-    </div>
+      <p
+        data-mr="CSR विभाग, कंपन्या, संस्था आणि समुदाय गटांसाठी अर्थपूर्ण भागीदारीच्या संधी."
+        data-en="Meaningful partnership opportunities for CSR teams, companies, foundations and community groups.">
 
-    <div class="needs-grid">
+        CSR विभाग, कंपन्या, संस्था आणि समुदाय गटांसाठी
+        अर्थपूर्ण भागीदारीच्या संधी.
 
-      <div class="need-card reveal">
-        <div>
-          <div class="need-icon">🍚</div>
-          <h3 data-mr="अन्न व किराणा"
-              data-en="Food & Groceries">
-            अन्न व किराणा
-          </h3>
-        </div>
-        <a href="donate.html"
-           data-mr="मदत करा →"
-           data-en="Support →">
-          मदत करा →
-        </a>
-      </div>
+      </p>
 
-      <div class="need-card reveal">
-        <div>
-          <div class="need-icon">💊</div>
-          <h3 data-mr="आरोग्यसेवा"
-              data-en="Healthcare">
-            आरोग्यसेवा
-          </h3>
-        </div>
-        <a href="donate.html"
-           data-mr="मदत करा →"
-           data-en="Support →">
-          मदत करा →
-        </a>
-      </div>
-
-      <div class="need-card reveal">
-        <div>
-          <div class="need-icon">🛏️</div>
-          <h3 data-mr="बेड व बेडिंग"
-              data-en="Beds & Bedding">
-            बेड व बेडिंग
-          </h3>
-        </div>
-        <a href="donate.html"
-           data-mr="मदत करा →"
-           data-en="Support →">
-          मदत करा →
-        </a>
-      </div>
-
-      <div class="need-card reveal">
-        <div>
-          <div class="need-icon">☀️</div>
-          <h3 data-mr="सौर ऊर्जा"
-              data-en="Solar Energy">
-            सौर ऊर्जा
-          </h3>
-        </div>
-        <a href="donate.html"
-           data-mr="मदत करा →"
-           data-en="Support →">
-          मदत करा →
-        </a>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =====================================================
-     VOLUNTEER / CSR
-===================================================== -->
-
-<section class="premium-section navy-feature">
-
-  <div class="container feature-grid">
-
-    <div class="reveal">
-
-      <div class="premium-label"
-           data-mr="सहभागी व्हा"
-           data-en="Get Involved">
-        सहभागी व्हा
-      </div>
-
-      <h2 class="premium-title"
-          data-mr="तुमचा वेळ, कौशल्य किंवा सहकार्य — कोणतीही मदत मौल्यवान आहे."
-          data-en="Your time, skills or support can make a difference.">
-
-        तुमचा वेळ, कौशल्य किंवा सहकार्य — कोणतीही मदत मौल्यवान आहे.
-
-      </h2>
-
-    </div>
-
-    <div>
-
-      <div class="feature-card reveal">
-
-        <div class="feature-card-icon">🤝</div>
-
-        <h3 data-mr="स्वयंसेवक व्हा"
-            data-en="Become a Volunteer">
-          स्वयंसेवक व्हा
-        </h3>
-
-        <p data-mr="मातांसोबत वेळ घालवा, उपक्रमांमध्ये मदत करा किंवा तुमच्या कौशल्याने योगदान द्या."
-           data-en="Spend time with the mothers, support activities or contribute your skills.">
-          मातांसोबत वेळ घालवा, उपक्रमांमध्ये मदत करा किंवा तुमच्या कौशल्याने योगदान द्या.
-        </p>
-
-        <a href="volunteer.html"
-           class="premium-btn premium-btn-light"
-           data-mr="स्वयंसेवक व्हा"
-           data-en="Volunteer With Us">
-          स्वयंसेवक व्हा
-        </a>
-
-      </div>
-
-      <div class="feature-card reveal">
-
-        <div class="feature-card-icon">🏢</div>
-
-        <h3 data-mr="CSR भागीदारी"
-            data-en="CSR Partnership">
-          CSR भागीदारी
-        </h3>
-
-        <p data-mr="संस्था, कंपन्या आणि CSR विभागांसाठी अर्थपूर्ण भागीदारीच्या संधी."
-           data-en="Meaningful partnership opportunities for companies and CSR teams.">
-          संस्था, कंपन्या आणि CSR विभागांसाठी अर्थपूर्ण भागीदारीच्या संधी.
-        </p>
-
-        <a href="csr.html"
-           class="premium-btn premium-btn-light"
-           data-mr="CSR बद्दल जाणून घ्या"
-           data-en="Explore CSR">
-          CSR बद्दल जाणून घ्या
-        </a>
-
-      </div>
+      <a
+        href="csr.html"
+        class="mr-btn mr-btn-light"
+        data-mr="CSR भागीदारी →"
+        data-en="CSR Partnership →">
+        CSR भागीदारी →
+      </a>
 
     </div>
 
@@ -1474,19 +2218,20 @@ h1,h2,h3,h4{
      DONATION CTA
 ===================================================== -->
 
-<section class="premium-donation">
+<section class="mr-donation">
 
-  <div class="container">
+  <div class="mr-reveal">
 
-    <div class="premium-label"
-         data-mr="आजच मदत करा"
-         data-en="Help Today">
-      आजच मदत करा
+    <div
+      class="mr-kicker"
+      data-mr="आजच मदत करा"
+      data-en="HELP TODAY">
+      HELP TODAY
     </div>
 
     <h2
-      data-mr="आपली छोटी मदत, एका आईसाठी मोठा आधार."
-      data-en="Your small contribution can make a big difference in a mother's life.">
+      data-mr="आपली छोटी मदत,<br>एका आईसाठी मोठा आधार."
+      data-en="Your small contribution<br>can mean so much to a mother.">
 
       आपली छोटी मदत,<br>
       एका आईसाठी मोठा आधार.
@@ -1494,17 +2239,19 @@ h1,h2,h3,h4{
     </h2>
 
     <p
-      data-mr="तुमची देणगी अन्न, आरोग्यसेवा, निवास, आवश्यक वस्तू आणि वृद्ध मातांच्या दैनंदिन काळजीसाठी उपयोगी पडते."
-      data-en="Your contribution supports food, healthcare, accommodation, essential supplies and daily care for elderly mothers.">
+      data-mr="आपली देणगी अन्न, आरोग्यसेवा, निवास, आवश्यक साहित्य आणि सुरक्षित भविष्य घडविण्यासाठी उपयोगी पडते."
+      data-en="Your contribution supports food, healthcare, accommodation, essential supplies and a more secure future.">
 
-      तुमची देणगी अन्न, आरोग्यसेवा, निवास, आवश्यक वस्तू आणि वृद्ध मातांच्या दैनंदिन काळजीसाठी उपयोगी पडते.
+      आपली देणगी अन्न, आरोग्यसेवा, निवास,
+      आवश्यक साहित्य आणि सुरक्षित भविष्य घडविण्यासाठी उपयोगी पडते.
 
     </p>
 
-    <a href="donate.html"
-       class="premium-btn premium-btn-gold"
-       data-mr="❤️ आत्ताच देणगी द्या"
-       data-en="❤️ Donate Now">
+    <a
+      href="donate.html"
+      class="mr-btn mr-btn-gold"
+      data-mr="❤️ आत्ताच देणगी द्या"
+      data-en="❤️ Donate Now">
       ❤️ आत्ताच देणगी द्या
     </a>
 
@@ -1514,38 +2261,202 @@ h1,h2,h3,h4{
 
 
 <!-- =====================================================
-     FINAL MESSAGE
+     CONTACT
 ===================================================== -->
 
-<section class="final-message">
+<section class="mr-section" style="padding-bottom:0;">
 
   <div class="container">
 
-    <blockquote
-      data-mr="“घर म्हणजे फक्त चार भिंती नाहीत. घर म्हणजे जिथे कोणीतरी आपली वाट पाहत असते.”"
-      data-en="“A home is not just four walls. A home is where someone is waiting for you.”">
+    <div class="mr-contact">
 
-      “घर म्हणजे फक्त चार भिंती नाहीत.<br>
-      घर म्हणजे जिथे कोणीतरी आपली वाट पाहत असते.”
+      <div class="mr-contact-info mr-reveal">
 
-    </blockquote>
+        <div
+          class="mr-kicker"
+          data-mr="संपर्क"
+          data-en="CONTACT">
+          CONTACT
+        </div>
 
-    <cite>— माई वृद्धाश्रम</cite>
+        <h2
+          data-mr="आपण भेटूया."
+          data-en="Let's connect.">
+          आपण भेटूया.
+        </h2>
+
+
+        <div class="mr-contact-item">
+
+          <strong
+            data-mr="संस्था"
+            data-en="ORGANIZATION">
+            संस्था
+          </strong>
+
+          <span>
+            Mai Vriddhashram<br>
+            Bodhi Tree Educational Foundation
+          </span>
+
+        </div>
+
+
+        <div class="mr-contact-item">
+
+          <strong
+            data-mr="स्थान"
+            data-en="LOCATION">
+            LOCATION
+          </strong>
+
+          <span>
+            Chhatrapati Sambhajinagar,
+            Maharashtra, India
+          </span>
+
+        </div>
+
+
+        <div class="mr-contact-item">
+
+          <strong
+            data-mr="नोंदणी क्रमांक"
+            data-en="REGISTRATION NO.">
+            REGISTRATION NO.
+          </strong>
+
+          <span>
+            F-23015
+          </span>
+
+        </div>
+
+
+        <div style="margin-top:30px;">
+
+          <a
+            href="about.html"
+            class="mr-btn mr-btn-gold"
+            data-mr="आमच्याबद्दल अधिक →"
+            data-en="Learn More →">
+            आमच्याबद्दल अधिक →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="mr-map mr-reveal">
+
+        <div class="mr-map-inner">
+
+          <div class="mr-map-icon">📍</div>
+
+          <h3
+            data-mr="माई वृद्धाश्रम"
+            data-en="Mai Vriddhashram">
+            माई वृद्धाश्रम
+          </h3>
+
+          <p
+            data-mr="छत्रपती संभाजीनगर, महाराष्ट्र"
+            data-en="Chhatrapati Sambhajinagar, Maharashtra">
+            छत्रपती संभाजीनगर, महाराष्ट्र
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
 
   </div>
 
 </section>
 
+
+<!-- =====================================================
+     FINAL QUOTE
+===================================================== -->
+
+<section class="mr-quote">
+
+  <div class="mr-reveal">
+
+    <div class="mr-quote-mark">“</div>
+
+    <p
+      data-mr="ज्यांनी आपलं आयुष्य आपल्यासाठी दिलं, त्यांच्या आयुष्याच्या संध्याकाळी आपण त्यांच्यासाठी उभं राहूया."
+      data-en="For those who gave their lives for us, let us stand beside them in the evening of their lives.">
+
+      ज्यांनी आपलं आयुष्य आपल्यासाठी दिलं,
+      त्यांच्या आयुष्याच्या संध्याकाळी
+      आपण त्यांच्यासाठी उभं राहूया.
+
+    </p>
+
+  </div>
+
+</section>
+
+
 </main>
 
 
+<!-- EXISTING FOOTER -->
 <div id="site-footer"></div>
 
 
+<!-- EXISTING SCRIPTS — DO NOT CHANGE -->
 <script src="config.js"></script>
 <script src="js/common.js"></script>
 <script src="js/main.js"></script>
 
+
+<script>
+
+/* =====================================================
+   HOMEPAGE REVEAL ANIMATION
+===================================================== */
+
+(function(){
+
+  const items = document.querySelectorAll(".mr-reveal");
+
+  if(!("IntersectionObserver" in window)){
+    items.forEach(el => el.classList.add("visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    entries => {
+
+      entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+          entry.target.classList.add("visible");
+
+          observer.unobserve(entry.target);
+
+        }
+
+      });
+
+    },
+    {
+      threshold:.12
+    }
+  );
+
+  items.forEach(el => observer.observe(el));
+
+})();
+
+</script>
+
+
 </body>
 </html>
-```
