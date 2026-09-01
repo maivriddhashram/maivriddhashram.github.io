@@ -1,15 +1,9 @@
-```html
 <!DOCTYPE html>
 <html lang="mr">
 
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Donation Receipt | Mai Vriddhashram</title>
 
@@ -19,49 +13,64 @@
   >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
   <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Noto+Serif+Devanagari:wght@600;700&family=Work+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap"
     rel="stylesheet"
   >
 
-  <link
-    rel="stylesheet"
-    href="css/style.css"
-  >
-
+  <link rel="stylesheet" href="css/style.css">
 
   <style>
 
     /* =====================================================
-       PREMIUM RECEIPT DESIGN
+       ROOT
     ===================================================== */
 
     :root {
-      --receipt-primary: #7b4b2a;
-      --receipt-secondary: #a66a3f;
-      --receipt-gold: #c99a4a;
-      --receipt-dark: #2d241f;
-      --receipt-muted: #6f6863;
-      --receipt-line: #ded7d1;
-      --receipt-soft: #f8f4ef;
-      --receipt-white: #ffffff;
-      --receipt-green: #18794e;
+      --primary: #754522;
+      --primary-dark: #4d2d19;
+      --secondary: #a66a3f;
+      --gold: #c99a4a;
+      --gold-light: #ead7ad;
+      --dark: #29221e;
+      --text: #443d38;
+      --muted: #746c65;
+      --line: #ddd4cc;
+      --soft: #faf6f0;
+      --green: #18794e;
+      --green-soft: #edf8f2;
+      --white: #ffffff;
     }
 
 
+    /* =====================================================
+       PAGE
+    ===================================================== */
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
+      margin: 0;
       background:
-        linear-gradient(
-          135deg,
-          #f7f3ef 0%,
-          #fff 50%,
-          #f7f3ef 100%
+        radial-gradient(
+          circle at top,
+          #fffdf9 0%,
+          #f7f2ec 45%,
+          #eee7df 100%
         );
+      color: var(--text);
+      font-family:
+        "Noto Sans Devanagari",
+        "Work Sans",
+        sans-serif;
     }
 
 
     .receipt-page {
+      width: 100%;
+      box-sizing: border-box;
       padding: 45px 15px 70px;
     }
 
@@ -74,44 +83,61 @@
 
 
     /* =====================================================
-       SUCCESS BANNER
+       SUCCESS MESSAGE
     ===================================================== */
 
     .receipt-success-banner {
-      background: #edf8f2;
-      border: 1px solid #c9ead8;
-      color: var(--receipt-green);
-      padding: 14px 18px;
-      border-radius: 12px;
-      text-align: center;
-      font-weight: 700;
+      box-sizing: border-box;
+      width: 100%;
       margin-bottom: 22px;
+      padding: 14px 18px;
+
+      background: var(--green-soft);
+      border: 1px solid #c7e6d5;
+      border-radius: 12px;
+
+      color: var(--green);
+      text-align: center;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.7;
     }
 
 
     /* =====================================================
-       MAIN RECEIPT
+       COMMON DOCUMENT
     ===================================================== */
 
-    .premium-receipt {
+    .premium-receipt,
+    .thank-you-letter {
       position: relative;
-      background: var(--receipt-white);
-      border: 1px solid #d9d0c8;
-      border-radius: 20px;
+      width: 100%;
+      box-sizing: border-box;
+
+      background: var(--white);
+      border: 1px solid #d7cdc4;
+      border-radius: 22px;
+
       overflow: hidden;
+
       box-shadow:
-        0 18px 50px rgba(45,36,31,0.12);
+        0 20px 55px rgba(45, 36, 31, 0.12);
     }
 
 
+    /* =====================================================
+       RECEIPT TOP DECORATION
+    ===================================================== */
+
     .receipt-top-line {
       height: 7px;
+
       background:
         linear-gradient(
           90deg,
-          var(--receipt-primary),
-          var(--receipt-gold),
-          var(--receipt-primary)
+          var(--primary),
+          var(--gold),
+          var(--primary)
         );
     }
 
@@ -122,40 +148,87 @@
 
 
     /* =====================================================
-       HEADER
+       RECEIPT HEADER
     ===================================================== */
 
     .premium-receipt-header {
       display: grid;
-      grid-template-columns: 120px 1fr 160px;
-      gap: 25px;
+      grid-template-columns: 125px 1fr 165px;
       align-items: center;
-      padding-bottom: 30px;
-      border-bottom: 1px solid var(--receipt-line);
+      gap: 24px;
+
+      padding-bottom: 28px;
+
+      border-bottom: 1px solid var(--line);
     }
 
 
+    /* =====================================================
+       LOGO
+       IMPORTANT: LOGO STAYS INSIDE CIRCLE
+    ===================================================== */
+
     .receipt-logo-wrap {
-      width: 105px;
-      height: 105px;
-      border: 1px solid #ddd2c8;
-      border-radius: 50%;
-      background: #fff;
+      width: 108px;
+      height: 108px;
+
+      box-sizing: border-box;
+
+      margin: 0 auto;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+
+      background: #ffffff;
+
       overflow: hidden;
+
       box-shadow:
-        0 5px 18px rgba(0,0,0,0.07);
+        0 5px 18px rgba(0, 0, 0, 0.08);
+
+      position: relative;
+    }
+
+
+    .receipt-logo-wrap::after {
+      content: "";
+
+      position: absolute;
+      inset: 5px;
+
+      border: 1px solid var(--gold-light);
+      border-radius: 50%;
+
+      pointer-events: none;
     }
 
 
     .receipt-logo {
-      width: 88px;
-      height: 88px;
+      display: block;
+
+      width: 84px;
+      height: 84px;
+
+      max-width: 84px;
+      max-height: 84px;
+
       object-fit: contain;
+      object-position: center;
+
+      margin: 0;
+
+      position: relative;
+      z-index: 2;
     }
 
+
+    /* =====================================================
+       ORGANIZATION
+    ===================================================== */
 
     .receipt-organization {
       text-align: center;
@@ -164,19 +237,29 @@
 
     .receipt-organization h1 {
       margin: 0;
-      color: var(--receipt-primary);
+
+      color: var(--primary);
+
       font-family:
         "Noto Serif Devanagari",
         serif;
+
       font-size: 31px;
-      line-height: 1.35;
+      font-weight: 700;
+
+      line-height: 1.4;
     }
 
 
     .receipt-organization h2 {
-      margin: 6px 0 0;
-      color: var(--receipt-dark);
-      font-family: "Fraunces", serif;
+      margin: 5px 0 0;
+
+      color: var(--dark);
+
+      font-family:
+        "Fraunces",
+        serif;
+
       font-size: 21px;
       font-weight: 600;
     }
@@ -184,51 +267,81 @@
 
     .receipt-organization p {
       margin: 8px 0 0;
-      color: var(--receipt-muted);
-      font-size: 13px;
-      line-height: 1.6;
+
+      color: var(--muted);
+
+      font-size: 12px;
+      line-height: 1.7;
     }
 
 
+    /* =====================================================
+       OFFICIAL BOX
+    ===================================================== */
+
     .receipt-official-box {
+      box-sizing: border-box;
+
+      padding: 14px 10px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #fbf7f1,
+          #f4ede5
+        );
+
+      border: 1px solid var(--line);
+      border-radius: 13px;
+
       text-align: center;
-      border: 1px solid var(--receipt-line);
-      border-radius: 12px;
-      padding: 13px 10px;
-      background: var(--receipt-soft);
     }
 
 
     .receipt-official-box .label {
-      font-size: 11px;
+      color: var(--muted);
+
+      font-size: 10px;
+      font-weight: 700;
+
+      letter-spacing: 1.3px;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--receipt-muted);
     }
 
 
     .receipt-official-box strong {
       display: block;
+
       margin-top: 5px;
-      font-size: 14px;
-      color: var(--receipt-dark);
+
+      color: var(--dark);
+
+      font-size: 13px;
+      line-height: 1.5;
     }
 
 
     /* =====================================================
-       RECEIPT TITLE
+       TITLE
     ===================================================== */
 
     .receipt-title-area {
       text-align: center;
-      padding: 30px 0 24px;
+
+      padding: 30px 0 23px;
     }
 
 
     .receipt-title-area .small-title {
-      color: var(--receipt-gold);
-      font-size: 12px;
+      color: var(--gold);
+
+      font-family:
+        "Work Sans",
+        sans-serif;
+
+      font-size: 11px;
       font-weight: 700;
+
       letter-spacing: 2px;
       text-transform: uppercase;
     }
@@ -236,52 +349,74 @@
 
     .receipt-title-area h2 {
       margin: 7px 0 5px;
-      color: var(--receipt-dark);
+
+      color: var(--dark);
+
       font-family:
         "Noto Serif Devanagari",
         serif;
+
       font-size: 30px;
+      line-height: 1.4;
     }
 
 
     .receipt-title-area p {
       margin: 0;
-      color: var(--receipt-muted);
-      font-size: 14px;
+
+      color: var(--muted);
+
+      font-size: 13px;
     }
 
 
     /* =====================================================
-       RECEIPT META
+       META
     ===================================================== */
 
     .receipt-meta {
       display: grid;
+
       grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-bottom: 25px;
+
+      gap: 13px;
+
+      margin-bottom: 23px;
     }
 
 
     .receipt-meta-box {
-      border: 1px solid var(--receipt-line);
-      border-radius: 11px;
       padding: 13px 15px;
+
       background: #fff;
+
+      border: 1px solid var(--line);
+      border-radius: 11px;
     }
 
 
     .receipt-meta-box span {
       display: block;
-      font-size: 11px;
-      color: var(--receipt-muted);
+
       margin-bottom: 4px;
+
+      color: var(--muted);
+
+      font-size: 10px;
+      font-weight: 500;
     }
 
 
     .receipt-meta-box strong {
-      color: var(--receipt-dark);
-      font-size: 14px;
+      color: var(--dark);
+
+      font-family:
+        "Work Sans",
+        "Noto Sans Devanagari",
+        sans-serif;
+
+      font-size: 13px;
+
       word-break: break-word;
     }
 
@@ -292,30 +427,68 @@
 
     .premium-amount-box {
       position: relative;
+
+      padding: 25px 20px;
+
+      margin: 22px 0 29px;
+
       text-align: center;
+
       background:
         linear-gradient(
           135deg,
-          #faf6f0,
-          #fff
+          #fbf7f1,
+          #fffdfb
         );
-      border: 1px solid #dfd1c3;
-      border-radius: 15px;
-      padding: 24px;
-      margin: 24px 0 30px;
+
+      border: 1px solid #dfd0c0;
+
+      border-radius: 16px;
     }
 
 
-    .premium-amount-box .amount-label {
-      color: var(--receipt-muted);
-      font-size: 13px;
-      margin-bottom: 5px;
+    .premium-amount-box::before,
+    .premium-amount-box::after {
+      content: "✦";
+
+      position: absolute;
+
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      color: var(--gold);
+
+      font-size: 16px;
+    }
+
+
+    .premium-amount-box::before {
+      left: 25px;
+    }
+
+
+    .premium-amount-box::after {
+      right: 25px;
+    }
+
+
+    .amount-label {
+      color: var(--muted);
+
+      font-size: 12px;
     }
 
 
     .premium-amount-box .amount {
-      color: var(--receipt-primary);
-      font-family: "Fraunces", serif;
+      margin-top: 3px;
+
+      color: var(--primary);
+
+      font-family:
+        "Fraunces",
+        serif;
+
       font-size: 40px;
       font-weight: 700;
       letter-spacing: 0.5px;
@@ -323,55 +496,87 @@
 
 
     .premium-amount-box .verified {
-      margin-top: 7px;
-      color: var(--receipt-green);
-      font-size: 12px;
+      margin-top: 6px;
+
+      color: var(--green);
+
+      font-family:
+        "Work Sans",
+        "Noto Sans Devanagari",
+        sans-serif;
+
+      font-size: 11px;
       font-weight: 700;
     }
 
 
     /* =====================================================
-       DETAILS
+       SECTION HEADINGS
     ===================================================== */
 
     .details-heading {
       display: flex;
       align-items: center;
+
       gap: 10px;
-      margin: 0 0 12px;
-      color: var(--receipt-dark);
+
+      margin: 0 0 11px;
+
+      color: var(--dark);
+
       font-family:
         "Noto Serif Devanagari",
         serif;
-      font-size: 20px;
+
+      font-size: 19px;
     }
 
 
     .details-heading::before {
       content: "";
+
       width: 4px;
-      height: 24px;
-      border-radius: 5px;
-      background: var(--receipt-gold);
+      height: 23px;
+
+      flex: 0 0 auto;
+
+      border-radius: 4px;
+
+      background:
+        linear-gradient(
+          180deg,
+          var(--gold),
+          var(--primary)
+        );
     }
 
 
+    /* =====================================================
+       TABLE
+    ===================================================== */
+
     .premium-table {
       width: 100%;
+
       border-collapse: separate;
       border-spacing: 0;
+
       overflow: hidden;
-      border: 1px solid var(--receipt-line);
+
+      border: 1px solid var(--line);
       border-radius: 12px;
     }
 
 
     .premium-table td {
       padding: 13px 15px;
-      border-bottom: 1px solid var(--receipt-line);
+
+      border-bottom: 1px solid var(--line);
+
       vertical-align: top;
-      line-height: 1.6;
-      font-size: 14px;
+
+      font-size: 13px;
+      line-height: 1.65;
     }
 
 
@@ -381,102 +586,164 @@
 
 
     .premium-table td:first-child {
-      width: 36%;
-      background: #faf8f5;
-      color: #5d554f;
+      width: 35%;
+
+      background: #faf7f3;
+
+      color: #5e554f;
+
       font-weight: 700;
     }
 
 
     .premium-table td:last-child {
-      color: var(--receipt-dark);
       background: #fff;
+
+      color: var(--dark);
+
       word-break: break-word;
     }
 
 
     .payment-id {
-      font-family: monospace;
-      font-size: 12px;
+      font-family:
+        "Courier New",
+        monospace;
+
+      font-size: 11px;
     }
 
 
     /* =====================================================
-       IMPORTANT NOTE
+       NOTE
     ===================================================== */
 
     .receipt-note {
-      margin-top: 22px;
+      margin-top: 21px;
+
       padding: 15px 17px;
-      border-radius: 11px;
+
       background: #faf7f3;
-      border: 1px solid #e6ddd5;
+
+      border: 1px solid #e5dbd2;
+
+      border-left: 4px solid var(--gold);
+
+      border-radius: 0 11px 11px 0;
+
       color: #665e58;
-      font-size: 12px;
+
+      font-size: 11px;
       line-height: 1.8;
     }
 
 
+    .receipt-note strong {
+      color: var(--primary);
+    }
+
+
     /* =====================================================
-       FOOTER
+       RECEIPT FOOTER
     ===================================================== */
 
     .receipt-document-footer {
-      margin-top: 35px;
-      padding-top: 22px;
-      border-top: 1px solid var(--receipt-line);
       display: grid;
+
       grid-template-columns: 1fr 1fr;
-      gap: 30px;
+
       align-items: end;
+
+      gap: 30px;
+
+      margin-top: 32px;
+      padding-top: 22px;
+
+      border-top: 1px solid var(--line);
     }
 
 
     .receipt-motto {
-      color: var(--receipt-primary);
+      color: var(--primary);
+
       font-family:
         "Noto Serif Devanagari",
         serif;
+
+      font-size: 14px;
       font-weight: 700;
-      font-size: 15px;
+      line-height: 1.7;
     }
 
 
     .receipt-motto small {
       display: block;
-      color: var(--receipt-muted);
+
+      margin-top: 5px;
+
+      color: var(--muted);
+
       font-family:
         "Noto Sans Devanagari",
         sans-serif;
-      font-size: 11px;
-      margin-top: 7px;
-      line-height: 1.6;
+
+      font-size: 10px;
+      font-weight: 400;
+
+      line-height: 1.7;
     }
 
 
+    /* =====================================================
+       SIGNATURE
+    ===================================================== */
+
     .signature-area {
+      min-height: 125px;
+
       text-align: right;
-      min-height: 85px;
+    }
+
+
+    .signature-image {
+      display: block;
+
+      width: 155px;
+      height: 62px;
+
+      object-fit: contain;
+      object-position: center;
+
+      margin: 0 0 0 auto;
     }
 
 
     .signature-line {
       width: 180px;
-      margin: 30px 0 6px auto;
+
+      margin: -2px 0 7px auto;
+
       border-top: 1px solid #777;
     }
 
 
     .signature-area strong {
-      font-size: 13px;
+      display: block;
+
+      color: var(--dark);
+
+      font-size: 12px;
     }
 
 
     .signature-area span {
       display: block;
-      font-size: 11px;
-      color: var(--receipt-muted);
-      margin-top: 3px;
+
+      margin-top: 2px;
+
+      color: var(--muted);
+
+      font-size: 10px;
     }
 
 
@@ -485,25 +752,19 @@
     ===================================================== */
 
     .thank-you-letter {
-      position: relative;
       margin-top: 30px;
-      background: #fff;
-      border: 1px solid #d9d0c8;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow:
-        0 18px 50px rgba(45,36,31,0.10);
     }
 
 
     .thank-you-top-line {
-      height: 5px;
+      height: 6px;
+
       background:
         linear-gradient(
           90deg,
-          var(--receipt-gold),
-          var(--receipt-primary),
-          var(--receipt-gold)
+          var(--gold),
+          var(--primary),
+          var(--gold)
         );
     }
 
@@ -515,82 +776,134 @@
 
     .thank-you-header {
       text-align: center;
-      padding-bottom: 25px;
-      border-bottom: 1px solid var(--receipt-line);
+
+      padding-bottom: 24px;
+
+      border-bottom: 1px solid var(--line);
     }
 
 
     .thank-you-header .heart {
-      font-size: 34px;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
+
+      font-size: 31px;
     }
 
 
     .thank-you-header h2 {
       margin: 0;
-      color: var(--receipt-primary);
+
+      color: var(--primary);
+
       font-family:
         "Noto Serif Devanagari",
         serif;
+
       font-size: 28px;
     }
 
 
     .thank-you-header p {
       margin: 7px 0 0;
-      color: var(--receipt-muted);
-      font-size: 13px;
+
+      color: var(--muted);
+
+      font-family:
+        "Work Sans",
+        sans-serif;
+
+      font-size: 12px;
     }
 
 
     .letter-content {
       max-width: 720px;
-      margin: 28px auto 0;
+
+      margin: 27px auto 0;
+
       color: #443d38;
-      font-size: 15px;
+
+      font-size: 14px;
+
       line-height: 2;
     }
 
 
     .letter-content p {
-      margin: 0 0 18px;
+      margin: 0 0 17px;
     }
 
 
     .letter-highlight {
-      margin: 25px 0;
-      padding: 20px 22px;
-      border-left: 4px solid var(--receipt-gold);
-      background: var(--receipt-soft);
+      margin: 24px 0;
+
+      padding: 19px 21px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #faf5ed,
+          #fffaf4
+        );
+
+      border-left: 4px solid var(--gold);
+
       border-radius: 0 12px 12px 0;
-      color: var(--receipt-primary);
+
+      color: var(--primary);
+
       font-family:
         "Noto Serif Devanagari",
         serif;
-      font-size: 16px;
+
+      font-size: 15px;
       font-weight: 600;
-      line-height: 1.8;
+
+      line-height: 1.85;
+
       text-align: center;
     }
 
 
+    /* =====================================================
+       LETTER SIGNATURE
+    ===================================================== */
+
     .letter-signature {
-      margin-top: 38px;
+      margin-top: 35px;
+
       text-align: right;
+
+      color: var(--dark);
+
       line-height: 1.8;
-      color: var(--receipt-dark);
+    }
+
+
+    .letter-signature-image {
+      display: block;
+
+      width: 175px;
+      height: 65px;
+
+      object-fit: contain;
+      object-position: center;
+
+      margin: 4px 0 2px auto;
     }
 
 
     .letter-signature strong {
-      color: var(--receipt-primary);
-      font-size: 15px;
+      color: var(--primary);
+
+      font-size: 14px;
     }
 
 
     .letter-signature small {
-      color: var(--receipt-muted);
-      font-size: 11px;
+      color: var(--muted);
+
+      font-size: 10px;
     }
 
 
@@ -599,14 +912,47 @@
     ===================================================== */
 
     .receipt-actions {
-      text-align: center;
       margin-top: 30px;
+
+      text-align: center;
     }
 
 
-    .receipt-actions button,
-    .receipt-actions a {
+    .receipt-actions button {
+      min-height: 45px;
+
       margin: 5px;
+
+      padding: 11px 20px;
+
+      border-radius: 9px;
+
+      cursor: pointer;
+
+      font-family:
+        "Noto Sans Devanagari",
+        sans-serif;
+
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+
+    .receipt-actions .btn-primary {
+      background: var(--primary);
+
+      border: 1px solid var(--primary);
+
+      color: white;
+    }
+
+
+    .receipt-actions .btn-outline {
+      background: white;
+
+      border: 1px solid var(--primary);
+
+      color: var(--primary);
     }
 
 
@@ -616,455 +962,70 @@
 
     .receipt-error {
       max-width: 650px;
+
       margin: 80px auto;
+
       padding: 35px 25px;
-      text-align: center;
+
+      box-sizing: border-box;
+
       background: #fff;
+
       border: 1px solid #ddd;
+
       border-radius: 18px;
+
+      text-align: center;
+
       box-shadow:
-        0 15px 40px rgba(0,0,0,0.08);
+        0 15px 40px rgba(0, 0, 0, 0.08);
     }
 
 
     .receipt-error h2 {
       color: #9b2c2c;
+
       font-family:
         "Noto Serif Devanagari",
         serif;
     }
 
 
-   <style>
-
-/* =====================================================
-   PREMIUM A4 PRINT — RECEIPT + THANK YOU LETTER ONLY
-===================================================== */
-
-@media print {
-
-  /* A4 page */
-  @page {
-    size: A4 portrait;
-    margin: 10mm;
-  }
-
-  /* Remove browser/site background */
-  html,
-  body {
-    width: 100%;
-    margin: 0 !important;
-    padding: 0 !important;
-    background: #ffffff !important;
-    color: #000 !important;
-  }
-
-  /* Hide complete website navigation/footer/buttons */
-  #site-header,
-  #site-footer,
-  header,
-  footer,
-  nav,
-  .receipt-actions,
-  .receipt-success-banner {
-    display: none !important;
-    visibility: hidden !important;
-  }
-
-  /* Receipt page becomes the only printable area */
-  .receipt-page {
-    display: block !important;
-    width: 100% !important;
-    max-width: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    background: #ffffff !important;
-  }
-
-  .receipt-wrapper {
-    display: block !important;
-    width: 100% !important;
-    max-width: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  /*
-   * IMPORTANT:
-   * Only these two documents are printed.
-   */
-  .premium-receipt,
-  .thank-you-letter {
-    display: block !important;
-    visibility: visible !important;
-    width: 100% !important;
-    max-width: none !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-
-    background: #ffffff !important;
-    box-shadow: none !important;
-
-    border: 1px solid #999 !important;
-    border-radius: 0 !important;
-  }
-
-  /* =========================
-     RECEIPT — PAGE 1
-  ========================= */
-
-  .premium-receipt {
-    page-break-after: always !important;
-    break-after: page !important;
-
-    min-height: 0 !important;
-  }
-
-  .receipt-top-line {
-    display: block !important;
-    height: 5px !important;
-  }
-
-  .receipt-inner {
-    padding: 20px !important;
-  }
-
-  /* =========================
-     THANK YOU — PAGE 2
-  ========================= */
-
-  .thank-you-letter {
-    page-break-before: always !important;
-    break-before: page !important;
-
-    page-break-after: auto !important;
-    break-after: auto !important;
-
-    min-height: 0 !important;
-  }
-
-  .thank-you-top-line {
-    display: block !important;
-    height: 4px !important;
-  }
-
-  .thank-you-inner {
-    padding: 25px !important;
-  }
-
-  /* =========================
-     HEADER
-  ========================= */
-
-  .premium-receipt-header {
-    display: grid !important;
-    grid-template-columns: 90px 1fr 120px !important;
-    gap: 15px !important;
-    align-items: center !important;
-
-    padding-bottom: 18px !important;
-  }
-
-  .receipt-logo-wrap {
-    width: 78px !important;
-    height: 78px !important;
-    box-shadow: none !important;
-  }
-
-  .receipt-logo {
-    width: 68px !important;
-    height: 68px !important;
-    object-fit: contain !important;
-  }
-
-  .receipt-organization h1 {
-    font-size: 25px !important;
-  }
-
-  .receipt-organization h2 {
-    font-size: 17px !important;
-  }
-
-  .receipt-organization p {
-    font-size: 10px !important;
-    line-height: 1.5 !important;
-  }
-
-  .receipt-official-box {
-    padding: 9px 7px !important;
-  }
-
-  .receipt-official-box .label {
-    font-size: 8px !important;
-  }
-
-  .receipt-official-box strong {
-    font-size: 10px !important;
-  }
-
-  /* =========================
-     RECEIPT TITLE
-  ========================= */
-
-  .receipt-title-area {
-    padding: 18px 0 15px !important;
-  }
-
-  .receipt-title-area .small-title {
-    font-size: 9px !important;
-  }
-
-  .receipt-title-area h2 {
-    font-size: 24px !important;
-  }
-
-  .receipt-title-area p {
-    font-size: 10px !important;
-  }
-
-  /* =========================
-     META
-  ========================= */
-
-  .receipt-meta {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 10px !important;
-    margin-bottom: 15px !important;
-  }
-
-  .receipt-meta-box {
-    padding: 9px 11px !important;
-  }
-
-  .receipt-meta-box span {
-    font-size: 8px !important;
-  }
-
-  .receipt-meta-box strong {
-    font-size: 11px !important;
-  }
-
-  /* =========================
-     AMOUNT
-  ========================= */
-
-  .premium-amount-box {
-    padding: 15px !important;
-    margin: 15px 0 20px !important;
-  }
-
-  .premium-amount-box .amount-label {
-    font-size: 10px !important;
-  }
-
-  .premium-amount-box .amount {
-    font-size: 31px !important;
-  }
-
-  .premium-amount-box .verified {
-    font-size: 9px !important;
-  }
-
-  /* =========================
-     DETAILS
-  ========================= */
-
-  .details-heading {
-    font-size: 16px !important;
-    margin-bottom: 8px !important;
-  }
-
-  .details-heading::before {
-    height: 19px !important;
-  }
-
-  .premium-table {
-    width: 100% !important;
-  }
-
-  .premium-table td {
-    padding: 8px 10px !important;
-    font-size: 10.5px !important;
-    line-height: 1.45 !important;
-  }
-
-  .premium-table td:first-child {
-    width: 34% !important;
-  }
-
-  .payment-id {
-    font-size: 9px !important;
-  }
-
-  /* =========================
-     NOTE
-  ========================= */
-
-  .receipt-note {
-    margin-top: 15px !important;
-    padding: 10px 12px !important;
-    font-size: 9px !important;
-    line-height: 1.55 !important;
-  }
-
-  /* =========================
-     RECEIPT FOOTER
-  ========================= */
-
-  .receipt-document-footer {
-    margin-top: 20px !important;
-    padding-top: 15px !important;
-    gap: 20px !important;
-  }
-
-  .receipt-motto {
-    font-size: 11px !important;
-  }
-
-  .receipt-motto small {
-    font-size: 8px !important;
-  }
-
-  .signature-area {
-    min-height: 60px !important;
-  }
-
-  .signature-line {
-    width: 130px !important;
-    margin-top: 20px !important;
-  }
-
-  .signature-area strong {
-    font-size: 10px !important;
-  }
-
-  .signature-area span {
-    font-size: 8px !important;
-  }
-
-  /* =========================
-     THANK YOU LETTER
-  ========================= */
-
-  .thank-you-header {
-    padding-bottom: 18px !important;
-  }
-
-  .thank-you-header .heart {
-    font-size: 26px !important;
-  }
-
-  .thank-you-header h2 {
-    font-size: 23px !important;
-  }
-
-  .thank-you-header p {
-    font-size: 9px !important;
-  }
-
-  .letter-content {
-    max-width: 100% !important;
-    margin-top: 22px !important;
-    font-size: 12px !important;
-    line-height: 1.8 !important;
-  }
-
-  .letter-content p {
-    margin-bottom: 13px !important;
-  }
-
-  .letter-highlight {
-    margin: 18px 0 !important;
-    padding: 14px 16px !important;
-    font-size: 13px !important;
-    line-height: 1.65 !important;
-  }
-
-  .letter-signature {
-    margin-top: 25px !important;
-    font-size: 11px !important;
-    line-height: 1.7 !important;
-  }
-
-  .letter-signature strong {
-    font-size: 12px !important;
-  }
-
-  .letter-signature small {
-    font-size: 8px !important;
-  }
-
-  /* =========================
-     PREVENT BAD PAGE BREAKS
-  ========================= */
-
-  .premium-receipt *,
-  .thank-you-letter * {
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-  }
-
-  .premium-table tr,
-  .receipt-meta-box,
-  .premium-amount-box,
-  .receipt-document-footer,
-  .letter-highlight,
-  .letter-signature {
-    break-inside: avoid !important;
-    page-break-inside: avoid !important;
-  }
-
-}
-
-
-/* =====================================================
-   MOBILE SCREEN ONLY
-   (Does NOT affect A4 printing)
-===================================================== */
-
-@media screen and (max-width: 700px) {
-
-  .receipt-logo {
-    object-fit: contain;
-  }
-
-}
-
-</style>
-
-
     /* =====================================================
        MOBILE
     ===================================================== */
 
-    @media (max-width: 700px) {
+    @media screen and (max-width: 700px) {
 
       .receipt-page {
-        padding: 25px 10px 50px;
+        padding: 22px 9px 45px;
       }
 
 
       .receipt-inner,
       .thank-you-inner {
-        padding: 22px 17px;
+        padding: 22px 16px;
       }
 
 
       .premium-receipt-header {
         grid-template-columns: 1fr;
+
+        gap: 17px;
+
         text-align: center;
       }
 
 
       .receipt-logo-wrap {
-        margin: 0 auto;
+        width: 105px;
+        height: 105px;
       }
 
 
-      .receipt-official-box {
-        max-width: 220px;
-        margin: 0 auto;
+      .receipt-logo {
+        width: 81px;
+        height: 81px;
       }
 
 
@@ -1075,6 +1036,18 @@
 
       .receipt-organization h2 {
         font-size: 18px;
+      }
+
+
+      .receipt-official-box {
+        max-width: 220px;
+
+        margin: 0 auto;
+      }
+
+
+      .receipt-title-area {
+        padding: 23px 0 19px;
       }
 
 
@@ -1093,9 +1066,20 @@
       }
 
 
+      .premium-amount-box::before {
+        left: 12px;
+      }
+
+
+      .premium-amount-box::after {
+        right: 12px;
+      }
+
+
       .premium-table td {
         padding: 10px;
-        font-size: 13px;
+
+        font-size: 12px;
       }
 
 
@@ -1106,16 +1090,32 @@
 
       .receipt-document-footer {
         grid-template-columns: 1fr;
+
+        gap: 15px;
       }
 
 
-      .signature-area {
+      .receipt-motto {
         text-align: center;
       }
 
 
+      .signature-area {
+        min-height: 115px;
+
+        text-align: center;
+      }
+
+
+      .signature-image,
+      .letter-signature-image {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+
       .signature-line {
-        margin: 30px auto 6px;
+        margin: -2px auto 7px;
       }
 
 
@@ -1125,12 +1125,535 @@
 
 
       .letter-content {
-        font-size: 14px;
+        font-size: 13px;
+        line-height: 1.9;
       }
 
 
       .letter-signature {
         text-align: center;
+      }
+
+    }
+
+
+    /* =====================================================
+       PREMIUM A4 PRINT
+       PAGE 1 = RECEIPT
+       PAGE 2 = THANK YOU LETTER
+    ===================================================== */
+
+    @media print {
+
+      @page {
+        size: A4 portrait;
+        margin: 9mm;
+      }
+
+
+      html,
+      body {
+        width: 100%;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        background: #fff !important;
+
+        color: #000 !important;
+      }
+
+
+      #site-header,
+      #site-footer,
+      header,
+      footer,
+      nav,
+      .receipt-actions,
+      .receipt-success-banner {
+        display: none !important;
+      }
+
+
+      .receipt-page {
+        width: 100% !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        background: #fff !important;
+      }
+
+
+      .receipt-wrapper {
+        width: 100% !important;
+
+        max-width: none !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+
+      .premium-receipt,
+      .thank-you-letter {
+        width: 100% !important;
+
+        box-sizing: border-box;
+
+        background: #fff !important;
+
+        border: 1px solid #999 !important;
+        border-radius: 0 !important;
+
+        box-shadow: none !important;
+
+        overflow: hidden !important;
+      }
+
+
+      /* =================================================
+         PAGE 1
+      ================================================= */
+
+      .premium-receipt {
+        display: block !important;
+
+        page-break-after: always !important;
+        break-after: page !important;
+      }
+
+
+      .receipt-top-line {
+        height: 5px !important;
+      }
+
+
+      .receipt-inner {
+        padding: 17px !important;
+      }
+
+
+      /* =================================================
+         PAGE 2
+      ================================================= */
+
+      .thank-you-letter {
+        display: block !important;
+
+        page-break-before: always !important;
+        break-before: page !important;
+      }
+
+
+      .thank-you-top-line {
+        height: 4px !important;
+      }
+
+
+      .thank-you-inner {
+        padding: 22px !important;
+      }
+
+
+      /* =================================================
+         PRINT HEADER
+      ================================================= */
+
+      .premium-receipt-header {
+        grid-template-columns: 82px 1fr 112px !important;
+
+        gap: 12px !important;
+
+        padding-bottom: 14px !important;
+      }
+
+
+      .receipt-logo-wrap {
+        width: 70px !important;
+        height: 70px !important;
+
+        border-width: 1px !important;
+
+        box-shadow: none !important;
+      }
+
+
+      .receipt-logo-wrap::after {
+        inset: 3px !important;
+      }
+
+
+      .receipt-logo {
+        width: 55px !important;
+        height: 55px !important;
+
+        max-width: 55px !important;
+        max-height: 55px !important;
+      }
+
+
+      .receipt-organization h1 {
+        font-size: 21px !important;
+      }
+
+
+      .receipt-organization h2 {
+        font-size: 14px !important;
+      }
+
+
+      .receipt-organization p {
+        font-size: 8px !important;
+        line-height: 1.45 !important;
+      }
+
+
+      .receipt-official-box {
+        padding: 7px 5px !important;
+
+        border-radius: 8px !important;
+      }
+
+
+      .receipt-official-box .label {
+        font-size: 6.5px !important;
+      }
+
+
+      .receipt-official-box strong {
+        margin-top: 3px !important;
+
+        font-size: 8px !important;
+      }
+
+
+      /* =================================================
+         PRINT TITLE
+      ================================================= */
+
+      .receipt-title-area {
+        padding: 12px 0 10px !important;
+      }
+
+
+      .receipt-title-area .small-title {
+        font-size: 7px !important;
+      }
+
+
+      .receipt-title-area h2 {
+        margin: 4px 0 2px !important;
+
+        font-size: 20px !important;
+      }
+
+
+      .receipt-title-area p {
+        font-size: 8px !important;
+      }
+
+
+      /* =================================================
+         PRINT META
+      ================================================= */
+
+      .receipt-meta {
+        gap: 7px !important;
+
+        margin-bottom: 10px !important;
+      }
+
+
+      .receipt-meta-box {
+        padding: 6px 8px !important;
+
+        border-radius: 7px !important;
+      }
+
+
+      .receipt-meta-box span {
+        font-size: 6.5px !important;
+      }
+
+
+      .receipt-meta-box strong {
+        font-size: 8.5px !important;
+      }
+
+
+      /* =================================================
+         PRINT AMOUNT
+      ================================================= */
+
+      .premium-amount-box {
+        padding: 10px !important;
+
+        margin: 9px 0 13px !important;
+
+        border-radius: 9px !important;
+      }
+
+
+      .premium-amount-box::before,
+      .premium-amount-box::after {
+        font-size: 9px !important;
+      }
+
+
+      .premium-amount-box::before {
+        left: 15px !important;
+      }
+
+
+      .premium-amount-box::after {
+        right: 15px !important;
+      }
+
+
+      .amount-label {
+        font-size: 7px !important;
+      }
+
+
+      .premium-amount-box .amount {
+        font-size: 26px !important;
+      }
+
+
+      .premium-amount-box .verified {
+        margin-top: 3px !important;
+
+        font-size: 7px !important;
+      }
+
+
+      /* =================================================
+         PRINT DETAILS
+      ================================================= */
+
+      .details-heading {
+        gap: 6px !important;
+
+        margin-bottom: 5px !important;
+
+        font-size: 12px !important;
+      }
+
+
+      .details-heading::before {
+        width: 3px !important;
+        height: 15px !important;
+      }
+
+
+      .premium-table {
+        border-radius: 7px !important;
+      }
+
+
+      .premium-table td {
+        padding: 5px 7px !important;
+
+        font-size: 8px !important;
+
+        line-height: 1.35 !important;
+      }
+
+
+      .premium-table td:first-child {
+        width: 34% !important;
+      }
+
+
+      .payment-id {
+        font-size: 7px !important;
+      }
+
+
+      /* =================================================
+         PRINT NOTE
+      ================================================= */
+
+      .receipt-note {
+        margin-top: 9px !important;
+
+        padding: 7px 9px !important;
+
+        border-left-width: 3px !important;
+
+        border-radius: 0 6px 6px 0 !important;
+
+        font-size: 7px !important;
+
+        line-height: 1.45 !important;
+      }
+
+
+      /* =================================================
+         PRINT RECEIPT FOOTER
+      ================================================= */
+
+      .receipt-document-footer {
+        grid-template-columns: 1fr 1fr !important;
+
+        gap: 15px !important;
+
+        margin-top: 12px !important;
+
+        padding-top: 9px !important;
+      }
+
+
+      .receipt-motto {
+        font-size: 8px !important;
+      }
+
+
+      .receipt-motto small {
+        margin-top: 2px !important;
+
+        font-size: 6.5px !important;
+
+        line-height: 1.45 !important;
+      }
+
+
+      .signature-area {
+        min-height: 80px !important;
+      }
+
+
+      .signature-image {
+        width: 105px !important;
+        height: 42px !important;
+      }
+
+
+      .signature-line {
+        width: 115px !important;
+
+        margin-top: -2px !important;
+
+        margin-bottom: 4px !important;
+      }
+
+
+      .signature-area strong {
+        font-size: 8px !important;
+      }
+
+
+      .signature-area span {
+        font-size: 6.5px !important;
+      }
+
+
+      /* =================================================
+         PRINT LETTER
+      ================================================= */
+
+      .thank-you-header {
+        padding-bottom: 14px !important;
+      }
+
+
+      .thank-you-header .heart {
+        font-size: 21px !important;
+      }
+
+
+      .thank-you-header h2 {
+        font-size: 20px !important;
+      }
+
+
+      .thank-you-header p {
+        margin-top: 4px !important;
+
+        font-size: 7px !important;
+      }
+
+
+      .letter-content {
+        max-width: 100% !important;
+
+        margin-top: 17px !important;
+
+        font-size: 10px !important;
+
+        line-height: 1.7 !important;
+      }
+
+
+      .letter-content p {
+        margin-bottom: 9px !important;
+      }
+
+
+      .letter-highlight {
+        margin: 12px 0 !important;
+
+        padding: 9px 11px !important;
+
+        border-left-width: 3px !important;
+
+        border-radius: 0 7px 7px 0 !important;
+
+        font-size: 10.5px !important;
+
+        line-height: 1.55 !important;
+      }
+
+
+      .letter-signature {
+        margin-top: 17px !important;
+
+        font-size: 9px !important;
+
+        line-height: 1.55 !important;
+      }
+
+
+      .letter-signature-image {
+        width: 120px !important;
+        height: 45px !important;
+
+        margin-top: 2px !important;
+        margin-bottom: 1px !important;
+      }
+
+
+      .letter-signature strong {
+        font-size: 10px !important;
+      }
+
+
+      .letter-signature small {
+        font-size: 6.5px !important;
+      }
+
+
+      /* =================================================
+         PRINT QUALITY
+      ================================================= */
+
+      .premium-receipt *,
+      .thank-you-letter * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+
+      .premium-table tr,
+      .receipt-meta-box,
+      .premium-amount-box,
+      .receipt-document-footer,
+      .letter-highlight,
+      .letter-signature {
+        break-inside: avoid !important;
+
+        page-break-inside: avoid !important;
       }
 
     }
@@ -1142,9 +1665,7 @@
 
 <body>
 
-
-  <!-- HEADER -->
-
+  <!-- SITE HEADER -->
   <div id="site-header"></div>
 
 
@@ -1155,48 +1676,44 @@
       id="receiptWrapper"
     >
 
-
       <!-- =================================================
            SUCCESS
       ================================================== -->
 
       <div class="receipt-success-banner">
-
         ✓ पेमेंट यशस्वीरीत्या पडताळले गेले आहे.
         आपल्या मौल्यवान सहकार्याबद्दल धन्यवाद.
-
       </div>
 
 
-
       <!-- =================================================
-           OFFICIAL DONATION RECEIPT
+           DONATION RECEIPT
       ================================================== -->
 
       <section class="premium-receipt">
 
         <div class="receipt-top-line"></div>
 
-
         <div class="receipt-inner">
-
 
           <!-- HEADER -->
 
           <div class="premium-receipt-header">
 
+            <!-- LOGO -->
 
             <div class="receipt-logo-wrap">
 
-           <img
-  class="receipt-logo"
-  src="./images/logo/home-logo.png"
-  alt="Mai Vriddhashram Logo"
-  style="display:block; width:110px; height:110px; object-fit:contain; margin:0 auto 15px;"
->
+              <img
+                class="receipt-logo"
+                src="./images/logo/home-logo.png"
+                alt="Mai Vriddhashram Logo"
+              >
 
             </div>
 
+
+            <!-- ORGANIZATION -->
 
             <div class="receipt-organization">
 
@@ -1217,6 +1734,8 @@
             </div>
 
 
+            <!-- OFFICIAL -->
+
             <div class="receipt-official-box">
 
               <div class="label">
@@ -1234,7 +1753,6 @@
             </div>
 
           </div>
-
 
 
           <!-- TITLE -->
@@ -1256,11 +1774,9 @@
           </div>
 
 
-
-          <!-- RECEIPT META -->
+          <!-- META -->
 
           <div class="receipt-meta">
-
 
             <div class="receipt-meta-box">
 
@@ -1290,7 +1806,6 @@
           </div>
 
 
-
           <!-- AMOUNT -->
 
           <div class="premium-amount-box">
@@ -1313,7 +1828,6 @@
           </div>
 
 
-
           <!-- DONOR DETAILS -->
 
           <h3 class="details-heading">
@@ -1323,83 +1837,82 @@
 
           <table class="premium-table">
 
+            <tbody>
 
-            <tr>
+              <tr>
 
-              <td>
-                देणगीदाराचे पूर्ण नाव
-              </td>
+                <td>
+                  देणगीदाराचे पूर्ण नाव
+                </td>
 
-              <td id="receiptName">
-                —
-              </td>
+                <td id="receiptName">
+                  —
+                </td>
 
-            </tr>
-
-
-            <tr>
-
-              <td>
-                मोबाईल नंबर
-              </td>
-
-              <td id="receiptPhone">
-                —
-              </td>
-
-            </tr>
+              </tr>
 
 
-            <tr>
+              <tr>
 
-              <td>
-                ई-मेल
-              </td>
+                <td>
+                  मोबाईल नंबर
+                </td>
 
-              <td id="receiptEmail">
-                —
-              </td>
+                <td id="receiptPhone">
+                  —
+                </td>
 
-            </tr>
-
-
-            <tr
-              id="panRow"
-            >
-
-              <td>
-                PAN नंबर
-              </td>
-
-              <td id="receiptPan">
-                —
-              </td>
-
-            </tr>
+              </tr>
 
 
-            <tr>
+              <tr>
 
-              <td>
-                पत्ता
-              </td>
+                <td>
+                  ई-मेल
+                </td>
 
-              <td id="receiptAddress">
-                —
-              </td>
+                <td id="receiptEmail">
+                  —
+                </td>
 
-            </tr>
+              </tr>
 
+
+              <tr id="panRow">
+
+                <td>
+                  PAN नंबर
+                </td>
+
+                <td id="receiptPan">
+                  —
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+                  पत्ता
+                </td>
+
+                <td id="receiptAddress">
+                  —
+                </td>
+
+              </tr>
+
+            </tbody>
 
           </table>
-
 
 
           <!-- PAYMENT DETAILS -->
 
           <h3
             class="details-heading"
-            style="margin-top:28px;"
+            style="margin-top:25px;"
           >
             पेमेंटची माहिती
           </h3>
@@ -1407,80 +1920,81 @@
 
           <table class="premium-table">
 
+            <tbody>
 
-            <tr>
+              <tr>
 
-              <td>
-                देणगीची रक्कम
-              </td>
+                <td>
+                  देणगीची रक्कम
+                </td>
 
-              <td id="receiptAmountTable">
-                —
-              </td>
+                <td id="receiptAmountTable">
+                  —
+                </td>
 
-            </tr>
-
-
-            <tr>
-
-              <td>
-                Payment ID
-              </td>
-
-              <td
-                id="receiptPaymentId"
-                class="payment-id"
-              >
-                —
-              </td>
-
-            </tr>
+              </tr>
 
 
-            <tr>
+              <tr>
 
-              <td>
-                Order ID
-              </td>
+                <td>
+                  Payment ID
+                </td>
 
-              <td
-                id="receiptOrderId"
-                class="payment-id"
-              >
-                —
-              </td>
+                <td
+                  id="receiptPaymentId"
+                  class="payment-id"
+                >
+                  —
+                </td>
 
-            </tr>
-
-
-            <tr>
-
-              <td>
-                80G पावतीची विनंती
-              </td>
-
-              <td id="receipt80G">
-                —
-              </td>
-
-            </tr>
+              </tr>
 
 
-            <tr>
+              <tr>
 
-              <td>
-                संस्थेचा Registration P. No.
-              </td>
+                <td>
+                  Order ID
+                </td>
 
-              <td>
-                F-23015
-              </td>
+                <td
+                  id="receiptOrderId"
+                  class="payment-id"
+                >
+                  —
+                </td>
 
-            </tr>
+              </tr>
 
+
+              <tr>
+
+                <td>
+                  80G पावतीची विनंती
+                </td>
+
+                <td id="receipt80G">
+                  —
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+                  संस्थेचा Registration P. No.
+                </td>
+
+                <td>
+                  F-23015
+                </td>
+
+              </tr>
+
+            </tbody>
 
           </table>
-
 
 
           <!-- NOTE -->
@@ -1504,11 +2018,9 @@
           </div>
 
 
-
-          <!-- FOOTER -->
+          <!-- RECEIPT FOOTER -->
 
           <div class="receipt-document-footer">
-
 
             <div class="receipt-motto">
 
@@ -1522,7 +2034,15 @@
             </div>
 
 
+            <!-- SIGNATURE -->
+
             <div class="signature-area">
+
+              <img
+                src="./images/logo/signature.png"
+                alt="Authorized Signature"
+                class="signature-image"
+              >
 
               <div class="signature-line"></div>
 
@@ -1542,11 +2062,9 @@
 
           </div>
 
-
         </div>
 
       </section>
-
 
 
       <!-- =================================================
@@ -1557,9 +2075,9 @@
 
         <div class="thank-you-top-line"></div>
 
-
         <div class="thank-you-inner">
 
+          <!-- LETTER HEADER -->
 
           <div class="thank-you-header">
 
@@ -1578,15 +2096,17 @@
           </div>
 
 
+          <!-- LETTER CONTENT -->
 
           <div class="letter-content">
 
-
             <p>
+
               आदरणीय
               <strong id="letterName">
                 देणगीदार
               </strong>,
+
             </p>
 
 
@@ -1644,6 +2164,8 @@
             </p>
 
 
+            <!-- LETTER SIGNATURE -->
+
             <div class="letter-signature">
 
               <strong>
@@ -1651,6 +2173,12 @@
               </strong>
 
               <br>
+
+              <img
+                src="./images/logo/signature.png"
+                alt="Authorized Signature"
+                class="letter-signature-image"
+              >
 
               <strong>
                 माई वृद्धाश्रम
@@ -1674,7 +2202,6 @@
 
             </div>
 
-
           </div>
 
         </div>
@@ -1682,13 +2209,11 @@
       </section>
 
 
-
       <!-- =================================================
            ACTION BUTTONS
       ================================================== -->
 
       <div class="receipt-actions">
-
 
         <button
           type="button"
@@ -1707,16 +2232,14 @@
           ❤️ पुन्हा देणगी द्या
         </button>
 
-
       </div>
-
 
     </div>
 
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- SITE FOOTER -->
 
   <div id="site-footer"></div>
 
@@ -1724,13 +2247,11 @@
   <!-- COMMON JS -->
 
   <script src="config.js"></script>
-
   <script src="js/common.js"></script>
 
 
-
   <!-- =====================================================
-       RECEIPT DATA SCRIPT
+       RECEIPT DATA
   ====================================================== -->
 
   <script>
@@ -1739,13 +2260,12 @@
       "DOMContentLoaded",
       function () {
 
-
-        /* =================================================
-           GET SUCCESSFUL DONATION
-        ================================================= */
-
         let donationData = null;
 
+
+        /* =================================================
+           LOAD DONATION DATA
+        ================================================= */
 
         try {
 
@@ -1772,9 +2292,8 @@
         }
 
 
-
         /* =================================================
-           CHECK DATA
+           CHECK DONATION
         ================================================= */
 
         if (
@@ -1820,14 +2339,12 @@
         }
 
 
-
         /* =================================================
            DONOR
         ================================================= */
 
         const donor =
-          donationData.donor;
-
+          donationData.donor || {};
 
 
         /* =================================================
@@ -1847,7 +2364,6 @@
           );
 
 
-
         /* =================================================
            PAYMENT
         ================================================= */
@@ -1862,21 +2378,30 @@
           "-";
 
 
-
         /* =================================================
            RECEIPT NUMBER
         ================================================= */
 
-        const receiptNumber =
-          "MV-" +
-          Date.now();
+        let receiptNumber;
+
+        if (donationData.receipt_number) {
+
+          receiptNumber =
+            donationData.receipt_number;
+
+        } else {
+
+          receiptNumber =
+            "MV-" +
+            Date.now();
+
+        }
 
 
         document.getElementById(
           "receiptNumber"
         ).textContent =
           receiptNumber;
-
 
 
         /* =================================================
@@ -1899,7 +2424,6 @@
           "letterAmount"
         ).textContent =
           formattedAmount;
-
 
 
         /* =================================================
@@ -1948,7 +2472,6 @@
           "देणगीदार";
 
 
-
         /* =================================================
            PAYMENT IDs
         ================================================= */
@@ -1963,7 +2486,6 @@
           "receiptOrderId"
         ).textContent =
           orderId;
-
 
 
         /* =================================================
@@ -2017,7 +2539,6 @@
           timeText;
 
 
-
         /* =================================================
            80G
         ================================================= */
@@ -2030,13 +2551,13 @@
             : "नाही";
 
 
-
         /* =================================================
-           HIDE PAN IF EMPTY
+           HIDE PAN WHEN EMPTY
         ================================================= */
 
         if (
-          !donor.pan
+          !donor.pan ||
+          String(donor.pan).trim() === ""
         ) {
 
           document.getElementById(
@@ -2056,4 +2577,3 @@
 </body>
 
 </html>
-```
