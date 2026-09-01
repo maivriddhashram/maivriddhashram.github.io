@@ -1038,3 +1038,304 @@ footer.site-footer a:hover{
   border:2px solid var(--white);
   box-shadow:0 0 0 2px var(--gold);
 }
+/* =========================================
+   MAI VRIDDHASHRAM — NAVY & ANTIQUE GOLD
+   PREMIUM NGO THEME
+   ========================================= */
+
+:root {
+  --premium-navy: #172A3A;
+  --premium-navy-dark: #0F1E2A;
+  --premium-navy-soft: #EAF0F4;
+  --premium-gold: #B8904A;
+  --premium-gold-light: #D8BD83;
+  --premium-cream: #FAF7F0;
+  --premium-white: #FFFFFF;
+}
+
+/* Page */
+body {
+  background: var(--premium-cream);
+  color: #25313B;
+}
+
+/* Header */
+.site-header,
+header {
+  background: rgba(23, 42, 58, 0.97);
+  border-bottom: 1px solid rgba(184, 144, 74, 0.35);
+}
+
+.site-header a,
+header a {
+  color: #FFFFFF;
+}
+
+.site-header a:hover,
+header a:hover {
+  color: var(--premium-gold-light);
+}
+
+/* Hero */
+.hero {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(23, 42, 58, 0.97),
+      rgba(15, 30, 42, 0.92)
+    );
+  color: #FFFFFF;
+}
+
+.hero h1 {
+  color: #FFFFFF;
+}
+
+.hero p {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.hero .eyebrow {
+  color: var(--premium-gold-light);
+}
+
+/* Buttons */
+.btn-primary,
+.btn-donate,
+button.primary {
+  background: var(--premium-gold);
+  color: #FFFFFF;
+  border-color: var(--premium-gold);
+  box-shadow: 0 8px 24px rgba(184, 144, 74, 0.22);
+}
+
+.btn-primary:hover,
+.btn-donate:hover,
+button.primary:hover {
+  background: #A27D3F;
+  border-color: #A27D3F;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--premium-navy);
+  border: 1px solid var(--premium-navy);
+}
+
+.hero .btn-secondary {
+  color: #FFFFFF;
+  border-color: rgba(255,255,255,0.6);
+}
+
+/* Gold lines / highlights */
+.section-title::after,
+.eyebrow::after {
+  background: var(--premium-gold);
+}
+
+/* Trust Strip */
+.trust-strip {
+  background: var(--premium-white);
+  border-top: 1px solid rgba(184,144,74,0.18);
+  border-bottom: 1px solid rgba(184,144,74,0.18);
+}
+
+/* Cards */
+.card,
+.info-card,
+.story-card,
+.facility-card,
+.mother-card,
+.stat-card {
+  background: var(--premium-white);
+  border: 1px solid rgba(23, 42, 58, 0.09);
+  box-shadow: 0 12px 35px rgba(23, 42, 58, 0.08);
+}
+
+.card:hover,
+.info-card:hover,
+.story-card:hover,
+.facility-card:hover,
+.mother-card:hover {
+  border-color: rgba(184, 144, 74, 0.45);
+  box-shadow: 0 18px 42px rgba(23, 42, 58, 0.13);
+  transform: translateY(-4px);
+}
+
+/* Icons */
+.icon,
+.feature-icon,
+.care-icon {
+  color: var(--premium-gold);
+  background: var(--premium-navy-soft);
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4 {
+  color: var(--premium-navy);
+}
+
+/* Deep Sections */
+.deep-section,
+.section-dark {
+  background: var(--premium-navy);
+  color: #FFFFFF;
+}
+
+.deep-section h2,
+.deep-section h3,
+.section-dark h2,
+.section-dark h3 {
+  color: #FFFFFF;
+}
+
+.deep-section p,
+.section-dark p {
+  color: rgba(255,255,255,0.82);
+}
+
+/* Statistics */
+.stat-number,
+.stat-card strong {
+  color: var(--premium-gold);
+}
+
+.stat-card {
+  border-top: 3px solid var(--premium-gold);
+}
+
+/* Donation CTA */
+.donation-cta,
+.cta-section {
+  background:
+    linear-gradient(
+      135deg,
+      var(--premium-navy),
+      var(--premium-navy-dark)
+    );
+  color: #FFFFFF;
+  border-top: 1px solid rgba(184,144,74,0.35);
+}
+
+.donation-cta h2,
+.cta-section h2 {
+  color: #FFFFFF;
+}
+
+.donation-cta p,
+.cta-section p {
+  color: rgba(255,255,255,0.84);
+}
+
+/* Donation Amount Buttons */
+.amount-btn,
+.donation-amount {
+  background: #FFFFFF;
+  color: var(--premium-navy);
+  border: 1px solid rgba(23,42,58,0.18);
+}
+
+.amount-btn:hover,
+.amount-btn.active,
+.donation-amount:hover,
+.donation-amount.active {
+  background: var(--premium-navy);
+  color: #FFFFFF;
+  border-color: var(--premium-navy);
+}
+
+/* Forms */
+input,
+textarea,
+select {
+  background: #FFFFFF;
+  border: 1px solid rgba(23,42,58,0.18);
+  color: #25313B;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--premium-gold);
+  box-shadow: 0 0 0 3px rgba(184,144,74,0.12);
+  outline: none;
+}
+
+/* Gallery */
+.gallery-item img,
+.gallery img {
+  transition: transform .35s ease, filter .35s ease;
+}
+
+.gallery-item:hover img,
+.gallery img:hover {
+  transform: scale(1.025);
+}
+
+/* Gold divider */
+.gold-divider {
+  height: 2px;
+  width: 70px;
+  background: var(--premium-gold);
+  margin: 18px 0;
+}
+
+/* Footer */
+.site-footer,
+footer {
+  background: var(--premium-navy-dark);
+  color: rgba(255,255,255,0.78);
+  border-top: 2px solid var(--premium-gold);
+}
+
+.site-footer h3,
+.site-footer h4,
+footer h3,
+footer h4 {
+  color: #FFFFFF;
+}
+
+.site-footer a,
+footer a {
+  color: rgba(255,255,255,0.78);
+}
+
+.site-footer a:hover,
+footer a:hover {
+  color: var(--premium-gold-light);
+}
+
+/* Gold text */
+.gold-text {
+  color: var(--premium-gold);
+}
+
+/* Selection */
+::selection {
+  background: var(--premium-navy);
+  color: #FFFFFF;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .hero {
+    background:
+      linear-gradient(
+        160deg,
+        var(--premium-navy-dark),
+        var(--premium-navy)
+      );
+  }
+
+  .card,
+  .info-card,
+  .story-card,
+  .facility-card,
+  .mother-card {
+    box-shadow: 0 8px 24px rgba(23,42,58,0.08);
+  }
+}
