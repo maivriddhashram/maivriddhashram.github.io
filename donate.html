@@ -197,155 +197,331 @@
     }
 /* =========================================
    PREMIUM DONATION HERO
+   REAL PHOTO + HOMEPAGE STYLE
    ========================================= */
 
 .donate-premium-hero {
   position: relative;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 85% 20%, rgba(184,144,74,.16), transparent 30%),
-    radial-gradient(circle at 10% 85%, rgba(216,189,131,.08), transparent 28%),
-    var(--navy-dark, #0D1D2A);
+  min-height: 680px;
+  display: flex;
+  align-items: center;
+  background: #0D1D2A;
   color: #fff;
-  padding: 90px 0 100px;
+  padding: 100px 0 110px;
 }
 
+/* REAL MAI VRIDDHASHRAM PHOTO */
 .donate-premium-hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background:
+
+  background-image:
     linear-gradient(
-      135deg,
-      rgba(255,255,255,.025) 0%,
-      transparent 45%,
-      rgba(184,144,74,.035) 100%
-    );
-  pointer-events: none;
+      90deg,
+      rgba(13,29,42,.92) 0%,
+      rgba(13,29,42,.78) 45%,
+      rgba(13,29,42,.55) 100%
+    ),
+    url("../images/our-mother.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transform: scale(1.02);
+
+  z-index: 0;
 }
+
+/* GOLDEN ATMOSPHERE */
+.donate-premium-hero::after {
+  content: "";
+  position: absolute;
+
+  width: 520px;
+  height: 520px;
+
+  right: -270px;
+  top: -220px;
+
+  border: 1px solid rgba(216,189,131,.22);
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 35px rgba(216,189,131,.035),
+    0 0 0 70px rgba(216,189,131,.02);
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+/* HERO CONTENT */
 
 .donate-hero-content {
   position: relative;
-  z-index: 2;
-  max-width: 900px;
+  z-index: 3;
+
+  max-width: 980px;
+
   margin: 0 auto;
+
   text-align: center;
 }
 
+
+/* BREADCRUMB */
+
 .donate-hero-breadcrumb {
-  color: rgba(255,255,255,.68) !important;
-  margin-bottom: 24px;
+  color: rgba(255,255,255,.70) !important;
+
+  margin-bottom: 30px;
 }
+
+
+/* GOLD LINE */
 
 .donate-hero-line {
-  width: 58px;
-  height: 2px;
+  width: 70px;
+  height: 1px;
+
   margin: 0 auto 24px;
-  background: var(--gold, #B8904A);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #D8BD83,
+      transparent
+    );
 }
+
+
+/* EYEBROW */
 
 .donate-hero-eyebrow {
-  margin: 0 0 18px;
-  color: var(--gold-light, #D8BD83);
+  margin: 0 0 20px;
+
+  color: #D8BD83;
+
   font-size: 13px;
+
   font-weight: 700;
-  letter-spacing: 2px;
+
+  letter-spacing: 2.5px;
+
+  line-height: 1.7;
+
   text-transform: uppercase;
+
+  text-shadow:
+    0 2px 12px rgba(0,0,0,.4);
 }
+
+
+/* MAIN TITLE */
 
 .donate-premium-hero h1 {
+  max-width: 900px;
+
   margin: 0 auto;
-  max-width: 850px;
-  color: #fff;
-  font-family: "Fraunces", "Noto Serif Devanagari", serif;
-  font-size: clamp(42px, 6vw, 72px);
-  line-height: 1.12;
+
+  color: #FAF7F0;
+
+  font-family:
+    "Fraunces",
+    "Noto Serif Devanagari",
+    serif;
+
+  font-size:
+    clamp(44px, 6.5vw, 78px);
+
   font-weight: 600;
-  letter-spacing: -1px;
+
+  line-height: 1.12;
+
+  letter-spacing: -1.5px;
+
+  text-shadow:
+    0 4px 25px rgba(0,0,0,.45);
 }
 
+
+/* DESCRIPTION */
+
 .donate-hero-description {
-  max-width: 680px;
-  margin: 26px auto 0;
-  color: rgba(255,255,255,.78);
+  max-width: 700px;
+
+  margin: 28px auto 0;
+
+  color: rgba(255,255,255,.84);
+
   font-size: 17px;
+
   line-height: 1.9;
+
+  text-shadow:
+    0 2px 15px rgba(0,0,0,.45);
 }
+
+
+/* ORNAMENT */
 
 .donate-hero-ornament {
   display: flex;
+
   align-items: center;
+
   justify-content: center;
-  gap: 12px;
-  margin-top: 32px;
+
+  gap: 14px;
+
+  margin-top: 34px;
 }
 
 .donate-hero-ornament span {
-  width: 55px;
+  width: 70px;
+
   height: 1px;
-  background: rgba(216,189,131,.5);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(216,189,131,.8)
+    );
+}
+
+.donate-hero-ornament span:last-child {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(216,189,131,.8),
+      transparent
+    );
 }
 
 .donate-hero-ornament i {
-  color: var(--gold-light, #D8BD83);
+  color: #D8BD83;
+
   font-size: 15px;
+
   font-style: normal;
 }
 
+
+/* DECORATIVE CIRCLES */
+
 .donate-hero-glow {
   position: absolute;
+
   border-radius: 50%;
+
   pointer-events: none;
-  filter: blur(1px);
+
+  z-index: 2;
 }
 
 .donate-hero-glow-1 {
   width: 220px;
   height: 220px;
+
   right: -80px;
   top: -90px;
-  border: 1px solid rgba(216,189,131,.12);
+
+  border:
+    1px solid
+    rgba(216,189,131,.14);
 }
 
 .donate-hero-glow-2 {
   width: 320px;
   height: 320px;
+
   left: -190px;
   bottom: -210px;
-  border: 1px solid rgba(184,144,74,.10);
+
+  border:
+    1px solid
+    rgba(184,144,74,.12);
 }
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
 
 @media (max-width: 600px) {
 
   .donate-premium-hero {
-    padding: 65px 0 75px;
+    min-height: 650px;
+
+    padding: 72px 0 80px;
+  }
+
+  .donate-premium-hero::before {
+
+    background-image:
+      linear-gradient(
+        rgba(13,29,42,.76),
+        rgba(13,29,42,.90)
+      ),
+      url("../images/our-mother.jpg");
+
+    background-position:
+      center center;
+
+  }
+
+  .donate-hero-breadcrumb {
+    margin-bottom: 25px;
+
+    font-size: 12px;
   }
 
   .donate-hero-eyebrow {
     font-size: 11px;
-    letter-spacing: 1.2px;
+
+    letter-spacing: 1.5px;
+
     line-height: 1.7;
   }
 
   .donate-premium-hero h1 {
-    font-size: 39px;
+
+    font-size: 40px;
+
     line-height: 1.2;
-    letter-spacing: -.5px;
+
+    letter-spacing: -.7px;
+
   }
 
   .donate-hero-description {
+
+    padding: 0 12px;
+
     font-size: 15px;
+
     line-height: 1.8;
-    padding: 0 10px;
+
   }
 
   .donate-hero-ornament {
-    margin-top: 26px;
+
+    margin-top: 28px;
+
   }
 
   .donate-hero-ornament span {
-    width: 38px;
+
+    width: 40px;
+
   }
+
 }
   </style>
 
