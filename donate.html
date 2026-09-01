@@ -1781,18 +1781,41 @@
                     );
 
 
-                  showStatus(
-                    "❤️ धन्यवाद! तुमचे पेमेंट यशस्वीरीत्या पडताळले गेले आहे. Payment ID: " +
-                    verified.payment_id,
-                    "success"
-                  );
+                 // Save successful payment information
+try {
+  sessionStorage.setItem(
+    "successfulDonation",
+    JSON.stringify({
+      amount: amount,
+      donor: donor,
+      order_id: verified.order_id || response.razorpay_order_id,
+      payment_id: verified.payment_id || response.razorpay_payment_id,
+      payment_date: new Date().toISOString()
+    })
+  );
+} catch (error) {
+  console.error("Could not save receipt data:", error);
+}
 
+showStatus(
+  "❤️ धन्यवाद! तुमचे पेमेंट यशस्वीरीत्या पडताळले गेले आहे.",
+  "success"
+);
 
-                  successBox.style.display =
-                    "block";
+successBox.style.display = "block";
 
-                  successBox.textContent =
-                    "❤️ तुमच्या देणगीबद्दल मनःपूर्वक धन्यवाद! पेमेंट यशस्वी झाले आहे.";
+successBox.innerHTML = `
+  <strong>❤️ तुमच्या देणगीबद्दल मनःपूर्वक धन्यवाद!</strong><br>
+  पेमेंट यशस्वी झाले आहे.<br><br>
+
+  <button
+    type="button"
+    class="btn btn-primary"
+    onclick="window.location.href='receipt.html'"
+  >
+    🧾 पावती व आभार पत्र पहा
+  </button>
+`;
 
 
                   /*
