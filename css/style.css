@@ -1352,3 +1352,37 @@ footer a:hover {
 .site-header .menu-toggle{
   color:#FFFFFF;
 }
+@media(max-width:880px){
+
+  .header-inner{
+    width:100%;
+    padding:10px 16px;
+    gap:8px;
+  }
+
+  .site-header .brand{
+    min-width:0;
+    flex:1 1 auto;
+  }
+
+  .site-header .header-actions{
+    flex:0 0 auto;
+  }
+
+  .site-header .menu-toggle{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:42px;
+    height:42px;
+    flex-shrink:0;
+  }
+
+  .site-header .mobile-nav{
+    width:100%;
+    max-width:100%;
+    box-sizing:border-box;
+    overflow-x:hidden;
+  }
+
+}
