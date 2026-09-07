@@ -2392,7 +2392,41 @@
           return;
 
         }
+const purposeMessage = document.getElementById("donationPurposeMessage");
 
+const purpose = new URLSearchParams(window.location.search).get("purpose");
+
+const purposeData = {
+  accommodation: {
+    mr: "आपण सुरक्षित निवासासाठी देणगी देत आहात.",
+    en: "You are donating to support safe accommodation."
+  },
+  food: {
+    mr: "आपण पौष्टिक आहारासाठी देणगी देत आहात.",
+    en: "You are donating to support nutritious food."
+  },
+  healthcare: {
+    mr: "आपण आरोग्य सहाय्यासाठी देणगी देत आहात.",
+    en: "You are donating to support healthcare."
+  },
+  yoga: {
+    mr: "आपण योग व ध्यानासाठी देणगी देत आहात.",
+    en: "You are donating to support yoga and meditation."
+  },
+  companionship: {
+    mr: "आपण सहचर्य आणि आपुलकीसाठी देणगी देत आहात.",
+    en: "You are donating to support companionship and care."
+  },
+  dignity: {
+    mr: "आपण सन्मान, प्रेम आणि आपलेपणासाठी देणगी देत आहात.",
+    en: "You are donating to support dignity, love and belonging."
+  }
+};
+
+if (purposeMessage && purposeData[purpose]) {
+  purposeMessage.querySelector("p").textContent =
+    purposeData[purpose].mr;
+}
 
         /* =====================================================
            SUPABASE FUNCTION URLS
