@@ -504,25 +504,23 @@ header.site-header,
 
 .brand-name small{
   display:block;
-
   margin-top:2px;
-
   color:var(--premium-gold-light);
 
-  font-family:'Noto Sans Devanagari',sans-serif;
-
+  font-family:"Noto Serif Devanagari", serif;
   font-size:.72rem;
-  font-weight:400;
-
-  line-height:1.35;
-
+  font-weight:500;
+  line-height:1.4;
   letter-spacing:0;
-
   word-spacing:0;
 
   white-space:normal;
-}
+  overflow-wrap:normal;
+  word-break:normal;
 
+  font-variant-ligatures:normal;
+  text-rendering:optimizeLegibility;
+}
 
 /* ============================================================
    DESKTOP NAVIGATION
