@@ -1339,3 +1339,16 @@ footer a:hover {
     box-shadow: 0 8px 24px rgba(23,42,58,0.08);
   }
 }
+/* Header mobile visibility fix */
+
+.site-header .brand-name{
+  color:#FFFFFF;
+}
+
+.site-header .brand-name small{
+  color:var(--premium-gold-light);
+}
+
+.site-header .menu-toggle{
+  color:#FFFFFF;
+}
