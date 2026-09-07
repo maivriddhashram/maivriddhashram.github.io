@@ -347,9 +347,11 @@ h1,h2,h3,h4{
   gap:20px;
 }
 
+/* CARE CARD */
+
 .care-card{
   background:var(--cream);
-  padding:38px 30px;
+  padding:30px;
   border:1px solid var(--border);
   transition:.3s ease;
 }
@@ -361,34 +363,68 @@ h1,h2,h3,h4{
   border-color:rgba(184,144,74,.35);
 }
 
+/* CARE CLICKABLE LINK */
+
+.care-card-link{
+  display:block;
+  text-decoration:none;
+  color:inherit;
+  cursor:pointer;
+}
+
+/* CARE PHOTO */
+
+.care-photo{
+  width:100%;
+  height:210px;
+  object-fit:cover;
+  display:block;
+  margin-bottom:24px;
+  border-radius:3px;
+  transition:.35s ease;
+}
+
+.care-card-link:hover .care-photo{
+  transform:scale(1.02);
+}
+
+/* NUMBER */
+
 .care-number{
   color:var(--gold);
   font-size:13px;
   font-weight:700;
-  margin-bottom:25px;
+  margin-bottom:20px;
 }
 
-.care-icon{
-  width:58px;
-  height:58px;
-  display:grid;
-  place-items:center;
-  border-radius:50%;
-  background:var(--navy);
-  color:white;
-  font-size:25px;
-  margin-bottom:22px;
-}
+/* TITLE */
 
 .care-card h3{
   font-size:25px;
   margin:0 0 12px;
 }
 
+/* DESCRIPTION */
+
 .care-card p{
   color:var(--muted);
   line-height:1.7;
   margin:0;
+}
+
+/* DONATE LINK */
+
+.care-donate{
+  display:inline-block;
+  margin-top:20px;
+  color:var(--gold);
+  font-weight:700;
+  font-size:14px;
+  transition:.3s ease;
+}
+
+.care-card-link:hover .care-donate{
+  letter-spacing:.3px;
 }
 
 /* ================= NAVY FEATURE ================= */
@@ -721,7 +757,12 @@ h1,h2,h3,h4{
     gap:35px;
   }
 
+  .care-photo{
+    height:220px;
+  }
+
 }
+
 /* =========================================================
    CARE ICON — VISIBILITY FIX
    ========================================================= */
@@ -747,6 +788,7 @@ h1,h2,h3,h4{
   visibility: visible;
   overflow: visible;
 }
+
 </style>
 
 <script type="application/ld+json">
@@ -930,8 +972,9 @@ h1,h2,h3,h4{
 
     <div class="editorial-image reveal">
 
-    <img src="images/our-mother.jpg"
-     alt="माई वृद्धाश्रमातील माता">
+      <img src="images/our-mother.jpg"
+           alt="माई वृद्धाश्रमातील माता">
+
       <div class="editorial-badge">
 
         <strong>एक घर.</strong>
@@ -972,91 +1015,209 @@ h1,h2,h3,h4{
         येथे मिळणारी काळजी
       </h2>
 
-      <p class="premium-copy">
+      <p class="premium-copy"
+         data-mr="प्रत्येक दिवस अधिक सुरक्षित, आरोग्यपूर्ण आणि आनंदी करण्यासाठी आवश्यक काळजी."
+         data-en="Essential care to make every day safer, healthier and happier.">
         प्रत्येक दिवस अधिक सुरक्षित, आरोग्यपूर्ण आणि आनंदी करण्यासाठी आवश्यक काळजी.
       </p>
 
     </div>
 
+
     <div class="care-grid">
 
-      <div class="care-card reveal">
+
+      <!-- =================================================
+           01 — SAFE ACCOMMODATION
+      ================================================== -->
+
+      <a href="donate.html?purpose=accommodation"
+         class="care-card care-card-link reveal">
+
         <div class="care-number">01</div>
-        <div class="care-icon">🏡</div>
+
+        <img src="images/images/imagescare-home.jpg"
+             alt="सुरक्षित निवास"
+             class="care-photo">
+
         <h3 data-mr="सुरक्षित निवास"
             data-en="Safe Accommodation">
           सुरक्षित निवास
         </h3>
+
         <p data-mr="स्वच्छ, सुरक्षित आणि आरामदायी वातावरण."
            data-en="Clean, safe and comfortable living spaces.">
           स्वच्छ, सुरक्षित आणि आरामदायी वातावरण.
         </p>
-      </div>
 
-      <div class="care-card reveal">
+        <span class="care-donate"
+              data-mr="निवासासाठी मदत करा →"
+              data-en="Support accommodation →">
+          निवासासाठी मदत करा →
+        </span>
+
+      </a>
+
+
+      <!-- =================================================
+           02 — NUTRITIOUS FOOD
+      ================================================== -->
+
+      <a href="donate.html?purpose=food"
+         class="care-card care-card-link reveal">
+
         <div class="care-number">02</div>
-        <div class="care-icon">🍲</div>
+
+        <img src="images/images/imagescare-food.jpg"
+             alt="पौष्टिक आहार"
+             class="care-photo">
+
         <h3 data-mr="पौष्टिक आहार"
             data-en="Nutritious Food">
           पौष्टिक आहार
         </h3>
+
         <p data-mr="दररोज सकस आणि पौष्टिक आहाराची व्यवस्था."
            data-en="Nutritious meals served every day.">
           दररोज सकस आणि पौष्टिक आहाराची व्यवस्था.
         </p>
-      </div>
 
-      <div class="care-card reveal">
+        <span class="care-donate"
+              data-mr="आहारासाठी मदत करा →"
+              data-en="Support food care →">
+          आहारासाठी मदत करा →
+        </span>
+
+      </a>
+
+
+      <!-- =================================================
+           03 — HEALTHCARE
+      ================================================== -->
+
+      <a href="donate.html?purpose=healthcare"
+         class="care-card care-card-link reveal">
+
         <div class="care-number">03</div>
-        <div class="care-icon">🩺</div>
+
+        <img src="images/images/imagescare-health.jpg"
+             alt="आरोग्य सहाय्य"
+             class="care-photo">
+
         <h3 data-mr="आरोग्य सहाय्य"
             data-en="Healthcare Support">
           आरोग्य सहाय्य
         </h3>
+
         <p data-mr="आरोग्य तपासणी, औषधे आणि आवश्यक काळजी."
            data-en="Health check-ups, medicines and care.">
           आरोग्य तपासणी, औषधे आणि आवश्यक काळजी.
         </p>
-      </div>
 
-      <div class="care-card reveal">
+        <span class="care-donate"
+              data-mr="आरोग्यासाठी मदत करा →"
+              data-en="Support healthcare →">
+          आरोग्यासाठी मदत करा →
+        </span>
+
+      </a>
+
+
+      <!-- =================================================
+           04 — YOGA & MEDITATION
+      ================================================== -->
+
+      <a href="donate.html?purpose=yoga"
+         class="care-card care-card-link reveal">
+
         <div class="care-number">04</div>
-        <div class="care-icon">🧘</div>
+
+        <img src="images/images/imagescare-yoga.jpg"
+             alt="योग व ध्यान"
+             class="care-photo">
+
         <h3 data-mr="योग व ध्यान"
             data-en="Yoga & Meditation">
           योग व ध्यान
         </h3>
+
         <p data-mr="मानसिक आणि शारीरिक स्वास्थ्यासाठी उपक्रम."
            data-en="Activities for mental and physical wellbeing.">
           मानसिक आणि शारीरिक स्वास्थ्यासाठी उपक्रम.
         </p>
-      </div>
 
-      <div class="care-card reveal">
+        <span class="care-donate"
+              data-mr="योगासाठी मदत करा →"
+              data-en="Support wellness →">
+          योगासाठी मदत करा →
+        </span>
+
+      </a>
+
+
+      <!-- =================================================
+           05 — COMPANIONSHIP
+      ================================================== -->
+
+      <a href="donate.html?purpose=companionship"
+         class="care-card care-card-link reveal">
+
         <div class="care-number">05</div>
-        <div class="care-icon">🤝</div>
+
+        <img src="images/images/imagescare-companionship.jpg"
+             alt="सहचर्य"
+             class="care-photo">
+
         <h3 data-mr="सहचर्य"
             data-en="Companionship">
           सहचर्य
         </h3>
+
         <p data-mr="आपुलकीचा सहवास आणि कुटुंबासारखे वातावरण."
            data-en="Warm companionship and a family-like environment.">
           आपुलकीचा सहवास आणि कुटुंबासारखे वातावरण.
         </p>
-      </div>
 
-      <div class="care-card reveal">
+        <span class="care-donate"
+              data-mr="सहचर्यासाठी मदत करा →"
+              data-en="Support companionship →">
+          सहचर्यासाठी मदत करा →
+        </span>
+
+      </a>
+
+
+      <!-- =================================================
+           06 — DIGNITY & LOVE
+      ================================================== -->
+
+      <a href="donate.html?purpose=dignity"
+         class="care-card care-card-link reveal">
+
         <div class="care-number">06</div>
-        <div class="care-icon">❤️</div>
+
+        <img src="images/images/imagescare-love.jpg"
+             alt="सन्मान व प्रेम"
+             class="care-photo">
+
         <h3 data-mr="सन्मान व प्रेम"
             data-en="Dignity & Love">
           सन्मान व प्रेम
         </h3>
+
         <p data-mr="प्रत्येक आईला आदर, सन्मान आणि आपलेपणाची भावना."
            data-en="Respect, dignity and a sense of belonging for every mother.">
           प्रत्येक आईला आदर, सन्मान आणि आपलेपणाची भावना.
         </p>
-      </div>
+
+        <span class="care-donate"
+              data-mr="या सेवेसाठी मदत करा →"
+              data-en="Support this care →">
+          या सेवेसाठी मदत करा →
+        </span>
+
+      </a>
+
 
     </div>
 
@@ -1178,11 +1339,13 @@ h1,h2,h3,h4{
             संमतीनंतर प्रकाशित
           </span>
         </div>
+
         <div class="mother-content">
           <h3 data-mr="एका आईची कहाणी"
               data-en="A Mother's Story">
             एका आईची कहाणी
           </h3>
+
           <p data-mr="संमती-मंजूर माहिती उपलब्ध झाल्यानंतर ही कहाणी येथे प्रकाशित केली जाईल."
              data-en="This story will be published after consent-approved information is available.">
             संमती-मंजूर माहिती उपलब्ध झाल्यानंतर ही कहाणी येथे प्रकाशित केली जाईल.
@@ -1197,11 +1360,13 @@ h1,h2,h3,h4{
             संमतीनंतर प्रकाशित
           </span>
         </div>
+
         <div class="mother-content">
           <h3 data-mr="एका आईची कहाणी"
               data-en="A Mother's Story">
             एका आईची कहाणी
           </h3>
+
           <p data-mr="संमती-मंजूर माहिती उपलब्ध झाल्यानंतर ही कहाणी येथे प्रकाशित केली जाईल."
              data-en="This story will be published after consent-approved information is available.">
             संमती-मंजूर माहिती उपलब्ध झाल्यानंतर ही कहाणी येथे प्रकाशित केली जाईल.
@@ -1216,11 +1381,13 @@ h1,h2,h3,h4{
             संमतीनंतर प्रकाशित
           </span>
         </div>
+
         <div class="mother-content">
           <h3 data-mr="एका आईची कहाणी"
               data-en="A Mother's Story">
             एका आईची कहाणी
           </h3>
+
           <p data-mr="संमती-मंजूर माहिती उपलब्ध झाल्यानंतर ही कहाणी येथे प्रकाशित केली जाईल."
              data-en="This story will be published after consent-approved information is available.">
             संमती-मंजूर माहिती उपलब्ध झाल्यानंतर ही कहाणी येथे प्रकाशित केली जाईल.
@@ -1353,6 +1520,7 @@ h1,h2,h3,h4{
             अन्न व किराणा
           </h3>
         </div>
+
         <a href="donate.html"
            data-mr="मदत करा →"
            data-en="Support →">
@@ -1368,6 +1536,7 @@ h1,h2,h3,h4{
             आरोग्यसेवा
           </h3>
         </div>
+
         <a href="donate.html"
            data-mr="मदत करा →"
            data-en="Support →">
@@ -1383,6 +1552,7 @@ h1,h2,h3,h4{
             बेड व बेडिंग
           </h3>
         </div>
+
         <a href="donate.html"
            data-mr="मदत करा →"
            data-en="Support →">
@@ -1398,6 +1568,7 @@ h1,h2,h3,h4{
             सौर ऊर्जा
           </h3>
         </div>
+
         <a href="donate.html"
            data-mr="मदत करा →"
            data-en="Support →">
@@ -1571,4 +1742,3 @@ h1,h2,h3,h4{
 
 </body>
 </html>
-```
