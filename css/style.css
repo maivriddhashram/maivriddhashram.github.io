@@ -1386,3 +1386,32 @@ footer a:hover {
   }
 
 }
+@media(max-width:880px){
+
+  .site-header .mobile-nav{
+    display:none;
+    width:100%;
+    box-sizing:border-box;
+    flex-direction:column;
+    padding:10px 16px 18px;
+    background:var(--premium-navy);
+    border-top:1px solid rgba(184,144,74,.35);
+  }
+
+  .site-header .mobile-nav.open{
+    display:flex;
+  }
+
+  .site-header .mobile-nav a{
+    width:100%;
+    box-sizing:border-box;
+    padding:12px 4px;
+    color:#FFFFFF;
+    border-bottom:1px solid rgba(255,255,255,.12);
+  }
+
+  .site-header .mobile-nav a.active{
+    color:var(--premium-gold-light);
+  }
+
+}
