@@ -196,8 +196,6 @@ h1,h2,h3,h4{
   color:var(--navy);
 }
 
-/* hero bottom detail */
-
 .hero-bottom-line{
   position:absolute;
   bottom:0;
@@ -329,7 +327,9 @@ h1,h2,h3,h4{
   font-size:13px;
 }
 
-/* ================= CARE ================= */
+/* =========================================================
+   CARE & SUPPORT
+   ========================================================= */
 
 .center-heading{
   text-align:center;
@@ -344,79 +344,89 @@ h1,h2,h3,h4{
 .care-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:20px;
+  gap:24px;
 }
 
-/* CARE CARD */
+/* ================= CARE CARD ================= */
 
 .care-card{
   background:var(--cream);
-  padding:30px;
   border:1px solid var(--border);
-  transition:.3s ease;
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    background .35s ease,
+    border-color .35s ease;
 }
 
-.care-card:hover{
-  background:white;
-  transform:translateY(-6px);
-  box-shadow:var(--shadow);
-  border-color:rgba(184,144,74,.35);
-}
-
-/* CARE CLICKABLE LINK */
+/* पूर्ण card clickable */
 
 .care-card-link{
   display:block;
   text-decoration:none;
   color:inherit;
   cursor:pointer;
+  overflow:hidden;
+  padding:0;
 }
 
-/* CARE PHOTO */
+/* hover */
+
+.care-card-link:hover{
+  background:white;
+  transform:translateY(-7px);
+  box-shadow:var(--shadow);
+  border-color:rgba(184,144,74,.45);
+}
+
+/* keyboard accessibility */
+
+.care-card-link:focus-visible{
+  outline:3px solid var(--gold);
+  outline-offset:4px;
+}
+
+/* ================= CARE PHOTO ================= */
 
 .care-photo{
   width:100%;
-  height:210px;
+  height:220px;
   object-fit:cover;
   display:block;
-  margin-bottom:24px;
-  border-radius:3px;
-  transition:.35s ease;
+  margin:0;
+  border-radius:0;
+  transition:transform .5s ease;
 }
 
 .care-card-link:hover .care-photo{
-  transform:scale(1.02);
+  transform:scale(1.045);
 }
 
-/* NUMBER */
+/* ================= CARE CONTENT ================= */
 
 .care-number{
   color:var(--gold);
   font-size:13px;
   font-weight:700;
-  margin-bottom:20px;
+  margin:25px 30px 15px;
 }
-
-/* TITLE */
 
 .care-card h3{
   font-size:25px;
-  margin:0 0 12px;
+  margin:0 30px 12px;
 }
-
-/* DESCRIPTION */
 
 .care-card p{
   color:var(--muted);
   line-height:1.7;
-  margin:0;
+  margin:0 30px;
 }
 
-/* DONATE LINK */
+/* ================= DONATE CTA ================= */
 
 .care-donate{
   display:inline-block;
-  margin-top:20px;
+  margin:20px 30px 30px;
   color:var(--gold);
   font-weight:700;
   font-size:14px;
@@ -424,7 +434,7 @@ h1,h2,h3,h4{
 }
 
 .care-card-link:hover .care-donate{
-  letter-spacing:.3px;
+  letter-spacing:.4px;
 }
 
 /* ================= NAVY FEATURE ================= */
@@ -655,7 +665,7 @@ h1,h2,h3,h4{
   font-size:14px;
 }
 
-/* ================= MOBILE ================= */
+/* ================= TABLET ================= */
 
 @media(max-width:900px){
 
@@ -692,6 +702,8 @@ h1,h2,h3,h4{
   }
 
 }
+
+/* ================= MOBILE ================= */
 
 @media(max-width:600px){
 
@@ -763,30 +775,22 @@ h1,h2,h3,h4{
 
 }
 
-/* =========================================================
-   CARE ICON — VISIBILITY FIX
-   ========================================================= */
+/* ================= SMALL MOBILE ================= */
 
-.care-icon {
-  width: 58px;
-  height: 58px;
-  min-width: 58px;
-  min-height: 58px;
+@media(max-width:380px){
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  .premium-hero h1{
+    font-size:2.5rem;
+  }
 
-  background: var(--navy);
-  color: #FFFFFF;
+  .care-photo{
+    height:200px;
+  }
 
-  border-radius: 50%;
-  font-size: 28px;
-  line-height: 1;
+  .care-card h3{
+    font-size:23px;
+  }
 
-  opacity: 1;
-  visibility: visible;
-  overflow: visible;
 }
 
 </style>
@@ -994,7 +998,7 @@ h1,h2,h3,h4{
 
 
 <!-- =====================================================
-     CARE
+     CARE & SUPPORT
 ===================================================== -->
 
 <section class="premium-section">
@@ -1027,18 +1031,17 @@ h1,h2,h3,h4{
     <div class="care-grid">
 
 
-      <!-- =================================================
-           01 — SAFE ACCOMMODATION
-      ================================================== -->
+      <!-- 01 SAFE ACCOMMODATION -->
 
       <a href="donate.html?purpose=accommodation"
-         class="care-card care-card-link reveal">
-
-        <div class="care-number">01</div>
+         class="care-card care-card-link reveal"
+         aria-label="सुरक्षित निवासासाठी देणगी द्या">
 
         <img src="images/images/imagescare-home.jpg"
              alt="सुरक्षित निवास"
              class="care-photo">
+
+        <div class="care-number">01</div>
 
         <h3 data-mr="सुरक्षित निवास"
             data-en="Safe Accommodation">
@@ -1059,18 +1062,17 @@ h1,h2,h3,h4{
       </a>
 
 
-      <!-- =================================================
-           02 — NUTRITIOUS FOOD
-      ================================================== -->
+      <!-- 02 NUTRITIOUS FOOD -->
 
       <a href="donate.html?purpose=food"
-         class="care-card care-card-link reveal">
-
-        <div class="care-number">02</div>
+         class="care-card care-card-link reveal"
+         aria-label="पौष्टिक आहारासाठी देणगी द्या">
 
         <img src="images/images/imagescare-food.jpg"
              alt="पौष्टिक आहार"
              class="care-photo">
+
+        <div class="care-number">02</div>
 
         <h3 data-mr="पौष्टिक आहार"
             data-en="Nutritious Food">
@@ -1091,18 +1093,17 @@ h1,h2,h3,h4{
       </a>
 
 
-      <!-- =================================================
-           03 — HEALTHCARE
-      ================================================== -->
+      <!-- 03 HEALTHCARE -->
 
       <a href="donate.html?purpose=healthcare"
-         class="care-card care-card-link reveal">
-
-        <div class="care-number">03</div>
+         class="care-card care-card-link reveal"
+         aria-label="आरोग्य सहाय्यासाठी देणगी द्या">
 
         <img src="images/images/imagescare-health.jpg"
              alt="आरोग्य सहाय्य"
              class="care-photo">
+
+        <div class="care-number">03</div>
 
         <h3 data-mr="आरोग्य सहाय्य"
             data-en="Healthcare Support">
@@ -1123,18 +1124,17 @@ h1,h2,h3,h4{
       </a>
 
 
-      <!-- =================================================
-           04 — YOGA & MEDITATION
-      ================================================== -->
+      <!-- 04 YOGA & MEDITATION -->
 
       <a href="donate.html?purpose=yoga"
-         class="care-card care-card-link reveal">
-
-        <div class="care-number">04</div>
+         class="care-card care-card-link reveal"
+         aria-label="योग व ध्यानासाठी देणगी द्या">
 
         <img src="images/images/imagescare-yoga.jpg"
              alt="योग व ध्यान"
              class="care-photo">
+
+        <div class="care-number">04</div>
 
         <h3 data-mr="योग व ध्यान"
             data-en="Yoga & Meditation">
@@ -1155,18 +1155,17 @@ h1,h2,h3,h4{
       </a>
 
 
-      <!-- =================================================
-           05 — COMPANIONSHIP
-      ================================================== -->
+      <!-- 05 COMPANIONSHIP -->
 
       <a href="donate.html?purpose=companionship"
-         class="care-card care-card-link reveal">
-
-        <div class="care-number">05</div>
+         class="care-card care-card-link reveal"
+         aria-label="सहचर्यासाठी देणगी द्या">
 
         <img src="images/images/imagescare-companionship.jpg"
              alt="सहचर्य"
              class="care-photo">
+
+        <div class="care-number">05</div>
 
         <h3 data-mr="सहचर्य"
             data-en="Companionship">
@@ -1187,18 +1186,17 @@ h1,h2,h3,h4{
       </a>
 
 
-      <!-- =================================================
-           06 — DIGNITY & LOVE
-      ================================================== -->
+      <!-- 06 DIGNITY & LOVE -->
 
       <a href="donate.html?purpose=dignity"
-         class="care-card care-card-link reveal">
-
-        <div class="care-number">06</div>
+         class="care-card care-card-link reveal"
+         aria-label="सन्मान व प्रेमासाठी देणगी द्या">
 
         <img src="images/images/imagescare-love.jpg"
              alt="सन्मान व प्रेम"
              class="care-photo">
+
+        <div class="care-number">06</div>
 
         <h3 data-mr="सन्मान व प्रेम"
             data-en="Dignity & Love">
