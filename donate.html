@@ -2422,7 +2422,10 @@ const purposeData = {
     en: "You are donating to support dignity, love and belonging."
   }
 };
-
+new-mai-vriddhashram: {
+  mr: "आपण नवीन माई वृद्धाश्रम प्रकल्पासाठी देणगी देत आहात.",
+  en: "You are donating to support the new Mai Vriddhashram project."
+}
 if (purposeMessage && purposeData[purpose]) {
   purposeMessage.querySelector("p").textContent =
     purposeData[purpose].mr;
@@ -2998,119 +3001,134 @@ if (purposeMessage && purposeData[purpose]) {
         ===================================================== */
 
         async function createRazorpayOrder(
-          amount
-        ) {
+  amount,
+  donor,
+  purpose
+) {
 
-          const response =
-            await fetch(
-              CREATE_ORDER_URL,
-              {
-                method:
-                  "POST",
+  const response =
+    await fetch(
+      CREATE_ORDER_URL,
+      {
+        method: "POST",
 
-                headers: {
-                  "Content-Type":
-                    "application/json"
-                },
+        headers: {
+          "Content-Type": "application/json"
+        },
 
-                body:
-                  JSON.stringify({
-                    amount:
-                      amount
-                  })
-              }
-            );
+        body: JSON.stringify({
 
+          amount: amount,
 
-          const data =
-            await response.json()
-              .catch(
-                function () {
-                  return {};
-                }
-              );
+          donor: donor,
+
+          purpose:
+            purpose || "new-mai-vriddhashram"
+
+        })
+      }
+    );
 
 
-          if (
-            !response.ok ||
-            !data.order_id
-          ) {
-
-            throw new Error(
-              data.error ||
-              "Order creation failed."
-            );
-
-          }
-
-
-          return data;
-
+  const data =
+    await response.json()
+      .catch(
+        function () {
+          return {};
         }
+      );
+
+
+  if (
+    !response.ok ||
+    !data.order_id
+  ) {
+
+    throw new Error(
+      data.error ||
+      "Order creation failed."
+    );
+
+  }
+
+
+  return data;
+
+}
 
 
         /* =====================================================
            VERIFY PAYMENT
         ===================================================== */
 
-        async function verifyPayment(
-          response
-        ) {
+       async function verifyPayment(
+  response,
+  amount,
+  donor,
+  purpose
+) {
 
-          const verificationResponse =
-            await fetch(
-              VERIFY_PAYMENT_URL,
-              {
-                method:
-                  "POST",
+  const verificationResponse =
+    await fetch(
+      VERIFY_PAYMENT_URL,
+      {
+        method: "POST",
 
-                headers: {
-                  "Content-Type":
-                    "application/json"
-                },
+        headers: {
+          "Content-Type": "application/json"
+        },
 
-                body:
-                  JSON.stringify({
+        body: JSON.stringify({
 
-                    razorpay_order_id:
-                      response.razorpay_order_id,
+          razorpay_order_id:
+            response.razorpay_order_id,
 
-                    razorpay_payment_id:
-                      response.razorpay_payment_id,
+          razorpay_payment_id:
+            response.razorpay_payment_id,
 
-                    razorpay_signature:
-                      response.razorpay_signature
+          razorpay_signature:
+            response.razorpay_signature,
 
-                  })
-              }
-            );
+          amount:
+            amount,
 
+          donor:
+            donor,
 
-          const data =
-            await verificationResponse.json()
-              .catch(
-                function () {
-                  return {};
-                }
-              );
+          purpose:
+            purpose ||
+            "new-mai-vriddhashram"
 
-
-          if (
-            !verificationResponse.ok ||
-            !data.success
-          ) {
-
-            throw new Error(
-              data.error ||
-              "Payment verification failed."
-            );
-
-          }
+        })
+      }
+    );
 
 
-          return data;
-
+  const data =
+    await verificationResponse.json()
+      .catch(
+        function () {
+          return {};
         }
+      );
+
+
+  if (
+    !verificationResponse.ok ||
+    !data.success
+  ) {
+
+    throw new Error(
+      data.error ||
+      "Payment verification failed."
+    );
+
+  }
+
+
+  return data;
+
+}
 
 
         /* =====================================================
@@ -3238,10 +3256,13 @@ if (purposeMessage && purposeData[purpose]) {
                   );
 
 
-                  const verified =
-                    await verifyPayment(
-                      response
-                    );
+                 const verified =
+  await verifyPayment(
+    response,
+    amount,
+    donor,
+    purpose || "new-mai-vriddhashram"
+  );
 
 
                  // Save successful payment information
@@ -3452,10 +3473,12 @@ successBox.innerHTML = `
 
             try {
 
-              const orderData =
-                await createRazorpayOrder(
-                  amount
-                );
+             const orderData =
+  await createRazorpayOrder(
+    amount,
+    donor,
+    purpose || "new-mai-vriddhashram"
+  );
 
 
               successBox.textContent =
