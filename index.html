@@ -1,6 +1,8 @@
+```html
 <!DOCTYPE html>
 <html lang="mr" data-lang="mr">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -16,16 +18,18 @@
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/style.css">
+
 
 <style>
 
 /* =========================================================
    MAI VRIDDHASHRAM — PREMIUM HOMEPAGE
    Navy + Antique Gold + Warm Cream
-   ========================================================= */
+========================================================= */
 
 :root{
   --navy:#172A3A;
@@ -64,7 +68,10 @@ h1,h2,h3,h4{
   margin:auto;
 }
 
-/* ================= HEADER ================= */
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 #site-header{
   position:relative;
@@ -84,7 +91,10 @@ h1,h2,h3,h4{
   color:var(--gold-light);
 }
 
-/* ================= HERO ================= */
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .premium-hero{
   position:relative;
@@ -98,13 +108,17 @@ h1,h2,h3,h4{
 .premium-hero-image{
   position:absolute;
   inset:0;
+
   background-image:
-    linear-gradient(90deg,
+    linear-gradient(
+      90deg,
       rgba(13,29,42,.42) 0%,
       rgba(13,29,42,.30) 30%,
       rgba(13,29,42,.12) 62%,
-      rgba(13,29,42,.03) 100%),
+      rgba(13,29,42,.03) 100%
+    ),
     url("../images/home-hero.png");
+
   background-size:cover;
   background-position:center;
 }
@@ -202,6 +216,7 @@ h1,h2,h3,h4{
   left:0;
   right:0;
   height:90px;
+
   background:linear-gradient(
     to bottom,
     transparent,
@@ -209,7 +224,10 @@ h1,h2,h3,h4{
   );
 }
 
-/* ================= TRUST ================= */
+
+/* =========================================================
+   TRUST
+========================================================= */
 
 .premium-trust{
   background:white;
@@ -243,7 +261,18 @@ h1,h2,h3,h4{
   color:var(--gold);
 }
 
-/* ================= INTRO ================= */
+.trust-foundation{
+  font-family:"Noto Sans Devanagari",sans-serif !important;
+  font-weight:600 !important;
+  letter-spacing:normal !important;
+  word-spacing:normal !important;
+  white-space:normal !important;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
 
 .premium-section{
   padding:105px 0;
@@ -327,9 +356,10 @@ h1,h2,h3,h4{
   font-size:13px;
 }
 
+
 /* =========================================================
    CARE & SUPPORT
-   ========================================================= */
+========================================================= */
 
 .center-heading{
   text-align:center;
@@ -347,19 +377,16 @@ h1,h2,h3,h4{
   gap:24px;
 }
 
-/* ================= CARE CARD ================= */
-
 .care-card{
   background:var(--cream);
   border:1px solid var(--border);
+
   transition:
     transform .35s ease,
     box-shadow .35s ease,
     background .35s ease,
     border-color .35s ease;
 }
-
-/* पूर्ण card clickable */
 
 .care-card-link{
   display:block;
@@ -370,8 +397,6 @@ h1,h2,h3,h4{
   padding:0;
 }
 
-/* hover */
-
 .care-card-link:hover{
   background:white;
   transform:translateY(-7px);
@@ -379,14 +404,10 @@ h1,h2,h3,h4{
   border-color:rgba(184,144,74,.45);
 }
 
-/* keyboard accessibility */
-
 .care-card-link:focus-visible{
   outline:3px solid var(--gold);
   outline-offset:4px;
 }
-
-/* ================= CARE PHOTO ================= */
 
 .care-photo{
   width:100%;
@@ -401,8 +422,6 @@ h1,h2,h3,h4{
 .care-card-link:hover .care-photo{
   transform:scale(1.045);
 }
-
-/* ================= CARE CONTENT ================= */
 
 .care-number{
   color:var(--gold);
@@ -422,8 +441,6 @@ h1,h2,h3,h4{
   margin:0 30px;
 }
 
-/* ================= DONATE CTA ================= */
-
 .care-donate{
   display:inline-block;
   margin:20px 30px 30px;
@@ -437,7 +454,10 @@ h1,h2,h3,h4{
   letter-spacing:.4px;
 }
 
-/* ================= NAVY FEATURE ================= */
+
+/* =========================================================
+   OLD / GENERAL NAVY FEATURE
+========================================================= */
 
 .navy-feature{
   background:var(--navy);
@@ -494,7 +514,385 @@ h1,h2,h3,h4{
   font-size:23px;
 }
 
-/* ================= MOTHERS ================= */
+
+/* =========================================================
+   NEW MAI VRIDDHASHRAM LIVE FUNDRAISING
+========================================================= */
+
+.mai-project-section{
+  background:var(--navy);
+  color:white;
+  position:relative;
+  overflow:hidden;
+}
+
+.mai-project-section::before{
+  content:"";
+  position:absolute;
+  width:520px;
+  height:520px;
+  border:1px solid rgba(216,189,131,.12);
+  border-radius:50%;
+  right:-250px;
+  top:-250px;
+  pointer-events:none;
+}
+
+.mai-project-section::after{
+  content:"";
+  position:absolute;
+  width:300px;
+  height:300px;
+  border:1px solid rgba(216,189,131,.08);
+  border-radius:50%;
+  left:-170px;
+  bottom:-170px;
+  pointer-events:none;
+}
+
+.mai-project-intro{
+  position:relative;
+  z-index:2;
+  max-width:850px;
+  margin:0 auto 55px;
+  text-align:center;
+}
+
+.mai-project-intro .premium-title{
+  color:white;
+}
+
+.mai-project-intro p{
+  color:rgba(255,255,255,.76);
+  font-size:17px;
+  line-height:1.9;
+}
+
+.mai-mission-grid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin-bottom:70px;
+}
+
+.mai-project-wrap{
+  position:relative;
+  z-index:2;
+  border-top:1px solid rgba(255,255,255,.12);
+  padding-top:65px;
+}
+
+.mai-project-label{
+  color:var(--gold-light);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  margin-bottom:14px;
+}
+
+.mai-project-wrap h2{
+  color:white;
+  font-size:clamp(2.2rem,4.5vw,4rem);
+  line-height:1.08;
+  max-width:900px;
+  margin:0 0 22px;
+}
+
+.mai-project-description{
+  color:rgba(255,255,255,.75);
+  font-size:17px;
+  line-height:1.9;
+  max-width:900px;
+  margin:0 0 18px;
+}
+
+.mai-project-emphasis{
+  color:var(--gold-light) !important;
+  font-weight:700;
+}
+
+
+/* =========================================================
+   FUNDRAISING CARD
+========================================================= */
+
+.mai-fundraising-card{
+  margin-top:42px;
+  padding:42px;
+  background:rgba(255,255,255,.045);
+  border:1px solid rgba(216,189,131,.28);
+  box-shadow:0 22px 60px rgba(0,0,0,.18);
+}
+
+.mai-fundraising-header{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:25px;
+}
+
+.mai-fundraising-eyebrow{
+  color:var(--gold-light);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+
+.mai-goal-amount{
+  color:white;
+  font-family:"Fraunces","Noto Serif Devanagari",serif;
+  font-size:clamp(2.7rem,6vw,4.8rem);
+  line-height:1;
+  margin:0;
+}
+
+.mai-goal-note{
+  color:rgba(255,255,255,.50);
+  font-size:13px;
+  margin-top:10px;
+}
+
+.mai-heart-mark{
+  width:58px;
+  height:58px;
+  border:1px solid rgba(216,189,131,.4);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:var(--gold-light);
+  font-size:25px;
+  flex:none;
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.mai-progress-area{
+  margin-top:38px;
+}
+
+.mai-progress-track{
+  width:100%;
+  height:13px;
+  border-radius:30px;
+  overflow:hidden;
+  background:rgba(255,255,255,.10);
+}
+
+.mai-progress-fill{
+  width:0%;
+  height:100%;
+  border-radius:30px;
+  background:var(--gold);
+  transition:width .8s ease;
+}
+
+.mai-fundraising-stats{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  gap:25px;
+  margin-top:18px;
+  align-items:end;
+}
+
+.mai-stat-item{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+}
+
+.mai-stat-item span{
+  color:rgba(255,255,255,.50);
+  font-size:12px;
+}
+
+.mai-stat-item strong{
+  color:white;
+  font-family:"Fraunces","Noto Serif Devanagari",serif;
+  font-size:23px;
+}
+
+.mai-stat-percent{
+  text-align:center;
+}
+
+.mai-stat-percent strong{
+  color:var(--gold-light);
+  font-size:28px;
+}
+
+.mai-stat-remaining{
+  text-align:right;
+}
+
+
+/* =========================================================
+   PROJECT DONATE CTA
+========================================================= */
+
+.mai-donate-area{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:30px;
+  margin-top:38px;
+  padding-top:30px;
+  border-top:1px solid rgba(255,255,255,.10);
+}
+
+.mai-donate-area p{
+  max-width:560px;
+  margin:0;
+  color:rgba(255,255,255,.65);
+  line-height:1.7;
+}
+
+
+/* =========================================================
+   SUPPORTERS
+========================================================= */
+
+.mai-supporters{
+  margin-top:55px;
+  padding:35px;
+  background:rgba(255,255,255,.025);
+  border:1px solid rgba(255,255,255,.10);
+}
+
+.mai-supporters-heading{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:20px;
+  margin-bottom:25px;
+}
+
+.mai-supporters-heading h3{
+  color:white;
+  font-size:28px;
+  margin:0;
+}
+
+.mai-supporters-total{
+  text-align:right;
+}
+
+.mai-supporters-total span{
+  display:block;
+  color:rgba(255,255,255,.45);
+  font-size:12px;
+  margin-bottom:4px;
+}
+
+.mai-supporters-total strong{
+  color:var(--gold-light);
+  font-family:"Fraunces","Noto Serif Devanagari",serif;
+  font-size:24px;
+}
+
+.mai-supporters-list{
+  display:flex;
+  flex-direction:column;
+}
+
+.mai-supporter-row{
+  display:grid;
+  grid-template-columns:130px 1fr auto;
+  gap:20px;
+  align-items:center;
+  padding:16px 18px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.mai-supporter-date{
+  color:rgba(255,255,255,.45);
+  font-size:12px;
+}
+
+.mai-supporter-name{
+  color:white;
+  font-weight:600;
+}
+
+.mai-supporter-amount{
+  color:var(--gold-light);
+  font-family:"Fraunces","Noto Serif Devanagari",serif;
+  font-size:20px;
+  font-weight:600;
+}
+
+.mai-supporter-empty{
+  text-align:center;
+  padding:28px 15px;
+  border:1px dashed rgba(216,189,131,.22);
+}
+
+.mai-supporter-empty span{
+  display:block;
+  color:var(--gold-light);
+  font-size:24px;
+  margin-bottom:8px;
+}
+
+.mai-supporter-empty p{
+  color:rgba(255,255,255,.52);
+  font-size:13px;
+  margin:0;
+}
+
+.mai-supporters-note{
+  color:rgba(255,255,255,.38);
+  font-size:11px;
+  line-height:1.6;
+  margin:20px 0 0;
+}
+
+
+/* =========================================================
+   PROJECT CONTACT
+========================================================= */
+
+.mai-project-contact{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:30px;
+  margin-top:35px;
+  padding:32px;
+  border:1px solid rgba(216,189,131,.18);
+}
+
+.mai-project-contact span{
+  color:var(--gold-light);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+}
+
+.mai-project-contact h3{
+  color:white;
+  font-size:25px;
+  margin:8px 0;
+}
+
+.mai-project-contact p{
+  color:rgba(255,255,255,.58);
+  margin:0;
+  line-height:1.6;
+}
+
+
+/* =========================================================
+   MOTHERS
+========================================================= */
 
 .mothers-grid{
   display:grid;
@@ -538,7 +936,10 @@ h1,h2,h3,h4{
   line-height:1.7;
 }
 
-/* ================= IMPACT ================= */
+
+/* =========================================================
+   IMPACT
+========================================================= */
 
 .impact-section{
   background:var(--cream-dark);
@@ -575,7 +976,10 @@ h1,h2,h3,h4{
   font-size:14px;
 }
 
-/* ================= NEEDS ================= */
+
+/* =========================================================
+   NEEDS
+========================================================= */
 
 .needs-grid{
   display:grid;
@@ -614,12 +1018,20 @@ h1,h2,h3,h4{
   text-decoration:none;
 }
 
-/* ================= CTA ================= */
+
+/* =========================================================
+   CTA
+========================================================= */
 
 .premium-donation{
   background:
-    linear-gradient(90deg,rgba(13,29,42,.97),rgba(23,42,58,.92)),
+    linear-gradient(
+      90deg,
+      rgba(13,29,42,.97),
+      rgba(23,42,58,.92)
+    ),
     url("../images/home-hero.png") center/cover;
+
   color:white;
   padding:100px 0;
   text-align:center;
@@ -639,7 +1051,10 @@ h1,h2,h3,h4{
   line-height:1.8;
 }
 
-/* ================= FINAL MESSAGE ================= */
+
+/* =========================================================
+   FINAL MESSAGE
+========================================================= */
 
 .final-message{
   padding:100px 0;
@@ -665,7 +1080,10 @@ h1,h2,h3,h4{
   font-size:14px;
 }
 
-/* ================= TABLET ================= */
+
+/* =========================================================
+   TABLET
+========================================================= */
 
 @media(max-width:900px){
 
@@ -703,7 +1121,10 @@ h1,h2,h3,h4{
 
 }
 
-/* ================= MOBILE ================= */
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media(max-width:600px){
 
@@ -715,18 +1136,18 @@ h1,h2,h3,h4{
     min-height:650px;
   }
 
- .premium-hero-image{
-  background-image:
-    linear-gradient(
-      180deg,
-      rgba(13,29,42,.38),
-      rgba(13,29,42,.62)
-    ),
-    url("../images/home-hero.png");
+  .premium-hero-image{
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(13,29,42,.38),
+        rgba(13,29,42,.62)
+      ),
+      url("../images/home-hero.png");
 
-  background-size: cover;
-  background-position: center center;
-}
+    background-size:cover;
+    background-position:center center;
+  }
 
   .premium-hero-content{
     padding:75px 0;
@@ -776,9 +1197,98 @@ h1,h2,h3,h4{
     height:220px;
   }
 
+
+  /* NEW PROJECT MOBILE */
+
+  .mai-mission-grid{
+    grid-template-columns:1fr;
+    margin-bottom:50px;
+  }
+
+  .mai-project-wrap{
+    padding-top:50px;
+  }
+
+  .mai-fundraising-card{
+    padding:25px;
+  }
+
+  .mai-fundraising-header{
+    gap:15px;
+  }
+
+  .mai-goal-amount{
+    font-size:2.55rem;
+  }
+
+  .mai-heart-mark{
+    width:48px;
+    height:48px;
+    font-size:20px;
+  }
+
+  .mai-fundraising-stats{
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+  }
+
+  .mai-stat-percent{
+    text-align:right;
+  }
+
+  .mai-stat-remaining{
+    grid-column:1 / -1;
+    text-align:left;
+    padding-top:12px;
+    border-top:1px solid rgba(255,255,255,.08);
+  }
+
+  .mai-donate-area{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .mai-donate-area .premium-btn{
+    width:100%;
+  }
+
+  .mai-supporters{
+    padding:25px 18px;
+  }
+
+  .mai-supporters-heading{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .mai-supporters-total{
+    text-align:left;
+  }
+
+  .mai-supporter-row{
+    grid-template-columns:1fr auto;
+    gap:7px 15px;
+  }
+
+  .mai-supporter-date{
+    grid-column:1 / -1;
+  }
+
+  .mai-project-contact{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .mai-project-contact .premium-btn{
+    width:100%;
+  }
+
 }
 
-/* ================= SMALL MOBILE ================= */
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
 
 @media(max-width:380px){
 
@@ -795,14 +1305,9 @@ h1,h2,h3,h4{
   }
 
 }
-.trust-foundation{
-  font-family: "Noto Sans Devanagari", sans-serif !important;
-  font-weight: 600 !important;
-  letter-spacing: normal !important;
-  word-spacing: normal !important;
-  white-space: normal !important;
-}
+
 </style>
+
 
 <script type="application/ld+json">
 {
@@ -827,11 +1332,14 @@ h1,h2,h3,h4{
 
 </head>
 
+
 <body>
 
 <div id="site-header"></div>
 
+
 <main>
+
 
 <!-- =====================================================
      HERO
@@ -854,9 +1362,13 @@ h1,h2,h3,h4{
         data-en="One mother found a home... Now her home needs your support.">
 
         एक आईला घर मिळालं...<br>
-        <span>आता तिच्या घराला तुमच्या आधाराची गरज आहे.</span>
+
+        <span>
+          आता तिच्या घराला तुमच्या आधाराची गरज आहे.
+        </span>
 
       </h1>
+
 
       <p
         class="premium-hero-description"
@@ -867,20 +1379,28 @@ h1,h2,h3,h4{
 
       </p>
 
+
       <div class="premium-buttons">
 
-        <a href="donate.html"
-           class="premium-btn premium-btn-gold"
-           data-mr="❤️ देणगी द्या"
-           data-en="❤️ Donate Now">
-          ❤️ देणगी द्या
+        <a
+          href="donate.html?purpose=new-mai-vriddhashram"
+          class="premium-btn premium-btn-gold"
+          data-mr="❤️ नवीन माई वृद्धाश्रमासाठी देणगी द्या"
+          data-en="❤️ Donate for New Mai Vriddhashram">
+
+          ❤️ नवीन माई वृद्धाश्रमासाठी देणगी द्या
+
         </a>
 
-        <a href="about.html"
-           class="premium-btn premium-btn-light"
-           data-mr="आमची कहाणी"
-           data-en="Our Story">
+
+        <a
+          href="about.html"
+          class="premium-btn premium-btn-light"
+          data-mr="आमची कहाणी"
+          data-en="Our Story">
+
           आमची कहाणी
+
         </a>
 
       </div>
@@ -903,28 +1423,48 @@ h1,h2,h3,h4{
   <div class="container trust-inner">
 
     <div class="trust-item">
+
       <span class="trust-icon">✓</span>
-    <span class="trust-foundation"
-      data-mr="बोधी ट्री एज्युकेशनल फाउंडेशन द्वारा संचालित"
-      data-en="Run by Bodhi Tree Educational Foundation">
-  बोधी ट्री एज्युकेशनल फाउंडेशन द्वारा संचालित
-</span>
+
+      <span
+        class="trust-foundation"
+        data-mr="बोधी ट्री एज्युकेशनल फाउंडेशन द्वारा संचालित"
+        data-en="Run by Bodhi Tree Educational Foundation">
+
+        बोधी ट्री एज्युकेशनल फाउंडेशन द्वारा संचालित
+
+      </span>
+
     </div>
 
+
     <div class="trust-item">
+
       <span class="trust-icon">♥</span>
-      <span data-mr="सन्मान · काळजी · आपलेपणा"
-            data-en="Dignity · Care · Belonging">
+
+      <span
+        data-mr="सन्मान · काळजी · आपलेपणा"
+        data-en="Dignity · Care · Belonging">
+
         सन्मान · काळजी · आपलेपणा
+
       </span>
+
     </div>
 
+
     <div class="trust-item">
+
       <span class="trust-icon">⌂</span>
-      <span data-mr="छत्रपती संभाजीनगर"
-            data-en="Chhatrapati Sambhajinagar">
+
+      <span
+        data-mr="छत्रपती संभाजीनगर"
+        data-en="Chhatrapati Sambhajinagar">
+
         छत्रपती संभाजीनगर
+
       </span>
+
     </div>
 
   </div>
@@ -942,60 +1482,79 @@ h1,h2,h3,h4{
 
     <div class="reveal">
 
-      <div class="premium-label"
-           data-mr="आमची कहाणी"
-           data-en="Our Story">
+      <div
+        class="premium-label"
+        data-mr="आमची कहाणी"
+        data-en="Our Story">
+
         आमची कहाणी
+
       </div>
 
-      <h2 class="premium-title"
-          data-mr="माई वृद्धाश्रम म्हणजे फक्त आश्रम नाही... हे एका आईचं घर आहे."
-          data-en="Mai Vriddhashram is not just a shelter... it is a mother's home.">
+
+      <h2
+        class="premium-title"
+        data-mr="माई वृद्धाश्रम म्हणजे फक्त आश्रम नाही... हे एका आईचं घर आहे."
+        data-en="Mai Vriddhashram is not just a shelter... it is a mother's home.">
 
         माई वृद्धाश्रम म्हणजे फक्त आश्रम नाही...<br>
         हे एका आईचं घर आहे.
 
       </h2>
 
+
       <div class="gold-line"></div>
 
-      <p class="premium-copy"
-         data-mr="वयोमानानुसार अनेक मातांना सोबतीची, सुरक्षिततेची आणि आपुलकीच्या घराची गरज असते. माई वृद्धाश्रम त्यांना केवळ निवारा नाही, तर सन्मान, काळजी आणि आपलेपणा देणारे घर उपलब्ध करून देण्याचा प्रयत्न करते."
-         data-en="As mothers grow older, many need companionship, safety and a home filled with warmth. Mai Vriddhashram works to offer them not just shelter, but dignity, care and belonging.">
+
+      <p
+        class="premium-copy"
+        data-mr="वयोमानानुसार अनेक मातांना सोबतीची, सुरक्षिततेची आणि आपुलकीच्या घराची गरज असते. माई वृद्धाश्रम त्यांना केवळ निवारा नाही, तर सन्मान, काळजी आणि आपलेपणा देणारे घर उपलब्ध करून देण्याचा प्रयत्न करते."
+        data-en="As mothers grow older, many need companionship, safety and a home filled with warmth. Mai Vriddhashram works to offer them not just shelter, but dignity, care and belonging.">
 
         वयोमानानुसार अनेक मातांना सोबतीची, सुरक्षिततेची आणि आपुलकीच्या घराची गरज असते. माई वृद्धाश्रम त्यांना केवळ निवारा नाही, तर सन्मान, काळजी आणि आपलेपणा देणारे घर उपलब्ध करून देण्याचा प्रयत्न करते.
 
       </p>
 
-      <p class="premium-copy"
-         data-mr="येथे प्रत्येक दिवस पौष्टिक आहार, आरोग्य लक्ष, योग-ध्यान आणि प्रेमळ सहवासाने भरलेला असतो — जेणेकरून प्रत्येक आई सन्मानाने आणि आनंदाने जगू शकेल."
-         data-en="Every day is built around nutritious food, healthcare, yoga, meditation and warm companionship — so that every mother can live with dignity and joy.">
+
+      <p
+        class="premium-copy"
+        data-mr="येथे प्रत्येक दिवस पौष्टिक आहार, आरोग्य लक्ष, योग-ध्यान आणि प्रेमळ सहवासाने भरलेला असतो — जेणेकरून प्रत्येक आई सन्मानाने आणि आनंदाने जगू शकेल."
+        data-en="Every day is built around nutritious food, healthcare, yoga, meditation and warm companionship — so that every mother can live with dignity and joy.">
 
         येथे प्रत्येक दिवस पौष्टिक आहार, आरोग्य लक्ष, योग-ध्यान आणि प्रेमळ सहवासाने भरलेला असतो — जेणेकरून प्रत्येक आई सन्मानाने आणि आनंदाने जगू शकेल.
 
       </p>
 
-      <a href="about.html"
-         class="premium-btn premium-btn-gold"
-         data-mr="संपूर्ण कहाणी वाचा"
-         data-en="Read Our Story">
+
+      <a
+        href="about.html"
+        class="premium-btn premium-btn-gold"
+        data-mr="संपूर्ण कहाणी वाचा"
+        data-en="Read Our Story">
+
         संपूर्ण कहाणी वाचा
+
       </a>
 
     </div>
 
+
     <div class="editorial-image reveal">
 
-      <img src="images/our-mother.jpg"
-           alt="माई वृद्धाश्रमातील माता">
+      <img
+        src="images/our-mother.jpg"
+        alt="माई वृद्धाश्रमातील माता">
 
       <div class="editorial-badge">
 
         <strong>एक घर.</strong>
 
-        <span data-mr="एका आईसाठी सन्मान, काळजी आणि आपलेपणा."
-              data-en="Dignity, care and belonging for a mother.">
+        <span
+          data-mr="एका आईसाठी सन्मान, काळजी आणि आपलेपणा."
+          data-en="Dignity, care and belonging for a mother.">
+
           एका आईसाठी सन्मान, काळजी आणि आपलेपणा.
+
         </span>
 
       </div>
@@ -1017,22 +1576,33 @@ h1,h2,h3,h4{
 
     <div class="center-heading reveal">
 
-      <div class="premium-label"
-           data-mr="सुविधा व काळजी"
-           data-en="Care & Support">
+      <div
+        class="premium-label"
+        data-mr="सुविधा व काळजी"
+        data-en="Care & Support">
+
         सुविधा व काळजी
+
       </div>
 
-      <h2 class="premium-title"
-          data-mr="येथे मिळणारी काळजी"
-          data-en="The care every mother deserves">
+
+      <h2
+        class="premium-title"
+        data-mr="येथे मिळणारी काळजी"
+        data-en="The care every mother deserves">
+
         येथे मिळणारी काळजी
+
       </h2>
 
-      <p class="premium-copy"
-         data-mr="प्रत्येक दिवस अधिक सुरक्षित, आरोग्यपूर्ण आणि आनंदी करण्यासाठी आवश्यक काळजी."
-         data-en="Essential care to make every day safer, healthier and happier.">
+
+      <p
+        class="premium-copy"
+        data-mr="प्रत्येक दिवस अधिक सुरक्षित, आरोग्यपूर्ण आणि आनंदी करण्यासाठी आवश्यक काळजी."
+        data-en="Essential care to make every day safer, healthier and happier.">
+
         प्रत्येक दिवस अधिक सुरक्षित, आरोग्यपूर्ण आणि आनंदी करण्यासाठी आवश्यक काळजी.
+
       </p>
 
     </div>
@@ -1041,191 +1611,256 @@ h1,h2,h3,h4{
     <div class="care-grid">
 
 
-      <!-- 01 SAFE ACCOMMODATION -->
+      <!-- 01 -->
 
-      <a href="donate.html?purpose=accommodation"
-         class="care-card care-card-link reveal"
-         aria-label="सुरक्षित निवासासाठी देणगी द्या">
+      <a
+        href="donate.html?purpose=accommodation"
+        class="care-card care-card-link reveal"
+        aria-label="सुरक्षित निवासासाठी देणगी द्या">
 
-        <img src="images/images/imagescare-home.jpg"
-             alt="सुरक्षित निवास"
-             class="care-photo">
+        <img
+          src="images/images/imagescare-home.jpg"
+          alt="सुरक्षित निवास"
+          class="care-photo">
 
         <div class="care-number">01</div>
 
-        <h3 data-mr="सुरक्षित निवास"
-            data-en="Safe Accommodation">
+        <h3
+          data-mr="सुरक्षित निवास"
+          data-en="Safe Accommodation">
+
           सुरक्षित निवास
+
         </h3>
 
-        <p data-mr="स्वच्छ, सुरक्षित आणि आरामदायी वातावरण."
-           data-en="Clean, safe and comfortable living spaces.">
+        <p
+          data-mr="स्वच्छ, सुरक्षित आणि आरामदायी वातावरण."
+          data-en="Clean, safe and comfortable living spaces.">
+
           स्वच्छ, सुरक्षित आणि आरामदायी वातावरण.
+
         </p>
 
-        <span class="care-donate"
-              data-mr="निवासासाठी मदत करा →"
-              data-en="Support accommodation →">
+        <span
+          class="care-donate"
+          data-mr="निवासासाठी मदत करा →"
+          data-en="Support accommodation →">
+
           निवासासाठी मदत करा →
+
         </span>
 
       </a>
 
 
-      <!-- 02 NUTRITIOUS FOOD -->
+      <!-- 02 -->
 
-      <a href="donate.html?purpose=food"
-         class="care-card care-card-link reveal"
-         aria-label="पौष्टिक आहारासाठी देणगी द्या">
+      <a
+        href="donate.html?purpose=food"
+        class="care-card care-card-link reveal"
+        aria-label="पौष्टिक आहारासाठी देणगी द्या">
 
-        <img src="images/images/imagescare-food.jpg"
-             alt="पौष्टिक आहार"
-             class="care-photo">
+        <img
+          src="images/images/imagescare-food.jpg"
+          alt="पौष्टिक आहार"
+          class="care-photo">
 
         <div class="care-number">02</div>
 
-        <h3 data-mr="पौष्टिक आहार"
-            data-en="Nutritious Food">
+        <h3
+          data-mr="पौष्टिक आहार"
+          data-en="Nutritious Food">
+
           पौष्टिक आहार
+
         </h3>
 
-        <p data-mr="दररोज सकस आणि पौष्टिक आहाराची व्यवस्था."
-           data-en="Nutritious meals served every day.">
+        <p
+          data-mr="दररोज सकस आणि पौष्टिक आहाराची व्यवस्था."
+          data-en="Nutritious meals served every day.">
+
           दररोज सकस आणि पौष्टिक आहाराची व्यवस्था.
+
         </p>
 
-        <span class="care-donate"
-              data-mr="आहारासाठी मदत करा →"
-              data-en="Support food care →">
+        <span
+          class="care-donate"
+          data-mr="आहारासाठी मदत करा →"
+          data-en="Support food care →">
+
           आहारासाठी मदत करा →
+
         </span>
 
       </a>
 
 
-      <!-- 03 HEALTHCARE -->
+      <!-- 03 -->
 
-      <a href="donate.html?purpose=healthcare"
-         class="care-card care-card-link reveal"
-         aria-label="आरोग्य सहाय्यासाठी देणगी द्या">
+      <a
+        href="donate.html?purpose=healthcare"
+        class="care-card care-card-link reveal"
+        aria-label="आरोग्य सहाय्यासाठी देणगी द्या">
 
-        <img src="images/images/imagescare-health.jpg"
-             alt="आरोग्य सहाय्य"
-             class="care-photo">
+        <img
+          src="images/images/imagescare-health.jpg"
+          alt="आरोग्य सहाय्य"
+          class="care-photo">
 
         <div class="care-number">03</div>
 
-        <h3 data-mr="आरोग्य सहाय्य"
-            data-en="Healthcare Support">
+        <h3
+          data-mr="आरोग्य सहाय्य"
+          data-en="Healthcare Support">
+
           आरोग्य सहाय्य
+
         </h3>
 
-        <p data-mr="आरोग्य तपासणी, औषधे आणि आवश्यक काळजी."
-           data-en="Health check-ups, medicines and care.">
+        <p
+          data-mr="आरोग्य तपासणी, औषधे आणि आवश्यक काळजी."
+          data-en="Health check-ups, medicines and care.">
+
           आरोग्य तपासणी, औषधे आणि आवश्यक काळजी.
+
         </p>
 
-        <span class="care-donate"
-              data-mr="आरोग्यासाठी मदत करा →"
-              data-en="Support healthcare →">
+        <span
+          class="care-donate"
+          data-mr="आरोग्यासाठी मदत करा →"
+          data-en="Support healthcare →">
+
           आरोग्यासाठी मदत करा →
+
         </span>
 
       </a>
 
 
-      <!-- 04 YOGA & MEDITATION -->
+      <!-- 04 -->
 
-      <a href="donate.html?purpose=yoga"
-         class="care-card care-card-link reveal"
-         aria-label="योग व ध्यानासाठी देणगी द्या">
+      <a
+        href="donate.html?purpose=yoga"
+        class="care-card care-card-link reveal"
+        aria-label="योग व ध्यानासाठी देणगी द्या">
 
-        <img src="images/images/imagescare-yoga.jpg"
-             alt="योग व ध्यान"
-             class="care-photo">
+        <img
+          src="images/images/imagescare-yoga.jpg"
+          alt="योग व ध्यान"
+          class="care-photo">
 
         <div class="care-number">04</div>
 
-        <h3 data-mr="योग व ध्यान"
-            data-en="Yoga & Meditation">
+        <h3
+          data-mr="योग व ध्यान"
+          data-en="Yoga & Meditation">
+
           योग व ध्यान
+
         </h3>
 
-        <p data-mr="मानसिक आणि शारीरिक स्वास्थ्यासाठी उपक्रम."
-           data-en="Activities for mental and physical wellbeing.">
+        <p
+          data-mr="मानसिक आणि शारीरिक स्वास्थ्यासाठी उपक्रम."
+          data-en="Activities for mental and physical wellbeing.">
+
           मानसिक आणि शारीरिक स्वास्थ्यासाठी उपक्रम.
+
         </p>
 
-        <span class="care-donate"
-              data-mr="योगासाठी मदत करा →"
-              data-en="Support wellness →">
+        <span
+          class="care-donate"
+          data-mr="योगासाठी मदत करा →"
+          data-en="Support wellness →">
+
           योगासाठी मदत करा →
+
         </span>
 
       </a>
 
 
-      <!-- 05 COMPANIONSHIP -->
+      <!-- 05 -->
 
-      <a href="donate.html?purpose=companionship"
-         class="care-card care-card-link reveal"
-         aria-label="सहचर्यासाठी देणगी द्या">
+      <a
+        href="donate.html?purpose=companionship"
+        class="care-card care-card-link reveal"
+        aria-label="सहचर्यासाठी देणगी द्या">
 
-        <img src="images/images/imagescare-companionship.jpg"
-             alt="सहचर्य"
-             class="care-photo">
+        <img
+          src="images/images/imagescare-companionship.jpg"
+          alt="सहचर्य"
+          class="care-photo">
 
         <div class="care-number">05</div>
 
-        <h3 data-mr="सहचर्य"
-            data-en="Companionship">
+        <h3
+          data-mr="सहचर्य"
+          data-en="Companionship">
+
           सहचर्य
+
         </h3>
 
-        <p data-mr="आपुलकीचा सहवास आणि कुटुंबासारखे वातावरण."
-           data-en="Warm companionship and a family-like environment.">
+        <p
+          data-mr="आपुलकीचा सहवास आणि कुटुंबासारखे वातावरण."
+          data-en="Warm companionship and a family-like environment.">
+
           आपुलकीचा सहवास आणि कुटुंबासारखे वातावरण.
+
         </p>
 
-        <span class="care-donate"
-              data-mr="सहचर्यासाठी मदत करा →"
-              data-en="Support companionship →">
+        <span
+          class="care-donate"
+          data-mr="सहचर्यासाठी मदत करा →"
+          data-en="Support companionship →">
+
           सहचर्यासाठी मदत करा →
+
         </span>
 
       </a>
 
 
-      <!-- 06 DIGNITY & LOVE -->
+      <!-- 06 -->
 
-      <a href="donate.html?purpose=dignity"
-         class="care-card care-card-link reveal"
-         aria-label="सन्मान व प्रेमासाठी देणगी द्या">
+      <a
+        href="donate.html?purpose=dignity"
+        class="care-card care-card-link reveal"
+        aria-label="सन्मान व प्रेमासाठी देणगी द्या">
 
-        <img src="images/images/imagescare-love.jpg"
-             alt="सन्मान व प्रेम"
-             class="care-photo">
+        <img
+          src="images/images/imagescare-love.jpg"
+          alt="सन्मान व प्रेम"
+          class="care-photo">
 
         <div class="care-number">06</div>
 
-        <h3 data-mr="सन्मान व प्रेम"
-            data-en="Dignity & Love">
+        <h3
+          data-mr="सन्मान व प्रेम"
+          data-en="Dignity & Love">
+
           सन्मान व प्रेम
+
         </h3>
 
-        <p data-mr="प्रत्येक आईला आदर, सन्मान आणि आपलेपणाची भावना."
-           data-en="Respect, dignity and a sense of belonging for every mother.">
+        <p
+          data-mr="प्रत्येक आईला आदर, सन्मान आणि आपलेपणाची भावना."
+          data-en="Respect, dignity and a sense of belonging for every mother.">
+
           प्रत्येक आईला आदर, सन्मान आणि आपलेपणाची भावना.
+
         </p>
 
-        <span class="care-donate"
-              data-mr="या सेवेसाठी मदत करा →"
-              data-en="Support this care →">
+        <span
+          class="care-donate"
+          data-mr="या सेवेसाठी मदत करा →"
+          data-en="Support this care →">
+
           या सेवेसाठी मदत करा →
+
         </span>
 
       </a>
-
 
     </div>
 
@@ -1235,65 +1870,430 @@ h1,h2,h3,h4{
 
 
 <!-- =====================================================
-     MISSION & VISION
+     OUR PURPOSE + MISSION + VISION
 ===================================================== -->
 
-<section class="premium-section navy-feature">
+<section class="premium-section mai-project-section">
 
-  <div class="container feature-grid">
+  <div class="container">
 
-    <div class="reveal">
 
-      <div class="premium-label">Our Purpose</div>
+    <!-- OUR PURPOSE -->
 
-      <h2 class="premium-title"
-          data-mr="प्रत्येक आईला सन्मानाने जगण्याचा अधिकार आहे."
-          data-en="Every mother deserves to live with dignity.">
+    <div class="mai-project-intro reveal">
+
+      <div
+        class="premium-label"
+        data-mr="आमचे ध्येय व दृष्टी"
+        data-en="Our Mission & Vision">
+
+        आमचे ध्येय व दृष्टी
+
+      </div>
+
+
+      <h2
+        class="premium-title"
+        data-mr="प्रत्येक आईला सन्मानाने जगण्याचा अधिकार आहे."
+        data-en="Every mother deserves to live with dignity.">
 
         प्रत्येक आईला सन्मानाने जगण्याचा अधिकार आहे.
 
       </h2>
 
-      <p data-mr="आमचे ध्येय वृद्ध मातांना सुरक्षित, सन्मानाचे आणि प्रेमळ वातावरण देणे आहे — जिथे त्या काळजी, आदर आणि आपलेपणाने जगू शकतील."
-         data-en="Our mission is to provide elderly mothers with a safe, dignified and loving environment where they can live with care, respect and belonging.">
 
-        आमचे ध्येय वृद्ध मातांना सुरक्षित, सन्मानाचे आणि प्रेमळ वातावरण देणे आहे — जिथे त्या काळजी, आदर आणि आपलेपणाने जगू शकतील.
+      <p
+        data-mr="माई वृद्धाश्रमचे ध्येय वृद्ध मातांना सुरक्षित, सन्मानाचे आणि प्रेमळ वातावरण देणे आहे — जिथे त्या काळजी, आदर आणि आपलेपणाने जगू शकतील."
+        data-en="Our mission is to provide elderly mothers with a safe, dignified and loving environment where they can live with care, respect and belonging.">
+
+        माई वृद्धाश्रमचे ध्येय वृद्ध मातांना सुरक्षित, सन्मानाचे आणि प्रेमळ वातावरण देणे आहे — जिथे त्या काळजी, आदर आणि आपलेपणाने जगू शकतील.
 
       </p>
 
     </div>
 
-    <div class="reveal">
 
-      <div class="feature-card">
+    <!-- MISSION / VISION -->
 
-        <div class="feature-card-icon">🎯</div>
+    <div class="mai-mission-grid">
 
-        <h3 data-mr="ध्येय"
-            data-en="Mission">
+
+      <div class="feature-card reveal">
+
+        <div class="feature-card-icon">
+          🎯
+        </div>
+
+        <h3
+          data-mr="ध्येय"
+          data-en="Mission">
+
           ध्येय
+
         </h3>
 
-        <p data-mr="वृद्ध मातांना सुरक्षित, सन्मानाचे आणि प्रेमळ वातावरण देणे."
-           data-en="To provide elderly mothers with a safe, dignified and loving environment.">
-          वृद्ध मातांना सुरक्षित, सन्मानाचे आणि प्रेमळ वातावरण देणे.
+        <p
+          data-mr="वृद्ध मातांना सुरक्षित निवास, पौष्टिक आहार, आरोग्यसेवा, प्रेमळ सहवास आणि सन्मानाने जगण्यासाठी आवश्यक आधार देणे."
+          data-en="To provide elderly mothers with safe accommodation, nutritious food, healthcare, companionship and the support they need to live with dignity.">
+
+          वृद्ध मातांना सुरक्षित निवास, पौष्टिक आहार, आरोग्यसेवा, प्रेमळ सहवास आणि सन्मानाने जगण्यासाठी आवश्यक आधार देणे.
+
         </p>
 
       </div>
 
-      <div class="feature-card">
 
-        <div class="feature-card-icon">🌅</div>
+      <div class="feature-card reveal">
 
-        <h3 data-mr="दृष्टी"
-            data-en="Vision">
+        <div class="feature-card-icon">
+          🌅
+        </div>
+
+        <h3
+          data-mr="दृष्टी"
+          data-en="Vision">
+
           दृष्टी
+
         </h3>
 
-        <p data-mr="असा समाज घडवणे जिथे कोणतीही वृद्ध आई एकटी, दुर्लक्षित किंवा बेघर राहणार नाही."
-           data-en="A society where no elderly mother feels alone, neglected or without a home.">
-          असा समाज घडवणे जिथे कोणतीही वृद्ध आई एकटी, दुर्लक्षित किंवा बेघर राहणार नाही.
+        <p
+          data-mr="असे कायमस्वरूपी, सुरक्षित आणि प्रेमळ घर उभारणे जिथे अधिकाधिक वृद्ध मातांना आयुष्याच्या या टप्प्यावर सन्मानाने आणि आनंदाने जगता येईल."
+          data-en="To build a permanent, safe and loving home where more elderly mothers can live with dignity, security and happiness in the later years of their lives.">
+
+          असे कायमस्वरूपी, सुरक्षित आणि प्रेमळ घर उभारणे जिथे अधिकाधिक वृद्ध मातांना आयुष्याच्या या टप्प्यावर सन्मानाने आणि आनंदाने जगता येईल.
+
         </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- =================================================
+         NEW MAI VRIDDHASHRAM PROJECT
+    ================================================= -->
+
+    <div class="mai-project-wrap reveal">
+
+
+      <div
+        class="mai-project-label"
+        data-mr="आमचे पुढचे पाऊल"
+        data-en="Our Next Step">
+
+        आमचे पुढचे पाऊल
+
+      </div>
+
+
+      <h2
+        data-mr="नवीन माई वृद्धाश्रम उभारण्यासाठी आपली साथ द्या"
+        data-en="Help Us Build the New Mai Vriddhashram">
+
+        नवीन माई वृद्धाश्रम उभारण्यासाठी आपली साथ द्या
+
+      </h2>
+
+
+      <p
+        class="mai-project-description"
+        data-mr="सध्या माई वृद्धाश्रममध्ये 25 ज्येष्ठ मातांची निःशुल्क सेवा केली जात आहे. सध्याची जागा मर्यादित असल्यामुळे अधिक ज्येष्ठांना सुरक्षित आणि सन्मानपूर्ण निवास देता यावा यासाठी नवीन, मोठी आणि आवश्यक सुविधांनी युक्त माई वृद्धाश्रम उभारण्याचे आमचे स्वप्न आहे."
+        data-en="Mai Vriddhashram currently provides free care and support to 25 elderly mothers. As our present space is limited, we dream of creating a larger and well-equipped new Mai Vriddhashram so that more elderly people can receive safe and dignified care.">
+
+        सध्या माई वृद्धाश्रममध्ये 25 ज्येष्ठ मातांची निःशुल्क सेवा केली जात आहे. सध्याची जागा मर्यादित असल्यामुळे अधिक ज्येष्ठांना सुरक्षित आणि सन्मानपूर्ण निवास देता यावा यासाठी नवीन, मोठी आणि आवश्यक सुविधांनी युक्त माई वृद्धाश्रम उभारण्याचे आमचे स्वप्न आहे.
+
+      </p>
+
+
+      <p
+        class="mai-project-description mai-project-emphasis"
+        data-mr="नवीन जागा मिळवणे, बांधकाम आणि आवश्यक पायाभूत सुविधा उभारण्यासाठी अंदाजे ₹20 कोटींच्या निधीची आवश्यकता आहे."
+        data-en="An estimated ₹20 Crore is required for acquiring a new site, construction and essential infrastructure.">
+
+        नवीन जागा मिळवणे, बांधकाम आणि आवश्यक पायाभूत सुविधा उभारण्यासाठी अंदाजे ₹20 कोटींच्या निधीची आवश्यकता आहे.
+
+      </p>
+
+
+      <!-- =================================================
+           FUNDRAISING CARD
+      ================================================= -->
+
+      <div class="mai-fundraising-card">
+
+
+        <div class="mai-fundraising-header">
+
+          <div>
+
+            <div
+              class="mai-fundraising-eyebrow"
+              data-mr="नवीन माई वृद्धाश्रम प्रकल्प"
+              data-en="New Mai Vriddhashram Project">
+
+              नवीन माई वृद्धाश्रम प्रकल्प
+
+            </div>
+
+
+            <h3 class="mai-goal-amount">
+              ₹20,00,00,000
+            </h3>
+
+
+            <div
+              class="mai-goal-note"
+              data-mr="अंदाजे एकूण निधी लक्ष्य"
+              data-en="Estimated total fundraising goal">
+
+              अंदाजे एकूण निधी लक्ष्य
+
+            </div>
+
+          </div>
+
+
+          <div class="mai-heart-mark">
+            ♥
+          </div>
+
+        </div>
+
+
+        <!-- PROGRESS -->
+
+        <div class="mai-progress-area">
+
+          <div class="mai-progress-track">
+
+            <div
+              class="mai-progress-fill"
+              id="maiProjectProgress">
+            </div>
+
+          </div>
+
+
+          <div class="mai-fundraising-stats">
+
+
+            <div class="mai-stat-item">
+
+              <span
+                data-mr="आतापर्यंत जमा"
+                data-en="Amount Raised">
+
+                आतापर्यंत जमा
+
+              </span>
+
+              <strong id="maiProjectRaised">
+                ₹0
+              </strong>
+
+            </div>
+
+
+            <div
+              class="mai-stat-item mai-stat-percent">
+
+              <span
+                data-mr="प्रगती"
+                data-en="Progress">
+
+                प्रगती
+
+              </span>
+
+              <strong id="maiProjectPercent">
+                0%
+              </strong>
+
+            </div>
+
+
+            <div
+              class="mai-stat-item mai-stat-remaining">
+
+              <span
+                data-mr="उर्वरित लक्ष्य"
+                data-en="Remaining Goal">
+
+                उर्वरित लक्ष्य
+
+              </span>
+
+              <strong id="maiProjectRemaining">
+                ₹20,00,00,000
+              </strong>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- PROJECT DONATION -->
+
+        <div class="mai-donate-area">
+
+          <p
+            data-mr="आपली छोटी किंवा मोठी प्रत्येक देणगी या स्वप्नाला पुढे नेणारे एक पाऊल आहे."
+            data-en="Every small or large contribution is one step toward making this dream a reality.">
+
+            आपली छोटी किंवा मोठी प्रत्येक देणगी या स्वप्नाला पुढे नेणारे एक पाऊल आहे.
+
+          </p>
+
+
+          <a
+            href="donate.html?purpose=new-mai-vriddhashram"
+            class="premium-btn premium-btn-gold"
+            data-mr="❤️ नवीन माई वृद्धाश्रमासाठी देणगी द्या"
+            data-en="❤️ Donate for New Mai Vriddhashram">
+
+            ❤️ नवीन माई वृद्धाश्रमासाठी देणगी द्या
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- =================================================
+           SUPPORTERS
+      ================================================= -->
+
+      <div class="mai-supporters">
+
+
+        <div class="mai-supporters-heading">
+
+          <div>
+
+            <div
+              class="mai-project-label"
+              data-mr="पारदर्शक योगदान नोंद"
+              data-en="Transparent Contribution Record">
+
+              पारदर्शक योगदान नोंद
+
+            </div>
+
+
+            <h3
+              data-mr="या स्वप्नासाठी साथ देणारे"
+              data-en="Those Supporting This Dream">
+
+              या स्वप्नासाठी साथ देणारे
+
+            </h3>
+
+          </div>
+
+
+          <div class="mai-supporters-total">
+
+            <span
+              data-mr="एकूण योगदान"
+              data-en="Total Contributions">
+
+              एकूण योगदान
+
+            </span>
+
+            <strong id="maiSupportersTotal">
+              ₹0
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="mai-supporters-list"
+          id="maiSupportersList">
+
+
+          <div class="mai-supporter-empty">
+
+            <span>♥</span>
+
+            <p
+              data-mr="आपण या विशेष प्रकल्पासाठी पहिले योगदान देऊ शकता."
+              data-en="You can be the first to contribute to this special project.">
+
+              आपण या विशेष प्रकल्पासाठी पहिले योगदान देऊ शकता.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <p
+          class="mai-supporters-note"
+          data-mr="फक्त सार्वजनिक प्रदर्शनासाठी संमती दिलेल्या देणगीदारांची सुरक्षित माहिती येथे दाखवली जाईल. मोबाईल, ईमेल, PAN किंवा पत्ता येथे दाखवला जाणार नाही."
+          data-en="Only safe information from donors who have given consent for public display will be shown here. Mobile, email, PAN and address will never be displayed.">
+
+          फक्त सार्वजनिक प्रदर्शनासाठी संमती दिलेल्या देणगीदारांची सुरक्षित माहिती येथे दाखवली जाईल. मोबाईल, ईमेल, PAN किंवा पत्ता येथे दाखवला जाणार नाही.
+
+        </p>
+
+      </div>
+
+
+      <!-- =================================================
+           PROJECT CONTACT
+      ================================================= -->
+
+      <div class="mai-project-contact">
+
+        <div>
+
+          <span
+            data-mr="CSR · मोठी देणगी · जमीन · बांधकाम · साहित्य"
+            data-en="CSR · Major Donations · Land · Construction · Materials">
+
+            CSR · मोठी देणगी · जमीन · बांधकाम · साहित्य
+
+          </span>
+
+
+          <h3
+            data-mr="या प्रकल्पासाठी सहकार्य करायचे आहे?"
+            data-en="Want to support this project?">
+
+            या प्रकल्पासाठी सहकार्य करायचे आहे?
+
+          </h3>
+
+
+          <p
+            data-mr="CSR भागीदारी, जमीन, बांधकाम किंवा मोठ्या योगदानासाठी आमच्याशी संपर्क साधा."
+            data-en="Contact us for CSR partnerships, land, construction or major contributions.">
+
+            CSR भागीदारी, जमीन, बांधकाम किंवा मोठ्या योगदानासाठी आमच्याशी संपर्क साधा.
+
+          </p>
+
+        </div>
+
+
+        <a
+          href="contact.html"
+          class="premium-btn premium-btn-light"
+          data-mr="संपर्क करा →"
+          data-en="Contact Us →">
+
+          संपर्क करा →
+
+        </a>
 
       </div>
 
@@ -1312,25 +2312,33 @@ h1,h2,h3,h4{
 
   <div class="container">
 
+
     <div class="center-heading reveal">
 
-      <div class="premium-label"
-           data-mr="आमच्या माता"
-           data-en="Our Mothers">
+      <div
+        class="premium-label"
+        data-mr="आमच्या माता"
+        data-en="Our Mothers">
+
         आमच्या माता
+
       </div>
 
-      <h2 class="premium-title"
-          data-mr="प्रत्येक आईची एक गोष्ट असते."
-          data-en="Every mother has a story.">
+
+      <h2
+        class="premium-title"
+        data-mr="प्रत्येक आईची एक गोष्ट असते."
+        data-en="Every mother has a story.">
 
         प्रत्येक आईची एक गोष्ट असते.
 
       </h2>
 
-      <p class="premium-copy"
-         data-mr="ओळख आणि गोपनीयतेचा पूर्ण आदर राखत, संमती दिलेल्या मातांच्या कहाण्या येथे प्रकाशित केल्या जातात."
-         data-en="With full respect for identity and privacy, only stories published with consent are shared here.">
+
+      <p
+        class="premium-copy"
+        data-mr="ओळख आणि गोपनीयतेचा पूर्ण आदर राखत, संमती दिलेल्या मातांच्या कहाण्या येथे प्रकाशित केल्या जातात."
+        data-en="With full respect for identity and privacy, only stories published with consent are shared here.">
 
         ओळख आणि गोपनीयतेचा पूर्ण आदर राखत, संमती दिलेल्या मातांच्या कहाण्या येथे प्रकाशित केल्या जातात.
 
@@ -1338,80 +2346,140 @@ h1,h2,h3,h4{
 
     </div>
 
+
     <div class="mothers-grid">
 
+
       <div class="mother-card reveal">
+
         <div class="mother-image">
-          <span data-mr="संमतीनंतर प्रकाशित"
-                data-en="Published after consent">
+
+          <span
+            data-mr="संमतीनंतर प्रकाशित"
+            data-en="Published after consent">
+
             संमतीनंतर प्रकाशित
+
           </span>
+
         </div>
+
 
         <div class="mother-content">
-          <h3 data-mr="एका आईची कहाणी"
-              data-en="A Mother's Story">
+
+          <h3
+            data-mr="एका आईची कहाणी"
+            data-en="A Mother's Story">
+
             एका आईची कहाणी
+
           </h3>
 
-          <p data-mr="संमती-मंजूर माहिती उपलब्ध झाल्यानंतर ही कहाणी येथे प्रकाशित केली जाईल."
-             data-en="This story will be published after consent-approved information is available.">
+
+          <p
+            data-mr="संमती-मंजूर माहिती उपलब्ध झाल्यानंतर ही कहाणी येथे प्रकाशित केली जाईल."
+            data-en="This story will be published after consent-approved information is available.">
+
             संमती-मंजूर माहिती उपलब्ध झाल्यानंतर ही कहाणी येथे प्रकाशित केली जाईल.
+
           </p>
+
         </div>
+
       </div>
 
+
       <div class="mother-card reveal">
+
         <div class="mother-image">
-          <span data-mr="संमतीनंतर प्रकाशित"
-                data-en="Published after consent">
+
+          <span
+            data-mr="संमतीनंतर प्रकाशित"
+            data-en="Published after consent">
+
             संमतीनंतर प्रकाशित
+
           </span>
+
         </div>
+
 
         <div class="mother-content">
-          <h3 data-mr="एका आईची कहाणी"
-              data-en="A Mother's Story">
+
+          <h3
+            data-mr="एका आईची कहाणी"
+            data-en="A Mother's Story">
+
             एका आईची कहाणी
+
           </h3>
 
-          <p data-mr="संमती-मंजूर माहिती उपलब्ध झाल्यानंतर ही कहाणी येथे प्रकाशित केली जाईल."
-             data-en="This story will be published after consent-approved information is available.">
+
+          <p
+            data-mr="संमती-मंजूर माहिती उपलब्ध झाल्यानंतर ही कहाणी येथे प्रकाशित केली जाईल."
+            data-en="This story will be published after consent-approved information is available.">
+
             संमती-मंजूर माहिती उपलब्ध झाल्यानंतर ही कहाणी येथे प्रकाशित केली जाईल.
+
           </p>
+
         </div>
+
       </div>
 
+
       <div class="mother-card reveal">
+
         <div class="mother-image">
-          <span data-mr="संमतीनंतर प्रकाशित"
-                data-en="Published after consent">
+
+          <span
+            data-mr="संमतीनंतर प्रकाशित"
+            data-en="Published after consent">
+
             संमतीनंतर प्रकाशित
+
           </span>
+
         </div>
+
 
         <div class="mother-content">
-          <h3 data-mr="एका आईची कहाणी"
-              data-en="A Mother's Story">
+
+          <h3
+            data-mr="एका आईची कहाणी"
+            data-en="A Mother's Story">
+
             एका आईची कहाणी
+
           </h3>
 
-          <p data-mr="संमती-मंजूर माहिती उपलब्ध झाल्यानंतर ही कहाणी येथे प्रकाशित केली जाईल."
-             data-en="This story will be published after consent-approved information is available.">
+
+          <p
+            data-mr="संमती-मंजूर माहिती उपलब्ध झाल्यानंतर ही कहाणी येथे प्रकाशित केली जाईल."
+            data-en="This story will be published after consent-approved information is available.">
+
             संमती-मंजूर माहिती उपलब्ध झाल्यानंतर ही कहाणी येथे प्रकाशित केली जाईल.
+
           </p>
+
         </div>
+
       </div>
 
     </div>
 
-    <div style="text-align:center;margin-top:35px;">
 
-      <a href="mothers.html"
-         class="premium-btn premium-btn-gold"
-         data-mr="सर्व माता पाहा"
-         data-en="View All Mothers">
+    <div
+      style="text-align:center;margin-top:35px;">
+
+      <a
+        href="mothers.html"
+        class="premium-btn premium-btn-gold"
+        data-mr="सर्व माता पाहा"
+        data-en="View All Mothers">
+
         सर्व माता पाहा
+
       </a>
 
     </div>
@@ -1429,17 +2497,23 @@ h1,h2,h3,h4{
 
   <div class="container">
 
+
     <div class="center-heading reveal">
 
-      <div class="premium-label"
-           data-mr="आमचा प्रभाव"
-           data-en="Our Impact">
+      <div
+        class="premium-label"
+        data-mr="आमचा प्रभाव"
+        data-en="Our Impact">
+
         आमचा प्रभाव
+
       </div>
 
-      <h2 class="premium-title"
-          data-mr="काळजी जी आकड्यांपेक्षा मोठी आहे."
-          data-en="Care that goes beyond numbers.">
+
+      <h2
+        class="premium-title"
+        data-mr="काळजी जी आकड्यांपेक्षा मोठी आहे."
+        data-en="Care that goes beyond numbers.">
 
         काळजी जी आकड्यांपेक्षा मोठी आहे.
 
@@ -1447,42 +2521,79 @@ h1,h2,h3,h4{
 
     </div>
 
+
     <div class="impact-grid">
 
+
       <div class="impact-box reveal">
-        <div class="impact-number">[XX]<span>+</span></div>
-        <div class="impact-label"
-             data-mr="आधार मिळालेल्या माता"
-             data-en="Mothers Supported">
+
+        <div class="impact-number">
+          [XX]<span>+</span>
+        </div>
+
+        <div
+          class="impact-label"
+          data-mr="आधार मिळालेल्या माता"
+          data-en="Mothers Supported">
+
           आधार मिळालेल्या माता
+
         </div>
+
       </div>
 
+
       <div class="impact-box reveal">
-        <div class="impact-number">[XX]<span>+</span></div>
-        <div class="impact-label"
-             data-mr="वाढलेले जेवण"
-             data-en="Meals Served">
+
+        <div class="impact-number">
+          [XX]<span>+</span>
+        </div>
+
+        <div
+          class="impact-label"
+          data-mr="वाढलेले जेवण"
+          data-en="Meals Served">
+
           वाढलेले जेवण
+
         </div>
+
       </div>
 
+
       <div class="impact-box reveal">
-        <div class="impact-number">[XX]<span>+</span></div>
-        <div class="impact-label"
-             data-mr="आरोग्य उपक्रम"
-             data-en="Health Activities">
+
+        <div class="impact-number">
+          [XX]<span>+</span>
+        </div>
+
+        <div
+          class="impact-label"
+          data-mr="आरोग्य उपक्रम"
+          data-en="Health Activities">
+
           आरोग्य उपक्रम
+
         </div>
+
       </div>
 
+
       <div class="impact-box reveal">
-        <div class="impact-number">[XX]<span>+</span></div>
-        <div class="impact-label"
-             data-mr="सेवेची वर्षे"
-             data-en="Years of Service">
-          सेवेची वर्षे
+
+        <div class="impact-number">
+          [XX]<span>+</span>
         </div>
+
+        <div
+          class="impact-label"
+          data-mr="सेवेची वर्षे"
+          data-en="Years of Service">
+
+          सेवेची वर्षे
+
+        </div>
+
       </div>
 
     </div>
@@ -1500,17 +2611,23 @@ h1,h2,h3,h4{
 
   <div class="container">
 
+
     <div class="center-heading reveal">
 
-      <div class="premium-label"
-           data-mr="सध्याच्या गरजा"
-           data-en="Current Needs">
+      <div
+        class="premium-label"
+        data-mr="सध्याच्या गरजा"
+        data-en="Current Needs">
+
         सध्याच्या गरजा
+
       </div>
 
-      <h2 class="premium-title"
-          data-mr="तुमची मदत कुठे उपयोगी पडते"
-          data-en="Where your support helps">
+
+      <h2
+        class="premium-title"
+        data-mr="तुमची मदत कुठे उपयोगी पडते"
+        data-en="Where your support helps">
 
         तुमची मदत कुठे उपयोगी पडते
 
@@ -1518,70 +2635,131 @@ h1,h2,h3,h4{
 
     </div>
 
+
     <div class="needs-grid">
 
+
       <div class="need-card reveal">
+
         <div>
-          <div class="need-icon">🍚</div>
-          <h3 data-mr="अन्न व किराणा"
-              data-en="Food & Groceries">
+
+          <div class="need-icon">
+            🍚
+          </div>
+
+          <h3
+            data-mr="अन्न व किराणा"
+            data-en="Food & Groceries">
+
             अन्न व किराणा
+
           </h3>
+
         </div>
 
-        <a href="donate.html"
-           data-mr="मदत करा →"
-           data-en="Support →">
+
+        <a
+          href="donate.html"
+          data-mr="मदत करा →"
+          data-en="Support →">
+
           मदत करा →
+
         </a>
+
       </div>
 
+
       <div class="need-card reveal">
+
         <div>
-          <div class="need-icon">💊</div>
-          <h3 data-mr="आरोग्यसेवा"
-              data-en="Healthcare">
+
+          <div class="need-icon">
+            💊
+          </div>
+
+          <h3
+            data-mr="आरोग्यसेवा"
+            data-en="Healthcare">
+
             आरोग्यसेवा
+
           </h3>
+
         </div>
 
-        <a href="donate.html"
-           data-mr="मदत करा →"
-           data-en="Support →">
+
+        <a
+          href="donate.html"
+          data-mr="मदत करा →"
+          data-en="Support →">
+
           मदत करा →
+
         </a>
+
       </div>
 
+
       <div class="need-card reveal">
+
         <div>
-          <div class="need-icon">🛏️</div>
-          <h3 data-mr="बेड व बेडिंग"
-              data-en="Beds & Bedding">
+
+          <div class="need-icon">
+            🛏️
+          </div>
+
+          <h3
+            data-mr="बेड व बेडिंग"
+            data-en="Beds & Bedding">
+
             बेड व बेडिंग
+
           </h3>
+
         </div>
 
-        <a href="donate.html"
-           data-mr="मदत करा →"
-           data-en="Support →">
+
+        <a
+          href="donate.html"
+          data-mr="मदत करा →"
+          data-en="Support →">
+
           मदत करा →
+
         </a>
+
       </div>
 
+
       <div class="need-card reveal">
+
         <div>
-          <div class="need-icon">☀️</div>
-          <h3 data-mr="सौर ऊर्जा"
-              data-en="Solar Energy">
+
+          <div class="need-icon">
+            ☀️
+          </div>
+
+          <h3
+            data-mr="सौर ऊर्जा"
+            data-en="Solar Energy">
+
             सौर ऊर्जा
+
           </h3>
+
         </div>
 
-        <a href="donate.html"
-           data-mr="मदत करा →"
-           data-en="Support →">
+
+        <a
+          href="donate.html"
+          data-mr="मदत करा →"
+          data-en="Support →">
+
           मदत करा →
+
         </a>
+
       </div>
 
     </div>
@@ -1599,17 +2777,23 @@ h1,h2,h3,h4{
 
   <div class="container feature-grid">
 
+
     <div class="reveal">
 
-      <div class="premium-label"
-           data-mr="सहभागी व्हा"
-           data-en="Get Involved">
+      <div
+        class="premium-label"
+        data-mr="सहभागी व्हा"
+        data-en="Get Involved">
+
         सहभागी व्हा
+
       </div>
 
-      <h2 class="premium-title"
-          data-mr="तुमचा वेळ, कौशल्य किंवा सहकार्य — कोणतीही मदत मौल्यवान आहे."
-          data-en="Your time, skills or support can make a difference.">
+
+      <h2
+        class="premium-title"
+        data-mr="तुमचा वेळ, कौशल्य किंवा सहकार्य — कोणतीही मदत मौल्यवान आहे."
+        data-en="Your time, skills or support can make a difference.">
 
         तुमचा वेळ, कौशल्य किंवा सहकार्य — कोणतीही मदत मौल्यवान आहे.
 
@@ -1617,50 +2801,79 @@ h1,h2,h3,h4{
 
     </div>
 
+
     <div>
+
 
       <div class="feature-card reveal">
 
-        <div class="feature-card-icon">🤝</div>
+        <div class="feature-card-icon">
+          🤝
+        </div>
 
-        <h3 data-mr="स्वयंसेवक व्हा"
-            data-en="Become a Volunteer">
+        <h3
+          data-mr="स्वयंसेवक व्हा"
+          data-en="Become a Volunteer">
+
           स्वयंसेवक व्हा
+
         </h3>
 
-        <p data-mr="मातांसोबत वेळ घालवा, उपक्रमांमध्ये मदत करा किंवा तुमच्या कौशल्याने योगदान द्या."
-           data-en="Spend time with the mothers, support activities or contribute your skills.">
+
+        <p
+          data-mr="मातांसोबत वेळ घालवा, उपक्रमांमध्ये मदत करा किंवा तुमच्या कौशल्याने योगदान द्या."
+          data-en="Spend time with the mothers, support activities or contribute your skills.">
+
           मातांसोबत वेळ घालवा, उपक्रमांमध्ये मदत करा किंवा तुमच्या कौशल्याने योगदान द्या.
+
         </p>
 
-        <a href="volunteer.html"
-           class="premium-btn premium-btn-light"
-           data-mr="स्वयंसेवक व्हा"
-           data-en="Volunteer With Us">
+
+        <a
+          href="volunteer.html"
+          class="premium-btn premium-btn-light"
+          data-mr="स्वयंसेवक व्हा"
+          data-en="Volunteer With Us">
+
           स्वयंसेवक व्हा
+
         </a>
 
       </div>
 
+
       <div class="feature-card reveal">
 
-        <div class="feature-card-icon">🏢</div>
+        <div class="feature-card-icon">
+          🏢
+        </div>
 
-        <h3 data-mr="CSR भागीदारी"
-            data-en="CSR Partnership">
+        <h3
+          data-mr="CSR भागीदारी"
+          data-en="CSR Partnership">
+
           CSR भागीदारी
+
         </h3>
 
-        <p data-mr="संस्था, कंपन्या आणि CSR विभागांसाठी अर्थपूर्ण भागीदारीच्या संधी."
-           data-en="Meaningful partnership opportunities for companies and CSR teams.">
+
+        <p
+          data-mr="संस्था, कंपन्या आणि CSR विभागांसाठी अर्थपूर्ण भागीदारीच्या संधी."
+          data-en="Meaningful partnership opportunities for companies and CSR teams.">
+
           संस्था, कंपन्या आणि CSR विभागांसाठी अर्थपूर्ण भागीदारीच्या संधी.
+
         </p>
 
-        <a href="csr.html"
-           class="premium-btn premium-btn-light"
-           data-mr="CSR बद्दल जाणून घ्या"
-           data-en="Explore CSR">
+
+        <a
+          href="csr.html"
+          class="premium-btn premium-btn-light"
+          data-mr="CSR बद्दल जाणून घ्या"
+          data-en="Explore CSR">
+
           CSR बद्दल जाणून घ्या
+
         </a>
 
       </div>
@@ -1680,11 +2893,16 @@ h1,h2,h3,h4{
 
   <div class="container">
 
-    <div class="premium-label"
-         data-mr="आजच मदत करा"
-         data-en="Help Today">
+
+    <div
+      class="premium-label"
+      data-mr="आजच मदत करा"
+      data-en="Help Today">
+
       आजच मदत करा
+
     </div>
+
 
     <h2
       data-mr="आपली छोटी मदत, एका आईसाठी मोठा आधार."
@@ -1695,6 +2913,7 @@ h1,h2,h3,h4{
 
     </h2>
 
+
     <p
       data-mr="तुमची देणगी अन्न, आरोग्यसेवा, निवास, आवश्यक वस्तू आणि वृद्ध मातांच्या दैनंदिन काळजीसाठी उपयोगी पडते."
       data-en="Your contribution supports food, healthcare, accommodation, essential supplies and daily care for elderly mothers.">
@@ -1703,11 +2922,15 @@ h1,h2,h3,h4{
 
     </p>
 
-    <a href="donate.html"
-       class="premium-btn premium-btn-gold"
-       data-mr="❤️ आत्ताच देणगी द्या"
-       data-en="❤️ Donate Now">
-      ❤️ आत्ताच देणगी द्या
+
+    <a
+      href="donate.html?purpose=new-mai-vriddhashram"
+      class="premium-btn premium-btn-gold"
+      data-mr="❤️ नवीन माई वृद्धाश्रमासाठी देणगी द्या"
+      data-en="❤️ Donate for New Mai Vriddhashram">
+
+      ❤️ नवीन माई वृद्धाश्रमासाठी देणगी द्या
+
     </a>
 
   </div>
@@ -1732,11 +2955,15 @@ h1,h2,h3,h4{
 
     </blockquote>
 
-    <cite>— माई वृद्धाश्रम</cite>
+
+    <cite>
+      — माई वृद्धाश्रम
+    </cite>
 
   </div>
 
 </section>
+
 
 </main>
 
@@ -1750,3 +2977,4 @@ h1,h2,h3,h4{
 
 </body>
 </html>
+```
