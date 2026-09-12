@@ -3267,12 +3267,12 @@ if (purposeMessage) {
                   );
 
 
-                 const verified =
+                const verified =
   await verifyPayment(
     response,
     amount,
     donor,
-    purpose || "new-mai-vriddhashram"
+    currentPurpose
   );
 
 
@@ -3283,6 +3283,7 @@ try {
     JSON.stringify({
       amount: amount,
       donor: donor,
+      purpose: currentPurpose,
       order_id: verified.order_id || response.razorpay_order_id,
       payment_id: verified.payment_id || response.razorpay_payment_id,
       payment_date: new Date().toISOString()
@@ -3484,11 +3485,11 @@ successBox.innerHTML = `
 
             try {
 
-             const orderData =
+           const orderData =
   await createRazorpayOrder(
     amount,
     donor,
-    purpose || "new-mai-vriddhashram"
+    currentPurpose
   );
 
 
