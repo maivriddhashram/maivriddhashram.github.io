@@ -2401,36 +2401,46 @@ const purposeData = {
     mr: "आपण सुरक्षित निवासासाठी देणगी देत आहात.",
     en: "You are donating to support safe accommodation."
   },
+
   food: {
     mr: "आपण पौष्टिक आहारासाठी देणगी देत आहात.",
     en: "You are donating to support nutritious food."
   },
+
   healthcare: {
     mr: "आपण आरोग्य सहाय्यासाठी देणगी देत आहात.",
     en: "You are donating to support healthcare."
   },
+
   yoga: {
     mr: "आपण योग व ध्यानासाठी देणगी देत आहात.",
     en: "You are donating to support yoga and meditation."
   },
+
   companionship: {
     mr: "आपण सहचर्य आणि आपुलकीसाठी देणगी देत आहात.",
     en: "You are donating to support companionship and care."
   },
+
   dignity: {
     mr: "आपण सन्मान, प्रेम आणि आपलेपणासाठी देणगी देत आहात.",
     en: "You are donating to support dignity, love and belonging."
+  },
+
+  "new-mai-vriddhashram": {
+    mr: "आपण नवीन माई वृद्धाश्रम प्रकल्पासाठी देणगी देत आहात.",
+    en: "You are donating to support the new Mai Vriddhashram project."
   }
 };
-new-mai-vriddhashram: {
-  mr: "आपण नवीन माई वृद्धाश्रम प्रकल्पासाठी देणगी देत आहात.",
-  en: "You are donating to support the new Mai Vriddhashram project."
-}
-if (purposeMessage && purposeData[purpose]) {
-  purposeMessage.querySelector("p").textContent =
-    purposeData[purpose].mr;
-}
+     const currentPurpose =
+  purposeData[purpose]
+    ? purpose
+    : "new-mai-vriddhashram";
 
+if (purposeMessage) {
+  purposeMessage.querySelector("p").textContent =
+    purposeData[currentPurpose].mr;
+}
         /* =====================================================
            SUPABASE FUNCTION URLS
         ===================================================== */
