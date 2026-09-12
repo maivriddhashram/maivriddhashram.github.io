@@ -3146,10 +3146,11 @@ if (purposeMessage) {
         ===================================================== */
 
         function openRazorpayCheckout(
-          orderData,
-          donor,
-          amount
-        ) {
+  orderData,
+  donor,
+  amount,
+  purpose
+) {
 
           if (
             typeof Razorpay ===
@@ -3495,12 +3496,12 @@ successBox.innerHTML = `
                 "सुरक्षित Razorpay Payment Window उघडत आहे...";
 
 
-              openRazorpayCheckout(
-                orderData,
-                donor,
-                amount
-              );
-
+             openRazorpayCheckout(
+  orderData,
+  donor,
+  amount,
+  currentPurpose
+);
 
             } catch (error) {
 
