@@ -8,6 +8,598 @@
 
 
 /* ------------------------------------------------------------
+   NEW MAI VRIDDHASHRAM FUNDRAISING
+------------------------------------------------------------ */
+
+/*
+ * Estimated project requirement:
+ * ₹20,00,00,000 = ₹20 Crore
+ */
+const FUNDRAISING_GOAL = 200000000;
+
+
+/*
+ * Public Supabase Edge Function
+ *
+ * IMPORTANT:
+ * This endpoint will be created separately.
+ * It should return only safe public fundraising data.
+ */
+const FUNDRAISING_STATS_URL =
+  "https://ktgqxfmjhfqpkezgqegv.supabase.co/functions/v1/public-fundraising";
+
+
+/*
+ * Indian currency formatter
+ */
+function formatIndianCurrency(amount){
+
+  const value =
+    Number(amount) || 0;
+
+  return "₹" +
+    new Intl.NumberFormat("en-IN", {
+      maximumFractionDigits: 0
+    }).format(value);
+
+}
+
+
+/*
+ * Get current website language
+ */
+function getCurrentLanguage(){
+
+  return document.documentElement
+    .getAttribute("data-lang") === "mr"
+    ? "mr"
+    : "en";
+
+}
+
+
+/*
+ * Update fundraising status message
+ */
+function setFundraisingStatus(message){
+
+  const status =
+    document.getElementById("maiProjectStatus");
+
+  if(status){
+
+    status.textContent =
+      message || "";
+
+  }
+
+}
+
+
+/*
+ * Render supporter list safely
+ *
+ * IMPORTANT:
+ * Donor information is inserted using textContent.
+ * No donor-supplied HTML is rendered.
+ */
+function renderFundraisingSupporters(supporters){
+
+  const list =
+    document.getElementById("maiProjectSupporters");
+
+  if(!list) return;
+
+
+  /*
+   * Clear existing content
+   */
+  list.innerHTML = "";
+
+
+  /*
+   * No supporters
+   */
+  if(
+    !Array.isArray(supporters) ||
+    supporters.length === 0
+  ){
+
+    const empty =
+      document.createElement("div");
+
+    empty.className =
+      "supporter-row supporter-empty";
+
+
+    const lang =
+      getCurrentLanguage();
+
+
+    empty.textContent =
+      lang === "mr"
+        ? "आपले समर्थक लवकरच येथे दिसतील."
+        : "Our supporters will appear here soon.";
+
+
+    list.appendChild(empty);
+
+    return;
+
+  }
+
+
+  /*
+   * Display maximum 20 public supporters
+   */
+  supporters
+    .slice(0, 20)
+    .forEach(supporter => {
+
+      if(!supporter) return;
+
+
+      const row =
+        document.createElement("div");
+
+      row.className =
+        "supporter-row";
+
+
+      /*
+       * NAME
+       */
+      const name =
+        document.createElement("div");
+
+      name.className =
+        "supporter-name";
+
+      name.textContent =
+        supporter.name ||
+        (
+          getCurrentLanguage() === "mr"
+            ? "एक समर्थक"
+            : "A Supporter"
+        );
+
+
+      /*
+       * DATE
+       */
+      const date =
+        document.createElement("div");
+
+      date.className =
+        "supporter-date";
+
+
+      if(supporter.date){
+
+        const parsedDate =
+          new Date(supporter.date);
+
+
+        if(!isNaN(parsedDate.getTime())){
+
+          date.textContent =
+            parsedDate.toLocaleDateString(
+              "en-IN",
+              {
+                day: "2-digit",
+                month: "short",
+                year: "numeric"
+              }
+            );
+
+        }
+
+      }
+
+
+      /*
+       * AMOUNT
+       */
+      const amount =
+        document.createElement("div");
+
+      amount.className =
+        "supporter-amount";
+
+      amount.textContent =
+        formatIndianCurrency(
+          supporter.amount
+        );
+
+
+      /*
+       * Details wrapper
+       */
+      const details =
+        document.createElement("div");
+
+      details.className =
+        "supporter-details";
+
+      details.appendChild(name);
+
+
+      if(date.textContent){
+
+        details.appendChild(date);
+
+      }
+
+
+      row.appendChild(details);
+      row.appendChild(amount);
+
+      list.appendChild(row);
+
+    });
+
+}
+
+
+/*
+ * Initialize live fundraising section
+ */
+async function initFundraising(){
+
+  const raisedEl =
+    document.getElementById("maiProjectRaised");
+
+  /*
+   * If fundraising section does not exist
+   * on the current page, do nothing.
+   */
+  if(!raisedEl) return;
+
+
+  const remainingEl =
+    document.getElementById(
+      "maiProjectRemaining"
+    );
+
+
+  const percentEl =
+    document.getElementById(
+      "maiProjectPercent"
+    );
+
+
+  const progressEl =
+    document.getElementById(
+      "maiProjectProgress"
+    );
+
+
+  const totalEl =
+    document.getElementById(
+      "maiProjectTotal"
+    );
+
+
+  /*
+   * Initial loading state
+   */
+  raisedEl.textContent = "—";
+
+
+  if(remainingEl){
+
+    remainingEl.textContent = "—";
+
+  }
+
+
+  if(percentEl){
+
+    percentEl.textContent = "—";
+
+  }
+
+
+  if(totalEl){
+
+    totalEl.textContent = "—";
+
+  }
+
+
+  if(progressEl){
+
+    progressEl.style.width = "0%";
+
+    progressEl.setAttribute(
+      "aria-valuenow",
+      "0"
+    );
+
+    progressEl.setAttribute(
+      "aria-valuemin",
+      "0"
+    );
+
+    progressEl.setAttribute(
+      "aria-valuemax",
+      "100"
+    );
+
+  }
+
+
+  /*
+   * Show loading message
+   */
+  const lang =
+    getCurrentLanguage();
+
+
+  setFundraisingStatus(
+    lang === "mr"
+      ? "देणगीची माहिती लोड होत आहे..."
+      : "Loading live contribution data..."
+  );
+
+
+  /*
+   * Fetch public fundraising data
+   */
+  try{
+
+    const response =
+      await fetch(
+        FUNDRAISING_STATS_URL,
+        {
+          method: "GET",
+          headers: {
+            "Accept": "application/json"
+          },
+          cache: "no-store"
+        }
+      );
+
+
+    if(!response.ok){
+
+      throw new Error(
+        "Fundraising endpoint returned " +
+        response.status
+      );
+
+    }
+
+
+    const data =
+      await response.json();
+
+
+    if(
+      !data ||
+      data.success !== true
+    ){
+
+      throw new Error(
+        "Invalid fundraising response"
+      );
+
+    }
+
+
+    /*
+     * Always calculate the final values
+     * from the returned raised amount.
+     *
+     * Do not blindly trust percentage
+     * or remaining amount from the API.
+     */
+    const raised =
+      Math.max(
+        0,
+        Number(data.raised) || 0
+      );
+
+
+    const goal =
+      FUNDRAISING_GOAL;
+
+
+    const remaining =
+      Math.max(
+        goal - raised,
+        0
+      );
+
+
+    const percent =
+      Math.min(
+        (raised / goal) * 100,
+        100
+      );
+
+
+    /*
+     * Update Amount Raised
+     */
+    raisedEl.textContent =
+      formatIndianCurrency(raised);
+
+
+    /*
+     * Update Remaining
+     */
+    if(remainingEl){
+
+      remainingEl.textContent =
+        formatIndianCurrency(remaining);
+
+    }
+
+
+    /*
+     * Update percentage
+     */
+    if(percentEl){
+
+      percentEl.textContent =
+        percent.toLocaleString(
+          "en-IN",
+          {
+            minimumFractionDigits:
+              percent > 0 && percent < 1
+                ? 2
+                : 0,
+            maximumFractionDigits: 2
+          }
+        ) + "% funded";
+
+    }
+
+
+    /*
+     * Update progress bar
+     */
+    if(progressEl){
+
+      progressEl.style.width =
+        percent + "%";
+
+
+      progressEl.setAttribute(
+        "aria-valuenow",
+        String(
+          Number(
+            percent.toFixed(2)
+          )
+        )
+      );
+
+    }
+
+
+    /*
+     * Total contributions
+     *
+     * This is the same aggregate amount
+     * as raised unless the endpoint
+     * intentionally returns another value.
+     */
+    if(totalEl){
+
+      const totalContributions =
+        Number(
+          data.total_contributions
+        );
+
+
+      totalEl.textContent =
+        formatIndianCurrency(
+          Number.isFinite(
+            totalContributions
+          )
+            ? totalContributions
+            : raised
+        );
+
+    }
+
+
+    /*
+     * Render public-consent supporters
+     */
+    renderFundraisingSupporters(
+      Array.isArray(data.supporters)
+        ? data.supporters
+        : []
+    );
+
+
+    /*
+     * Success status
+     */
+    setFundraisingStatus(
+      lang === "mr"
+        ? "देणगीची माहिती अद्ययावत आहे."
+        : "Live contribution data is updated."
+    );
+
+
+  }
+  catch(error){
+
+    console.error(
+      "Fundraising data error:",
+      error
+    );
+
+
+    /*
+     * Keep the goal visible even
+     * if live data cannot be loaded.
+     */
+    raisedEl.textContent =
+      "—";
+
+
+    if(remainingEl){
+
+      remainingEl.textContent =
+        "—";
+
+    }
+
+
+    if(percentEl){
+
+      percentEl.textContent =
+        "—";
+
+    }
+
+
+    if(totalEl){
+
+      totalEl.textContent =
+        "—";
+
+    }
+
+
+    if(progressEl){
+
+      progressEl.style.width =
+        "0%";
+
+      progressEl.setAttribute(
+        "aria-valuenow",
+        "0"
+      );
+
+    }
+
+
+    /*
+     * Safe user-facing error
+     */
+    setFundraisingStatus(
+      lang === "mr"
+        ? "सध्या देणगीची थेट माहिती उपलब्ध नाही. कृपया काही वेळाने पुन्हा पहा."
+        : "Live contribution data is temporarily unavailable. Please check again later."
+    );
+
+
+    /*
+     * Keep supporter area safe
+     */
+    renderFundraisingSupporters([]);
+
+  }
+
+}
+
+
+/* ------------------------------------------------------------
    ANIMATED IMPACT COUNTERS
 ------------------------------------------------------------ */
 function initCounters(){
@@ -681,5 +1273,11 @@ function initPage(){
   initDonationDetails();
 
   initDonationAmounts();
+
+  /*
+   * New Mai Vriddhashram
+   * live fundraising section
+   */
+  initFundraising();
 
 }
