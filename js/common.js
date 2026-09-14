@@ -37,7 +37,12 @@
   alt="माई वृद्धाश्रम Logo"
 >
 
-          <span class="brand-name" data-mr="माई वृद्धाश्रम" data-en="Mai Vriddhashram">माई वृद्धाश्रम<small data-mr="बोधी ट्री एज्युकेशनल फाउंडेशन" data-en="Bodhi Tree Educational Foundation">बोधी ट्री एज्युकेशनल फाउंडेशन</small></span>
+          <span class="brand-name" data-mr="माई वृद्धाश्रम" data-en="Mai Vriddhashram">माई वृद्धाश्रम<small
+  data-mr="NGO Bodhi Tree Educational Foundation"
+  data-en="NGO Bodhi Tree Educational Foundation">
+  NGO Bodhi Tree Educational Foundation
+</small>
+</span>
         </a>
         <nav class="main-nav" aria-label="Primary">${links}</nav>
         <div class="header-actions">
@@ -83,7 +88,11 @@
               </svg>
               <span class="brand-name" style="color:var(--ivory);" data-mr="माई वृद्धाश्रम" data-en="Mai Vriddhashram">माई वृद्धाश्रम</span>
             </div>
-            <p data-mr="बोधी ट्री एज्युकेशनल फाउंडेशन द्वारा संचालित" data-en="Run by Bodhi Tree Educational Foundation">बोधी ट्री एज्युकेशनल फाउंडेशन द्वारा संचालित</p>
+            <p
+  data-mr="NGO Bodhi Tree Educational Foundation द्वारा संचालित"
+  data-en="Run by NGO Bodhi Tree Educational Foundation">
+  NGO Bodhi Tree Educational Foundation द्वारा संचालित
+</p>
             <div class="social-row">
               <a href="${/^\[/.test(SITE_CONFIG.instagram)?'#':SITE_CONFIG.instagram}" aria-label="Instagram">📷</a>
               <a href="${/^\[/.test(SITE_CONFIG.facebook)?'#':SITE_CONFIG.facebook}" aria-label="Facebook">📘</a>
