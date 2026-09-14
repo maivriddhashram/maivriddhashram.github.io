@@ -2224,3 +2224,13 @@ footer h4{
 /* ============================================================
    END — MAI VRIDDHASHRAM RESPONSIVE CSS
    ============================================================ */
+/* Fix Devanagari conjunct rendering for ट्री */
+.brand-name,
+.brand-name small,
+.site-footer p {
+  font-family: 'Noto Sans Devanagari', sans-serif !important;
+  font-variant-ligatures: none !important;
+  font-feature-settings: "liga" 0, "clig" 0 !important;
+  letter-spacing: 0 !important;
+  word-spacing: 0 !important;
+}
