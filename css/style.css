@@ -507,7 +507,7 @@ header.site-header,
   margin-top:2px;
   color:var(--premium-gold-light);
 
-  font-family:"Noto Serif Devanagari", serif;
+  font-family:'Noto Sans Devanagari', sans-serif;
   font-size:.72rem;
   font-weight:500;
   line-height:1.4;
