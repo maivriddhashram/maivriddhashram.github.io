@@ -55,7 +55,7 @@ body{
   padding:0;
   background:var(--premium-cream);
   color:#25313B;
-  font-family:'Work Sans','Noto Sans Devanagari',sans-serif;
+  font-family:'Noto Sans Devanagari',sans-serif;
   line-height:1.65;
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
