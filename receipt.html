@@ -2761,18 +2761,193 @@
        RECEIPT DATA
   ====================================================== -->
 
-  <script>
+ <script>
 
-    document.addEventListener(
-      "DOMContentLoaded",
-      function () {
+  /*
+   * =====================================================
+   * RECEIPT DATA
+   * Server verified receipt + sessionStorage fallback
+   * =====================================================
+   */
 
-        let donationData = null;
+  const RECEIPT_FUNCTION_URL =
+    "https://ktgqxfmjhfqpkezgqegv.supabase.co/functions/v1/public-receipt";
 
 
-        /* =================================================
-           LOAD DONATION DATA
-        ================================================= */
+  document.addEventListener(
+    "DOMContentLoaded",
+    async function () {
+
+      let donationData = null;
+
+
+      /*
+       * =================================================
+       * STEP 1
+       * Get payment_id from URL
+       *
+       * Example:
+       * receipt.html?payment_id=pay_xxxxxxxxx
+       * =================================================
+       */
+
+      const urlParams =
+        new URLSearchParams(
+          window.location.search
+        );
+
+
+      const paymentIdFromUrl =
+        urlParams.get("payment_id");
+
+
+      /*
+       * =================================================
+       * STEP 2
+       * If payment_id exists, get verified receipt
+       * directly from Supabase
+       * =================================================
+       */
+
+      if (paymentIdFromUrl) {
+
+        try {
+
+          const response =
+            await fetch(
+              RECEIPT_FUNCTION_URL,
+              {
+                method: "POST",
+
+                headers: {
+                  "Content-Type":
+                    "application/json"
+                },
+
+                body: JSON.stringify({
+                  payment_id:
+                    paymentIdFromUrl
+                })
+              }
+            );
+
+
+          const result =
+            await response.json();
+
+
+          if (
+            response.ok &&
+            result.success &&
+            result.donation
+          ) {
+
+            const serverDonation =
+              result.donation;
+
+
+            /*
+             * Convert database format
+             * into existing receipt format
+             */
+
+            donationData = {
+
+              amount:
+                serverDonation.amount,
+
+              donor: {
+
+                name:
+                  serverDonation.donor_name,
+
+                email:
+                  serverDonation.donor_email,
+
+                phone:
+                  serverDonation.donor_phone,
+
+                pan:
+                  serverDonation.donor_pan,
+
+                address:
+                  serverDonation.donor_address,
+
+                request80G:
+                  serverDonation.request_80g,
+
+                publicConsent:
+                  serverDonation.public_consent
+
+              },
+
+              purpose:
+                serverDonation.purpose,
+
+              order_id:
+                serverDonation.order_id,
+
+              payment_id:
+                serverDonation.payment_id,
+
+              receipt_number:
+                serverDonation.receipt_number,
+
+              payment_date:
+                serverDonation.created_at
+
+            };
+
+
+            /*
+             * Save the verified receipt locally
+             * as a secondary fallback.
+             */
+
+            try {
+
+              sessionStorage.setItem(
+                "successfulDonation",
+                JSON.stringify(
+                  donationData
+                )
+              );
+
+            } catch (storageError) {
+
+              console.warn(
+                "Could not save receipt locally:",
+                storageError
+              );
+
+            }
+
+          }
+
+        } catch (error) {
+
+          console.error(
+            "Server receipt loading error:",
+            error
+          );
+
+        }
+
+      }
+
+
+      /*
+       * =================================================
+       * STEP 3
+       * Fallback to sessionStorage
+       *
+       * This keeps the existing PC flow working.
+       * =================================================
+       */
+
+      if (
+        !donationData
+      ) {
 
         try {
 
@@ -2792,294 +2967,331 @@
         } catch (error) {
 
           console.error(
-            "Receipt data error:",
+            "Receipt local data error:",
             error
           );
 
         }
 
+      }
 
-        /* =================================================
-           CHECK DONATION
-        ================================================= */
 
-        if (
-          !donationData ||
-          !donationData.donor
-        ) {
+      /*
+       * =================================================
+       * STEP 4
+       * Check donation data
+       * =================================================
+       */
 
-          document.getElementById(
-            "receiptWrapper"
-          ).innerHTML = `
+      if (
+        !donationData ||
+        !donationData.donor
+      ) {
 
-            <div class="receipt-error">
+        document.getElementById(
+          "receiptWrapper"
+        ).innerHTML = `
 
-              <div style="font-size:45px;">
-                ⚠️
-              </div>
+          <div class="receipt-error">
 
-              <h2>
-                पावतीची माहिती उपलब्ध नाही
-              </h2>
-
-              <p>
-                कृपया पेमेंट यशस्वी झाल्यानंतर
-                पावती उघडा.
-              </p>
-
-              <br>
-
-              <button
-                type="button"
-                class="btn btn-primary"
-                onclick="window.location.href='donate.html'"
-              >
-                ❤️ देणगी पृष्ठावर जा
-              </button>
-
+            <div style="font-size:45px;">
+              ⚠️
             </div>
 
-          `;
+            <h2>
+              पावतीची माहिती उपलब्ध नाही
+            </h2>
 
-          return;
+            <p>
+              पेमेंटची पडताळलेली पावती माहिती
+              उपलब्ध झाली नाही.
+            </p>
 
-        }
+            <p style="font-size:12px;color:#746c65;">
+              कृपया काही क्षणांनी पुन्हा प्रयत्न करा.
+            </p>
 
+            <br>
 
-        /* =================================================
-           DONOR
-        ================================================= */
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="window.location.href='donate.html'"
+            >
+              ❤️ देणगी पृष्ठावर जा
+            </button>
 
-        const donor =
-          donationData.donor || {};
+          </div>
 
+        `;
 
-        /* =================================================
-           AMOUNT
-        ================================================= */
-
-        const amount =
-          Number(
-            donationData.amount
-          ) || 0;
-
-
-        const formattedAmount =
-          "₹" +
-          amount.toLocaleString(
-            "en-IN"
-          );
-
-
-        /* =================================================
-           PAYMENT
-        ================================================= */
-
-        const paymentId =
-          donationData.payment_id ||
-          "-";
-
-
-        const orderId =
-          donationData.order_id ||
-          "-";
-
-
-        /* =================================================
-           RECEIPT NUMBER
-        ================================================= */
-
-        let receiptNumber;
-
-
-        if (donationData.receipt_number) {
-
-          receiptNumber =
-            donationData.receipt_number;
-
-        } else {
-
-          receiptNumber =
-            "MV-" +
-            Date.now();
-
-        }
-
-
-        document.getElementById(
-          "receiptNumber"
-        ).textContent =
-          receiptNumber;
-
-
-        /* =================================================
-           AMOUNT
-        ================================================= */
-
-        document.getElementById(
-          "receiptAmount"
-        ).textContent =
-          formattedAmount;
-
-
-        document.getElementById(
-          "receiptAmountTable"
-        ).textContent =
-          formattedAmount;
-
-
-        document.getElementById(
-          "letterAmount"
-        ).textContent =
-          formattedAmount;
-
-
-        /* =================================================
-           DONOR DETAILS
-        ================================================= */
-
-        document.getElementById(
-          "receiptName"
-        ).textContent =
-          donor.name ||
-          "-";
-
-
-        document.getElementById(
-          "receiptPhone"
-        ).textContent =
-          donor.phone ||
-          "-";
-
-
-        document.getElementById(
-          "receiptEmail"
-        ).textContent =
-          donor.email ||
-          "-";
-
-
-        document.getElementById(
-          "receiptPan"
-        ).textContent =
-          donor.pan ||
-          "-";
-
-
-        document.getElementById(
-          "receiptAddress"
-        ).textContent =
-          donor.address ||
-          "-";
-
-
-        document.getElementById(
-          "letterName"
-        ).textContent =
-          donor.name ||
-          "देणगीदार";
-
-
-        /* =================================================
-           PAYMENT IDS
-        ================================================= */
-
-        document.getElementById(
-          "receiptPaymentId"
-        ).textContent =
-          paymentId;
-
-
-        document.getElementById(
-          "receiptOrderId"
-        ).textContent =
-          orderId;
-
-
-        /* =================================================
-           PAYMENT DATE
-        ================================================= */
-
-        let paymentDate =
-          new Date(
-            donationData.payment_date
-          );
-
-
-        if (
-          isNaN(
-            paymentDate.getTime()
-          )
-        ) {
-
-          paymentDate =
-            new Date();
-
-        }
-
-
-        const dateText =
-          paymentDate.toLocaleDateString(
-            "en-IN",
-            {
-              day: "2-digit",
-              month: "2-digit",
-              year: "numeric"
-            }
-          );
-
-
-        const timeText =
-          paymentDate.toLocaleTimeString(
-            "en-IN",
-            {
-              hour: "2-digit",
-              minute: "2-digit"
-            }
-          );
-
-
-        document.getElementById(
-          "receiptDate"
-        ).textContent =
-          dateText +
-          " | " +
-          timeText;
-
-
-        /* =================================================
-           80G
-        ================================================= */
-
-        document.getElementById(
-          "receipt80G"
-        ).textContent =
-          donor.request80G
-            ? "होय"
-            : "नाही";
-
-
-        /* =================================================
-           HIDE PAN WHEN EMPTY
-        ================================================= */
-
-        if (
-          !donor.pan ||
-          String(donor.pan).trim() === ""
-        ) {
-
-          document.getElementById(
-            "panRow"
-          ).style.display =
-            "none";
-
-        }
+        return;
 
       }
 
-    );
 
-  </script>
+      /*
+       * =================================================
+       * DONOR
+       * =================================================
+       */
+
+      const donor =
+        donationData.donor || {};
+
+
+      /*
+       * =================================================
+       * AMOUNT
+       * =================================================
+       */
+
+      const amount =
+        Number(
+          donationData.amount
+        ) || 0;
+
+
+      const formattedAmount =
+        "₹" +
+        amount.toLocaleString(
+          "en-IN"
+        );
+
+
+      /*
+       * =================================================
+       * PAYMENT
+       * =================================================
+       */
+
+      const paymentId =
+        donationData.payment_id ||
+        "-";
+
+
+      const orderId =
+        donationData.order_id ||
+        "-";
+
+
+      /*
+       * =================================================
+       * RECEIPT NUMBER
+       * =================================================
+       */
+
+      let receiptNumber;
+
+
+      if (
+        donationData.receipt_number
+      ) {
+
+        receiptNumber =
+          donationData.receipt_number;
+
+      } else {
+
+        /*
+         * Old/local receipt fallback.
+         * Normally the server will provide
+         * the permanent receipt number.
+         */
+
+        receiptNumber =
+          "MV-" +
+          Date.now();
+
+      }
+
+
+      document.getElementById(
+        "receiptNumber"
+      ).textContent =
+        receiptNumber;
+
+
+      /*
+       * =================================================
+       * AMOUNT
+       * =================================================
+       */
+
+      document.getElementById(
+        "receiptAmount"
+      ).textContent =
+        formattedAmount;
+
+
+      document.getElementById(
+        "receiptAmountTable"
+      ).textContent =
+        formattedAmount;
+
+
+      document.getElementById(
+        "letterAmount"
+      ).textContent =
+        formattedAmount;
+
+
+      /*
+       * =================================================
+       * DONOR DETAILS
+       * =================================================
+       */
+
+      document.getElementById(
+        "receiptName"
+      ).textContent =
+        donor.name ||
+        "-";
+
+
+      document.getElementById(
+        "receiptPhone"
+      ).textContent =
+        donor.phone ||
+        "-";
+
+
+      document.getElementById(
+        "receiptEmail"
+      ).textContent =
+        donor.email ||
+        "-";
+
+
+      document.getElementById(
+        "receiptPan"
+      ).textContent =
+        donor.pan ||
+        "-";
+
+
+      document.getElementById(
+        "receiptAddress"
+      ).textContent =
+        donor.address ||
+        "-";
+
+
+      document.getElementById(
+        "letterName"
+      ).textContent =
+        donor.name ||
+        "देणगीदार";
+
+
+      /*
+       * =================================================
+       * PAYMENT IDS
+       * =================================================
+       */
+
+      document.getElementById(
+        "receiptPaymentId"
+      ).textContent =
+        paymentId;
+
+
+      document.getElementById(
+        "receiptOrderId"
+      ).textContent =
+        orderId;
+
+
+      /*
+       * =================================================
+       * PAYMENT DATE
+       * =================================================
+       */
+
+      let paymentDate =
+        new Date(
+          donationData.payment_date
+        );
+
+
+      if (
+        isNaN(
+          paymentDate.getTime()
+        )
+      ) {
+
+        paymentDate =
+          new Date();
+
+      }
+
+
+      const dateText =
+        paymentDate.toLocaleDateString(
+          "en-IN",
+          {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric"
+          }
+        );
+
+
+      const timeText =
+        paymentDate.toLocaleTimeString(
+          "en-IN",
+          {
+            hour: "2-digit",
+            minute: "2-digit"
+          }
+        );
+
+
+      document.getElementById(
+        "receiptDate"
+      ).textContent =
+        dateText +
+        " | " +
+        timeText;
+
+
+      /*
+       * =================================================
+       * 80G
+       * =================================================
+       */
+
+      document.getElementById(
+        "receipt80G"
+      ).textContent =
+        donor.request80G
+          ? "होय"
+          : "नाही";
+
+
+      /*
+       * =================================================
+       * HIDE PAN WHEN EMPTY
+       * =================================================
+       */
+
+      if (
+        !donor.pan ||
+        String(donor.pan).trim() === ""
+      ) {
+
+        document.getElementById(
+          "panRow"
+        ).style.display =
+          "none";
+
+      }
+
+    }
+
+  );
+
+</script>
 
 
 </body>
