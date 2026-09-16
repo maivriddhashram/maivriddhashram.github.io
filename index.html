@@ -2959,7 +2959,77 @@ h1,h2,h3,h4{
 <script src="config.js"></script>
 <script src="js/common.js"></script>
 <script src="js/main.js"></script>
+<script>
+  async function loadMaiFundraisingTotal() {
+    try {
+      const response = await fetch(
+        "https://ktgqxfmjhfqpkezgqegv.supabase.co/functions/v1/public-fundraising-total",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({})
+        }
+      );
 
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        throw new Error("Unable to load fundraising total");
+      }
+
+      const total = Number(data.total || 0);
+      const goal = Number(data.goal || 200000000);
+      const percentage = Number(data.percentage || 0);
+
+      const raisedElement =
+        document.getElementById("maiProjectRaised");
+
+      const percentElement =
+        document.getElementById("maiProjectPercent");
+
+      const remainingElement =
+        document.getElementById("maiProjectRemaining");
+
+      const progressElement =
+        document.getElementById("maiProjectProgress");
+
+      if (raisedElement) {
+        raisedElement.textContent =
+          "₹" + total.toLocaleString("en-IN");
+      }
+
+      if (percentElement) {
+        percentElement.textContent =
+          percentage.toFixed(2) + "%";
+      }
+
+      if (remainingElement) {
+        const remaining = Math.max(goal - total, 0);
+
+        remainingElement.textContent =
+          "₹" + remaining.toLocaleString("en-IN");
+      }
+
+      if (progressElement) {
+        progressElement.style.width =
+          Math.min(percentage, 100) + "%";
+      }
+
+    } catch (error) {
+      console.error(
+        "Fundraising total error:",
+        error
+      );
+    }
+  }
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    loadMaiFundraisingTotal
+  );
+</script>
 </body>
 </html>
-```
+
