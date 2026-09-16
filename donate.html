@@ -3278,17 +3278,18 @@ if (purposeMessage) {
 
                  // Save successful payment information
 try {
-  sessionStorage.setItem(
-    "successfulDonation",
-    JSON.stringify({
-      amount: amount,
-      donor: donor,
-      purpose: currentPurpose,
-      order_id: verified.order_id || response.razorpay_order_id,
-      payment_id: verified.payment_id || response.razorpay_payment_id,
-      payment_date: new Date().toISOString()
-    })
-  );
+ sessionStorage.setItem(
+  "successfulDonation",
+  JSON.stringify({
+    amount: amount,
+    donor: donor,
+    purpose: currentPurpose,
+    order_id: verified.order_id || response.razorpay_order_id,
+    payment_id: verified.payment_id || response.razorpay_payment_id,
+    payment_date: new Date().toISOString(),
+    receipt_number: verified.receipt_number || null
+  })
+);
 } catch (error) {
   console.error("Could not save receipt data:", error);
 }
@@ -3305,12 +3306,12 @@ successBox.innerHTML = `
   पेमेंट यशस्वी झाले आहे.<br><br>
 
   <button
-    type="button"
-    class="btn btn-primary"
-    onclick="window.location.href='receipt.html'"
-  >
-    🧾 पावती व आभार पत्र पहा
-  </button>
+  type="button"
+  class="btn btn-primary"
+  onclick="openDonationReceipt()"
+>
+  🧾 पावती व आभार पत्र पहा
+</button>
 `;
 
 
@@ -3874,7 +3875,42 @@ successBox.innerHTML = `
 
       }
     );
+function openDonationReceipt() {
+  try {
+    const saved =
+      sessionStorage.getItem("successfulDonation");
 
+    if (!saved) {
+      window.location.href = "receipt.html";
+      return;
+    }
+
+    const donation =
+      JSON.parse(saved);
+
+    const paymentId =
+      donation.payment_id;
+
+    if (!paymentId) {
+      window.location.href = "receipt.html";
+      return;
+    }
+
+    window.location.href =
+      "receipt.html?payment_id=" +
+      encodeURIComponent(paymentId);
+
+  } catch (error) {
+
+    console.error(
+      "Receipt navigation error:",
+      error
+    );
+
+    window.location.href =
+      "receipt.html";
+  }
+}
   </script>
 
 </body>
