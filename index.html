@@ -3013,8 +3013,28 @@ h1,h2,h3,h4{
       }
 
       if (progressElement) {
-        progressElement.style.width =
-          Math.min(percentage, 100) + "%";
+
+        const finalProgress =
+          Math.min(percentage, 100);
+
+        // सुरुवात 0% पासून
+        progressElement.style.width = "0%";
+
+        // थोडा वेळ थांबून पूर्ण 100% पर्यंत जा
+        setTimeout(function () {
+
+          progressElement.style.width = "100%";
+
+          // 100% वर थोडा वेळ थांबून
+          // actual donation progress वर परत या
+          setTimeout(function () {
+
+            progressElement.style.width =
+              finalProgress + "%";
+
+          }, 1800);
+
+        }, 300);
       }
 
     } catch (error) {
