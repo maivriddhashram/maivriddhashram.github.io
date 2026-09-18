@@ -93,6 +93,81 @@
 <script src="config.js"></script>
 <script src="js/common.js"></script>
 <script src="js/main.js"></script>
-<script>document.addEventListener("DOMContentLoaded", ()=> initForm("volunteerForm"));</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const form = document.getElementById("volunteerForm");
+
+  if (!form) return;
+
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const success = form.querySelector(".form-success");
+
+    const data = {
+      inquiry_type: "volunteer",
+      name: document.getElementById("vName").value.trim(),
+      phone: document.getElementById("vPhone").value.trim(),
+      email: document.getElementById("vEmail").value.trim(),
+      city: document.getElementById("vCity").value.trim(),
+      interest: document.getElementById("vInterest").value,
+      preferred_date: document.getElementById("vDate").value,
+      message: document.getElementById("vMessage").value.trim()
+    };
+
+    if (!data.name || !data.phone || !data.email || !data.city) {
+      alert("कृपया आवश्यक माहिती पूर्ण भरा.");
+      return;
+    }
+
+    if (!document.getElementById("vConsent").checked) {
+      alert("कृपया संमती द्या.");
+      return;
+    }
+
+    const submitButton = form.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    submitButton.textContent = "पाठवत आहे...";
+
+    try {
+
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbwL5sEJ3qVTuvztFihOKC5N6N1aEgubBYC51P_MN44xAsavgXsnW1hsrtgXaCD6Y5Ib/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8"
+          },
+          body: JSON.stringify(data)
+        }
+      );
+
+      form.reset();
+
+      if (success) {
+        success.style.display = "block";
+      }
+
+      submitButton.disabled = false;
+      submitButton.textContent = "अर्ज सादर करा";
+
+    } catch (error) {
+
+      console.error(error);
+
+      alert("फॉर्म पाठवताना समस्या आली. कृपया पुन्हा प्रयत्न करा.");
+
+      submitButton.disabled = false;
+      submitButton.textContent = "अर्ज सादर करा";
+    }
+
+  });
+
+});
+</script>
+
 </body>
 </html>
