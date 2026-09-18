@@ -84,6 +84,80 @@
 <script src="config.js"></script>
 <script src="js/common.js"></script>
 <script src="js/main.js"></script>
-<script>document.addEventListener("DOMContentLoaded", ()=> initForm("csrForm"));</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const form = document.getElementById("csrForm");
+
+  if (!form) return;
+
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const success = form.querySelector(".form-success");
+
+    const data = {
+      inquiry_type: "csr",
+      company_name: document.getElementById("cCompany").value.trim(),
+      contact_person: document.getElementById("cContact").value.trim(),
+      email: document.getElementById("cEmail").value.trim(),
+      phone: document.getElementById("cPhone").value.trim(),
+      interest: document.getElementById("cInterest").value.trim(),
+      approximate_support: document.getElementById("cAmount").value.trim(),
+      message: document.getElementById("cMessage").value.trim()
+    };
+
+    if (
+      !data.company_name ||
+      !data.contact_person ||
+      !data.email ||
+      !data.phone
+    ) {
+      alert("कृपया आवश्यक माहिती पूर्ण भरा.");
+      return;
+    }
+
+    const submitButton = form.querySelector('button[type="submit"]');
+
+    submitButton.disabled = true;
+    submitButton.textContent = "पाठवत आहे...";
+
+    try {
+
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbwL5sEJ3qVTuvztFihOKC5N6N1aEgubBYC51P_MN44xAsavgXsnW1hsrtgXaCD6Y5Ib/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8"
+          },
+          body: JSON.stringify(data)
+        }
+      );
+
+      form.reset();
+
+      if (success) {
+        success.style.display = "block";
+      }
+
+      submitButton.disabled = false;
+      submitButton.textContent = "चौकशी पाठवा";
+
+    } catch (error) {
+
+      console.error(error);
+
+      alert("फॉर्म पाठवताना समस्या आली. कृपया पुन्हा प्रयत्न करा.");
+
+      submitButton.disabled = false;
+      submitButton.textContent = "चौकशी पाठवा";
+    }
+
+  });
+
+});
+</script>
 </body>
 </html>
