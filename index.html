@@ -939,7 +939,66 @@ h1,h2,h3,h4{
   font-size:14px;
   line-height:1.7;
 }
+.mother-image{
+  position:relative;
+  aspect-ratio:4/5;
+  overflow:hidden;
+  background:var(--cream-dark);
+}
 
+.mother-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.mother-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to top,
+    rgba(13,29,42,.38),
+    transparent 45%
+  );
+  pointer-events:none;
+}
+
+.mother-image span{
+  position:absolute;
+  left:16px;
+  bottom:16px;
+  z-index:2;
+  border:1px solid rgba(184,144,74,.35);
+  padding:7px 12px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:600;
+  background:rgba(255,255,255,.90);
+  color:#80652F;
+}
+
+.mother-consent{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  margin-top:18px;
+  padding-top:14px;
+  border-top:1px solid var(--border);
+  color:var(--gold);
+  font-size:11px;
+  font-weight:600;
+}
+
+.mother-consent span:first-child{
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:rgba(184,144,74,.12);
+}
 
 /* =========================================================
    IMPACT
@@ -2334,8 +2393,6 @@ h1,h2,h3,h4{
 
     <div class="mothers-grid">
 
-
-     ```html
 <!-- MOTHER CARD 1 -->
 
 <div class="mother-card reveal">
