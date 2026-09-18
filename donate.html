@@ -2411,6 +2411,10 @@ const purposeMessage = document.getElementById("donationPurposeMessage");
 const purpose = new URLSearchParams(window.location.search).get("purpose");
 
 const purposeData = {
+ general: {
+  mr: "तुमची देणगी योग्य सेवेसाठी वापरली जाईल.",
+  en: "Your donation will be used for the appropriate care and services."
+},
   accommodation: {
     mr: "आपण सुरक्षित निवासासाठी देणगी देत आहात.",
     en: "You are donating to support safe accommodation."
@@ -2449,7 +2453,7 @@ const purposeData = {
      const currentPurpose =
   purposeData[purpose]
     ? purpose
-    : "new-mai-vriddhashram";
+    : "general";
 
 if (purposeMessage) {
   purposeMessage.querySelector("p").textContent =
