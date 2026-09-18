@@ -3288,7 +3288,28 @@ if (purposeMessage) {
     donor,
     currentPurpose
   );
-
+await fetch(
+  "https://script.google.com/macros/s/AKfycbwL5sEJ3qVTuvztFihOKC5N6N1aEgubBYC51P_MN44xAsavgXsnW1hsrtgXaCD6Y5Ib/exec",
+  {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "text/plain;charset=utf-8"
+    },
+    body: JSON.stringify({
+      inquiry_type: "donation",
+      donor_name: donor.name || "",
+      email: donor.email || "",
+      phone: donor.phone || "",
+      amount: amount,
+      purpose: currentPurpose || "",
+      payment_id: verified.payment_id || response.razorpay_payment_id || "",
+      order_id: verified.order_id || response.razorpay_order_id || "",
+      receipt_number: verified.receipt_number || "",
+      payment_date: new Date().toISOString()
+    })
+  }
+);
 
                  // Save successful payment information
 try {
