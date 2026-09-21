@@ -1,100 +1,845 @@
+```html
 <!DOCTYPE html>
 <html lang="mr" data-lang="mr">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>संपर्क | Contact — Mai Vriddhashram</title>
-<meta name="description" content="माई वृद्धाश्रमशी संपर्क साधा — फोन, व्हॉट्सअ‍ॅप, ईमेल किंवा भेट देऊन.">
-<link rel="canonical" href="[VERIFIED CANONICAL URL]/contact.html">
+
+<meta
+  name="description"
+  content="माई वृद्धाश्रमशी संपर्क साधा — फोन, व्हॉट्सअ‍ॅप, ईमेल किंवा प्रत्यक्ष भेटीद्वारे. माई वृद्धाश्रम, चhatrapati Sambhajinagar."
+>
+
+<link
+  rel="canonical"
+  href="https://maivriddhashram.github.io/contact.html"
+>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Noto+Serif+Devanagari:wght@600;700&family=Work+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Noto+Serif+Devanagari:wght@600;700&family=Work+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap"
+  rel="stylesheet"
+>
+
 <link rel="stylesheet" href="css/style.css">
+
+<style>
+
+/* =========================================================
+   CONTACT PAGE — PREMIUM DESIGN
+   ========================================================= */
+
+.contact-page {
+  position: relative;
+}
+
+/* Main contact grid */
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 32px;
+  align-items: start;
+}
+
+/* =========================================================
+   CONTACT INFORMATION CARD
+   ========================================================= */
+
+.contact-info-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-info-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    #172A3A,
+    #B8904A,
+    #172A3A
+  );
+}
+
+.contact-heading {
+  margin-bottom: 6px;
+}
+
+.contact-subtitle {
+  margin-top: 0;
+  opacity: 0.78;
+}
+
+.contact-details {
+  margin-top: 24px;
+  display: grid;
+  gap: 15px;
+}
+
+.contact-detail {
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+  padding: 13px 14px;
+  border-radius: 12px;
+  background: rgba(184, 144, 74, 0.055);
+  border: 1px solid rgba(184, 144, 74, 0.12);
+}
+
+.contact-detail-icon {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #172A3A;
+  color: #ffffff;
+  font-size: 17px;
+}
+
+.contact-detail strong {
+  display: block;
+  margin-bottom: 3px;
+}
+
+.contact-detail span {
+  word-break: break-word;
+}
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.contact-actions .btn {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.contact-actions .btn:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   SOCIAL MEDIA
+   ========================================================= */
+
+.social-box {
+  margin-top: 24px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(23, 42, 58, 0.10);
+}
+
+.social-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 13px;
+  border-radius: 10px;
+  background: rgba(23, 42, 58, 0.045);
+  color: inherit;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.social-link:hover {
+  background: rgba(184, 144, 74, 0.10);
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   GOOGLE MAP
+   ========================================================= */
+
+.contact-map-wrap {
+  margin-top: 22px;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(23, 42, 58, 0.12);
+  background: #ffffff;
+  box-shadow: 0 12px 30px rgba(23, 42, 58, 0.08);
+}
+
+.contact-map {
+  width: 100%;
+  height: 330px;
+  display: block;
+  border: 0;
+}
+
+.map-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 15px;
+  background: #172A3A;
+  color: #ffffff;
+}
+
+.map-caption strong {
+  font-size: 14px;
+}
+
+.map-caption span {
+  font-size: 13px;
+  opacity: 0.82;
+}
+
+/* =========================================================
+   MESSAGE FORM
+   ========================================================= */
+
+.contact-form-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-form-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    #B8904A,
+    #172A3A
+  );
+}
+
+.form-intro {
+  margin-top: 4px;
+  margin-bottom: 22px;
+  opacity: 0.76;
+}
+
+.contact-submit {
+  margin-top: 5px;
+  min-height: 50px;
+  font-weight: 700;
+  letter-spacing: 0.1px;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .social-links {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .contact-map {
+    height: 280px;
+  }
+
+  .map-caption {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+}
+
+@media (max-width: 420px) {
+
+  .contact-actions {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+</style>
 </head>
+
+
 <body>
+
 <div id="site-header"></div>
-<main id="main">
+
+
+<main id="main" class="contact-page">
+
+  <!-- =====================================================
+       PAGE HERO
+       ===================================================== -->
+
   <section class="page-hero">
     <div class="container">
-      <p class="breadcrumbs" data-mr="मुख्यपृष्ठ / संपर्क" data-en="Home / Contact">मुख्यपृष्ठ / संपर्क</p>
-      <h1 data-mr="संपर्क साधा" data-en="Get in Touch">संपर्क साधा</h1>
+
+      <p
+        class="breadcrumbs"
+        data-mr="मुख्यपृष्ठ / संपर्क"
+        data-en="Home / Contact"
+      >
+        मुख्यपृष्ठ / संपर्क
+      </p>
+
+      <h1
+        data-mr="संपर्क साधा"
+        data-en="Get in Touch"
+      >
+        संपर्क साधा
+      </h1>
+
     </div>
   </section>
+
+
+  <!-- =====================================================
+       CONTACT SECTION
+       ===================================================== -->
 
   <section class="section">
-    <div class="container grid grid-2" style="align-items:start; gap:36px;">
-      <div class="reveal">
-        <div class="card" style="margin-bottom:20px;">
-          <h3 data-mr="माई वृद्धाश्रम" data-en="Mai Vriddhashram">माई वृद्धाश्रम</h3>
-          <p data-mr="बोधी ट्री एज्युकेशनल फाउंडेशन द्वारा संचालित" data-en="Run by Bodhi Tree Educational Foundation">बोधी ट्री एज्युकेशनल फाउंडेशन द्वारा संचालित</p>
-          <p><strong data-mr="पत्ता:" data-en="Address:">पत्ता:</strong> <span id="cAddress"></span></p>
-          <p><strong data-mr="फोन:" data-en="Phone:">फोन:</strong> <span id="cPhoneD"></span></p>
-          <p><strong data-mr="व्हॉट्सअ‍ॅप:" data-en="WhatsApp:">व्हॉट्सअ‍ॅप:</strong> <span id="cWa"></span></p>
-          <p><strong data-mr="ईमेल:" data-en="Email:">ईमेल:</strong> <span id="cEmailD"></span></p>
-          <div class="hero-cta-row">
-            <a href="#" id="btnCall" class="btn btn-outline btn-sm" data-mr="📞 कॉल करा" data-en="📞 Call">📞 कॉल करा</a>
-            <a href="#" id="btnWa" target="_blank" rel="noopener" class="btn btn-outline btn-sm" data-mr="💬 व्हॉट्सअ‍ॅप" data-en="💬 WhatsApp">💬 व्हॉट्सअ‍ॅप</a>
-            <a href="#" id="btnMap" target="_blank" rel="noopener" class="btn btn-outline btn-sm" data-mr="📍 दिशा मिळवा" data-en="📍 Get Directions">📍 दिशा मिळवा</a>
-            <a href="#" id="btnEmail" class="btn btn-outline btn-sm" data-mr="✉️ ईमेल करा" data-en="✉️ Email">✉️ ईमेल करा</a>
-          </div>
-        </div>
-        <div class="card">
-          <h3 data-mr="सोशल मीडिया" data-en="Social Media">सोशल मीडिया</h3>
-          <p><strong>Instagram:</strong> <span id="cInsta"></span></p>
-          <p><strong>Facebook:</strong> <span id="cFb"></span></p>
-          <div class="hero-media" style="aspect-ratio:16/9; margin-top:16px;">
-            <div class="placeholder-media">
-              <span data-mr="सत्यापित Google नकाशा येथे जोडला जाईल" data-en="A verified Google Map will be embedded here">सत्यापित Google नकाशा येथे जोडला जाईल</span>
+
+    <div class="container contact-grid">
+
+
+      <!-- =================================================
+           LEFT — CONTACT INFORMATION
+           ================================================= -->
+
+      <div class="card reveal contact-info-card">
+
+        <h2
+          class="contact-heading"
+          data-mr="माई वृद्धाश्रम"
+          data-en="Mai Vriddhashram"
+        >
+          माई वृद्धाश्रम
+        </h2>
+
+        <p
+          class="contact-subtitle"
+          data-mr="बोधी ट्री एज्युकेशनल फाउंडेशन द्वारा संचालित"
+          data-en="Run by Bodhi Tree Educational Foundation"
+        >
+          बोधी ट्री एज्युकेशनल फाउंडेशन द्वारा संचालित
+        </p>
+
+
+        <!-- CONTACT DETAILS -->
+
+        <div class="contact-details">
+
+          <div class="contact-detail">
+
+            <div class="contact-detail-icon">📍</div>
+
+            <div>
+              <strong
+                data-mr="पत्ता"
+                data-en="Address"
+              >
+                पत्ता
+              </strong>
+
+              <span id="cAddress"></span>
             </div>
+
           </div>
+
+
+          <div class="contact-detail">
+
+            <div class="contact-detail-icon">📞</div>
+
+            <div>
+              <strong
+                data-mr="फोन"
+                data-en="Phone"
+              >
+                फोन
+              </strong>
+
+              <span id="cPhoneD"></span>
+            </div>
+
+          </div>
+
+
+          <div class="contact-detail">
+
+            <div class="contact-detail-icon">💬</div>
+
+            <div>
+              <strong
+                data-mr="व्हॉट्सअ‍ॅप"
+                data-en="WhatsApp"
+              >
+                व्हॉट्सअ‍ॅप
+              </strong>
+
+              <span id="cWa"></span>
+            </div>
+
+          </div>
+
+
+          <div class="contact-detail">
+
+            <div class="contact-detail-icon">✉️</div>
+
+            <div>
+              <strong
+                data-mr="ईमेल"
+                data-en="Email"
+              >
+                ईमेल
+              </strong>
+
+              <span id="cEmailD"></span>
+            </div>
+
+          </div>
+
         </div>
+
+
+        <!-- ACTION BUTTONS -->
+
+        <div class="contact-actions">
+
+          <a
+            href="#"
+            id="btnCall"
+            class="btn btn-outline btn-sm"
+            data-mr="📞 कॉल करा"
+            data-en="📞 Call"
+          >
+            📞 कॉल करा
+          </a>
+
+          <a
+            href="#"
+            id="btnWa"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-outline btn-sm"
+            data-mr="💬 व्हॉट्सअ‍ॅप"
+            data-en="💬 WhatsApp"
+          >
+            💬 व्हॉट्सअ‍ॅप
+          </a>
+
+          <a
+            href="#"
+            id="btnMap"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-outline btn-sm"
+            data-mr="📍 दिशा मिळवा"
+            data-en="📍 Get Directions"
+          >
+            📍 दिशा मिळवा
+          </a>
+
+          <a
+            href="#"
+            id="btnEmail"
+            class="btn btn-outline btn-sm"
+            data-mr="✉️ ईमेल करा"
+            data-en="✉️ Email"
+          >
+            ✉️ ईमेल करा
+          </a>
+
+        </div>
+
+
+        <!-- =================================================
+             SOCIAL MEDIA
+             ================================================= -->
+
+        <div class="social-box">
+
+          <h3
+            data-mr="सोशल मीडिया"
+            data-en="Social Media"
+          >
+            सोशल मीडिया
+          </h3>
+
+          <div class="social-links">
+
+            <a
+              href="#"
+              class="social-link"
+              id="socialInstagram"
+              target="_blank"
+              rel="noopener"
+            >
+              <span>📷</span>
+              <span>
+                <strong>Instagram</strong><br>
+                <small id="cInsta"></small>
+              </span>
+            </a>
+
+
+            <a
+              href="#"
+              class="social-link"
+              id="socialFacebook"
+              target="_blank"
+              rel="noopener"
+            >
+              <span>f</span>
+              <span>
+                <strong>Facebook</strong><br>
+                <small id="cFb"></small>
+              </span>
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- =================================================
+             GOOGLE MAP
+             ================================================= -->
+
+        <div class="contact-map-wrap">
+
+          <iframe
+            class="contact-map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.6071759131883!2d75.3570948!3d19.8565675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdba3007ae04b65%3A0x6e99b313512f7e9c!2sMai%20Vridhashram%20(Old%20Age%20Home)%20%F0%9F%8F%A0!5e0!3m2!1sen!2sin!4v1789989026151!5m2!1sen!2sin"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            title="Mai Vriddhashram — Google Maps"
+          ></iframe>
+
+          <div class="map-caption">
+
+            <strong
+              data-mr="📍 माई वृद्धाश्रम"
+              data-en="📍 Mai Vriddhashram"
+            >
+              📍 माई वृद्धाश्रम
+            </strong>
+
+            <span
+              data-mr="छत्रपती संभाजीनगर"
+              data-en="Chhatrapati Sambhajinagar"
+            >
+              छत्रपती संभाजीनगर
+            </span>
+
+          </div>
+
+        </div>
+
       </div>
 
-      <div class="card reveal">
-        <h3 data-mr="संदेश पाठवा" data-en="Send a Message">संदेश पाठवा</h3>
+
+      <!-- =================================================
+           RIGHT — MESSAGE FORM
+           ================================================= -->
+
+      <div class="card reveal contact-form-card">
+
+        <h2
+          data-mr="संदेश पाठवा"
+          data-en="Send a Message"
+        >
+          संदेश पाठवा
+        </h2>
+
+        <p
+          class="form-intro"
+          data-mr="आपल्याला काही विचारायचे असल्यास किंवा माई वृद्धाश्रमाशी संपर्क साधायचा असल्यास खालील फॉर्म भरा."
+          data-en="If you have a question or would like to connect with Mai Vriddhashram, please fill out the form below."
+        >
+          आपल्याला काही विचारायचे असल्यास किंवा माई वृद्धाश्रमाशी संपर्क साधायचा असल्यास खालील फॉर्म भरा.
+        </p>
+
+
         <form id="contactForm" novalidate>
+
           <div class="form-field">
-            <label for="ctName" data-mr="नाव" data-en="Name">नाव <span class="req">*</span></label>
-            <input type="text" id="ctName" required><span class="form-error"></span>
+
+            <label
+              for="ctName"
+              data-mr="नाव"
+              data-en="Name"
+            >
+              नाव <span class="req">*</span>
+            </label>
+
+            <input
+              type="text"
+              id="ctName"
+              required
+              autocomplete="name"
+            >
+
+            <span class="form-error"></span>
+
           </div>
+
+
           <div class="form-field">
-            <label for="ctEmail" data-mr="ईमेल" data-en="Email">ईमेल <span class="req">*</span></label>
-            <input type="email" id="ctEmail" required><span class="form-error"></span>
+
+            <label
+              for="ctEmail"
+              data-mr="ईमेल"
+              data-en="Email"
+            >
+              ईमेल <span class="req">*</span>
+            </label>
+
+            <input
+              type="email"
+              id="ctEmail"
+              required
+              autocomplete="email"
+            >
+
+            <span class="form-error"></span>
+
           </div>
+
+
           <div class="form-field">
-            <label for="ctPhone" data-mr="फोन" data-en="Phone">फोन</label>
-            <input type="tel" id="ctPhone">
+
+            <label
+              for="ctPhone"
+              data-mr="फोन"
+              data-en="Phone"
+            >
+              फोन
+            </label>
+
+            <input
+              type="tel"
+              id="ctPhone"
+              autocomplete="tel"
+            >
+
           </div>
+
+
           <div class="form-field">
-            <label for="ctMessage" data-mr="संदेश" data-en="Message">संदेश <span class="req">*</span></label>
-            <textarea id="ctMessage" rows="4" required></textarea><span class="form-error"></span>
+
+            <label
+              for="ctMessage"
+              data-mr="संदेश"
+              data-en="Message"
+            >
+              संदेश <span class="req">*</span>
+            </label>
+
+            <textarea
+              id="ctMessage"
+              rows="6"
+              required
+            ></textarea>
+
+            <span class="form-error"></span>
+
           </div>
-          <button type="submit" class="btn btn-primary" style="width:100%;" data-mr="संदेश पाठवा" data-en="Send Message">संदेश पाठवा</button>
-          <div class="form-success" data-mr="धन्यवाद! आम्ही लवकरच आपल्याशी संपर्क साधू." data-en="Thank you! We'll get back to you soon.">धन्यवाद! आम्ही लवकरच आपल्याशी संपर्क साधू.</div>
+
+
+          <button
+            type="submit"
+            class="btn btn-primary contact-submit"
+            style="width:100%;"
+            data-mr="संदेश पाठवा"
+            data-en="Send Message"
+          >
+            संदेश पाठवा
+          </button>
+
+
+          <div
+            class="form-success"
+            data-mr="धन्यवाद! आम्ही लवकरच आपल्याशी संपर्क साधू."
+            data-en="Thank you! We'll get back to you soon."
+          >
+            धन्यवाद! आम्ही लवकरच आपल्याशी संपर्क साधू.
+          </div>
+
         </form>
+
       </div>
+
     </div>
+
   </section>
+
 </main>
+
+
 <div id="site-footer"></div>
+
+
+<!-- =======================================================
+     SITE SCRIPTS
+     ======================================================= -->
+
 <script src="config.js"></script>
 <script src="js/common.js"></script>
 <script src="js/main.js"></script>
+
+
 <script>
-document.addEventListener("DOMContentLoaded", ()=>{
-  document.getElementById("cAddress").textContent = SITE_CONFIG.address;
-  document.getElementById("cPhoneD").textContent = SITE_CONFIG.phone;
-  document.getElementById("cWa").textContent = SITE_CONFIG.whatsapp;
-  document.getElementById("cEmailD").textContent = SITE_CONFIG.email;
-  document.getElementById("cInsta").textContent = SITE_CONFIG.instagram;
-  document.getElementById("cFb").textContent = SITE_CONFIG.facebook;
-  const tel = /^\[/.test(SITE_CONFIG.phone) ? "#" : "tel:"+SITE_CONFIG.phone;
-  const wa = (SITE_CONFIG.whatsapp||"").replace(/[^0-9]/g,"");
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* -----------------------------------------------
+     CONTACT INFORMATION
+     ----------------------------------------------- */
+
+  document.getElementById("cAddress").textContent =
+    SITE_CONFIG.address;
+
+  document.getElementById("cPhoneD").textContent =
+    SITE_CONFIG.phone;
+
+  document.getElementById("cWa").textContent =
+    SITE_CONFIG.whatsapp;
+
+  document.getElementById("cEmailD").textContent =
+    SITE_CONFIG.email;
+
+  document.getElementById("cInsta").textContent =
+    SITE_CONFIG.instagram;
+
+  document.getElementById("cFb").textContent =
+    SITE_CONFIG.facebook;
+
+
+  /* -----------------------------------------------
+     CALL
+     ----------------------------------------------- */
+
+  const tel =
+    /^\[/.test(SITE_CONFIG.phone)
+      ? "#"
+      : "tel:" + SITE_CONFIG.phone;
+
   document.getElementById("btnCall").href = tel;
-  document.getElementById("btnWa").href = wa ? "https://wa.me/"+wa : "#";
-  document.getElementById("btnMap").href = /^\[/.test(SITE_CONFIG.googleMapsLink) ? "#" : SITE_CONFIG.googleMapsLink;
-  document.getElementById("btnEmail").href = /^\[/.test(SITE_CONFIG.email) ? "#" : "mailto:"+SITE_CONFIG.email;
+
+
+  /* -----------------------------------------------
+     WHATSAPP
+     ----------------------------------------------- */
+
+  const wa =
+    (SITE_CONFIG.whatsapp || "").replace(/[^0-9]/g, "");
+
+  document.getElementById("btnWa").href =
+    wa
+      ? "https://wa.me/" + wa
+      : "#";
+
+
+  /* -----------------------------------------------
+     GOOGLE MAP DIRECTIONS
+     ----------------------------------------------- */
+
+  document.getElementById("btnMap").href =
+    /^\[/.test(SITE_CONFIG.googleMapsLink)
+      ? "#"
+      : SITE_CONFIG.googleMapsLink;
+
+
+  /* -----------------------------------------------
+     EMAIL
+     ----------------------------------------------- */
+
+  document.getElementById("btnEmail").href =
+    /^\[/.test(SITE_CONFIG.email)
+      ? "#"
+      : "mailto:" + SITE_CONFIG.email;
+
+
+  /* -----------------------------------------------
+     SOCIAL MEDIA LINKS
+     ----------------------------------------------- */
+
+  if (
+    SITE_CONFIG.instagram &&
+    !/^\[/.test(SITE_CONFIG.instagram)
+  ) {
+    document.getElementById("socialInstagram").href =
+      SITE_CONFIG.instagram;
+  } else {
+    document.getElementById("socialInstagram").href = "#";
+  }
+
+
+  if (
+    SITE_CONFIG.facebook &&
+    !/^\[/.test(SITE_CONFIG.facebook)
+  ) {
+    document.getElementById("socialFacebook").href =
+      SITE_CONFIG.facebook;
+  } else {
+    document.getElementById("socialFacebook").href = "#";
+  }
+
+
+  /* -----------------------------------------------
+     CONTACT FORM
+     ----------------------------------------------- */
+
   initForm("contactForm");
+
 });
+
 </script>
+
 </body>
 </html>
+```
