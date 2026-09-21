@@ -587,22 +587,15 @@
   font-size:26px;
 
   font-weight:700;
+
+  line-height:0;
 }
 
-.about-purpose-card h3{
-  margin:0 0 15px;
+.about-purpose-icon svg{
+  width:32px;
+  height:32px;
 
-  font-size:30px;
-}
-
-.about-purpose-card p{
-  margin:0;
-
-  color:var(--about-muted);
-
-  font-size:16px;
-
-  line-height:1.85;
+  display:block;
 }
 
 
@@ -676,6 +669,15 @@
   border-radius:50%;
 
   font-size:21px;
+
+  line-height:0;
+}
+
+.about-value-symbol svg{
+  width:27px;
+  height:27px;
+
+  display:block;
 }
 
 .about-value h3{
@@ -780,6 +782,15 @@
   font-size:18px;
 
   font-weight:700;
+
+  line-height:0;
+}
+
+.about-care-symbol svg{
+  width:24px;
+  height:24px;
+
+  display:block;
 }
 
 .about-care-card h3{
@@ -1241,6 +1252,21 @@
     font-size:31px;
   }
 
+  .about-purpose-icon svg{
+    width:30px;
+    height:30px;
+  }
+
+  .about-value-symbol svg{
+    width:25px;
+    height:25px;
+  }
+
+  .about-care-symbol svg{
+    width:22px;
+    height:22px;
+  }
+
 }
 
 
@@ -1504,8 +1530,22 @@
 
       <article class="about-purpose-card">
 
-        <div class="about-purpose-icon">
-          M
+        <div class="about-purpose-icon" aria-hidden="true">
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M12 3v18"/>
+            <path d="M5 7h14"/>
+            <path d="M7 7c0 3 2 5 5 5s5-2 5-5"/>
+            <path d="M5 21h14"/>
+          </svg>
+
         </div>
 
         <h3
@@ -1530,8 +1570,20 @@
 
       <article class="about-purpose-card">
 
-        <div class="about-purpose-icon">
-          V
+        <div class="about-purpose-icon" aria-hidden="true">
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6z"/>
+            <circle cx="12" cy="12" r="2.8"/>
+          </svg>
+
         </div>
 
         <h3
@@ -1605,8 +1657,19 @@
           01
         </div>
 
-        <div class="about-value-symbol">
-          D
+        <div class="about-value-symbol" aria-hidden="true">
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M12 3l2.1 4.3 4.7.7-3.4 3.3.8 4.7-4.2-2.2-4.2 2.2.8-4.7-3.4-3.3 4.7-.7L12 3z"/>
+          </svg>
+
         </div>
 
         <h3
@@ -1633,8 +1696,22 @@
           02
         </div>
 
-        <div class="about-value-symbol">
-          C
+        <div class="about-value-symbol" aria-hidden="true">
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="9" cy="8" r="3"/>
+            <circle cx="17" cy="9" r="2.3"/>
+            <path d="M3.5 20c.5-4 2.4-6 5.5-6s5 2 5.5 6"/>
+            <path d="M14.5 15c2.8-.8 5 .8 6 4"/>
+          </svg>
+
         </div>
 
         <h3
@@ -1661,8 +1738,20 @@
           03
         </div>
 
-        <div class="about-value-symbol">
-          S
+        <div class="about-value-symbol" aria-hidden="true">
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M12 3l7 3v5c0 4.5-2.8 7.8-7 10-4.2-2.2-7-5.5-7-10V6l7-3z"/>
+            <path d="M8.5 12l2.3 2.3 4.7-5"/>
+          </svg>
+
         </div>
 
         <h3
@@ -1689,8 +1778,19 @@
           04
         </div>
 
-        <div class="about-value-symbol">
-          L
+        <div class="about-value-symbol" aria-hidden="true">
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M20.8 8.8c0 5.2-8.8 10.2-8.8 10.2S3.2 14 3.2 8.8A4.7 4.7 0 0 1 12 6.2a4.7 4.7 0 0 1 8.8 2.6z"/>
+          </svg>
+
         </div>
 
         <h3
@@ -1763,8 +1863,22 @@
 
         <div class="about-care-top">
 
-          <div class="about-care-symbol">
-            H
+          <div class="about-care-symbol" aria-hidden="true">
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M3 21h18"/>
+              <path d="M5 21V10l7-5 7 5v11"/>
+              <path d="M9 21v-6h6v6"/>
+              <path d="M9 10h.01M12 10h.01M15 10h.01"/>
+            </svg>
+
           </div>
 
           <h3
@@ -1791,8 +1905,24 @@
 
         <div class="about-care-top">
 
-          <div class="about-care-symbol">
-            F
+          <div class="about-care-symbol" aria-hidden="true">
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 3v7"/>
+              <path d="M9 3v7"/>
+              <path d="M6 7h3"/>
+              <path d="M7.5 10v11"/>
+              <path d="M17 3c-2 2-3 4.5-3 7 0 1.8 1 3 3 3v8"/>
+              <path d="M17 3v18"/>
+            </svg>
+
           </div>
 
           <h3
@@ -1819,8 +1949,21 @@
 
         <div class="about-care-top">
 
-          <div class="about-care-symbol">
-            H
+          <div class="about-care-symbol" aria-hidden="true">
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 21s-7-4.4-7-10.2C5 7.6 7 5 10 5c1.2 0 2.3.5 3 1.5C13.7 5.5 14.8 5 16 5c3 0 5 2.6 5 5.8C21 16.6 12 21 12 21z"/>
+              <path d="M12 9v5"/>
+              <path d="M9.5 11.5h5"/>
+            </svg>
+
           </div>
 
           <h3
@@ -1847,8 +1990,22 @@
 
         <div class="about-care-top">
 
-          <div class="about-care-symbol">
-            Y
+          <div class="about-care-symbol" aria-hidden="true">
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="5" r="2"/>
+              <path d="M8 21c.5-4 1.8-6.5 4-6.5s3.5 2.5 4 6.5"/>
+              <path d="M5 10c2 1.5 4.2 2.2 7 2.2s5-.7 7-2.2"/>
+              <path d="M8 10l-2 5M16 10l2 5"/>
+            </svg>
+
           </div>
 
           <h3
@@ -1875,8 +2032,22 @@
 
         <div class="about-care-top">
 
-          <div class="about-care-symbol">
-            C
+          <div class="about-care-symbol" aria-hidden="true">
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="9" cy="8" r="3"/>
+              <circle cx="17" cy="9" r="2.3"/>
+              <path d="M3.5 20c.5-4 2.4-6 5.5-6s5 2 5.5 6"/>
+              <path d="M14.5 15c2.8-.8 5 .8 6 4"/>
+            </svg>
+
           </div>
 
           <h3
@@ -1903,8 +2074,20 @@
 
         <div class="about-care-top">
 
-          <div class="about-care-symbol">
-          R
+          <div class="about-care-symbol" aria-hidden="true">
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 20.5S4 15.8 4 9.2C4 6.8 5.8 5 8.2 5c1.7 0 3.1.9 3.8 2.2C12.7 5.9 14.1 5 15.8 5 18.2 5 20 6.8 20 9.2c0 6.6-8 11.3-8 11.3z"/>
+              <path d="M8 12h.01M12 12h.01M16 12h.01"/>
+            </svg>
+
           </div>
 
           <h3
