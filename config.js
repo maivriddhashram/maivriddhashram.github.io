@@ -75,7 +75,7 @@ const SITE_CONFIG = {
 
   whatsapp: "918888125610",
 
-  email: "bodhitef@gmail.com",
+  email: "maivridhashram@gmail.com",
 
   website: "https://ngobtefoundationindia.org",
 
