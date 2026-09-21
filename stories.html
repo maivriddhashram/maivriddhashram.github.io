@@ -1,66 +1,794 @@
 <!DOCTYPE html>
 <html lang="mr" data-lang="mr">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>कथा | Stories & Impact — Mai Vriddhashram</title>
-<meta name="description" content="माई वृद्धाश्रम येथील मान्यताप्राप्त कथा व प्रभाव — केवळ संस्थेच्या मान्यतेनंतरच प्रकाशित.">
-<link rel="canonical" href="[VERIFIED CANONICAL URL]/stories.html">
+
+<title>कथा व प्रभाव | Stories & Impact — Mai Vriddhashram</title>
+
+<meta
+  name="description"
+  content="माई वृद्धाश्रमातील मातांच्या वास्तविक कथा — सन्मान, काळजी, सुरक्षितता आणि आपुलकीच्या प्रवासाच्या कथा."
+>
+
+<link
+  rel="canonical"
+  href="https://maivriddhashram.github.io/stories.html"
+>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Noto+Serif+Devanagari:wght@600;700&family=Work+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Noto+Serif+Devanagari:wght@600;700&family=Work+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap"
+  rel="stylesheet"
+>
+
 <link rel="stylesheet" href="css/style.css">
+
+
+<style>
+
+/* =========================================================
+   STORIES PAGE
+========================================================= */
+
+.stories-page {
+  background: #faf7f0;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.stories-hero {
+  padding: 86px 20px 70px;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(250,247,240,0.96),
+      rgba(250,247,240,1)
+    );
+  text-align: center;
+}
+
+.stories-hero-inner {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.stories-eyebrow {
+  margin-bottom: 14px;
+
+  color: #b8904a;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.stories-hero h1 {
+  margin-bottom: 18px;
+
+  color: #172a3a;
+
+  font-family: "Noto Serif Devanagari", serif;
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.2;
+}
+
+.stories-hero-copy {
+  max-width: 720px;
+  margin: 0 auto;
+
+  color: #53616d;
+
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   STORY SECTION
+========================================================= */
+
+.stories-section {
+  padding: 70px 20px;
+}
+
+.stories-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.stories-heading {
+  max-width: 760px;
+  margin: 0 auto 48px;
+
+  text-align: center;
+}
+
+.stories-label {
+  margin-bottom: 10px;
+
+  color: #b8904a;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+}
+
+.stories-heading h2 {
+  margin-bottom: 14px;
+
+  color: #172a3a;
+
+  font-family: "Noto Serif Devanagari", serif;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.3;
+}
+
+.stories-heading p {
+  margin: 0;
+
+  color: #596773;
+
+  line-height: 1.85;
+}
+
+
+/* =========================================================
+   STORIES LIST
+========================================================= */
+
+.story-list {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+}
+
+
+/* =========================================================
+   STORY CARD
+========================================================= */
+
+.story-card {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.9fr) minmax(0, 1.1fr);
+
+  overflow: hidden;
+
+  background: #fff;
+
+  border: 1px solid rgba(23,42,58,0.08);
+  border-radius: 24px;
+
+  box-shadow: 0 14px 38px rgba(23,42,58,0.07);
+}
+
+.story-card:nth-child(even) {
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+}
+
+.story-card:nth-child(even) .story-image-wrap {
+  order: 2;
+}
+
+.story-card:nth-child(even) .story-content {
+  order: 1;
+}
+
+
+/* =========================================================
+   STORY IMAGE
+========================================================= */
+
+.story-image-wrap {
+  min-height: 420px;
+  background: #e9e4da;
+}
+
+.story-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   STORY CONTENT
+========================================================= */
+
+.story-content {
+  padding: 46px 44px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.story-number {
+  margin-bottom: 12px;
+
+  color: #b8904a;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.story-content h3 {
+  margin: 0 0 22px;
+
+  color: #172a3a;
+
+  font-family: "Noto Serif Devanagari", serif;
+  font-size: clamp(25px, 3vw, 34px);
+  line-height: 1.4;
+}
+
+.story-content p {
+  margin: 0 0 18px;
+
+  color: #4f5d68;
+
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   CONSENT
+========================================================= */
+
+.story-consent {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  width: fit-content;
+
+  margin-top: 8px;
+  padding: 9px 14px;
+
+  border-radius: 999px;
+
+  background: #f5f1e8;
+
+  color: #53616d;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.story-consent-icon {
+  width: 20px;
+  height: 20px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #b8904a;
+  color: #fff;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   CLOSING SECTION
+========================================================= */
+
+.stories-closing {
+  padding: 80px 20px;
+
+  background: #172a3a;
+
+  text-align: center;
+}
+
+.stories-closing-inner {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.stories-closing h2 {
+  margin-bottom: 18px;
+
+  color: #fff;
+
+  font-family: "Noto Serif Devanagari", serif;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.4;
+}
+
+.stories-closing p {
+  margin: 0 auto 28px;
+
+  color: rgba(255,255,255,0.86);
+
+  line-height: 1.9;
+}
+
+.stories-closing .premium-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+  padding: 12px 24px;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .story-card,
+  .story-card:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+
+  .story-card:nth-child(even) .story-image-wrap,
+  .story-card:nth-child(even) .story-content {
+    order: initial;
+  }
+
+  .story-image-wrap {
+    min-height: 340px;
+  }
+
+  .story-content {
+    padding: 36px 30px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .stories-hero {
+    padding: 64px 18px 52px;
+  }
+
+  .stories-section {
+    padding: 52px 16px;
+  }
+
+  .story-list {
+    gap: 28px;
+  }
+
+  .story-card {
+    border-radius: 18px;
+  }
+
+  .story-image-wrap {
+    min-height: 290px;
+  }
+
+  .story-content {
+    padding: 28px 22px 30px;
+  }
+
+  .story-content h3 {
+    margin-bottom: 18px;
+  }
+
+  .story-content p {
+    font-size: 15px;
+    line-height: 1.85;
+  }
+
+  .story-consent {
+    font-size: 12px;
+  }
+
+  .stories-closing {
+    padding: 60px 18px;
+  }
+
+}
+
+</style>
+
 </head>
+
+
 <body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
 <div id="site-header"></div>
-<main id="main">
-  <section class="page-hero">
-    <div class="container">
-      <p class="breadcrumbs" data-mr="मुख्यपृष्ठ / कथा" data-en="Home / Stories">मुख्यपृष्ठ / कथा</p>
-      <h1 data-mr="कथा व प्रभाव" data-en="Stories & Impact">कथा व प्रभाव</h1>
-      <p class="max-w-prose mx-auto" data-mr="प्रत्येक कहाणी प्रकाशित करण्यापूर्वी संस्थेची व संबंधित व्यक्तीची मान्यता घेतली जाते." data-en="Every story is published only after organizational and individual approval.">प्रत्येक कहाणी प्रकाशित करण्यापूर्वी संस्थेची व संबंधित व्यक्तीची मान्यता घेतली जाते.</p>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="container grid grid-3">
-      <div class="card reveal">
-        <div class="hero-media" style="aspect-ratio:4/3; margin-bottom:16px;"><div class="placeholder-media"><span class="placeholder-tag" data-mr="मंजुरीची प्रतीक्षा" data-en="Awaiting approval">मंजुरीची प्रतीक्षा</span></div></div>
-        <h3 data-mr="[मंजूर शीर्षक]" data-en="[Approved title]">[मंजूर शीर्षक]</h3>
-        <p class="form-note" data-mr="[मंजूर कथा]" data-en="[Approved story]">[मंजूर कथा]</p>
-        <p class="quote-block" data-mr="[मंजूर उद्गार]" data-en="[Approved quote]">[मंजूर उद्गार]</p>
-      </div>
-      <div class="card reveal">
-        <div class="hero-media" style="aspect-ratio:4/3; margin-bottom:16px;"><div class="placeholder-media"><span class="placeholder-tag" data-mr="मंजुरीची प्रतीक्षा" data-en="Awaiting approval">मंजुरीची प्रतीक्षा</span></div></div>
-        <h3 data-mr="[मंजूर शीर्षक]" data-en="[Approved title]">[मंजूर शीर्षक]</h3>
-        <p class="form-note" data-mr="[मंजूर कथा]" data-en="[Approved story]">[मंजूर कथा]</p>
-        <p class="quote-block" data-mr="[मंजूर उद्गार]" data-en="[Approved quote]">[मंजूर उद्गार]</p>
-      </div>
-      <div class="card reveal">
-        <div class="hero-media" style="aspect-ratio:4/3; margin-bottom:16px;"><div class="placeholder-media"><span class="placeholder-tag" data-mr="मंजुरीची प्रतीक्षा" data-en="Awaiting approval">मंजुरीची प्रतीक्षा</span></div></div>
-        <h3 data-mr="[मंजूर शीर्षक]" data-en="[Approved title]">[मंजूर शीर्षक]</h3>
-        <p class="form-note" data-mr="[मंजूर कथा]" data-en="[Approved story]">[मंजूर कथा]</p>
-        <p class="quote-block" data-mr="[मंजूर उद्गार]" data-en="[Approved quote]">[मंजूर उद्गार]</p>
-      </div>
-    </div>
-  </section>
 
-  <section class="section section-alt">
-    <div class="container">
-      <div class="text-center reveal" style="margin-bottom:20px;">
-        <h2 data-mr="आकड्यांमधून बोलणारी काळजी" data-en="Impact in Numbers">आकड्यांमधून बोलणारी काळजी</h2>
-      </div>
-      <div class="grid grid-4">
-        <div class="stat-card reveal"><div class="stat-number" data-target="[XX]">[XX]+</div><div class="stat-label" data-mr="आधार मिळालेल्या माता" data-en="Elderly Mothers Supported">आधार मिळालेल्या माता</div></div>
-        <div class="stat-card reveal"><div class="stat-number" data-target="[XX]">[XX]+</div><div class="stat-label" data-mr="वाढलेले जेवण" data-en="Meals Served">वाढलेले जेवण</div></div>
-        <div class="stat-card reveal"><div class="stat-number" data-target="[XX]">[XX]+</div><div class="stat-label" data-mr="स्वयंसेवक / सहाय्यक" data-en="Volunteers / Supporters">स्वयंसेवक / सहाय्यक</div></div>
-        <div class="stat-card reveal"><div class="stat-number" data-target="[XX]">[XX]+</div><div class="stat-label" data-mr="सेवेची वर्षे" data-en="Years of Service">सेवेची वर्षे</div></div>
-      </div>
+<main id="main" class="stories-page">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="stories-hero">
+
+  <div class="stories-hero-inner">
+
+    <div
+      class="stories-eyebrow"
+      data-mr="आमच्या माता"
+      data-en="Our Mothers"
+    >
+      आमच्या माता
     </div>
-  </section>
+
+
+    <h1
+      data-mr="प्रत्येक आईची एक गोष्ट असते."
+      data-en="Every Mother Has a Story."
+    >
+      प्रत्येक आईची एक गोष्ट असते.
+    </h1>
+
+
+    <p
+      class="stories-hero-copy"
+      data-mr="या कथा माई वृद्धाश्रमातील मातांच्या जीवनातील अनुभव, संघर्ष आणि आज मिळत असलेल्या आधाराची झलक देतात. प्रत्येक कथा सन्मान आणि गोपनीयतेचा आदर राखून प्रकाशित केली आहे."
+      data-en="These stories offer a glimpse into the experiences, struggles and care received by mothers at Mai Vriddhashram. Each story is shared with respect for dignity and privacy."
+    >
+      या कथा माई वृद्धाश्रमातील मातांच्या जीवनातील अनुभव, संघर्ष आणि आज मिळत असलेल्या आधाराची झलक देतात. प्रत्येक कथा सन्मान आणि गोपनीयतेचा आदर राखून प्रकाशित केली आहे.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     STORIES
+===================================================== -->
+
+<section class="stories-section">
+
+  <div class="stories-container">
+
+
+    <div class="stories-heading reveal">
+
+      <div
+        class="stories-label"
+        data-mr="कथा व प्रभाव"
+        data-en="Stories & Impact"
+      >
+        कथा व प्रभाव
+      </div>
+
+
+      <h2
+        data-mr="मायेच्या आधाराने बदललेले दिवस"
+        data-en="Days Changed Through Care and Belonging"
+      >
+        मायेच्या आधाराने बदललेले दिवस
+      </h2>
+
+
+      <p
+        data-mr="माई वृद्धाश्रमासाठी प्रत्येक माता ही केवळ लाभार्थी नसून एक स्वतंत्र जीवनप्रवास घेऊन आलेली व्यक्ती आहे."
+        data-en="At Mai Vriddhashram, every mother is not merely a beneficiary, but a person carrying her own life journey."
+      >
+        माई वृद्धाश्रमासाठी प्रत्येक माता ही केवळ लाभार्थी नसून एक स्वतंत्र जीवनप्रवास घेऊन आलेली व्यक्ती आहे.
+      </p>
+
+    </div>
+
+
+
+    <div class="story-list">
+
+
+      <!-- =================================================
+           STORY 01
+      ================================================== -->
+
+      <article class="story-card reveal">
+
+
+        <div class="story-image-wrap">
+
+          <img
+            class="story-image"
+            src="images/mother-01.jpg"
+            alt="माई वृद्धाश्रमातील माता"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <div class="story-content">
+
+          <div
+            class="story-number"
+            data-mr="कथा ०१"
+            data-en="Story 01"
+          >
+            कथा ०१
+          </div>
+
+
+          <h3
+            data-mr="माईची माया मिळालेली एक आई"
+            data-en="A Mother Who Found Care at Mai"
+          >
+            माईची माया मिळालेली एक आई
+          </h3>
+
+
+          <p
+            data-mr="वेदांतनगर पोलीस ठाण्याच्या हद्दीत एक वृद्ध माता एकट्या अवस्थेत आढळल्या. पोलीस निरीक्षक संगीता गिरी मॅडम यांनी संवेदनशीलतेने त्यांची विचारपूस करून त्यांना सुरक्षित आश्रय मिळवून देण्यासाठी पुढाकार घेतला. त्यानंतर त्यांना माई वृद्धाश्रमात आणण्यात आले."
+            data-en="An elderly mother was found alone within the jurisdiction of Vedantnagar Police Station. Police Inspector Sangeeta Giri took compassionate steps to help her receive safe shelter, and she was subsequently brought to Mai Vriddhashram."
+          >
+            वेदांतनगर पोलीस ठाण्याच्या हद्दीत एक वृद्ध माता एकट्या अवस्थेत आढळल्या. पोलीस निरीक्षक संगीता गिरी मॅडम यांनी संवेदनशीलतेने त्यांची विचारपूस करून त्यांना सुरक्षित आश्रय मिळवून देण्यासाठी पुढाकार घेतला. त्यानंतर त्यांना माई वृद्धाश्रमात आणण्यात आले.
+          </p>
+
+
+          <p
+            data-mr="माई वृद्धाश्रमात आल्यानंतर संचालिका मीरा वाघमारे आणि ऋत्विक वाघमारे यांनी प्रेमाने त्यांची विचारपूस केली. त्यांना जेवण, फळे, चहा, स्वच्छ कपडे आणि विश्रांतीची व्यवस्था देण्यात आली. एका अनोळखी दिवसातून त्यांना पुन्हा मायेचा आणि सुरक्षिततेचा आधार मिळाला."
+            data-en="At Mai Vriddhashram, Director Meera Waghmare and Rutveek Waghmare welcomed her with care. She was provided food, fruits, tea, clean clothes and a safe place to rest. She found care, dignity and a sense of safety once again."
+          >
+            माई वृद्धाश्रमात आल्यानंतर संचालिका मीरा वाघमारे आणि ऋत्विक वाघमारे यांनी प्रेमाने त्यांची विचारपूस केली. त्यांना जेवण, फळे, चहा, स्वच्छ कपडे आणि विश्रांतीची व्यवस्था देण्यात आली. एका अनोळखी दिवसातून त्यांना पुन्हा मायेचा आणि सुरक्षिततेचा आधार मिळाला.
+          </p>
+
+
+          <div class="story-consent">
+
+            <span class="story-consent-icon">✓</span>
+
+            <span
+              data-mr="मातेच्या संमतीने माहिती प्रकाशित"
+              data-en="Published with the mother's consent"
+            >
+              मातेच्या संमतीने माहिती प्रकाशित
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- =================================================
+           STORY 02
+      ================================================== -->
+
+      <article class="story-card reveal">
+
+
+        <div class="story-image-wrap">
+
+          <img
+            class="story-image"
+            src="images/mother-02.jpg"
+            alt="माई वृद्धाश्रमातील माता"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <div class="story-content">
+
+          <div
+            class="story-number"
+            data-mr="कथा ०२"
+            data-en="Story 02"
+          >
+            कथा ०२
+          </div>
+
+
+          <h3
+            data-mr="एका मातेची हळवी कहाणी"
+            data-en="A Mother's Story"
+          >
+            एका मातेची हळवी कहाणी
+          </h3>
+
+
+          <p
+            data-mr="पतीच्या निधनानंतर त्यांच्या आयुष्याचा एकमेव आधार असलेल्या मुलाचेही तरुण वयातच निधन झाले. त्यानंतर वाढत्या वयासोबत दवाखाना, औषधे आणि दैनंदिन सांभाळाची गरज वाढत गेली; मात्र त्यांची काळजी घेण्यासाठी जवळचे कोणी उरले नव्हते."
+            data-en="After her husband passed away, her only source of support, her son, also passed away at a young age. As she grew older, the need for medical care, medicines and daily support increased, but there was no one close to take care of her."
+          >
+            पतीच्या निधनानंतर त्यांच्या आयुष्याचा एकमेव आधार असलेल्या मुलाचेही तरुण वयातच निधन झाले. त्यानंतर वाढत्या वयासोबत दवाखाना, औषधे आणि दैनंदिन सांभाळाची गरज वाढत गेली; मात्र त्यांची काळजी घेण्यासाठी जवळचे कोणी उरले नव्हते.
+          </p>
+
+
+          <p
+            data-mr="गावाकडील परिस्थिती पाहून दूरच्या नातेवाईकांनी त्यांना माई वृद्धाश्रमात आणले. आज येथे त्यांना निवारा, आरोग्यसेवा, औषधोपचार आणि सर्वात महत्त्वाचे म्हणजे मायेची व आपुलकीची साथ मिळत आहे. उरलेल्या आयुष्याच्या वाटेवर त्या आता एकट्या नाहीत."
+            data-en="Seeing her circumstances in the village, distant relatives brought her to Mai Vriddhashram. Today, she receives shelter, healthcare, medicines and, most importantly, love and companionship. She is no longer alone on the journey ahead."
+          >
+            गावाकडील परिस्थिती पाहून दूरच्या नातेवाईकांनी त्यांना माई वृद्धाश्रमात आणले. आज येथे त्यांना निवारा, आरोग्यसेवा, औषधोपचार आणि सर्वात महत्त्वाचे म्हणजे मायेची व आपुलकीची साथ मिळत आहे. उरलेल्या आयुष्याच्या वाटेवर त्या आता एकट्या नाहीत.
+          </p>
+
+
+          <div class="story-consent">
+
+            <span class="story-consent-icon">✓</span>
+
+            <span
+              data-mr="मातेच्या संमतीने माहिती प्रकाशित"
+              data-en="Published with the mother's consent"
+            >
+              मातेच्या संमतीने माहिती प्रकाशित
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- =================================================
+           STORY 03
+      ================================================== -->
+
+      <article class="story-card reveal">
+
+
+        <div class="story-image-wrap">
+
+          <img
+            class="story-image"
+            src="images/mother-03.jpg"
+            alt="माई वृद्धाश्रमातील माता"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <div class="story-content">
+
+          <div
+            class="story-number"
+            data-mr="कथा ०३"
+            data-en="Story 03"
+          >
+            कथा ०३
+          </div>
+
+
+          <h3
+            data-mr="एका आईला मिळालेली नवी मायेची वाट"
+            data-en="A Mother Who Found a New Path of Care"
+          >
+            एका आईला मिळालेली नवी मायेची वाट
+          </h3>
+
+
+          <p
+            data-mr="अतिशय लहान वयातच त्यांचे लग्न झाले आणि अवघ्या १६व्या वर्षी पतीचे निधन झाले. काही काळ आई-वडिलांनी त्यांचा सांभाळ केला; मात्र त्यानंतर त्यांचेही निधन झाले. एकामागून एक दुःखाचे आघात सहन करत त्या तारुण्यातच अनाथ झाल्या."
+            data-en="She was married at a very young age and lost her husband at just 16. Her parents cared for her for some time, but they too passed away. After facing one loss after another, she was left without family support at a young age."
+          >
+            अतिशय लहान वयातच त्यांचे लग्न झाले आणि अवघ्या १६व्या वर्षी पतीचे निधन झाले. काही काळ आई-वडिलांनी त्यांचा सांभाळ केला; मात्र त्यानंतर त्यांचेही निधन झाले. एकामागून एक दुःखाचे आघात सहन करत त्या तारुण्यातच अनाथ झाल्या.
+          </p>
+
+
+          <p
+            data-mr="सांभाळ करण्यासाठी कोणीही उरले नाही. त्या दारोदार व रस्त्यावर भटकू लागल्या; कोणी खायला दिले तर ते खाऊन दिवस काढत आणि कधी रस्त्यावरच रात्र घालवत. सामाजिक कार्यकर्त्यांनी पोलिसांच्या मध्यस्थीने त्यांना माई वृद्धाश्रमात मोफत प्रवेश मिळवून दिला. आज त्यांना येथे सुरक्षित निवारा, अन्न, आरोग्यसेवा आणि मायेचा आधार मिळत आहे."
+            data-en="With no one left to care for her, she began wandering from door to door and on the streets, surviving on whatever food people offered and sometimes sleeping on the roadside. Social workers, with police support, helped her receive free admission to Mai Vriddhashram. Today, she has safe shelter, food, healthcare and the support of care and compassion."
+          >
+            सांभाळ करण्यासाठी कोणीही उरले नाही. त्या दारोदार व रस्त्यावर भटकू लागल्या; कोणी खायला दिले तर ते खाऊन दिवस काढत आणि कधी रस्त्यावरच रात्र घालवत. सामाजिक कार्यकर्त्यांनी पोलिसांच्या मध्यस्थीने त्यांना माई वृद्धाश्रमात मोफत प्रवेश मिळवून दिला. आज त्यांना येथे सुरक्षित निवारा, अन्न, आरोग्यसेवा आणि मायेचा आधार मिळत आहे.
+          </p>
+
+
+          <div class="story-consent">
+
+            <span class="story-consent-icon">✓</span>
+
+            <span
+              data-mr="मातेच्या संमतीने माहिती प्रकाशित"
+              data-en="Published with the mother's consent"
+            >
+              मातेच्या संमतीने माहिती प्रकाशित
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CLOSING
+===================================================== -->
+
+<section class="stories-closing">
+
+  <div class="stories-closing-inner">
+
+
+    <h2
+      data-mr="एक सुरक्षित घर, एक मायेचा आधार."
+      data-en="A Safe Home. A Place of Care."
+    >
+      एक सुरक्षित घर, एक मायेचा आधार.
+    </h2>
+
+
+    <p
+      data-mr="या कथा केवळ भूतकाळातील संघर्ष सांगत नाहीत; त्या सन्मानाने जगण्यासाठी मिळालेल्या आधाराचीही साक्ष देतात. माई वृद्धाश्रमाचा प्रयत्न प्रत्येक मातेला सुरक्षितता, काळजी आणि आपलेपणाची जाणीव देण्याचा आहे."
+      data-en="These stories are not only about past struggles; they also reflect the support that helps mothers live with dignity. Mai Vriddhashram strives to provide every mother with safety, care and a sense of belonging."
+    >
+      या कथा केवळ भूतकाळातील संघर्ष सांगत नाहीत; त्या सन्मानाने जगण्यासाठी मिळालेल्या आधाराचीही साक्ष देतात. माई वृद्धाश्रमाचा प्रयत्न प्रत्येक मातेला सुरक्षितता, काळजी आणि आपलेपणाची जाणीव देण्याचा आहे.
+    </p>
+
+
+    <a
+      href="donate.html"
+      class="premium-btn premium-btn-gold"
+      data-mr="या सेवेला सहकार्य करा"
+      data-en="Support the Care"
+    >
+      या सेवेला सहकार्य करा
+    </a>
+
+
+  </div>
+
+</section>
+
+
 </main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <div id="site-footer"></div>
+
+
 <script src="config.js"></script>
 <script src="js/common.js"></script>
 <script src="js/main.js"></script>
+
 </body>
 </html>
