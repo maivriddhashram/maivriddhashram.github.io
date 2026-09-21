@@ -733,113 +733,110 @@
 
 
 <script>
+document.addEventListener("DOMContentLoaded", function () {
 
-document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
 
-  /* -----------------------------------------------
-     CONTACT INFORMATION
-     ----------------------------------------------- */
+  if (!form) return;
 
-  document.getElementById("cAddress").textContent =
-    SITE_CONFIG.address;
+  form.addEventListener("submit", async function (event) {
 
-  document.getElementById("cPhoneD").textContent =
-    SITE_CONFIG.phone;
+    event.preventDefault();
 
-  document.getElementById("cWa").textContent =
-    SITE_CONFIG.whatsapp;
+    const success = form.querySelector(".form-success");
 
-  document.getElementById("cEmailD").textContent =
-    SITE_CONFIG.email;
+    const data = {
+      inquiry_type: "contact",
 
-  document.getElementById("cInsta").textContent =
-    SITE_CONFIG.instagram;
+      name: document.getElementById("ctName").value.trim(),
 
-  document.getElementById("cFb").textContent =
-    SITE_CONFIG.facebook;
+      email: document.getElementById("ctEmail").value.trim(),
 
+      phone: document.getElementById("ctPhone").value.trim(),
 
-  /* -----------------------------------------------
-     CALL
-     ----------------------------------------------- */
-
-  const tel =
-    /^\[/.test(SITE_CONFIG.phone)
-      ? "#"
-      : "tel:" + SITE_CONFIG.phone;
-
-  document.getElementById("btnCall").href = tel;
+      message: document.getElementById("ctMessage").value.trim()
+    };
 
 
-  /* -----------------------------------------------
-     WHATSAPP
-     ----------------------------------------------- */
+    /* =========================
+       VALIDATION
+    ========================= */
 
-  const wa =
-    (SITE_CONFIG.whatsapp || "").replace(/[^0-9]/g, "");
+    if (!data.name || !data.email || !data.message) {
 
-  document.getElementById("btnWa").href =
-    wa
-      ? "https://wa.me/" + wa
-      : "#";
+      alert("कृपया आवश्यक माहिती पूर्ण भरा.");
 
-
-  /* -----------------------------------------------
-     GOOGLE MAP DIRECTIONS
-     ----------------------------------------------- */
-
-  document.getElementById("btnMap").href =
-    /^\[/.test(SITE_CONFIG.googleMapsLink)
-      ? "#"
-      : SITE_CONFIG.googleMapsLink;
+      return;
+    }
 
 
-  /* -----------------------------------------------
-     EMAIL
-     ----------------------------------------------- */
+    /* =========================
+       SUBMIT BUTTON
+    ========================= */
 
-  document.getElementById("btnEmail").href =
-    /^\[/.test(SITE_CONFIG.email)
-      ? "#"
-      : "mailto:" + SITE_CONFIG.email;
+    const submitButton =
+      form.querySelector('button[type="submit"]');
 
+    submitButton.disabled = true;
 
-  /* -----------------------------------------------
-     SOCIAL MEDIA LINKS
-     ----------------------------------------------- */
-
-  if (
-    SITE_CONFIG.instagram &&
-    !/^\[/.test(SITE_CONFIG.instagram)
-  ) {
-    document.getElementById("socialInstagram").href =
-      SITE_CONFIG.instagram;
-  } else {
-    document.getElementById("socialInstagram").href = "#";
-  }
+    submitButton.textContent = "पाठवत आहे...";
 
 
-  if (
-    SITE_CONFIG.facebook &&
-    !/^\[/.test(SITE_CONFIG.facebook)
-  ) {
-    document.getElementById("socialFacebook").href =
-      SITE_CONFIG.facebook;
-  } else {
-    document.getElementById("socialFacebook").href = "#";
-  }
+    /* =========================
+       SEND TO GOOGLE APPS SCRIPT
+    ========================= */
+
+    try {
+
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbwL5sEJ3qVTuvztFihOKC5N6N1aEgubBYC51P_MN44xAsavgXsnW1hsrtgXaCD6Y5Ib/exec",
+        {
+          method: "POST",
+
+          mode: "no-cors",
+
+          headers: {
+            "Content-Type":
+              "text/plain;charset=utf-8"
+          },
+
+          body: JSON.stringify(data)
+        }
+      );
 
 
-  /* -----------------------------------------------
-     CONTACT FORM
-     ----------------------------------------------- */
+      /* =========================
+         SUCCESS
+      ========================= */
 
-  initForm("contactForm");
+      form.reset();
+
+      if (success) {
+        success.style.display = "block";
+      }
+
+      submitButton.disabled = false;
+
+      submitButton.textContent = "संदेश पाठवा";
+
+
+    } catch (error) {
+
+      console.error(error);
+
+      alert(
+        "फॉर्म पाठवताना समस्या आली. कृपया पुन्हा प्रयत्न करा."
+      );
+
+      submitButton.disabled = false;
+
+      submitButton.textContent = "संदेश पाठवा";
+    }
+
+  });
 
 });
-
 </script>
-
 </body>
 </html>
 ```
