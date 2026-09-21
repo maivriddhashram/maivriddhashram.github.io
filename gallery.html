@@ -1,65 +1,925 @@
 <!DOCTYPE html>
 <html lang="mr" data-lang="mr">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>गॅलरी | Gallery — Mai Vriddhashram</title>
-<meta name="description" content="माई वृद्धाश्रम येथील माता, उपक्रम, आरोग्य सेवा, सण आणि स्वयंसेवकांच्या क्षणांची छायाचित्रे.">
+
+<meta
+  name="description"
+  content="माई वृद्धाश्रम येथील माता आणि संस्थेच्या सुविधांची छायाचित्रे. माई वृद्धाश्रम — A Home of Dignity, Care and Love."
+>
+
 <link rel="canonical" href="[VERIFIED CANONICAL URL]/gallery.html">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Noto+Serif+Devanagari:wght@600;700&family=Work+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Noto+Serif+Devanagari:wght@600;700&family=Work+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap"
+  rel="stylesheet"
+>
+
 <link rel="stylesheet" href="css/style.css">
+
+<style>
+
+/* =========================================================
+   GALLERY PAGE
+========================================================= */
+
+.gallery-page-intro {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.gallery-page-intro p {
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 38px;
+}
+
+.filter-btn {
+  border: 1px solid rgba(23, 42, 58, 0.16);
+  background: #fff;
+  color: #172A3A;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-family: "Work Sans", "Noto Sans Devanagari", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.filter-btn:hover {
+  transform: translateY(-1px);
+  border-color: #B8904A;
+}
+
+.filter-btn.active {
+  background: #172A3A;
+  color: #fff;
+  border-color: #172A3A;
+}
+
+
+/* =========================================================
+   GALLERY GRID
+========================================================= */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  border: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #f3f0ea;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(23, 42, 58, 0.08);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(23, 42, 58, 0.14);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.045);
+}
+
+
+/* =========================================================
+   EMPTY / INFO MESSAGE
+========================================================= */
+
+.gallery-info {
+  max-width: 720px;
+  margin: 42px auto 0;
+  padding: 20px 24px;
+  border-radius: 16px;
+  background: #faf7f0;
+  border: 1px solid rgba(184, 144, 74, 0.22);
+  text-align: center;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(10, 20, 28, 0.94);
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox-inner {
+  position: relative;
+  width: min(100%, 1000px);
+}
+
+.lightbox-inner img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 78vh;
+  margin: 0 auto;
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+}
+
+#lightboxCaption {
+  color: #fff;
+  font-family: "Noto Sans Devanagari", "Work Sans", sans-serif;
+  line-height: 1.6;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.lightbox-close:hover {
+  background: rgba(255,255,255,0.22);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .gallery-filters {
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+
+  .filter-btn {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .gallery-item {
+    border-radius: 14px;
+  }
+
+  .gallery-info {
+    padding: 18px;
+  }
+
+}
+
+
+@media (max-width: 420px) {
+
+  .gallery-grid {
+    gap: 10px;
+  }
+
+  .gallery-item {
+    border-radius: 12px;
+  }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.filter-btn:focus-visible,
+.gallery-item:focus-visible,
+.lightbox-close:focus-visible {
+  outline: 3px solid rgba(184, 144, 74, 0.55);
+  outline-offset: 3px;
+}
+
+</style>
 </head>
+
+
 <body>
+
 <div id="site-header"></div>
+
+
 <main id="main">
+
+  <!-- =====================================================
+       HERO
+  ====================================================== -->
+
   <section class="page-hero">
+
     <div class="container">
-      <p class="breadcrumbs" data-mr="मुख्यपृष्ठ / गॅलरी" data-en="Home / Gallery">मुख्यपृष्ठ / गॅलरी</p>
-      <h1 data-mr="गॅलरी" data-en="Gallery">गॅलरी</h1>
-      <p class="max-w-prose mx-auto" data-mr="येथे खरी माई वृद्धाश्रम छायाचित्रे प्रकाशित होतील. सर्व फोटो जोडण्यापूर्वी संबंधित संमती घेतली जाते." data-en="Genuine Mai Vriddhashram photographs will be published here. Consent is obtained before any photo is added.">येथे खरी माई वृद्धाश्रम छायाचित्रे प्रकाशित होतील. सर्व फोटो जोडण्यापूर्वी संबंधित संमती घेतली जाते.</p>
+
+      <p
+        class="breadcrumbs"
+        data-mr="मुख्यपृष्ठ / गॅलरी"
+        data-en="Home / Gallery"
+      >
+        मुख्यपृष्ठ / गॅलरी
+      </p>
+
+      <h1
+        data-mr="गॅलरी"
+        data-en="Gallery"
+      >
+        गॅलरी
+      </h1>
+
+      <div class="gallery-page-intro">
+
+        <p
+          data-mr="माई वृद्धाश्रमातील माता, त्यांच्या दैनंदिन जीवनातील क्षण आणि संस्थेच्या उपलब्ध सुविधांची काही छायाचित्रे येथे पाहता येतील."
+          data-en="Explore photographs of the mothers at Mai Vriddhashram, moments from their daily lives, and selected facilities of the home."
+        >
+          माई वृद्धाश्रमातील माता, त्यांच्या दैनंदिन जीवनातील क्षण आणि संस्थेच्या उपलब्ध सुविधांची काही छायाचित्रे येथे पाहता येतील.
+        </p>
+
+      </div>
+
     </div>
+
   </section>
+
+
+  <!-- =====================================================
+       GALLERY
+  ====================================================== -->
 
   <section class="section">
+
     <div class="container">
-      <div class="gallery-filters" role="group" aria-label="Gallery filters">
-        <button class="filter-btn active" data-filter="all" data-mr="सर्व" data-en="All">सर्व</button>
-        <button class="filter-btn" data-filter="mothers" data-mr="माता" data-en="Mothers">माता</button>
-        <button class="filter-btn" data-filter="activities" data-mr="उपक्रम" data-en="Activities">उपक्रम</button>
-        <button class="filter-btn" data-filter="health" data-mr="आरोग्य" data-en="Health">आरोग्य</button>
-        <button class="filter-btn" data-filter="festivals" data-mr="सण" data-en="Festivals">सण</button>
-        <button class="filter-btn" data-filter="volunteers" data-mr="स्वयंसेवक" data-en="Volunteers">स्वयंसेवक</button>
-        <button class="filter-btn" data-filter="donations" data-mr="देणग्या" data-en="Donations">देणग्या</button>
-        <button class="filter-btn" data-filter="facilities" data-mr="सुविधा" data-en="Facilities">सुविधा</button>
+
+      <!-- FILTERS -->
+
+      <div
+        class="gallery-filters"
+        role="group"
+        aria-label="Gallery filters"
+      >
+
+        <button
+          type="button"
+          class="filter-btn active"
+          data-filter="all"
+          data-mr="सर्व"
+          data-en="All"
+        >
+          सर्व
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn"
+          data-filter="mothers"
+          data-mr="माता"
+          data-en="Mothers"
+        >
+          माता
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn"
+          data-filter="facilities"
+          data-mr="सुविधा"
+          data-en="Facilities"
+        >
+          सुविधा
+        </button>
+
       </div>
+
+
+      <!-- =================================================
+           PHOTO GRID
+      ================================================== -->
 
       <div class="gallery-grid" id="galleryGrid">
-        <button class="gallery-item" data-cat="mothers"><img src="images/gallery/placeholder-1.svg" alt="माई वृद्धाश्रम — फोटो लवकरच जोडला जाईल (Photo to be added)" loading="lazy"></button>
-        <button class="gallery-item" data-cat="activities"><img src="images/gallery/placeholder-2.svg" alt="उपक्रम — फोटो लवकरच जोडला जाईल (Photo to be added)" loading="lazy"></button>
-        <button class="gallery-item" data-cat="health"><img src="images/gallery/placeholder-3.svg" alt="आरोग्य शिबिर — फोटो लवकरच जोडला जाईल (Photo to be added)" loading="lazy"></button>
-        <button class="gallery-item" data-cat="festivals"><img src="images/gallery/placeholder-4.svg" alt="सण — फोटो लवकरच जोडला जाईल (Photo to be added)" loading="lazy"></button>
-        <button class="gallery-item" data-cat="volunteers"><img src="images/gallery/placeholder-5.svg" alt="स्वयंसेवक — फोटो लवकरच जोडला जाईल (Photo to be added)" loading="lazy"></button>
-        <button class="gallery-item" data-cat="donations"><img src="images/gallery/placeholder-6.svg" alt="देणगी मोहीम — फोटो लवकरच जोडला जाईल (Photo to be added)" loading="lazy"></button>
-        <button class="gallery-item" data-cat="facilities"><img src="images/gallery/placeholder-7.svg" alt="सुविधा — फोटो लवकरच जोडला जाईल (Photo to be added)" loading="lazy"></button>
-        <button class="gallery-item" data-cat="mothers"><img src="images/gallery/placeholder-8.svg" alt="माई वृद्धाश्रम — फोटो लवकरच जोडला जाईल (Photo to be added)" loading="lazy"></button>
+
+
+        <!-- =========================
+             MOTHERS
+        ========================== -->
+
+        <button
+          type="button"
+          class="gallery-item"
+          data-cat="mothers"
+          data-caption-mr="माई वृद्धाश्रमातील माता"
+          data-caption-en="Mothers at Mai Vriddhashram"
+        >
+          <img
+            src="images/our-mothers-01.jpg"
+            alt="माई वृद्धाश्रमातील माता"
+            loading="lazy"
+          >
+        </button>
+
+
+        <button
+          type="button"
+          class="gallery-item"
+          data-cat="mothers"
+          data-caption-mr="माई वृद्धाश्रमातील माता"
+          data-caption-en="Mothers at Mai Vriddhashram"
+        >
+          <img
+            src="images/our-mothers-02.jpg"
+            alt="माई वृद्धाश्रमातील माता"
+            loading="lazy"
+          >
+        </button>
+
+
+        <button
+          type="button"
+          class="gallery-item"
+          data-cat="mothers"
+          data-caption-mr="माई वृद्धाश्रमातील माता"
+          data-caption-en="Mothers at Mai Vriddhashram"
+        >
+          <img
+            src="images/our-mothers-03.jpg"
+            alt="माई वृद्धाश्रमातील माता"
+            loading="lazy"
+          >
+        </button>
+
+
+        <button
+          type="button"
+          class="gallery-item"
+          data-cat="mothers"
+          data-caption-mr="माई वृद्धाश्रमातील माता"
+          data-caption-en="Mothers at Mai Vriddhashram"
+        >
+          <img
+            src="images/our-mothers-04.jpg"
+            alt="माई वृद्धाश्रमातील माता"
+            loading="lazy"
+          >
+        </button>
+
+
+        <button
+          type="button"
+          class="gallery-item"
+          data-cat="mothers"
+          data-caption-mr="माई वृद्धाश्रमातील माता"
+          data-caption-en="Mothers at Mai Vriddhashram"
+        >
+          <img
+            src="images/our-mothers-05.jpg"
+            alt="माई वृद्धाश्रमातील माता"
+            loading="lazy"
+          >
+        </button>
+
+
+        <button
+          type="button"
+          class="gallery-item"
+          data-cat="mothers"
+          data-caption-mr="माई वृद्धाश्रमातील माता"
+          data-caption-en="Mothers at Mai Vriddhashram"
+        >
+          <img
+            src="images/our-mothers-06.jpg"
+            alt="माई वृद्धाश्रमातील माता"
+            loading="lazy"
+          >
+        </button>
+
+
+        <button
+          type="button"
+          class="gallery-item"
+          data-cat="mothers"
+          data-caption-mr="माई वृद्धाश्रमातील माता"
+          data-caption-en="Mothers at Mai Vriddhashram"
+        >
+          <img
+            src="images/our-mothers-07.jpg"
+            alt="माई वृद्धाश्रमातील माता"
+            loading="lazy"
+          >
+        </button>
+
+
+        <button
+          type="button"
+          class="gallery-item"
+          data-cat="mothers"
+          data-caption-mr="माई वृद्धाश्रमातील माता"
+          data-caption-en="Mothers at Mai Vriddhashram"
+        >
+          <img
+            src="images/our-mothers-08.jpg"
+            alt="माई वृद्धाश्रमातील माता"
+            loading="lazy"
+          >
+        </button>
+
+
+        <button
+          type="button"
+          class="gallery-item"
+          data-cat="mothers"
+          data-caption-mr="माई वृद्धाश्रमातील माता"
+          data-caption-en="Mothers at Mai Vriddhashram"
+        >
+          <img
+            src="images/our-mothers-09.jpg"
+            alt="माई वृद्धाश्रमातील माता"
+            loading="lazy"
+          >
+        </button>
+
+
+        <button
+          type="button"
+          class="gallery-item"
+          data-cat="mothers"
+          data-caption-mr="माई वृद्धाश्रमातील माता"
+          data-caption-en="Mothers at Mai Vriddhashram"
+        >
+          <img
+            src="images/our-mothers-10.jpg"
+            alt="माई वृद्धाश्रमातील माता"
+            loading="lazy"
+          >
+        </button>
+
+
+        <button
+          type="button"
+          class="gallery-item"
+          data-cat="mothers"
+          data-caption-mr="माई वृद्धाश्रमातील माता"
+          data-caption-en="Mothers at Mai Vriddhashram"
+        >
+          <img
+            src="images/our-mothers-11.jpg"
+            alt="माई वृद्धाश्रमातील माता"
+            loading="lazy"
+          >
+        </button>
+
+
+        <button
+          type="button"
+          class="gallery-item"
+          data-cat="mothers"
+          data-caption-mr="माई वृद्धाश्रमातील माता"
+          data-caption-en="Mothers at Mai Vriddhashram"
+        >
+          <img
+            src="images/our-mothers-12.jpg"
+            alt="माई वृद्धाश्रमातील माता"
+            loading="lazy"
+          >
+        </button>
+
+
+        <button
+          type="button"
+          class="gallery-item"
+          data-cat="mothers"
+          data-caption-mr="माई वृद्धाश्रमातील माता"
+          data-caption-en="Mothers at Mai Vriddhashram"
+        >
+          <img
+            src="images/our-mothers-13.jpg"
+            alt="माई वृद्धाश्रमातील माता"
+            loading="lazy"
+          >
+        </button>
+
+
+        <button
+          type="button"
+          class="gallery-item"
+          data-cat="mothers"
+          data-caption-mr="माई वृद्धाश्रमातील माता"
+          data-caption-en="Mothers at Mai Vriddhashram"
+        >
+          <img
+            src="images/our-mothers-14.jpg"
+            alt="माई वृद्धाश्रमातील माता"
+            loading="lazy"
+          >
+        </button>
+
+
+        <button
+          type="button"
+          class="gallery-item"
+          data-cat="mothers"
+          data-caption-mr="माई वृद्धाश्रमातील माता"
+          data-caption-en="Mothers at Mai Vriddhashram"
+        >
+          <img
+            src="images/our-mothers-15.jpg"
+            alt="माई वृद्धाश्रमातील माता"
+            loading="lazy"
+          >
+        </button>
+
+
+
+        <!-- =========================
+             FACILITIES
+        ========================== -->
+
+        <button
+          type="button"
+          class="gallery-item"
+          data-cat="facilities"
+          data-caption-mr="निवास व्यवस्था"
+          data-caption-en="Accommodation"
+        >
+          <img
+            src="images/facility-accommodation.jpg"
+            alt="माई वृद्धाश्रम निवास व्यवस्था"
+            loading="lazy"
+          >
+        </button>
+
+
+        <button
+          type="button"
+          class="gallery-item"
+          data-cat="facilities"
+          data-caption-mr="स्वयंपाकघर व आहार व्यवस्था"
+          data-caption-en="Kitchen and Meals"
+        >
+          <img
+            src="images/facility-kitchen.jpg"
+            alt="माई वृद्धाश्रम स्वयंपाकघर"
+            loading="lazy"
+          >
+        </button>
+
+
+        <button
+          type="button"
+          class="gallery-item"
+          data-cat="facilities"
+          data-caption-mr="आरोग्य सहाय्य"
+          data-caption-en="Healthcare Support"
+        >
+          <img
+            src="images/facility-healthcare.jpg"
+            alt="माई वृद्धाश्रम आरोग्य सहाय्य"
+            loading="lazy"
+          >
+        </button>
+
+
+        <button
+          type="button"
+          class="gallery-item"
+          data-cat="facilities"
+          data-caption-mr="योग व ध्यान"
+          data-caption-en="Yoga and Meditation"
+        >
+          <img
+            src="images/facility-yoga.jpg"
+            alt="माई वृद्धाश्रम योग व ध्यान"
+            loading="lazy"
+          >
+        </button>
+
+
+        <button
+          type="button"
+          class="gallery-item"
+          data-cat="facilities"
+          data-caption-mr="स्वच्छता"
+          data-caption-en="Cleanliness"
+        >
+          <img
+            src="images/facility-cleanliness.jpg"
+            alt="माई वृद्धाश्रम स्वच्छता व्यवस्था"
+            loading="lazy"
+          >
+        </button>
+
+
+        <button
+          type="button"
+          class="gallery-item"
+          data-cat="facilities"
+          data-caption-mr="मनोरंजन व सामाजिक उपक्रम"
+          data-caption-en="Recreation and Social Activities"
+        >
+          <img
+            src="images/facility-recreation.jpg"
+            alt="माई वृद्धाश्रम मनोरंजन व सामाजिक उपक्रम"
+            loading="lazy"
+          >
+        </button>
+
       </div>
-      <p class="form-note text-center" style="margin-top:20px;" data-mr="टीप: सध्या दाखवलेल्या प्रतिमा नमुना-प्लेसहोल्डर आहेत. या खऱ्या, संमती-मंजूर छायाचित्रांनी बदलल्या जातील." data-en="Note: images currently shown are sample placeholders and will be replaced with genuine, consent-approved photographs.">टीप: सध्या दाखवलेल्या प्रतिमा नमुना-प्लेसहोल्डर आहेत. या खऱ्या, संमती-मंजूर छायाचित्रांनी बदलल्या जातील.</p>
+
+
+      <!-- INFO -->
+
+      <div class="gallery-info">
+
+        <p
+          data-mr="ही गॅलरी संस्थेतील प्रत्यक्ष छायाचित्रांवर आधारित ठेवली आहे. नवीन उपक्रम, कार्यक्रम किंवा इतर संमती-मंजूर छायाचित्रे उपलब्ध झाल्यानंतर ती संबंधित विभागात जोडता येतील."
+          data-en="This gallery is based on genuine photographs from the institution. Additional consent-approved photographs from activities, events or other areas can be added to the relevant category as they become available."
+        >
+          ही गॅलरी संस्थेतील प्रत्यक्ष छायाचित्रांवर आधारित ठेवली आहे. नवीन उपक्रम, कार्यक्रम किंवा इतर संमती-मंजूर छायाचित्रे उपलब्ध झाल्यानंतर ती संबंधित विभागात जोडता येतील.
+        </p>
+
+      </div>
+
     </div>
+
   </section>
+
 </main>
 
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" tabindex="-1">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+
+<!-- =======================================================
+     LIGHTBOX
+======================================================== -->
+
+<div
+  class="lightbox"
+  id="lightbox"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Image preview"
+  tabindex="-1"
+>
+
+  <button
+    type="button"
+    class="lightbox-close"
+    id="lightboxClose"
+    aria-label="Close"
+  >
+    &times;
+  </button>
+
   <div class="lightbox-inner text-center">
-    <img id="lightboxImg" src="" alt="" style="max-height:70vh; margin:0 auto; border-radius:12px;">
-    <p id="lightboxCaption" style="margin-top:14px;"></p>
+
+    <img
+      id="lightboxImg"
+      src=""
+      alt=""
+    >
+
+    <p id="lightboxCaption"></p>
+
   </div>
+
 </div>
 
+
 <div id="site-footer"></div>
+
+
 <script src="config.js"></script>
 <script src="js/common.js"></script>
 <script src="js/main.js"></script>
+
+
+<script>
+
+/* =========================================================
+   GALLERY FILTER
+========================================================= */
+
+(function () {
+
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const galleryItems = document.querySelectorAll(".gallery-item");
+
+  filterButtons.forEach(function (button) {
+
+    button.addEventListener("click", function () {
+
+      const filter = this.getAttribute("data-filter");
+
+      filterButtons.forEach(function (btn) {
+        btn.classList.remove("active");
+      });
+
+      this.classList.add("active");
+
+      galleryItems.forEach(function (item) {
+
+        const category = item.getAttribute("data-cat");
+
+        if (filter === "all" || category === filter) {
+          item.style.display = "";
+        } else {
+          item.style.display = "none";
+        }
+
+      });
+
+    });
+
+  });
+
+})();
+
+
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+
+(function () {
+
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightboxImg");
+  const lightboxCaption = document.getElementById("lightboxCaption");
+  const lightboxClose = document.getElementById("lightboxClose");
+  const galleryItems = document.querySelectorAll(".gallery-item");
+
+  if (!lightbox || !lightboxImg || !lightboxClose) {
+    return;
+  }
+
+
+  function getCurrentLanguage() {
+
+    const html = document.documentElement;
+
+    return html.getAttribute("data-lang") || "mr";
+
+  }
+
+
+  function openLightbox(item) {
+
+    const image = item.querySelector("img");
+
+    if (!image) {
+      return;
+    }
+
+    const lang = getCurrentLanguage();
+
+    const captionMR =
+      item.getAttribute("data-caption-mr") || "";
+
+    const captionEN =
+      item.getAttribute("data-caption-en") || "";
+
+    lightboxImg.src = image.src;
+
+    lightboxImg.alt = image.alt || "";
+
+    lightboxCaption.textContent =
+      lang === "en" ? captionEN : captionMR;
+
+    lightbox.classList.add("open");
+
+    document.body.style.overflow = "hidden";
+
+    lightbox.focus();
+
+  }
+
+
+  function closeLightbox() {
+
+    lightbox.classList.remove("open");
+
+    lightboxImg.src = "";
+
+    document.body.style.overflow = "";
+
+  }
+
+
+  galleryItems.forEach(function (item) {
+
+    item.addEventListener("click", function () {
+
+      openLightbox(this);
+
+    });
+
+  });
+
+
+  lightboxClose.addEventListener("click", function () {
+
+    closeLightbox();
+
+  });
+
+
+  lightbox.addEventListener("click", function (event) {
+
+    if (event.target === lightbox) {
+
+      closeLightbox();
+
+    }
+
+  });
+
+
+  document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Escape" && lightbox.classList.contains("open")) {
+
+      closeLightbox();
+
+    }
+
+  });
+
+})();
+
+</script>
+
 </body>
 </html>
