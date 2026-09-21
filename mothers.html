@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="mr" data-lang="mr">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -8,31 +10,121 @@
 
 <meta
   name="description"
-  content="माई वृद्धाश्रम येथील मातांबद्दल — केवळ संमती दिलेल्या माहितीसह, पूर्ण गोपनीयतेचा आदर राखत."
+  content="माई वृद्धाश्रम येथील मातांचे छायाचित्र दर्शन — त्यांच्या प्रतिष्ठेचा, सन्मानाचा आणि गोपनीयतेचा आदर राखत."
 >
 
 <link rel="canonical" href="[VERIFIED CANONICAL URL]/mothers.html">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link
   href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Noto+Serif+Devanagari:wght@600;700&family=Work+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap"
   rel="stylesheet"
 >
 
 <link rel="stylesheet" href="css/style.css">
+
+
+<style>
+
+/* =========================================
+   OUR MOTHERS — PHOTO GALLERY
+   ========================================= */
+
+.mothers-gallery {
+  align-items: stretch;
+}
+
+/* Photo container */
+
+.mothers-gallery .mother-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #f3f0ea;
+  position: relative;
+}
+
+/* Photo */
+
+.mothers-gallery .mother-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+/* Small zoom effect */
+
+.mothers-gallery .card:hover .mother-photo img {
+  transform: scale(1.04);
+}
+
+/* Remove unnecessary card spacing */
+
+.mothers-gallery .card {
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+  .mothers-gallery {
+    gap: 20px;
+  }
+
+  .mothers-gallery .mother-photo {
+    border-radius: 16px;
+  }
+
+}
+
+/* Small mobile */
+
+@media (max-width: 480px) {
+
+  .mothers-gallery {
+    gap: 16px;
+  }
+
+  .mothers-gallery .mother-photo {
+    border-radius: 14px;
+  }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
+
+<!-- =========================================
+     SITE HEADER
+     ========================================= -->
+
 <div id="site-header"></div>
+
+
+<!-- =========================================
+     MAIN CONTENT
+     ========================================= -->
 
 <main id="main">
 
-  <!-- =========================
+
+  <!-- =======================================
        PAGE HERO
-  ========================== -->
+       ======================================= -->
 
   <section class="page-hero">
+
     <div class="container">
 
       <p
@@ -43,6 +135,7 @@
         मुख्यपृष्ठ / आमच्या माता
       </p>
 
+
       <h1
         data-mr="प्रत्येक आईची एक गोष्ट असते."
         data-en="Every mother has a story."
@@ -50,677 +143,298 @@
         प्रत्येक आईची एक गोष्ट असते.
       </h1>
 
+
       <p
         class="max-w-prose mx-auto"
-        data-mr="येथे केवळ ज्या मातांनी स्पष्ट संमती दिली आहे, त्यांचीच माहिती व फोटो प्रकाशित केले जातात. आधार क्रमांक, वैयक्तिक कागदपत्रे, फोन नंबर किंवा वैद्यकीय तपशील कधीही सार्वजनिक केले जात नाहीत."
-        data-en="Only mothers who have given explicit consent have their information and photographs published here. Identity documents, phone numbers, or medical details are never made public."
+        data-mr="येथे केवळ ज्या मातांनी स्पष्ट संमती दिली आहे, त्यांचीच छायाचित्रे प्रकाशित केली जातात. प्रत्येक मातेच्या प्रतिष्ठेचा, सन्मानाचा आणि गोपनीयतेचा पूर्ण आदर राखला जातो."
+        data-en="Only photographs of mothers who have given explicit consent are published here. The dignity, respect and privacy of every mother are fully protected."
       >
-        येथे केवळ ज्या मातांनी स्पष्ट संमती दिली आहे, त्यांचीच माहिती व फोटो प्रकाशित केले जातात.
-        आधार क्रमांक, वैयक्तिक कागदपत्रे, फोन नंबर किंवा वैद्यकीय तपशील कधीही सार्वजनिक केले जात नाहीत.
+        येथे केवळ ज्या मातांनी स्पष्ट संमती दिली आहे, त्यांचीच छायाचित्रे प्रकाशित केली जातात.
+        प्रत्येक मातेच्या प्रतिष्ठेचा, सन्मानाचा आणि गोपनीयतेचा पूर्ण आदर राखला जातो.
       </p>
 
     </div>
+
   </section>
 
 
-  <!-- =========================
-       OUR MOTHERS
-       15 PHOTO PLACEHOLDERS
-  ========================== -->
+
+  <!-- =======================================
+       PHOTO GALLERY
+       ======================================= -->
 
   <section class="section">
 
     <div class="container">
 
-      <div class="grid grid-3" id="mothersGrid">
+      <div class="grid grid-3 mothers-gallery" id="mothersGrid">
 
 
-        <!-- MOTHER 01 -->
-        <div class="card text-center reveal">
+        <!-- Mother 01 -->
 
-          <div
-            class="hero-media"
-            style="aspect-ratio:1/1; margin-bottom:16px;"
-          >
+        <div class="card">
 
-            <div class="placeholder-media">
+          <div class="mother-photo">
 
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-              >
-                <circle cx="12" cy="8" r="4"/>
-                <path d="M4 21v-1a8 8 0 0 1 16 0v1"/>
-              </svg>
-
-              <span
-                class="placeholder-tag"
-                data-mr="संमतीची प्रतीक्षा"
-                data-en="Awaiting consent"
-              >
-                संमतीची प्रतीक्षा
-              </span>
-
-            </div>
+            <img
+              src="images/our-mothers-01.jpg"
+              alt="माई वृद्धाश्रमातील माता"
+              loading="lazy"
+            >
 
           </div>
-
-          <h3
-            data-mr="[मंजूर प्रदर्शन नाव]"
-            data-en="[Approved display name]"
-          >
-            [मंजूर प्रदर्शन नाव]
-          </h3>
-
-          <p
-            class="form-note"
-            data-mr="[मंजूर असल्यासच वय दाखवले जाईल]"
-            data-en="[Age shown only if approved]"
-          >
-            [मंजूर असल्यासच वय दाखवले जाईल]
-          </p>
-
-          <p
-            class="form-note"
-            data-mr="[मंजूर संक्षिप्त कहाणी येथे येईल]"
-            data-en="[Short approved story will appear here]"
-          >
-            [मंजूर संक्षिप्त कहाणी येथे येईल]
-          </p>
 
         </div>
 
 
-        <!-- MOTHER 02 -->
-        <div class="card text-center reveal">
 
-          <div
-            class="hero-media"
-            style="aspect-ratio:1/1; margin-bottom:16px;"
-          >
+        <!-- Mother 02 -->
 
-            <div class="placeholder-media">
+        <div class="card">
 
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-              >
-                <circle cx="12" cy="8" r="4"/>
-                <path d="M4 21v-1a8 8 0 0 1 16 0v1"/>
-              </svg>
+          <div class="mother-photo">
 
-              <span
-                class="placeholder-tag"
-                data-mr="संमतीची प्रतीक्षा"
-                data-en="Awaiting consent"
-              >
-                संमतीची प्रतीक्षा
-              </span>
-
-            </div>
+            <img
+              src="images/our-mothers-02.jpg"
+              alt="माई वृद्धाश्रमातील माता"
+              loading="lazy"
+            >
 
           </div>
-
-          <h3
-            data-mr="[मंजूर प्रदर्शन नाव]"
-            data-en="[Approved display name]"
-          >
-            [मंजूर प्रदर्शन नाव]
-          </h3>
-
-          <p
-            class="form-note"
-            data-mr="[मंजूर असल्यासच वय दाखवले जाईल]"
-            data-en="[Age shown only if approved]"
-          >
-            [मंजूर असल्यासच वय दाखवले जाईल]
-          </p>
-
-          <p
-            class="form-note"
-            data-mr="[मंजूर संक्षिप्त कहाणी येथे येईल]"
-            data-en="[Short approved story will appear here]"
-          >
-            [मंजूर संक्षिप्त कहाणी येथे येईल]
-          </p>
 
         </div>
 
 
-        <!-- MOTHER 03 -->
-        <div class="card text-center reveal">
 
-          <div
-            class="hero-media"
-            style="aspect-ratio:1/1; margin-bottom:16px;"
-          >
+        <!-- Mother 03 -->
 
-            <div class="placeholder-media">
+        <div class="card">
 
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-              >
-                <circle cx="12" cy="8" r="4"/>
-                <path d="M4 21v-1a8 8 0 0 1 16 0v1"/>
-              </svg>
+          <div class="mother-photo">
 
-              <span
-                class="placeholder-tag"
-                data-mr="संमतीची प्रतीक्षा"
-                data-en="Awaiting consent"
-              >
-                संमतीची प्रतीक्षा
-              </span>
-
-            </div>
+            <img
+              src="images/our-mothers-03.jpg"
+              alt="माई वृद्धाश्रमातील माता"
+              loading="lazy"
+            >
 
           </div>
-
-          <h3
-            data-mr="[मंजूर प्रदर्शन नाव]"
-            data-en="[Approved display name]"
-          >
-            [मंजूर प्रदर्शन नाव]
-          </h3>
-
-          <p
-            class="form-note"
-            data-mr="[मंजूर असल्यासच वय दाखवले जाईल]"
-            data-en="[Age shown only if approved]"
-          >
-            [मंजूर असल्यासच वय दाखवले जाईल]
-          </p>
-
-          <p
-            class="form-note"
-            data-mr="[मंजूर संक्षिप्त कहाणी येथे येईल]"
-            data-en="[Short approved story will appear here]"
-          >
-            [मंजूर संक्षिप्त कहाणी येथे येईल]
-          </p>
 
         </div>
 
 
-        <!-- MOTHER 04 -->
-        <div class="card text-center reveal">
 
-          <div
-            class="hero-media"
-            style="aspect-ratio:1/1; margin-bottom:16px;"
-          >
+        <!-- Mother 04 -->
 
-            <div class="placeholder-media">
+        <div class="card">
 
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="12" cy="8" r="4"/>
-                <path d="M4 21v-1a8 8 0 0 1 16 0v1"/>
-              </svg>
+          <div class="mother-photo">
 
-              <span class="placeholder-tag"
-                data-mr="संमतीची प्रतीक्षा"
-                data-en="Awaiting consent">
-                संमतीची प्रतीक्षा
-              </span>
-
-            </div>
+            <img
+              src="images/our-mothers-04.jpg"
+              alt="माई वृद्धाश्रमातील माता"
+              loading="lazy"
+            >
 
           </div>
-
-          <h3
-            data-mr="[मंजूर प्रदर्शन नाव]"
-            data-en="[Approved display name]"
-          >
-            [मंजूर प्रदर्शन नाव]
-          </h3>
-
-          <p class="form-note"
-            data-mr="[मंजूर असल्यासच वय दाखवले जाईल]"
-            data-en="[Age shown only if approved]">
-            [मंजूर असल्यासच वय दाखवले जाईल]
-          </p>
-
-          <p class="form-note"
-            data-mr="[मंजूर संक्षिप्त कहाणी येथे येईल]"
-            data-en="[Short approved story will appear here]">
-            [मंजूर संक्षिप्त कहाणी येथे येईल]
-          </p>
 
         </div>
 
 
-        <!-- MOTHER 05 -->
-        <div class="card text-center reveal">
 
-          <div class="hero-media" style="aspect-ratio:1/1; margin-bottom:16px;">
-            <div class="placeholder-media">
+        <!-- Mother 05 -->
 
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="12" cy="8" r="4"/>
-                <path d="M4 21v-1a8 8 0 0 1 16 0v1"/>
-              </svg>
+        <div class="card">
 
-              <span class="placeholder-tag"
-                data-mr="संमतीची प्रतीक्षा"
-                data-en="Awaiting consent">
-                संमतीची प्रतीक्षा
-              </span>
+          <div class="mother-photo">
 
-            </div>
+            <img
+              src="images/our-mothers-05.jpg"
+              alt="माई वृद्धाश्रमातील माता"
+              loading="lazy"
+            >
+
           </div>
-
-          <h3 data-mr="[मंजूर प्रदर्शन नाव]" data-en="[Approved display name]">
-            [मंजूर प्रदर्शन नाव]
-          </h3>
-
-          <p class="form-note"
-            data-mr="[मंजूर असल्यासच वय दाखवले जाईल]"
-            data-en="[Age shown only if approved]">
-            [मंजूर असल्यासच वय दाखवले जाईल]
-          </p>
-
-          <p class="form-note"
-            data-mr="[मंजूर संक्षिप्त कहाणी येथे येईल]"
-            data-en="[Short approved story will appear here]">
-            [मंजूर संक्षिप्त कहाणी येथे येईल]
-          </p>
 
         </div>
 
 
-        <!-- MOTHER 06 -->
-        <div class="card text-center reveal">
 
-          <div class="hero-media" style="aspect-ratio:1/1; margin-bottom:16px;">
-            <div class="placeholder-media">
+        <!-- Mother 06 -->
 
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="12" cy="8" r="4"/>
-                <path d="M4 21v-1a8 8 0 0 1 16 0v1"/>
-              </svg>
+        <div class="card">
 
-              <span class="placeholder-tag"
-                data-mr="संमतीची प्रतीक्षा"
-                data-en="Awaiting consent">
-                संमतीची प्रतीक्षा
-              </span>
+          <div class="mother-photo">
 
-            </div>
+            <img
+              src="images/our-mothers-06.jpg"
+              alt="माई वृद्धाश्रमातील माता"
+              loading="lazy"
+            >
+
           </div>
-
-          <h3 data-mr="[मंजूर प्रदर्शन नाव]" data-en="[Approved display name]">
-            [मंजूर प्रदर्शन नाव]
-          </h3>
-
-          <p class="form-note"
-            data-mr="[मंजूर असल्यासच वय दाखवले जाईल]"
-            data-en="[Age shown only if approved]">
-            [मंजूर असल्यासच वय दाखवले जाईल]
-          </p>
-
-          <p class="form-note"
-            data-mr="[मंजूर संक्षिप्त कहाणी येथे येईल]"
-            data-en="[Short approved story will appear here]">
-            [मंजूर संक्षिप्त कहाणी येथे येईल]
-          </p>
 
         </div>
 
 
-        <!-- MOTHER 07 -->
-        <div class="card text-center reveal">
 
-          <div class="hero-media" style="aspect-ratio:1/1; margin-bottom:16px;">
-            <div class="placeholder-media">
+        <!-- Mother 07 -->
 
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="12" cy="8" r="4"/>
-                <path d="M4 21v-1a8 8 0 0 1 16 0v1"/>
-              </svg>
+        <div class="card">
 
-              <span class="placeholder-tag"
-                data-mr="संमतीची प्रतीक्षा"
-                data-en="Awaiting consent">
-                संमतीची प्रतीक्षा
-              </span>
+          <div class="mother-photo">
 
-            </div>
+            <img
+              src="images/our-mothers-07.jpg"
+              alt="माई वृद्धाश्रमातील माता"
+              loading="lazy"
+            >
+
           </div>
-
-          <h3 data-mr="[मंजूर प्रदर्शन नाव]" data-en="[Approved display name]">
-            [मंजूर प्रदर्शन नाव]
-          </h3>
-
-          <p class="form-note"
-            data-mr="[मंजूर असल्यासच वय दाखवले जाईल]"
-            data-en="[Age shown only if approved]">
-            [मंजूर असल्यासच वय दाखवले जाईल]
-          </p>
-
-          <p class="form-note"
-            data-mr="[मंजूर संक्षिप्त कहाणी येथे येईल]"
-            data-en="[Short approved story will appear here]">
-            [मंजूर संक्षिप्त कहाणी येथे येईल]
-          </p>
 
         </div>
 
 
-        <!-- MOTHER 08 -->
-        <div class="card text-center reveal">
 
-          <div class="hero-media" style="aspect-ratio:1/1; margin-bottom:16px;">
-            <div class="placeholder-media">
+        <!-- Mother 08 -->
 
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="12" cy="8" r="4"/>
-                <path d="M4 21v-1a8 8 0 0 1 16 0v1"/>
-              </svg>
+        <div class="card">
 
-              <span class="placeholder-tag"
-                data-mr="संमतीची प्रतीक्षा"
-                data-en="Awaiting consent">
-                संमतीची प्रतीक्षा
-              </span>
+          <div class="mother-photo">
 
-            </div>
+            <img
+              src="images/our-mothers-08.jpg"
+              alt="माई वृद्धाश्रमातील माता"
+              loading="lazy"
+            >
+
           </div>
-
-          <h3 data-mr="[मंजूर प्रदर्शन नाव]" data-en="[Approved display name]">
-            [मंजूर प्रदर्शन नाव]
-          </h3>
-
-          <p class="form-note"
-            data-mr="[मंजूर असल्यासच वय दाखवले जाईल]"
-            data-en="[Age shown only if approved]">
-            [मंजूर असल्यासच वय दाखवले जाईल]
-          </p>
-
-          <p class="form-note"
-            data-mr="[मंजूर संक्षिप्त कहाणी येथे येईल]"
-            data-en="[Short approved story will appear here]">
-            [मंजूर संक्षिप्त कहाणी येथे येईल]
-          </p>
 
         </div>
 
 
-        <!-- MOTHER 09 -->
-        <div class="card text-center reveal">
 
-          <div class="hero-media" style="aspect-ratio:1/1; margin-bottom:16px;">
-            <div class="placeholder-media">
+        <!-- Mother 09 -->
 
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="12" cy="8" r="4"/>
-                <path d="M4 21v-1a8 8 0 0 1 16 0v1"/>
-              </svg>
+        <div class="card">
 
-              <span class="placeholder-tag"
-                data-mr="संमतीची प्रतीक्षा"
-                data-en="Awaiting consent">
-                संमतीची प्रतीक्षा
-              </span>
+          <div class="mother-photo">
 
-            </div>
+            <img
+              src="images/our-mothers-09.jpg"
+              alt="माई वृद्धाश्रमातील माता"
+              loading="lazy"
+            >
+
           </div>
-
-          <h3 data-mr="[मंजूर प्रदर्शन नाव]" data-en="[Approved display name]">
-            [मंजूर प्रदर्शन नाव]
-          </h3>
-
-          <p class="form-note"
-            data-mr="[मंजूर असल्यासच वय दाखवले जाईल]"
-            data-en="[Age shown only if approved]">
-            [मंजूर असल्यासच वय दाखवले जाईल]
-          </p>
-
-          <p class="form-note"
-            data-mr="[मंजूर संक्षिप्त कहाणी येथे येईल]"
-            data-en="[Short approved story will appear here]">
-            [मंजूर संक्षिप्त कहाणी येथे येईल]
-          </p>
 
         </div>
 
 
-        <!-- MOTHER 10 -->
-        <div class="card text-center reveal">
 
-          <div class="hero-media" style="aspect-ratio:1/1; margin-bottom:16px;">
-            <div class="placeholder-media">
+        <!-- Mother 10 -->
 
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="12" cy="8" r="4"/>
-                <path d="M4 21v-1a8 8 0 0 1 16 0v1"/>
-              </svg>
+        <div class="card">
 
-              <span class="placeholder-tag"
-                data-mr="संमतीची प्रतीक्षा"
-                data-en="Awaiting consent">
-                संमतीची प्रतीक्षा
-              </span>
+          <div class="mother-photo">
 
-            </div>
+            <img
+              src="images/our-mothers-10.jpg"
+              alt="माई वृद्धाश्रमातील माता"
+              loading="lazy"
+            >
+
           </div>
-
-          <h3 data-mr="[मंजूर प्रदर्शन नाव]" data-en="[Approved display name]">
-            [मंजूर प्रदर्शन नाव]
-          </h3>
-
-          <p class="form-note"
-            data-mr="[मंजूर असल्यासच वय दाखवले जाईल]"
-            data-en="[Age shown only if approved]">
-            [मंजूर असल्यासच वय दाखवले जाईल]
-          </p>
-
-          <p class="form-note"
-            data-mr="[मंजूर संक्षिप्त कहाणी येथे येईल]"
-            data-en="[Short approved story will appear here]">
-            [मंजूर संक्षिप्त कहाणी येथे येईल]
-          </p>
 
         </div>
 
 
-        <!-- MOTHER 11 -->
-        <div class="card text-center reveal">
 
-          <div class="hero-media" style="aspect-ratio:1/1; margin-bottom:16px;">
-            <div class="placeholder-media">
+        <!-- Mother 11 -->
 
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="12" cy="8" r="4"/>
-                <path d="M4 21v-1a8 8 0 0 1 16 0v1"/>
-              </svg>
+        <div class="card">
 
-              <span class="placeholder-tag"
-                data-mr="संमतीची प्रतीक्षा"
-                data-en="Awaiting consent">
-                संमतीची प्रतीक्षा
-              </span>
+          <div class="mother-photo">
 
-            </div>
+            <img
+              src="images/our-mothers-11.jpg"
+              alt="माई वृद्धाश्रमातील माता"
+              loading="lazy"
+            >
+
           </div>
-
-          <h3 data-mr="[मंजूर प्रदर्शन नाव]" data-en="[Approved display name]">
-            [मंजूर प्रदर्शन नाव]
-          </h3>
-
-          <p class="form-note"
-            data-mr="[मंजूर असल्यासच वय दाखवले जाईल]"
-            data-en="[Age shown only if approved]">
-            [मंजूर असल्यासच वय दाखवले जाईल]
-          </p>
-
-          <p class="form-note"
-            data-mr="[मंजूर संक्षिप्त कहाणी येथे येईल]"
-            data-en="[Short approved story will appear here]">
-            [मंजूर संक्षिप्त कहाणी येथे येईल]
-          </p>
 
         </div>
 
 
-        <!-- MOTHER 12 -->
-        <div class="card text-center reveal">
 
-          <div class="hero-media" style="aspect-ratio:1/1; margin-bottom:16px;">
-            <div class="placeholder-media">
+        <!-- Mother 12 -->
 
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="12" cy="8" r="4"/>
-                <path d="M4 21v-1a8 8 0 0 1 16 0v1"/>
-              </svg>
+        <div class="card">
 
-              <span class="placeholder-tag"
-                data-mr="संमतीची प्रतीक्षा"
-                data-en="Awaiting consent">
-                संमतीची प्रतीक्षा
-              </span>
+          <div class="mother-photo">
 
-            </div>
+            <img
+              src="images/our-mothers-12.jpg"
+              alt="माई वृद्धाश्रमातील माता"
+              loading="lazy"
+            >
+
           </div>
-
-          <h3 data-mr="[मंजूर प्रदर्शन नाव]" data-en="[Approved display name]">
-            [मंजूर प्रदर्शन नाव]
-          </h3>
-
-          <p class="form-note"
-            data-mr="[मंजूर असल्यासच वय दाखवले जाईल]"
-            data-en="[Age shown only if approved]">
-            [मंजूर असल्यासच वय दाखवले जाईल]
-          </p>
-
-          <p class="form-note"
-            data-mr="[मंजूर संक्षिप्त कहाणी येथे येईल]"
-            data-en="[Short approved story will appear here]">
-            [मंजूर संक्षिप्त कहाणी येथे येईल]
-          </p>
 
         </div>
 
 
-        <!-- MOTHER 13 -->
-        <div class="card text-center reveal">
 
-          <div class="hero-media" style="aspect-ratio:1/1; margin-bottom:16px;">
-            <div class="placeholder-media">
+        <!-- Mother 13 -->
 
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="12" cy="8" r="4"/>
-                <path d="M4 21v-1a8 8 0 0 1 16 0v1"/>
-              </svg>
+        <div class="card">
 
-              <span class="placeholder-tag"
-                data-mr="संमतीची प्रतीक्षा"
-                data-en="Awaiting consent">
-                संमतीची प्रतीक्षा
-              </span>
+          <div class="mother-photo">
 
-            </div>
+            <img
+              src="images/our-mothers-13.jpg"
+              alt="माई वृद्धाश्रमातील माता"
+              loading="lazy"
+            >
+
           </div>
-
-          <h3 data-mr="[मंजूर प्रदर्शन नाव]" data-en="[Approved display name]">
-            [मंजूर प्रदर्शन नाव]
-          </h3>
-
-          <p class="form-note"
-            data-mr="[मंजूर असल्यासच वय दाखवले जाईल]"
-            data-en="[Age shown only if approved]">
-            [मंजूर असल्यासच वय दाखवले जाईल]
-          </p>
-
-          <p class="form-note"
-            data-mr="[मंजूर संक्षिप्त कहाणी येथे येईल]"
-            data-en="[Short approved story will appear here]">
-            [मंजूर संक्षिप्त कहाणी येथे येईल]
-          </p>
 
         </div>
 
 
-        <!-- MOTHER 14 -->
-        <div class="card text-center reveal">
 
-          <div class="hero-media" style="aspect-ratio:1/1; margin-bottom:16px;">
-            <div class="placeholder-media">
+        <!-- Mother 14 -->
 
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="12" cy="8" r="4"/>
-                <path d="M4 21v-1a8 8 0 0 1 16 0v1"/>
-              </svg>
+        <div class="card">
 
-              <span class="placeholder-tag"
-                data-mr="संमतीची प्रतीक्षा"
-                data-en="Awaiting consent">
-                संमतीची प्रतीक्षा
-              </span>
+          <div class="mother-photo">
 
-            </div>
+            <img
+              src="images/our-mothers-14.jpg"
+              alt="माई वृद्धाश्रमातील माता"
+              loading="lazy"
+            >
+
           </div>
-
-          <h3 data-mr="[मंजूर प्रदर्शन नाव]" data-en="[Approved display name]">
-            [मंजूर प्रदर्शन नाव]
-          </h3>
-
-          <p class="form-note"
-            data-mr="[मंजूर असल्यासच वय दाखवले जाईल]"
-            data-en="[Age shown only if approved]">
-            [मंजूर असल्यासच वय दाखवले जाईल]
-          </p>
-
-          <p class="form-note"
-            data-mr="[मंजूर संक्षिप्त कहाणी येथे येईल]"
-            data-en="[Short approved story will appear here]">
-            [मंजूर संक्षिप्त कहाणी येथे येईल]
-          </p>
 
         </div>
 
 
-        <!-- MOTHER 15 -->
-        <div class="card text-center reveal">
 
-          <div class="hero-media" style="aspect-ratio:1/1; margin-bottom:16px;">
-            <div class="placeholder-media">
+        <!-- Mother 15 -->
 
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="12" cy="8" r="4"/>
-                <path d="M4 21v-1a8 8 0 0 1 16 0v1"/>
-              </svg>
+        <div class="card">
 
-              <span class="placeholder-tag"
-                data-mr="संमतीची प्रतीक्षा"
-                data-en="Awaiting consent">
-                संमतीची प्रतीक्षा
-              </span>
+          <div class="mother-photo">
 
-            </div>
+            <img
+              src="images/our-mothers-15.jpg"
+              alt="माई वृद्धाश्रमातील माता"
+              loading="lazy"
+            >
+
           </div>
-
-          <h3 data-mr="[मंजूर प्रदर्शन नाव]" data-en="[Approved display name]">
-            [मंजूर प्रदर्शन नाव]
-          </h3>
-
-          <p class="form-note"
-            data-mr="[मंजूर असल्यासच वय दाखवले जाईल]"
-            data-en="[Age shown only if approved]">
-            [मंजूर असल्यासच वय दाखवले जाईल]
-          </p>
-
-          <p class="form-note"
-            data-mr="[मंजूर संक्षिप्त कहाणी येथे येईल]"
-            data-en="[Short approved story will appear here]">
-            [मंजूर संक्षिप्त कहाणी येथे येईल]
-          </p>
 
         </div>
 
@@ -732,13 +446,15 @@
   </section>
 
 
-  <!-- =========================
-       PRIVACY
-  ========================== -->
+
+  <!-- =======================================
+       PRIVACY COMMITMENT
+       ======================================= -->
 
   <section class="section section-alt text-center">
 
     <div class="container">
+
 
       <h2
         data-mr="गोपनीयतेची आमची बांधिलकी"
@@ -746,6 +462,7 @@
       >
         गोपनीयतेची आमची बांधिलकी
       </h2>
+
 
       <p
         class="max-w-prose mx-auto"
@@ -756,6 +473,7 @@
         आधार, वैद्यकीय नोंदी, मागील पत्ता किंवा कोणतीही गोपनीय माहिती कधीही सार्वजनिक केली जात नाही.
       </p>
 
+
       <a
         href="donate.html"
         class="btn btn-primary"
@@ -765,19 +483,35 @@
         ❤️ देणगी द्या
       </a>
 
+
     </div>
 
   </section>
 
+
 </main>
 
+
+
+<!-- =========================================
+     SITE FOOTER
+     ========================================= -->
 
 <div id="site-footer"></div>
 
 
+
+<!-- =========================================
+     JAVASCRIPT
+     ========================================= -->
+
 <script src="config.js"></script>
+
 <script src="js/common.js"></script>
+
 <script src="js/main.js"></script>
 
+
 </body>
+
 </html>
