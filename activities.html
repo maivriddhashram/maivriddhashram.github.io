@@ -1,78 +1,901 @@
 <!DOCTYPE html>
 <html lang="mr" data-lang="mr">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>उपक्रम | Activities — Mai Vriddhashram</title>
-<meta name="description" content="माई वृद्धाश्रम येथील आरोग्य शिबिरे, योग, सण, वाढदिवस आणि सामाजिक उपक्रमांची झलक.">
-<link rel="canonical" href="[VERIFIED CANONICAL URL]/activities.html">
+
+<meta
+  name="description"
+  content="माई वृद्धाश्रम येथील आरोग्य सहाय्य, योग-ध्यान, सण, आनंदाचे क्षण, सांस्कृतिक व मनोरंजनात्मक उपक्रम आणि स्वयंसेवक सहभाग."
+>
+
+<link
+  rel="canonical"
+  href="[VERIFIED CANONICAL URL]/activities.html"
+>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Noto+Serif+Devanagari:wght@600;700&family=Work+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Noto+Serif+Devanagari:wght@600;700&family=Work+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap"
+  rel="stylesheet"
+>
+
 <link rel="stylesheet" href="css/style.css">
+
+
+<style>
+
+/* =========================================================
+   ACTIVITIES PAGE
+   ========================================================= */
+
+.activities-intro {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.activities-intro p {
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   ACTIVITY GRID
+   ========================================================= */
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 10px;
+}
+
+
+/* =========================================================
+   ACTIVITY CARD
+   ========================================================= */
+
+.activity-card {
+  position: relative;
+  padding: 30px;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid rgba(23, 42, 58, 0.08);
+  box-shadow: 0 10px 30px rgba(23, 42, 58, 0.06);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.activity-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: #b8904a;
+  opacity: 0.75;
+}
+
+.activity-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(23, 42, 58, 0.10);
+}
+
+
+/* =========================================================
+   ICON
+   ========================================================= */
+
+.activity-icon {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: #f6f0e5;
+  font-size: 27px;
+  margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+   ========================================================= */
+
+.activity-card h3 {
+  margin: 0 0 12px;
+}
+
+.activity-card p {
+  margin: 0;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   SMALL LABEL
+   ========================================================= */
+
+.activity-tag {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 6px 11px;
+  border-radius: 999px;
+  background: #f7f4ee;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+
+/* =========================================================
+   CARE PHILOSOPHY SECTION
+   ========================================================= */
+
+.activities-principles {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.principle-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.principle-item {
+  padding: 24px;
+  text-align: center;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.72);
+  border: 1px solid rgba(23,42,58,0.07);
+}
+
+.principle-item .principle-icon {
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+.principle-item h3 {
+  margin-bottom: 8px;
+}
+
+.principle-item p {
+  margin: 0;
+  line-height: 1.65;
+  font-size: 0.94rem;
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.activities-cta-text {
+  max-width: 720px;
+  margin: 0 auto 24px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .activities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .principle-list {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .activity-card {
+    padding: 24px;
+    border-radius: 17px;
+  }
+
+  .activity-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 24px;
+    border-radius: 14px;
+  }
+
+}
+
+</style>
+
 </head>
+
+
 <body>
+
+
+<!-- =====================================================
+     HEADER
+     ===================================================== -->
+
 <div id="site-header"></div>
+
+
 <main id="main">
-  <section class="page-hero">
-    <div class="container">
-      <p class="breadcrumbs" data-mr="मुख्यपृष्ठ / उपक्रम" data-en="Home / Activities">मुख्यपृष्ठ / उपक्रम</p>
-      <h1 data-mr="उपक्रम" data-en="Activities">उपक्रम</h1>
-      <p class="max-w-prose mx-auto" data-mr="प्रत्येक दिवस अर्थपूर्ण करणारे कार्यक्रम व उपक्रम — फक्त पडताळणी झालेल्या घटनाच येथे नमूद केल्या जातील." data-en="Programs and activities that make every day meaningful — only verified events are listed here.">प्रत्येक दिवस अर्थपूर्ण करणारे कार्यक्रम व उपक्रम — फक्त पडताळणी झालेल्या घटनाच येथे नमूद केल्या जातील.</p>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="container" style="max-width:760px;">
-      <div class="timeline">
-        <div class="timeline-item reveal">
-          <div class="icon-badge">🩺</div>
-          <h3 data-mr="आरोग्य शिबिरे" data-en="Health Camps">आरोग्य शिबिरे</h3>
-          <p class="form-note" data-mr="[पडताळणी झालेल्या तारखेची व तपशीलांची प्रतीक्षा]" data-en="[Awaiting verified date and details]">[पडताळणी झालेल्या तारखेची व तपशीलांची प्रतीक्षा]</p>
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+
+<section class="page-hero">
+
+  <div class="container">
+
+    <p
+      class="breadcrumbs"
+      data-mr="मुख्यपृष्ठ / उपक्रम"
+      data-en="Home / Activities"
+    >
+      मुख्यपृष्ठ / उपक्रम
+    </p>
+
+
+    <h1
+      data-mr="उपक्रम"
+      data-en="Activities"
+    >
+      उपक्रम
+    </h1>
+
+
+    <p
+      class="max-w-prose mx-auto"
+      data-mr="माई वृद्धाश्रमातील प्रत्येक दिवस सुरक्षित, अर्थपूर्ण आणि आनंदी असावा — या भावनेतून आरोग्य, सहवास, आनंद आणि सामाजिक सहभागाला महत्त्व दिले जाते."
+      data-en="Every day at Mai Vriddhashram is intended to be safe, meaningful and joyful — with a focus on health, companionship, happiness and social participation."
+    >
+      माई वृद्धाश्रमातील प्रत्येक दिवस सुरक्षित, अर्थपूर्ण आणि आनंदी असावा —
+      या भावनेतून आरोग्य, सहवास, आनंद आणि सामाजिक सहभागाला महत्त्व दिले जाते.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTRODUCTION
+     ===================================================== -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="activities-intro">
+
+      <h2
+        data-mr="निवासापलीकडची काळजी"
+        data-en="Care Beyond Accommodation"
+      >
+        निवासापलीकडची काळजी
+      </h2>
+
+
+      <p
+        data-mr="वृद्धाश्रम म्हणजे केवळ राहण्याची जागा नाही. सुरक्षित निवासासोबत आरोग्य, मानसिक समाधान, सामाजिक संवाद, आपुलकी आणि आनंदाचे क्षण यांनाही तितकेच महत्त्व आहे. मातांच्या गरजा, आरोग्य आणि सोय लक्षात घेऊन विविध उपक्रम व सहभागाच्या संधी उपलब्ध करून देण्याचा प्रयत्न केला जातो."
+        data-en="A care home is more than a place to stay. Along with safe accommodation, health, emotional wellbeing, social interaction, companionship and moments of joy matter equally. Activities and opportunities for participation are encouraged according to the mothers' needs, wellbeing and comfort."
+      >
+        वृद्धाश्रम म्हणजे केवळ राहण्याची जागा नाही.
+        सुरक्षित निवासासोबत आरोग्य, मानसिक समाधान, सामाजिक संवाद,
+        आपुलकी आणि आनंदाचे क्षण यांनाही तितकेच महत्त्व आहे.
+        मातांच्या गरजा, आरोग्य आणि सोय लक्षात घेऊन विविध उपक्रम
+        व सहभागाच्या संधी उपलब्ध करून देण्याचा प्रयत्न केला जातो.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ACTIVITIES
+     ===================================================== -->
+
+<section class="section section-alt">
+
+  <div class="container">
+
+
+    <div class="activities-grid">
+
+
+      <!-- =================================================
+           01 HEALTH
+           ================================================= -->
+
+      <article class="activity-card reveal">
+
+        <div class="activity-icon">
+          🩺
         </div>
-        <div class="timeline-item reveal">
-          <div class="icon-badge">🧘</div>
-          <h3 data-mr="योग सत्रे" data-en="Yoga Sessions">योग सत्रे</h3>
-          <p class="form-note" data-mr="[पडताळणी झालेल्या तारखेची व तपशीलांची प्रतीक्षा]" data-en="[Awaiting verified date and details]">[पडताळणी झालेल्या तारखेची व तपशीलांची प्रतीक्षा]</p>
+
+
+        <h3
+          data-mr="आरोग्य सहाय्य"
+          data-en="Healthcare Support"
+        >
+          आरोग्य सहाय्य
+        </h3>
+
+
+        <p
+          data-mr="मातांच्या आरोग्याची काळजी ही दैनंदिन सेवाभावाचा महत्त्वाचा भाग आहे. आवश्यकतेनुसार आरोग्य तपासणी, वैद्यकीय सल्ला, उपचारासाठी सहकार्य आणि आरोग्यविषयक काळजी घेतली जाते."
+          data-en="Looking after the mothers' health is an important part of daily care. Health check-ups, medical guidance, treatment support and appropriate healthcare assistance are provided as needed."
+        >
+          मातांच्या आरोग्याची काळजी ही दैनंदिन सेवाभावाचा
+          महत्त्वाचा भाग आहे. आवश्यकतेनुसार आरोग्य तपासणी,
+          वैद्यकीय सल्ला, उपचारासाठी सहकार्य आणि आरोग्यविषयक
+          काळजी घेतली जाते.
+        </p>
+
+
+        <span
+          class="activity-tag"
+          data-mr="आरोग्य व काळजी"
+          data-en="Health & Care"
+        >
+          आरोग्य व काळजी
+        </span>
+
+      </article>
+
+
+
+      <!-- =================================================
+           02 YOGA
+           ================================================= -->
+
+      <article class="activity-card reveal">
+
+        <div class="activity-icon">
+          🧘
         </div>
-        <div class="timeline-item reveal">
-          <div class="icon-badge">🎊</div>
-          <h3 data-mr="सण साजरे" data-en="Festivals">सण साजरे</h3>
-          <p class="form-note" data-mr="[पडताळणी झालेल्या तारखेची व तपशीलांची प्रतीक्षा]" data-en="[Awaiting verified date and details]">[पडताळणी झालेल्या तारखेची व तपशीलांची प्रतीक्षा]</p>
+
+
+        <h3
+          data-mr="योग व ध्यान"
+          data-en="Yoga & Meditation"
+        >
+          योग व ध्यान
+        </h3>
+
+
+        <p
+          data-mr="शारीरिक हालचाल, मानसिक शांतता आणि सकारात्मक वातावरणासाठी योग, ध्यान आणि शांत चिंतनास प्रोत्साहन दिले जाते. मातांच्या सोयीनुसार आणि क्षमतेनुसार सहभागाला महत्त्व दिले जाते."
+          data-en="Yoga, meditation and quiet reflection are encouraged to support physical movement, mental peace and a positive environment. Participation is adapted to each mother's comfort and ability."
+        >
+          शारीरिक हालचाल, मानसिक शांतता आणि सकारात्मक
+          वातावरणासाठी योग, ध्यान आणि शांत चिंतनास प्रोत्साहन
+          दिले जाते. मातांच्या सोयीनुसार आणि क्षमतेनुसार
+          सहभागाला महत्त्व दिले जाते.
+        </p>
+
+
+        <span
+          class="activity-tag"
+          data-mr="मनःशांती"
+          data-en="Wellbeing"
+        >
+          मनःशांती
+        </span>
+
+      </article>
+
+
+
+      <!-- =================================================
+           03 FESTIVALS
+           ================================================= -->
+
+      <article class="activity-card reveal">
+
+        <div class="activity-icon">
+          🎊
         </div>
-        <div class="timeline-item reveal">
-          <div class="icon-badge">🎂</div>
-          <h3 data-mr="वाढदिवस साजरे" data-en="Birthday Celebrations">वाढदिवस साजरे</h3>
-          <p class="form-note" data-mr="[पडताळणी झालेल्या तारखेची व तपशीलांची प्रतीक्षा]" data-en="[Awaiting verified date and details]">[पडताळणी झालेल्या तारखेची व तपशीलांची प्रतीक्षा]</p>
+
+
+        <h3
+          data-mr="सण व विशेष दिवस"
+          data-en="Festivals & Special Days"
+        >
+          सण व विशेष दिवस
+        </h3>
+
+
+        <p
+          data-mr="सण आणि विशेष दिवस एकत्र साजरे करून मातांना आनंद, आपुलकी आणि कुटुंबासारख्या सहवासाचा अनुभव मिळावा यासाठी प्रयत्न केला जातो."
+          data-en="Festivals and special days are observed together to create moments of joy, belonging and a family-like sense of togetherness."
+        >
+          सण आणि विशेष दिवस एकत्र साजरे करून मातांना आनंद,
+          आपुलकी आणि कुटुंबासारख्या सहवासाचा अनुभव मिळावा
+          यासाठी प्रयत्न केला जातो.
+        </p>
+
+
+        <span
+          class="activity-tag"
+          data-mr="सहवास व आनंद"
+          data-en="Togetherness & Joy"
+        >
+          सहवास व आनंद
+        </span>
+
+      </article>
+
+
+
+      <!-- =================================================
+           04 BIRTHDAYS
+           ================================================= -->
+
+      <article class="activity-card reveal">
+
+        <div class="activity-icon">
+          🎂
         </div>
-        <div class="timeline-item reveal">
-          <div class="icon-badge">🎭</div>
-          <h3 data-mr="सांस्कृतिक कार्यक्रम" data-en="Cultural Programs">सांस्कृतिक कार्यक्रम</h3>
-          <p class="form-note" data-mr="[पडताळणी झालेल्या तारखेची व तपशीलांची प्रतीक्षा]" data-en="[Awaiting verified date and details]">[पडताळणी झालेल्या तारखेची व तपशीलांची प्रतीक्षा]</p>
+
+
+        <h3
+          data-mr="वाढदिवस व आनंदाचे क्षण"
+          data-en="Birthdays & Moments of Joy"
+        >
+          वाढदिवस व आनंदाचे क्षण
+        </h3>
+
+
+        <p
+          data-mr="मातांच्या आयुष्यातील विशेष दिवस आनंदाने साजरे करण्याचा प्रयत्न केला जातो. छोट्या-छोट्या आनंदाच्या क्षणांमधून आपलेपणा, सन्मान आणि कुटुंबीय वातावरण निर्माण केले जाते."
+          data-en="Special days in the mothers' lives are celebrated with warmth and joy. Small moments of celebration help create belonging, dignity and a family-like environment."
+        >
+          मातांच्या आयुष्यातील विशेष दिवस आनंदाने साजरे करण्याचा
+          प्रयत्न केला जातो. छोट्या-छोट्या आनंदाच्या क्षणांमधून
+          आपलेपणा, सन्मान आणि कुटुंबीय वातावरण निर्माण केले जाते.
+        </p>
+
+
+        <span
+          class="activity-tag"
+          data-mr="आपुलकी व सन्मान"
+          data-en="Belonging & Dignity"
+        >
+          आपुलकी व सन्मान
+        </span>
+
+      </article>
+
+
+
+      <!-- =================================================
+           05 CULTURAL
+           ================================================= -->
+
+      <article class="activity-card reveal">
+
+        <div class="activity-icon">
+          🎭
         </div>
-        <div class="timeline-item reveal">
-          <div class="icon-badge">🤝</div>
-          <h3 data-mr="स्वयंसेवक भेटी" data-en="Volunteer Visits">स्वयंसेवक भेटी</h3>
-          <p class="form-note" data-mr="[पडताळणी झालेल्या तारखेची व तपशीलांची प्रतीक्षा]" data-en="[Awaiting verified date and details]">[पडताळणी झालेल्या तारखेची व तपशीलांची प्रतीक्षा]</p>
+
+
+        <h3
+          data-mr="सांस्कृतिक व मनोरंजनात्मक उपक्रम"
+          data-en="Cultural & Recreational Activities"
+        >
+          सांस्कृतिक व मनोरंजनात्मक उपक्रम
+        </h3>
+
+
+        <p
+          data-mr="गाणी, संवाद, खेळ, मनोरंजन आणि सांस्कृतिक सहभागातून मातांच्या दैनंदिन जीवनात उत्साही आणि आनंदी वातावरण निर्माण करण्याचा प्रयत्न केला जातो."
+          data-en="Songs, conversations, games, recreation and cultural participation help create a cheerful and engaging environment in the mothers' daily lives."
+        >
+          गाणी, संवाद, खेळ, मनोरंजन आणि सांस्कृतिक सहभागातून
+          मातांच्या दैनंदिन जीवनात उत्साही आणि आनंदी वातावरण
+          निर्माण करण्याचा प्रयत्न केला जातो.
+        </p>
+
+
+        <span
+          class="activity-tag"
+          data-mr="मनोरंजन व सहभाग"
+          data-en="Recreation & Participation"
+        >
+          मनोरंजन व सहभाग
+        </span>
+
+      </article>
+
+
+
+      <!-- =================================================
+           06 VOLUNTEERS
+           ================================================= -->
+
+      <article class="activity-card reveal">
+
+        <div class="activity-icon">
+          🤝
         </div>
-        <div class="timeline-item reveal">
-          <div class="icon-badge">🎁</div>
-          <h3 data-mr="देणगी मोहीमा" data-en="Donation Drives">देणगी मोहीमा</h3>
-          <p class="form-note" data-mr="[पडताळणी झालेल्या तारखेची व तपशीलांची प्रतीक्षा]" data-en="[Awaiting verified date and details]">[पडताळणी झालेल्या तारखेची व तपशीलांची प्रतीक्षा]</p>
+
+
+        <h3
+          data-mr="स्वयंसेवक व हितचिंतकांचा सहभाग"
+          data-en="Volunteer & Supporter Engagement"
+        >
+          स्वयंसेवक व हितचिंतकांचा सहभाग
+        </h3>
+
+
+        <p
+          data-mr="स्वयंसेवक, हितचिंतक आणि समाजातील सहृदय व्यक्तींच्या भेटी व सहभागामुळे मातांना सामाजिक संवाद आणि आपुलकीचा अनुभव मिळतो. आवश्यकतेनुसार विविध सेवाकार्यांमध्ये स्वयंसेवी सहकार्य घेतले जाते."
+          data-en="Visits and participation by volunteers, well-wishers and caring members of the community provide social interaction and companionship. Volunteer support is welcomed for appropriate service activities."
+        >
+          स्वयंसेवक, हितचिंतक आणि समाजातील सहृदय व्यक्तींच्या
+          भेटी व सहभागामुळे मातांना सामाजिक संवाद आणि आपुलकीचा
+          अनुभव मिळतो. आवश्यकतेनुसार विविध सेवाकार्यांमध्ये
+          स्वयंसेवी सहकार्य घेतले जाते.
+        </p>
+
+
+        <span
+          class="activity-tag"
+          data-mr="समाजाचा सहभाग"
+          data-en="Community Participation"
+        >
+          समाजाचा सहभाग
+        </span>
+
+      </article>
+
+
+
+      <!-- =================================================
+           07 SERVICE SUPPORT
+           ================================================= -->
+
+      <article class="activity-card reveal">
+
+        <div class="activity-icon">
+          🎁
         </div>
+
+
+        <h3
+          data-mr="सेवा व देणगीद्वारे सहकार्य"
+          data-en="Support Through Service & Donations"
+        >
+          सेवा व देणगीद्वारे सहकार्य
+        </h3>
+
+
+        <p
+          data-mr="मातांच्या निवास, आहार, आरोग्य आणि दैनंदिन गरजांसाठी समाजातील दाते व हितचिंतकांचे सहकार्य महत्त्वाचे आहे. वस्तूरूप मदत, सेवा किंवा देणगीद्वारे माई वृद्धाश्रमाच्या कार्यात सहभागी होता येते."
+          data-en="Support from donors and well-wishers is important for accommodation, meals, healthcare and daily needs. You can contribute through in-kind support, service or donations."
+        >
+          मातांच्या निवास, आहार, आरोग्य आणि दैनंदिन गरजांसाठी
+          समाजातील दाते व हितचिंतकांचे सहकार्य महत्त्वाचे आहे.
+          वस्तूरूप मदत, सेवा किंवा देणगीद्वारे माई वृद्धाश्रमाच्या
+          कार्यात सहभागी होता येते.
+        </p>
+
+
+        <span
+          class="activity-tag"
+          data-mr="सेवेतून सहभाग"
+          data-en="Support Through Service"
+        >
+          सेवेतून सहभाग
+        </span>
+
+      </article>
+
+
+
+      <!-- =================================================
+           08 COMPANIONSHIP
+           ================================================= -->
+
+      <article class="activity-card reveal">
+
+        <div class="activity-icon">
+          ❤️
+        </div>
+
+
+        <h3
+          data-mr="सहवास व भावनिक आधार"
+          data-en="Companionship & Emotional Support"
+        >
+          सहवास व भावनिक आधार
+        </h3>
+
+
+        <p
+          data-mr="मातांशी संवाद साधणे, त्यांचे म्हणणे ऐकून घेणे आणि दैनंदिन जीवनात आपुलकीचा सहवास देणे ही माई वृद्धाश्रमाच्या काळजीची महत्त्वाची बाजू आहे."
+          data-en="Conversation, listening and providing caring companionship are important parts of the support offered at Mai Vriddhashram."
+        >
+          मातांशी संवाद साधणे, त्यांचे म्हणणे ऐकून घेणे आणि
+          दैनंदिन जीवनात आपुलकीचा सहवास देणे ही माई वृद्धाश्रमाच्या
+          काळजीची महत्त्वाची बाजू आहे.
+        </p>
+
+
+        <span
+          class="activity-tag"
+          data-mr="आपुलकी व सहवास"
+          data-en="Care & Companionship"
+        >
+          आपुलकी व सहवास
+        </span>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     OUR APPROACH
+     ===================================================== -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="activities-principles text-center">
+
+      <h2
+        data-mr="आमच्या उपक्रमांचा केंद्रबिंदू"
+        data-en="What Guides Our Activities"
+      >
+        आमच्या उपक्रमांचा केंद्रबिंदू
+      </h2>
+
+
+      <p
+        class="max-w-prose mx-auto"
+        data-mr="प्रत्येक उपक्रमामागे मातांचा सन्मान, सुरक्षितता आणि आनंद यांना केंद्रस्थानी ठेवण्याचा प्रयत्न असतो."
+        data-en="Every activity is guided by an effort to place the mothers' dignity, safety and wellbeing at the centre."
+      >
+        प्रत्येक उपक्रमामागे मातांचा सन्मान, सुरक्षितता आणि आनंद
+        यांना केंद्रस्थानी ठेवण्याचा प्रयत्न असतो.
+      </p>
+
+
+      <div class="principle-list">
+
+
+        <!-- Principle 01 -->
+
+        <div class="principle-item reveal">
+
+          <div class="principle-icon">
+            🌿
+          </div>
+
+
+          <h3
+            data-mr="सन्मान"
+            data-en="Dignity"
+          >
+            सन्मान
+          </h3>
+
+
+          <p
+            data-mr="प्रत्येक मातेची प्रतिष्ठा आणि वैयक्तिक निवड यांचा आदर."
+            data-en="Respect for every mother's dignity and personal choices."
+          >
+            प्रत्येक मातेची प्रतिष्ठा आणि वैयक्तिक निवड यांचा आदर.
+          </p>
+
+        </div>
+
+
+
+        <!-- Principle 02 -->
+
+        <div class="principle-item reveal">
+
+          <div class="principle-icon">
+            🛡️
+          </div>
+
+
+          <h3
+            data-mr="सुरक्षितता"
+            data-en="Safety"
+          >
+            सुरक्षितता
+          </h3>
+
+
+          <p
+            data-mr="सुरक्षित, स्वच्छ आणि काळजीपूर्ण वातावरणाला प्राधान्य."
+            data-en="A safe, clean and caring environment remains a priority."
+          >
+            सुरक्षित, स्वच्छ आणि काळजीपूर्ण वातावरणाला प्राधान्य.
+          </p>
+
+        </div>
+
+
+
+        <!-- Principle 03 -->
+
+        <div class="principle-item reveal">
+
+          <div class="principle-icon">
+            ❤️
+          </div>
+
+
+          <h3
+            data-mr="आपुलकी"
+            data-en="Compassion"
+          >
+            आपुलकी
+          </h3>
+
+
+          <p
+            data-mr="कुटुंबासारखा सहवास, संवाद आणि भावनिक आधार देण्याचा प्रयत्न."
+            data-en="An effort to provide companionship, conversation and emotional support."
+          >
+            कुटुंबासारखा सहवास, संवाद आणि भावनिक आधार देण्याचा प्रयत्न.
+          </p>
+
+        </div>
+
+
       </div>
-    </div>
-  </section>
 
-  <section class="section section-alt text-center">
-    <div class="container">
-      <h2 data-mr="एखाद्या उपक्रमात सहभागी व्हायचंय?" data-en="Want to take part in an activity?">एखाद्या उपक्रमात सहभागी व्हायचंय?</h2>
-      <a href="volunteer.html" class="btn btn-primary" data-mr="🤝 स्वयंसेवक व्हा" data-en="🤝 Volunteer With Us">🤝 स्वयंसेवक व्हा</a>
     </div>
-  </section>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VOLUNTEER CTA
+     ===================================================== -->
+
+<section class="section section-alt text-center">
+
+  <div class="container">
+
+    <h2
+      data-mr="तुम्हीही या सेवेत सहभागी होऊ शकता"
+      data-en="You Can Be Part of This Service"
+    >
+      तुम्हीही या सेवेत सहभागी होऊ शकता
+    </h2>
+
+
+    <p
+      class="activities-cta-text"
+      data-mr="तुमचा वेळ, कौशल्य, सेवा किंवा सहकार्य मातांच्या जीवनात सकारात्मक अनुभव निर्माण करण्यास हातभार लावू शकते."
+      data-en="Your time, skills, service or support can contribute to creating positive experiences in the lives of the mothers."
+    >
+      तुमचा वेळ, कौशल्य, सेवा किंवा सहकार्य मातांच्या जीवनात
+      सकारात्मक अनुभव निर्माण करण्यास हातभार लावू शकते.
+    </p>
+
+
+    <a
+      href="volunteer.html"
+      class="btn btn-primary"
+      data-mr="🤝 स्वयंसेवक व्हा"
+      data-en="🤝 Volunteer With Us"
+    >
+      🤝 स्वयंसेवक व्हा
+    </a>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DONATION CTA
+     ===================================================== -->
+
+<section class="section section-deep text-center">
+
+  <div class="container">
+
+    <h2
+      data-mr="मातांच्या सेवेत आपला हातभार लावा"
+      data-en="Support the Care of Our Mothers"
+    >
+      मातांच्या सेवेत आपला हातभार लावा
+    </h2>
+
+
+    <p
+      class="activities-cta-text"
+      data-mr="आपले सहकार्य माई वृद्धाश्रमातील निवास, आहार, आरोग्य आणि दैनंदिन काळजी सुरू ठेवण्यास मदत करते."
+      data-en="Your support helps sustain accommodation, meals, healthcare and daily care at Mai Vriddhashram."
+    >
+      आपले सहकार्य माई वृद्धाश्रमातील निवास, आहार,
+      आरोग्य आणि दैनंदिन काळजी सुरू ठेवण्यास मदत करते.
+    </p>
+
+
+    <a
+      href="donate.html"
+      class="btn btn-gold"
+      data-mr="❤️ देणगी द्या"
+      data-en="❤️ Donate Now"
+    >
+      ❤️ देणगी द्या
+    </a>
+
+  </div>
+
+</section>
+
+
 </main>
+
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
 <div id="site-footer"></div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
 <script src="config.js"></script>
+
 <script src="js/common.js"></script>
+
 <script src="js/main.js"></script>
+
+
 </body>
+
 </html>
