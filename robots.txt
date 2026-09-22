@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: [VERIFIED CANONICAL URL]/sitemap.xml
+Sitemap: https://maivriddhashram.org/sitemap.xml
