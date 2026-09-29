@@ -2323,13 +2323,16 @@
 
 if (typeof SITE_CONFIG === "undefined") {
 
-  console.error("SITE_CONFIG is not loaded.");
+  console.warn("SITE_CONFIG is not loaded. Using fallback donation settings.");
 
-  return;
+  window.SITE_CONFIG = {
+    donationAmounts: [500, 1000, 2500, 5000],
+    upiId: "MAB.037326017310014@AXISBANK",
+    qrCodeImage: "",
+    registrationPNumber: "F-23015"
+  };
 
 }
-
-
 /* =====================================================
    DONATION PURPOSE MESSAGE
    ===================================================== */
