@@ -3318,10 +3318,282 @@ languageObserver.observe(
             },
 
 
-            handler:
-              async function (
-                response
-              ) {
+          /* =====================================================
+   RAZORPAY PAYMENT SUCCESS HANDLER
+   MOBILE + DESKTOP SAFE
+   ===================================================== */
+
+handler:
+  async function (response) {
+
+    try {
+
+      /* -------------------------------------------------
+         STEP 1 — PAYMENT RECEIVED
+         ------------------------------------------------- */
+
+      showStatus(
+        "पेमेंट मिळाले आहे. सुरक्षितपणे पडताळणी सुरू आहे...",
+        "info"
+      );
+
+
+      /* -------------------------------------------------
+         STEP 2 — VERIFY PAYMENT
+         ------------------------------------------------- */
+
+      const verified =
+        await verifyPayment(
+          response,
+          amount,
+          donor,
+          currentPurpose
+        );
+
+
+      /* -------------------------------------------------
+         STEP 3 — SAVE SUCCESSFUL DONATION FIRST
+         IMPORTANT:
+         Receipt data is saved BEFORE Google notification.
+         This makes mobile receipt flow reliable.
+         ------------------------------------------------- */
+
+      const successfulDonation = {
+
+        amount:
+          amount,
+
+        donor:
+          donor,
+
+        purpose:
+          currentPurpose,
+
+        order_id:
+          verified.order_id ||
+          response.razorpay_order_id ||
+          "",
+
+        payment_id:
+          verified.payment_id ||
+          response.razorpay_payment_id ||
+          "",
+
+        payment_date:
+          new Date().toISOString(),
+
+        receipt_number:
+          verified.receipt_number ||
+          null
+
+      };
+
+
+      try {
+
+        sessionStorage.setItem(
+          "successfulDonation",
+          JSON.stringify(
+            successfulDonation
+          )
+        );
+
+        /* Backup copy for mobile browsers */
+        localStorage.setItem(
+          "successfulDonation",
+          JSON.stringify(
+            successfulDonation
+          )
+        );
+
+      } catch (storageError) {
+
+        console.error(
+          "Donation storage error:",
+          storageError
+        );
+
+      }
+
+
+      /* -------------------------------------------------
+         STEP 4 — SHOW SUCCESS IMMEDIATELY
+         DO NOT WAIT FOR GOOGLE SCRIPT
+         ------------------------------------------------- */
+
+      showStatus(
+        "❤️ धन्यवाद! तुमचे पेमेंट यशस्वीरीत्या पडताळले गेले आहे.",
+        "success"
+      );
+
+
+      successBox.style.display =
+        "block";
+
+
+      successBox.innerHTML = `
+
+        <strong>
+          ❤️ तुमच्या देणगीबद्दल मनःपूर्वक धन्यवाद!
+        </strong>
+
+        <br>
+
+        पेमेंट यशस्वी झाले आहे.
+
+        <br><br>
+
+        <button
+          type="button"
+          class="btn btn-primary"
+          id="mobileReceiptBtn"
+          style="
+            width:100%;
+            max-width:320px;
+            margin:8px auto;
+          "
+        >
+          🧾 पावती व आभार पत्र पहा
+        </button>
+
+      `;
+
+
+      /* -------------------------------------------------
+         STEP 5 — RECEIPT BUTTON
+         ------------------------------------------------- */
+
+      const receiptButton =
+        document.getElementById(
+          "mobileReceiptBtn"
+        );
+
+
+      if (receiptButton) {
+
+        receiptButton.addEventListener(
+          "click",
+          function () {
+
+            openDonationReceipt();
+
+          }
+        );
+
+      }
+
+
+      /* -------------------------------------------------
+         STEP 6 — GOOGLE SHEET NOTIFICATION
+         
+         IMPORTANT:
+         Do NOT use await here.
+         
+         Receipt should NOT depend on Google Apps Script.
+         ------------------------------------------------- */
+
+      try {
+
+        fetch(
+          "https://script.google.com/macros/s/AKfycbwL5sEJ3qVTuvztFihOKC5N6N1aEgubBYC51P_MN44xAsavgXsnW1hsrtgXaCD6Y5Ib/exec",
+          {
+            method: "POST",
+
+            mode: "no-cors",
+
+            headers: {
+              "Content-Type":
+                "text/plain;charset=utf-8"
+            },
+
+            body:
+              JSON.stringify({
+
+                inquiry_type:
+                  "donation",
+
+                donor_name:
+                  donor.name || "",
+
+                email:
+                  donor.email || "",
+
+                phone:
+                  donor.phone || "",
+
+                amount:
+                  amount,
+
+                purpose:
+                  currentPurpose || "",
+
+                payment_id:
+                  verified.payment_id ||
+                  response.razorpay_payment_id ||
+                  "",
+
+                order_id:
+                  verified.order_id ||
+                  response.razorpay_order_id ||
+                  "",
+
+                receipt_number:
+                  verified.receipt_number ||
+                  "",
+
+                payment_date:
+                  new Date().toISOString()
+
+              })
+
+          }
+        ).catch(
+          function (googleError) {
+
+            console.warn(
+              "Google notification failed:",
+              googleError
+            );
+
+          }
+        );
+
+      } catch (googleError) {
+
+        console.warn(
+          "Google notification could not be started:",
+          googleError
+        );
+
+      }
+
+
+    } catch (error) {
+
+      console.error(
+        "Verification error:",
+        error
+      );
+
+
+      showStatus(
+        error.message ||
+        "पेमेंट पडताळणी अयशस्वी झाली.",
+        "error"
+      );
+
+    } finally {
+
+      continueBtn.disabled =
+        false;
+
+      continueBtn.classList.remove(
+        "payment-loading"
+      );
+
+    }
+
+  }
 
                 try {
 
@@ -3961,29 +4233,60 @@ successBox.innerHTML = `
       }
     );
 function openDonationReceipt() {
+
   try {
-    const saved =
-      sessionStorage.getItem("successfulDonation");
+
+    let saved =
+      sessionStorage.getItem(
+        "successfulDonation"
+      );
+
+
+    /* Mobile backup */
+    if (!saved) {
+
+      saved =
+        localStorage.getItem(
+          "successfulDonation"
+        );
+
+    }
+
 
     if (!saved) {
-      window.location.href = "receipt.html";
+
+      window.location.href =
+        "receipt.html";
+
       return;
+
     }
+
 
     const donation =
       JSON.parse(saved);
 
+
     const paymentId =
       donation.payment_id;
 
+
     if (!paymentId) {
-      window.location.href = "receipt.html";
+
+      window.location.href =
+        "receipt.html";
+
       return;
+
     }
+
 
     window.location.href =
       "receipt.html?payment_id=" +
-      encodeURIComponent(paymentId);
+      encodeURIComponent(
+        paymentId
+      );
+
 
   } catch (error) {
 
@@ -3992,9 +4295,12 @@ function openDonationReceipt() {
       error
     );
 
+
     window.location.href =
       "receipt.html";
+
   }
+
 }
   </script>
 
