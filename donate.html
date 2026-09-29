@@ -3316,123 +3316,330 @@ languageObserver.observe(
 
             },
 
+handler:
+  async function (
+    response
+  ) {
 
-            handler:
-              async function (
-                response
-              ) {
+    try {
 
-                try {
-
-                  showStatus(
-                    "पेमेंट मिळाले आहे. सुरक्षितपणे पडताळणी सुरू आहे...",
-                    "info"
-                  );
-
-
-                const verified =
-  await verifyPayment(
-    response,
-    amount,
-    donor,
-    currentPurpose
-  );
-await fetch(
-  "https://script.google.com/macros/s/AKfycbwL5sEJ3qVTuvztFihOKC5N6N1aEgubBYC51P_MN44xAsavgXsnW1hsrtgXaCD6Y5Ib/exec",
-  {
-    method: "POST",
-    mode: "no-cors",
-    headers: {
-      "Content-Type": "text/plain;charset=utf-8"
-    },
-    body: JSON.stringify({
-      inquiry_type: "donation",
-      donor_name: donor.name || "",
-      email: donor.email || "",
-      phone: donor.phone || "",
-      amount: amount,
-      purpose: currentPurpose || "",
-      payment_id: verified.payment_id || response.razorpay_payment_id || "",
-      order_id: verified.order_id || response.razorpay_order_id || "",
-      receipt_number: verified.receipt_number || "",
-      payment_date: new Date().toISOString()
-    })
-  }
-);
-
-                 // Save successful payment information
-try {
- sessionStorage.setItem(
-  "successfulDonation",
-  JSON.stringify({
-    amount: amount,
-    donor: donor,
-    purpose: currentPurpose,
-    order_id: verified.order_id || response.razorpay_order_id,
-    payment_id: verified.payment_id || response.razorpay_payment_id,
-    payment_date: new Date().toISOString(),
-    receipt_number: verified.receipt_number || null
-  })
-);
-} catch (error) {
-  console.error("Could not save receipt data:", error);
-}
-
-showStatus(
-  "❤️ धन्यवाद! तुमचे पेमेंट यशस्वीरीत्या पडताळले गेले आहे.",
-  "success"
-);
-
-successBox.style.display = "block";
-
-successBox.innerHTML = `
-  <strong>❤️ तुमच्या देणगीबद्दल मनःपूर्वक धन्यवाद!</strong><br>
-  पेमेंट यशस्वी झाले आहे.<br><br>
-
-  <button
-  type="button"
-  class="btn btn-primary"
-  onclick="openDonationReceipt()"
->
-  🧾 पावती व आभार पत्र पहा
-</button>
-`;
+      showStatus(
+        "पेमेंट मिळाले आहे. सुरक्षितपणे पडताळणी सुरू आहे...",
+        "info"
+      );
 
 
-                  /*
-                     Future receipt system can use:
-                     verified.order_id
-                     verified.payment_id
-                     donor
-                     amount
-                  */
+      /* =====================================================
+         STEP 1 — SERVER PAYMENT VERIFICATION
+         ===================================================== */
+
+      const verified =
+        await verifyPayment(
+          response,
+          amount,
+          donor,
+          currentPurpose
+        );
 
 
-                } catch (error) {
+      /* =====================================================
+         STEP 2 — GET FINAL PAYMENT DETAILS
+         ===================================================== */
 
-                  console.error(
-                    "Verification error:",
-                    error
-                  );
+      const finalPaymentId =
+        verified.payment_id ||
+        response.razorpay_payment_id ||
+        "";
 
-                  showStatus(
-                    error.message ||
-                    "पेमेंट पडताळणी अयशस्वी झाली.",
-                    "error"
-                  );
+      const finalOrderId =
+        verified.order_id ||
+        response.razorpay_order_id ||
+        "";
 
-                } finally {
+      const finalReceiptNumber =
+        verified.receipt_number ||
+        null;
 
-                  continueBtn.disabled =
-                    false;
 
-                  continueBtn.classList.remove(
-                    "payment-loading"
-                  );
+      if (!finalPaymentId) {
 
-                }
+        throw new Error(
+          "Payment verified, but payment ID was not received."
+        );
+
+      }
+
+
+      /* =====================================================
+         STEP 3 — SAVE LOCAL FALLBACK
+         ===================================================== */
+
+      try {
+
+        sessionStorage.setItem(
+          "successfulDonation",
+          JSON.stringify({
+
+            amount:
+              amount,
+
+            donor:
+              donor,
+
+            purpose:
+              currentPurpose,
+
+            order_id:
+              finalOrderId,
+
+            payment_id:
+              finalPaymentId,
+
+            payment_date:
+              new Date().toISOString(),
+
+            receipt_number:
+              finalReceiptNumber
+
+          })
+        );
+
+      } catch (storageError) {
+
+        console.warn(
+          "Could not save receipt fallback:",
+          storageError
+        );
+
+      }
+
+
+      /* =====================================================
+         STEP 4 — SEND ORGANIZATION NOTIFICATION
+         
+         IMPORTANT:
+         Google Apps Script ला WAIT करायचे नाही.
+         त्यामुळे mobile receipt flow अडकणार नाही.
+         ===================================================== */
+
+      const notificationPayload =
+        JSON.stringify({
+
+          inquiry_type:
+            "donation",
+
+          donor_name:
+            donor.name || "",
+
+          email:
+            donor.email || "",
+
+          phone:
+            donor.phone || "",
+
+          amount:
+            amount,
+
+          purpose:
+            currentPurpose || "",
+
+          payment_id:
+            finalPaymentId,
+
+          order_id:
+            finalOrderId,
+
+          receipt_number:
+            finalReceiptNumber || "",
+
+          payment_date:
+            new Date().toISOString()
+
+        });
+
+
+      try {
+
+        if (
+          navigator.sendBeacon
+        ) {
+
+          const beaconData =
+            new Blob(
+              [
+                notificationPayload
+              ],
+              {
+                type:
+                  "text/plain;charset=utf-8"
+              }
+            );
+
+          const beaconSent =
+            navigator.sendBeacon(
+              "https://script.google.com/macros/s/AKfycbwL5sEJ3qVTuvztFihOKC5N6N1aEgubBYC51P_MN44xAsavgXsnW1hsrtgXaCD6Y5Ib/exec",
+              beaconData
+            );
+
+
+          if (!beaconSent) {
+
+            fetch(
+              "https://script.google.com/macros/s/AKfycbwL5sEJ3qVTuvztFihOKC5N6N1aEgubBYC51P_MN44xAsavgXsnW1hsrtgXaCD6Y5Ib/exec",
+              {
+                method:
+                  "POST",
+
+                mode:
+                  "no-cors",
+
+                headers: {
+                  "Content-Type":
+                    "text/plain;charset=utf-8"
+                },
+
+                body:
+                  notificationPayload,
+
+                keepalive:
+                  true
+              }
+            ).catch(
+              function (notificationError) {
+
+                console.warn(
+                  "Notification request failed:",
+                  notificationError
+                );
 
               }
+            );
+
+          }
+
+        } else {
+
+          fetch(
+            "https://script.google.com/macros/s/AKfycbwL5sEJ3qVTuvztFihOKC5N6N1aEgubBYC51P_MN44xAsavgXsnW1hsrtgXaCD6Y5Ib/exec",
+            {
+              method:
+                "POST",
+
+              mode:
+                "no-cors",
+
+              headers: {
+                "Content-Type":
+                  "text/plain;charset=utf-8"
+              },
+
+              body:
+                notificationPayload,
+
+              keepalive:
+                true
+            }
+          ).catch(
+            function (notificationError) {
+
+              console.warn(
+                "Notification request failed:",
+                notificationError
+              );
+
+            }
+          );
+
+        }
+
+      } catch (notificationError) {
+
+        console.warn(
+          "Notification could not be sent:",
+          notificationError
+        );
+
+      }
+
+
+      /* =====================================================
+         STEP 5 — SUCCESS MESSAGE
+         ===================================================== */
+
+      showStatus(
+        "❤️ धन्यवाद! तुमचे पेमेंट यशस्वीरीत्या पडताळले गेले आहे.",
+        "success"
+      );
+
+
+      successBox.style.display =
+        "block";
+
+
+      successBox.innerHTML = `
+        <strong>❤️ तुमच्या देणगीबद्दल मनःपूर्वक धन्यवाद!</strong><br>
+        पेमेंट यशस्वी झाले आहे.<br><br>
+
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="openDonationReceipt()"
+        >
+          🧾 पावती व आभार पत्र पहा
+        </button>
+      `;
+
+
+      /* =====================================================
+         STEP 6
+         
+         IMPORTANT:
+         Receipt page server वरून payment_id वापरून
+         donation पुन्हा मिळवेल.
+         ===================================================== */
+
+      setTimeout(
+        function () {
+
+          window.location.replace(
+            "receipt.html?payment_id=" +
+            encodeURIComponent(
+              finalPaymentId
+            )
+          );
+
+        },
+        300
+      );
+
+
+    } catch (error) {
+
+      console.error(
+        "Verification error:",
+        error
+      );
+
+
+      showStatus(
+        error.message ||
+        "पेमेंट पडताळणी अयशस्वी झाली.",
+        "error"
+      );
+
+
+    } finally {
+
+      continueBtn.disabled =
+        false;
+
+      continueBtn.classList.remove(
+        "payment-loading"
+      );
+
+    }
+
+  }
 
           };
 
