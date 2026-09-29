@@ -2317,74 +2317,194 @@
       "DOMContentLoaded",
       function () {
 
-        /* =====================================================
-           CHECK SITE CONFIG
-        ===================================================== */
+      /* =====================================================
+   DONATION PURPOSE CONFIGURATION
+   ===================================================== */
 
-        if (
-          typeof SITE_CONFIG === "undefined"
-        ) {
+if (typeof SITE_CONFIG === "undefined") {
 
-          console.error(
-            "SITE_CONFIG is not loaded."
-          );
+  console.error("SITE_CONFIG is not loaded.");
 
-          return;
+  return;
 
-        }
-const purposeMessage = document.getElementById("donationPurposeMessage");
+}
 
-const purpose = new URLSearchParams(window.location.search).get("purpose");
+
+/* =====================================================
+   DONATION PURPOSE MESSAGE
+   ===================================================== */
+
+const purposeMessage =
+  document.getElementById("donationPurposeMessage");
+
+
+/* =====================================================
+   GET PURPOSE FROM URL
+   Example:
+   donate.html?purpose=food
+   ===================================================== */
+
+const urlParams =
+  new URLSearchParams(window.location.search);
+
+const purpose =
+  urlParams.get("purpose");
+
+
+/* =====================================================
+   PURPOSE DATA
+   ===================================================== */
 
 const purposeData = {
- general: {
-  mr: "तुमची देणगी योग्य सेवेसाठी वापरली जाईल.",
-  en: "Your donation will be used for the appropriate care and services."
-},
-  accommodation: {
-    mr: "आपण सुरक्षित निवासासाठी देणगी देत आहात.",
-    en: "You are donating to support safe accommodation."
+
+  general: {
+    mr: "तुमची देणगी माईंच्या गरजेनुसार योग्य सेवा व काळजीसाठी वापरली जाईल.",
+    en: "Your donation will be used where it is most needed for the care and well-being of the elderly."
   },
+
+
+  accommodation: {
+    mr: "आपली देणगी माईंना सुरक्षित, सन्मानजनक आणि प्रेमळ निवासाची सुविधा उपलब्ध करून देण्यासाठी उपयोगी ठरेल.",
+    en: "Your donation will help provide the elderly with safe, dignified and caring accommodation."
+  },
+
 
   food: {
-    mr: "आपण पौष्टिक आहारासाठी देणगी देत आहात.",
-    en: "You are donating to support nutritious food."
+    mr: "आपली देणगी माईंना पौष्टिक अन्न, अन्नधान्य आणि दैनंदिन भोजनाची सुविधा देण्यासाठी उपयोगी ठरेल.",
+    en: "Your donation will help provide nutritious food, groceries and daily meals for the elderly."
   },
+
 
   healthcare: {
-    mr: "आपण आरोग्य सहाय्यासाठी देणगी देत आहात.",
-    en: "You are donating to support healthcare."
+    mr: "आपली देणगी माईंच्या आरोग्य तपासणी, औषधोपचार आणि आवश्यक आरोग्य सहाय्यासाठी उपयोगी ठरेल.",
+    en: "Your donation will support health check-ups, medicines and essential healthcare for the elderly."
   },
+
 
   yoga: {
-    mr: "आपण योग व ध्यानासाठी देणगी देत आहात.",
-    en: "You are donating to support yoga and meditation."
+    mr: "आपली देणगी माईंच्या शारीरिक व मानसिक आरोग्यासाठी योग, ध्यान आणि आरोग्यदायी उपक्रमांना मदत करेल.",
+    en: "Your donation will support yoga, meditation and wellness activities for the physical and mental well-being of the elderly."
   },
+
 
   companionship: {
-    mr: "आपण सहचर्य आणि आपुलकीसाठी देणगी देत आहात.",
-    en: "You are donating to support companionship and care."
+    mr: "आपली देणगी माईंना सहचर्य, आपुलकी, संवाद आणि भावनिक आधार देण्यासाठी मदत करेल.",
+    en: "Your donation will help provide companionship, affection, meaningful interaction and emotional support to the elderly."
   },
+
 
   dignity: {
-    mr: "आपण सन्मान, प्रेम आणि आपलेपणासाठी देणगी देत आहात.",
-    en: "You are donating to support dignity, love and belonging."
+    mr: "आपली देणगी माईंना सन्मान, प्रेम, आपलेपणा आणि सुरक्षित आयुष्य देण्याच्या आमच्या प्रयत्नांना बळ देईल.",
+    en: "Your donation will strengthen our efforts to provide the elderly with dignity, love, belonging and a secure life."
   },
 
+
   "new-mai-vriddhashram": {
-    mr: "आपण नवीन माई वृद्धाश्रम प्रकल्पासाठी देणगी देत आहात.",
-    en: "You are donating to support the new Mai Vriddhashram project."
+    mr: "आपली देणगी नवीन माई वृद्धाश्रमाच्या उभारणीसाठी असून, अधिक माईंना सुरक्षित निवास, अन्न, आरोग्यसेवा आणि सन्मानाने जगण्याची संधी उपलब्ध करून देण्याच्या प्रयत्नांना बळ देईल.",
+    en: "Your donation will support the new Mai Vriddhashram project, helping create a larger home where more elderly people can receive safe accommodation, food, healthcare and a life of dignity."
   }
+
 };
-     const currentPurpose =
+
+
+/* =====================================================
+   DEFAULT PURPOSE
+   ===================================================== */
+
+/*
+   जर URL मध्ये purpose दिलेला नसेल
+   किंवा चुकीचा purpose असेल,
+   तर New Mai Vriddhashram हा default राहील.
+*/
+
+const currentPurpose =
   purposeData[purpose]
     ? purpose
-    : "general";
+    : "new-mai-vriddhashram";
 
-if (purposeMessage) {
-  purposeMessage.querySelector("p").textContent =
-    purposeData[currentPurpose].mr;
+
+/* =====================================================
+   GET CURRENT LANGUAGE
+   ===================================================== */
+
+/*
+   Site वर language system असेल तर त्यानुसार
+   Marathi / English message दाखवला जाईल.
+*/
+
+let currentLanguage = "mr";
+
+if (
+  document.documentElement.lang &&
+  document.documentElement.lang.toLowerCase().startsWith("en")
+) {
+  currentLanguage = "en";
 }
+
+
+/* =====================================================
+   DISPLAY DONATION PURPOSE MESSAGE
+   ===================================================== */
+
+function updateDonationPurposeMessage() {
+
+  if (!purposeMessage) {
+    return;
+  }
+
+  const paragraph =
+    purposeMessage.querySelector("p");
+
+  if (!paragraph) {
+    return;
+  }
+
+  paragraph.textContent =
+    purposeData[currentPurpose][currentLanguage] ||
+    purposeData[currentPurpose].mr;
+
+}
+
+
+/* =====================================================
+   INITIAL MESSAGE
+   ===================================================== */
+
+updateDonationPurposeMessage();
+
+
+/* =====================================================
+   LANGUAGE CHANGE SUPPORT
+   ===================================================== */
+
+/*
+   तुमच्या website मध्ये language बदलल्यावर
+   <html lang="mr"> / <html lang="en">
+   बदलत असेल तर message सुद्धा बदलेल.
+*/
+
+const languageObserver =
+  new MutationObserver(() => {
+
+    currentLanguage =
+      document.documentElement.lang
+        .toLowerCase()
+        .startsWith("en")
+        ? "en"
+        : "mr";
+
+    updateDonationPurposeMessage();
+
+  });
+
+
+languageObserver.observe(
+  document.documentElement,
+  {
+    attributes: true,
+    attributeFilter: ["lang"]
+  }
+);
         /* =====================================================
            SUPABASE FUNCTION URLS
         ===================================================== */
